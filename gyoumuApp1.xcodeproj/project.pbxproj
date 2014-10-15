@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F889EFAF19EED0760049B3A7 /* PerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F889EFAE19EED0760049B3A7 /* PerViewController.m */; };
 		F8A223D119EE6C0D00139991 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8A223D019EE6C0D00139991 /* Foundation.framework */; };
 		F8A223D319EE6C0D00139991 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8A223D219EE6C0D00139991 /* CoreGraphics.framework */; };
 		F8A223D519EE6C0D00139991 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8A223D419EE6C0D00139991 /* UIKit.framework */; };
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F889EFAD19EED0760049B3A7 /* PerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerViewController.h; sourceTree = "<group>"; };
+		F889EFAE19EED0760049B3A7 /* PerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerViewController.m; sourceTree = "<group>"; };
 		F8A223CD19EE6C0D00139991 /* gyoumuApp1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gyoumuApp1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8A223D019EE6C0D00139991 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F8A223D219EE6C0D00139991 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -114,6 +117,8 @@
 			children = (
 				F8A223DF19EE6C0D00139991 /* AppDelegate.h */,
 				F8A223E019EE6C0D00139991 /* AppDelegate.m */,
+				F889EFAD19EED0760049B3A7 /* PerViewController.h */,
+				F889EFAE19EED0760049B3A7 /* PerViewController.m */,
 				F8A223E219EE6C0D00139991 /* Main.storyboard */,
 				F8A223E519EE6C0D00139991 /* ViewController.h */,
 				F8A223E619EE6C0D00139991 /* ViewController.m */,
@@ -250,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8A223E719EE6C0D00139991 /* ViewController.m in Sources */,
+				F889EFAF19EED0760049B3A7 /* PerViewController.m in Sources */,
 				F8A223E119EE6C0D00139991 /* AppDelegate.m in Sources */,
 				F8A223DD19EE6C0D00139991 /* main.m in Sources */,
 			);
@@ -458,6 +464,7 @@
 				F8A2240119EE6C0D00139991 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F8A2240219EE6C0D00139991 /* Build configuration list for PBXNativeTarget "gyoumuApp1Tests" */ = {
 			isa = XCConfigurationList;
@@ -466,6 +473,7 @@
 				F8A2240419EE6C0D00139991 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

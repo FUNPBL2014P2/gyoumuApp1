@@ -10,6 +10,7 @@
 
 @interface PerViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel *labName;
 @end
 
 @implementation PerViewController
@@ -27,6 +28,10 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    //ログインしたユーザ名を引き継いだのを渡しています .hファイルを参照
+    NSString *str1 = @"Login User:";
+    NSString *val = [str1 stringByAppendingString:self.recieveLabName];
+    self.labName.text = val;
 }
 
 - (void)didReceiveMemoryWarning
