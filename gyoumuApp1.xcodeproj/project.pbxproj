@@ -1,0 +1,473 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F8A223D119EE6C0D00139991 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8A223D019EE6C0D00139991 /* Foundation.framework */; };
+		F8A223D319EE6C0D00139991 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8A223D219EE6C0D00139991 /* CoreGraphics.framework */; };
+		F8A223D519EE6C0D00139991 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8A223D419EE6C0D00139991 /* UIKit.framework */; };
+		F8A223DB19EE6C0D00139991 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F8A223D919EE6C0D00139991 /* InfoPlist.strings */; };
+		F8A223DD19EE6C0D00139991 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A223DC19EE6C0D00139991 /* main.m */; };
+		F8A223E119EE6C0D00139991 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A223E019EE6C0D00139991 /* AppDelegate.m */; };
+		F8A223E419EE6C0D00139991 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8A223E219EE6C0D00139991 /* Main.storyboard */; };
+		F8A223E719EE6C0D00139991 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A223E619EE6C0D00139991 /* ViewController.m */; };
+		F8A223E919EE6C0D00139991 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8A223E819EE6C0D00139991 /* Images.xcassets */; };
+		F8A223F019EE6C0D00139991 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8A223EF19EE6C0D00139991 /* XCTest.framework */; };
+		F8A223F119EE6C0D00139991 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8A223D019EE6C0D00139991 /* Foundation.framework */; };
+		F8A223F219EE6C0D00139991 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8A223D419EE6C0D00139991 /* UIKit.framework */; };
+		F8A223FA19EE6C0D00139991 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F8A223F819EE6C0D00139991 /* InfoPlist.strings */; };
+		F8A223FC19EE6C0D00139991 /* gyoumuApp1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A223FB19EE6C0D00139991 /* gyoumuApp1Tests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F8A223F319EE6C0D00139991 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F8A223C519EE6C0D00139991 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F8A223CC19EE6C0D00139991;
+			remoteInfo = gyoumuApp1;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F8A223CD19EE6C0D00139991 /* gyoumuApp1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gyoumuApp1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8A223D019EE6C0D00139991 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F8A223D219EE6C0D00139991 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F8A223D419EE6C0D00139991 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F8A223D819EE6C0D00139991 /* gyoumuApp1-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "gyoumuApp1-Info.plist"; sourceTree = "<group>"; };
+		F8A223DA19EE6C0D00139991 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F8A223DC19EE6C0D00139991 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F8A223DE19EE6C0D00139991 /* gyoumuApp1-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "gyoumuApp1-Prefix.pch"; sourceTree = "<group>"; };
+		F8A223DF19EE6C0D00139991 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F8A223E019EE6C0D00139991 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F8A223E319EE6C0D00139991 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F8A223E519EE6C0D00139991 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F8A223E619EE6C0D00139991 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F8A223E819EE6C0D00139991 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F8A223EE19EE6C0D00139991 /* gyoumuApp1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gyoumuApp1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8A223EF19EE6C0D00139991 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		F8A223F719EE6C0D00139991 /* gyoumuApp1Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "gyoumuApp1Tests-Info.plist"; sourceTree = "<group>"; };
+		F8A223F919EE6C0D00139991 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F8A223FB19EE6C0D00139991 /* gyoumuApp1Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = gyoumuApp1Tests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F8A223CA19EE6C0D00139991 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8A223D319EE6C0D00139991 /* CoreGraphics.framework in Frameworks */,
+				F8A223D519EE6C0D00139991 /* UIKit.framework in Frameworks */,
+				F8A223D119EE6C0D00139991 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8A223EB19EE6C0D00139991 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8A223F019EE6C0D00139991 /* XCTest.framework in Frameworks */,
+				F8A223F219EE6C0D00139991 /* UIKit.framework in Frameworks */,
+				F8A223F119EE6C0D00139991 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F8A223C419EE6C0D00139991 = {
+			isa = PBXGroup;
+			children = (
+				F8A223D619EE6C0D00139991 /* gyoumuApp1 */,
+				F8A223F519EE6C0D00139991 /* gyoumuApp1Tests */,
+				F8A223CF19EE6C0D00139991 /* Frameworks */,
+				F8A223CE19EE6C0D00139991 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F8A223CE19EE6C0D00139991 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F8A223CD19EE6C0D00139991 /* gyoumuApp1.app */,
+				F8A223EE19EE6C0D00139991 /* gyoumuApp1Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F8A223CF19EE6C0D00139991 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F8A223D019EE6C0D00139991 /* Foundation.framework */,
+				F8A223D219EE6C0D00139991 /* CoreGraphics.framework */,
+				F8A223D419EE6C0D00139991 /* UIKit.framework */,
+				F8A223EF19EE6C0D00139991 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F8A223D619EE6C0D00139991 /* gyoumuApp1 */ = {
+			isa = PBXGroup;
+			children = (
+				F8A223DF19EE6C0D00139991 /* AppDelegate.h */,
+				F8A223E019EE6C0D00139991 /* AppDelegate.m */,
+				F8A223E219EE6C0D00139991 /* Main.storyboard */,
+				F8A223E519EE6C0D00139991 /* ViewController.h */,
+				F8A223E619EE6C0D00139991 /* ViewController.m */,
+				F8A223E819EE6C0D00139991 /* Images.xcassets */,
+				F8A223D719EE6C0D00139991 /* Supporting Files */,
+			);
+			path = gyoumuApp1;
+			sourceTree = "<group>";
+		};
+		F8A223D719EE6C0D00139991 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F8A223D819EE6C0D00139991 /* gyoumuApp1-Info.plist */,
+				F8A223D919EE6C0D00139991 /* InfoPlist.strings */,
+				F8A223DC19EE6C0D00139991 /* main.m */,
+				F8A223DE19EE6C0D00139991 /* gyoumuApp1-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F8A223F519EE6C0D00139991 /* gyoumuApp1Tests */ = {
+			isa = PBXGroup;
+			children = (
+				F8A223FB19EE6C0D00139991 /* gyoumuApp1Tests.m */,
+				F8A223F619EE6C0D00139991 /* Supporting Files */,
+			);
+			path = gyoumuApp1Tests;
+			sourceTree = "<group>";
+		};
+		F8A223F619EE6C0D00139991 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F8A223F719EE6C0D00139991 /* gyoumuApp1Tests-Info.plist */,
+				F8A223F819EE6C0D00139991 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F8A223CC19EE6C0D00139991 /* gyoumuApp1 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F8A223FF19EE6C0D00139991 /* Build configuration list for PBXNativeTarget "gyoumuApp1" */;
+			buildPhases = (
+				F8A223C919EE6C0D00139991 /* Sources */,
+				F8A223CA19EE6C0D00139991 /* Frameworks */,
+				F8A223CB19EE6C0D00139991 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = gyoumuApp1;
+			productName = gyoumuApp1;
+			productReference = F8A223CD19EE6C0D00139991 /* gyoumuApp1.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F8A223ED19EE6C0D00139991 /* gyoumuApp1Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F8A2240219EE6C0D00139991 /* Build configuration list for PBXNativeTarget "gyoumuApp1Tests" */;
+			buildPhases = (
+				F8A223EA19EE6C0D00139991 /* Sources */,
+				F8A223EB19EE6C0D00139991 /* Frameworks */,
+				F8A223EC19EE6C0D00139991 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F8A223F419EE6C0D00139991 /* PBXTargetDependency */,
+			);
+			name = gyoumuApp1Tests;
+			productName = gyoumuApp1Tests;
+			productReference = F8A223EE19EE6C0D00139991 /* gyoumuApp1Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F8A223C519EE6C0D00139991 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = shota;
+				TargetAttributes = {
+					F8A223ED19EE6C0D00139991 = {
+						TestTargetID = F8A223CC19EE6C0D00139991;
+					};
+				};
+			};
+			buildConfigurationList = F8A223C819EE6C0D00139991 /* Build configuration list for PBXProject "gyoumuApp1" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F8A223C419EE6C0D00139991;
+			productRefGroup = F8A223CE19EE6C0D00139991 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F8A223CC19EE6C0D00139991 /* gyoumuApp1 */,
+				F8A223ED19EE6C0D00139991 /* gyoumuApp1Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F8A223CB19EE6C0D00139991 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8A223E919EE6C0D00139991 /* Images.xcassets in Resources */,
+				F8A223DB19EE6C0D00139991 /* InfoPlist.strings in Resources */,
+				F8A223E419EE6C0D00139991 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8A223EC19EE6C0D00139991 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8A223FA19EE6C0D00139991 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F8A223C919EE6C0D00139991 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8A223E719EE6C0D00139991 /* ViewController.m in Sources */,
+				F8A223E119EE6C0D00139991 /* AppDelegate.m in Sources */,
+				F8A223DD19EE6C0D00139991 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8A223EA19EE6C0D00139991 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8A223FC19EE6C0D00139991 /* gyoumuApp1Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F8A223F419EE6C0D00139991 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F8A223CC19EE6C0D00139991 /* gyoumuApp1 */;
+			targetProxy = F8A223F319EE6C0D00139991 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F8A223D919EE6C0D00139991 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F8A223DA19EE6C0D00139991 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F8A223E219EE6C0D00139991 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F8A223E319EE6C0D00139991 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F8A223F819EE6C0D00139991 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F8A223F919EE6C0D00139991 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F8A223FD19EE6C0D00139991 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		F8A223FE19EE6C0D00139991 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F8A2240019EE6C0D00139991 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "gyoumuApp1/gyoumuApp1-Prefix.pch";
+				INFOPLIST_FILE = "gyoumuApp1/gyoumuApp1-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F8A2240119EE6C0D00139991 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "gyoumuApp1/gyoumuApp1-Prefix.pch";
+				INFOPLIST_FILE = "gyoumuApp1/gyoumuApp1-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		F8A2240319EE6C0D00139991 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/gyoumuApp1.app/gyoumuApp1";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "gyoumuApp1/gyoumuApp1-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "gyoumuApp1Tests/gyoumuApp1Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		F8A2240419EE6C0D00139991 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/gyoumuApp1.app/gyoumuApp1";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "gyoumuApp1/gyoumuApp1-Prefix.pch";
+				INFOPLIST_FILE = "gyoumuApp1Tests/gyoumuApp1Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F8A223C819EE6C0D00139991 /* Build configuration list for PBXProject "gyoumuApp1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8A223FD19EE6C0D00139991 /* Debug */,
+				F8A223FE19EE6C0D00139991 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F8A223FF19EE6C0D00139991 /* Build configuration list for PBXNativeTarget "gyoumuApp1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8A2240019EE6C0D00139991 /* Debug */,
+				F8A2240119EE6C0D00139991 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F8A2240219EE6C0D00139991 /* Build configuration list for PBXNativeTarget "gyoumuApp1Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8A2240319EE6C0D00139991 /* Debug */,
+				F8A2240419EE6C0D00139991 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F8A223C519EE6C0D00139991 /* Project object */;
+}
