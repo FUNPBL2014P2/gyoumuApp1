@@ -40,10 +40,11 @@
 - (IBAction)loginBtn:(id)sender {
     }
 
-- (IBAction)nextView:(id)sender {
+//必要なしかも
+/*- (IBAction)nextView:(id)sender {
     [self performSegueWithIdentifier:@"next" sender:self];
 }
-
+*/
 //画面が遷移した際の関数　ここで引き継ぎしが行われる
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
