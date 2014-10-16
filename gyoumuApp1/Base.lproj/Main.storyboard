@@ -48,7 +48,7 @@
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="loginBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w1U-Dk-7Jp"/>
-                                    <segue destination="X7H-lg-RQD" kind="modal" identifier="next" id="BgG-4K-HnS"/>
+                                    <segue destination="X7H-lg-RQD" kind="modal" identifier="next" modalTransitionStyle="crossDissolve" id="BgG-4K-HnS"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -66,7 +66,6 @@
         <!--Per View Controller-->
         <scene sceneID="YiB-vn-Srr">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ib2-Fz-SZB" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="X7H-lg-RQD" customClass="PerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3zJ-U1-wh7"/>
@@ -89,6 +88,7 @@
                         <outlet property="labName" destination="IDu-Hk-ZPW" id="BOH-22-nnQ"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ib2-Fz-SZB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="581" y="-242"/>
         </scene>

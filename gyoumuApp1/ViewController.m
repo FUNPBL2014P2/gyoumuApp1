@@ -18,14 +18,14 @@
 
 @implementation ViewController{
     //引き継がせたい変数の方を設定
-    int sendUser;
+    NSArray *sendPerArray;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
    	// Do any additional setup after loading the view, typically from a nib.
-   }
+       }
 
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -40,19 +40,14 @@
 - (IBAction)loginBtn:(id)sender {
     }
 
-//必要なしかも
-/*- (IBAction)nextView:(id)sender {
-    [self performSegueWithIdentifier:@"next" sender:self];
-}
-*/
 //画面が遷移した際の関数　ここで引き継ぎしが行われる
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     //Segueの特定
     if ( [[segue identifier] isEqualToString:@"next"] ) {
         PerViewController *PerViewController = [segue destinationViewController];
-        //ここで遷移先ビューのクラスの変数reciveUserに値を渡している
-        PerViewController.receiveUser = sendUser;
+        //ここで遷移先ビューのクラスの変数recivePerArrayに値を渡している
+        PerViewController.receivePerArray = sendPerArray;
     }
 }
 
@@ -71,9 +66,17 @@
     
     for(int i = 0; i < jsonArray.count; i++) {
         if( ([self.userText.text isEqualToString:jsonArray[i][@"username"]] == YES) && ([self.pwText.text  isEqualToString:jsonArray[i][@"terminalId"]]) ) {
-            //ユーザの番号を代入
-            sendUser = i;
-            //画面を遷移するYES
+            //個人のユーザ情報を取得するための処理
+            NSString *orignPersonal = @"http://webdb.per.c.fun.ac.jp/sofline/view.php?data=";
+            NSString *urlPersonal = [NSString stringWithFormat:@"%@%@",orignPersonal,jsonArray[i][@"path"]];
+            
+            
+            NSURLRequest *requestPersonal = [NSURLRequest requestWithURL:[NSURL URLWithString:urlPersonal]];
+            NSData *jsonDataPersonal = [NSURLConnection sendSynchronousRequest:requestPersonal returningResponse:nil error:nil];
+            NSArray *jsonArrayPersonal = [NSJSONSerialization JSONObjectWithData:jsonDataPersonal options:NSJSONReadingAllowFragments error:nil];
+            //値渡しするsendArrayにユーザ情報を代入
+            sendPerArray = jsonArrayPersonal;
+                        //画面を遷移するYES
             return YES;
         }
             }

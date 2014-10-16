@@ -10,5 +10,6 @@
 
 @interface PerViewController : UIViewController
 //引き継ぎたい変数の型を設定 ここではログインユーザの番号です
-@property int receiveUser;
+//@property int receiveUser;
+@property NSArray *receivePerArray;
 @end
