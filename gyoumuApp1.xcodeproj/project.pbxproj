@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB9DE12319F03D2D0071FEEB /* AMSlideMenuContentSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9DE11519F03D2D0071FEEB /* AMSlideMenuContentSegue.m */; };
+		EB9DE12419F03D2D0071FEEB /* AMSlideMenuLeftMenuSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9DE11719F03D2D0071FEEB /* AMSlideMenuLeftMenuSegue.m */; };
+		EB9DE12519F03D2D0071FEEB /* AMSlideMenuLeftTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9DE11919F03D2D0071FEEB /* AMSlideMenuLeftTableViewController.m */; };
+		EB9DE12619F03D2D0071FEEB /* AMSlideMenuMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9DE11B19F03D2D0071FEEB /* AMSlideMenuMainViewController.m */; };
+		EB9DE12719F03D2D0071FEEB /* AMSlideMenuRightMenuSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9DE11E19F03D2D0071FEEB /* AMSlideMenuRightMenuSegue.m */; };
+		EB9DE12819F03D2D0071FEEB /* AMSlideMenuRightTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9DE12019F03D2D0071FEEB /* AMSlideMenuRightTableViewController.m */; };
+		EB9DE12919F03D2D0071FEEB /* UIViewController+AMSlideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9DE12219F03D2D0071FEEB /* UIViewController+AMSlideMenu.m */; };
+		EB9DE12C19F03E910071FEEB /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9DE12B19F03E910071FEEB /* MenuViewController.m */; };
 		F889EFAF19EED0760049B3A7 /* PerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F889EFAE19EED0760049B3A7 /* PerViewController.m */; };
 		F8A223D119EE6C0D00139991 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8A223D019EE6C0D00139991 /* Foundation.framework */; };
 		F8A223D319EE6C0D00139991 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8A223D219EE6C0D00139991 /* CoreGraphics.framework */; };
@@ -35,6 +43,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EB9DE11419F03D2D0071FEEB /* AMSlideMenuContentSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideMenuContentSegue.h; sourceTree = "<group>"; };
+		EB9DE11519F03D2D0071FEEB /* AMSlideMenuContentSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMSlideMenuContentSegue.m; sourceTree = "<group>"; };
+		EB9DE11619F03D2D0071FEEB /* AMSlideMenuLeftMenuSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideMenuLeftMenuSegue.h; sourceTree = "<group>"; };
+		EB9DE11719F03D2D0071FEEB /* AMSlideMenuLeftMenuSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMSlideMenuLeftMenuSegue.m; sourceTree = "<group>"; };
+		EB9DE11819F03D2D0071FEEB /* AMSlideMenuLeftTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideMenuLeftTableViewController.h; sourceTree = "<group>"; };
+		EB9DE11919F03D2D0071FEEB /* AMSlideMenuLeftTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMSlideMenuLeftTableViewController.m; sourceTree = "<group>"; };
+		EB9DE11A19F03D2D0071FEEB /* AMSlideMenuMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideMenuMainViewController.h; sourceTree = "<group>"; };
+		EB9DE11B19F03D2D0071FEEB /* AMSlideMenuMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMSlideMenuMainViewController.m; sourceTree = "<group>"; };
+		EB9DE11C19F03D2D0071FEEB /* AMSlideMenuProtocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideMenuProtocols.h; sourceTree = "<group>"; };
+		EB9DE11D19F03D2D0071FEEB /* AMSlideMenuRightMenuSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideMenuRightMenuSegue.h; sourceTree = "<group>"; };
+		EB9DE11E19F03D2D0071FEEB /* AMSlideMenuRightMenuSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMSlideMenuRightMenuSegue.m; sourceTree = "<group>"; };
+		EB9DE11F19F03D2D0071FEEB /* AMSlideMenuRightTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideMenuRightTableViewController.h; sourceTree = "<group>"; };
+		EB9DE12019F03D2D0071FEEB /* AMSlideMenuRightTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMSlideMenuRightTableViewController.m; sourceTree = "<group>"; };
+		EB9DE12119F03D2D0071FEEB /* UIViewController+AMSlideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AMSlideMenu.h"; sourceTree = "<group>"; };
+		EB9DE12219F03D2D0071FEEB /* UIViewController+AMSlideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AMSlideMenu.m"; sourceTree = "<group>"; };
+		EB9DE12A19F03E910071FEEB /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		EB9DE12B19F03E910071FEEB /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		F889EFAD19EED0760049B3A7 /* PerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerViewController.h; sourceTree = "<group>"; };
 		F889EFAE19EED0760049B3A7 /* PerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerViewController.m; sourceTree = "<group>"; };
 		F8A223CD19EE6C0D00139991 /* gyoumuApp1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gyoumuApp1.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,6 +107,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EB9DE11319F03D2D0071FEEB /* AMSlideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				EB9DE11419F03D2D0071FEEB /* AMSlideMenuContentSegue.h */,
+				EB9DE11519F03D2D0071FEEB /* AMSlideMenuContentSegue.m */,
+				EB9DE11619F03D2D0071FEEB /* AMSlideMenuLeftMenuSegue.h */,
+				EB9DE11719F03D2D0071FEEB /* AMSlideMenuLeftMenuSegue.m */,
+				EB9DE11819F03D2D0071FEEB /* AMSlideMenuLeftTableViewController.h */,
+				EB9DE11919F03D2D0071FEEB /* AMSlideMenuLeftTableViewController.m */,
+				EB9DE11A19F03D2D0071FEEB /* AMSlideMenuMainViewController.h */,
+				EB9DE11B19F03D2D0071FEEB /* AMSlideMenuMainViewController.m */,
+				EB9DE11C19F03D2D0071FEEB /* AMSlideMenuProtocols.h */,
+				EB9DE11D19F03D2D0071FEEB /* AMSlideMenuRightMenuSegue.h */,
+				EB9DE11E19F03D2D0071FEEB /* AMSlideMenuRightMenuSegue.m */,
+				EB9DE11F19F03D2D0071FEEB /* AMSlideMenuRightTableViewController.h */,
+				EB9DE12019F03D2D0071FEEB /* AMSlideMenuRightTableViewController.m */,
+				EB9DE12119F03D2D0071FEEB /* UIViewController+AMSlideMenu.h */,
+				EB9DE12219F03D2D0071FEEB /* UIViewController+AMSlideMenu.m */,
+			);
+			path = AMSlideMenu;
+			sourceTree = "<group>";
+		};
 		F8A223C419EE6C0D00139991 = {
 			isa = PBXGroup;
 			children = (
@@ -115,11 +162,13 @@
 		F8A223D619EE6C0D00139991 /* gyoumuApp1 */ = {
 			isa = PBXGroup;
 			children = (
+				EB9DE11319F03D2D0071FEEB /* AMSlideMenu */,
 				F8A223DF19EE6C0D00139991 /* AppDelegate.h */,
 				F8A223E019EE6C0D00139991 /* AppDelegate.m */,
 				F889EFAD19EED0760049B3A7 /* PerViewController.h */,
 				F889EFAE19EED0760049B3A7 /* PerViewController.m */,
-				F8A223E219EE6C0D00139991 /* Main.storyboard */,
+				EB9DE12A19F03E910071FEEB /* MenuViewController.h */,
+				EB9DE12B19F03E910071FEEB /* MenuViewController.m */,
 				F8A223E519EE6C0D00139991 /* ViewController.h */,
 				F8A223E619EE6C0D00139991 /* ViewController.m */,
 				F8A223E819EE6C0D00139991 /* Images.xcassets */,
@@ -131,6 +180,7 @@
 		F8A223D719EE6C0D00139991 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F8A223E219EE6C0D00139991 /* Main.storyboard */,
 				F8A223D819EE6C0D00139991 /* gyoumuApp1-Info.plist */,
 				F8A223D919EE6C0D00139991 /* InfoPlist.strings */,
 				F8A223DC19EE6C0D00139991 /* main.m */,
@@ -257,9 +307,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB9DE12919F03D2D0071FEEB /* UIViewController+AMSlideMenu.m in Sources */,
+				EB9DE12719F03D2D0071FEEB /* AMSlideMenuRightMenuSegue.m in Sources */,
+				EB9DE12319F03D2D0071FEEB /* AMSlideMenuContentSegue.m in Sources */,
 				F8A223E719EE6C0D00139991 /* ViewController.m in Sources */,
+				EB9DE12819F03D2D0071FEEB /* AMSlideMenuRightTableViewController.m in Sources */,
+				EB9DE12619F03D2D0071FEEB /* AMSlideMenuMainViewController.m in Sources */,
 				F889EFAF19EED0760049B3A7 /* PerViewController.m in Sources */,
+				EB9DE12C19F03E910071FEEB /* MenuViewController.m in Sources */,
 				F8A223E119EE6C0D00139991 /* AppDelegate.m in Sources */,
+				EB9DE12519F03D2D0071FEEB /* AMSlideMenuLeftTableViewController.m in Sources */,
+				EB9DE12419F03D2D0071FEEB /* AMSlideMenuLeftMenuSegue.m in Sources */,
 				F8A223DD19EE6C0D00139991 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
