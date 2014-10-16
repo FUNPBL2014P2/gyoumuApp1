@@ -18,14 +18,14 @@
 
 @implementation ViewController{
     //引き継がせたい変数の方を設定
-    NSString *sendLabName;
+    int sendUser;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
    	// Do any additional setup after loading the view, typically from a nib.
-    }
+   }
 
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -51,8 +51,8 @@
     //Segueの特定
     if ( [[segue identifier] isEqualToString:@"next"] ) {
         PerViewController *PerViewController = [segue destinationViewController];
-        //ここで遷移先ビューのクラスの変数recieveLabNameに値を渡している
-        PerViewController.recieveLabName = sendLabName;
+        //ここで遷移先ビューのクラスの変数reciveUserに値を渡している
+        PerViewController.receiveUser = sendUser;
     }
 }
 
@@ -71,8 +71,8 @@
     
     for(int i = 0; i < jsonArray.count; i++) {
         if( ([self.userText.text isEqualToString:jsonArray[i][@"username"]] == YES) && ([self.pwText.text  isEqualToString:jsonArray[i][@"terminalId"]]) ) {
-            //引き継がせたい文字列を代入
-            sendLabName = jsonArray[i][@"username"];
+            //ユーザの番号を代入
+            sendUser = i;
             //画面を遷移するYES
             return YES;
         }

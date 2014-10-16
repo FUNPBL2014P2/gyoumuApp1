@@ -204,6 +204,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = shota;
 				TargetAttributes = {
+					F8A223CC19EE6C0D00139991 = {
+						DevelopmentTeam = 565CL88MF2;
+					};
 					F8A223ED19EE6C0D00139991 = {
 						TestTargetID = F8A223CC19EE6C0D00139991;
 					};
@@ -384,10 +387,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "gyoumuApp1/gyoumuApp1-Prefix.pch";
 				INFOPLIST_FILE = "gyoumuApp1/gyoumuApp1-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -397,10 +403,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "gyoumuApp1/gyoumuApp1-Prefix.pch";
 				INFOPLIST_FILE = "gyoumuApp1/gyoumuApp1-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

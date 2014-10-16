@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface PerViewController : UIViewController
-//引き継ぎたい変数の型を設定
-@property NSString *recieveLabName;
+//引き継ぎたい変数の型を設定 ここではログインユーザの番号です
+@property int receiveUser;
 @end

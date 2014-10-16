@@ -27,10 +27,28 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSString *orign = @"http://webdb.per.c.fun.ac.jp/sofline/viewall.php";
+    NSString *url = [NSString stringWithFormat:@"%@",orign];
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
+    NSData *jsonData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    NSDictionary *jsonDlc = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:nil];
+    //jsonArrayにデータを格納
+    NSArray *jsonArray = [jsonDlc objectForKey:@"data"];
+
     // Do any additional setup after loading the view.
     //ログインしたユーザ名を引き継いだのを渡しています .hファイルを参照
     NSString *str1 = @"Login User:";
-    NSString *val = [str1 stringByAppendingString:self.recieveLabName];
+    /* "datetime": "20141002-133706",
+    "title"
+    "message"
+    "latitude"
+     "longitude"
+    "terminalId"
+    "username"
+    "option0"*/ //ログインユーザのそれぞれの値を取り出せます
+    NSString *val = [str1 stringByAppendingString:jsonArray[_receiveUser][@"message"]];
+    NSLog(@"%d", _receiveUser);
     self.labName.text = val;
 }
 
