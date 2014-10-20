@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB34E0EE19F4C590001CA342 /* menuicon.png in Resources */ = {isa = PBXBuildFile; fileRef = EB34E0ED19F4C590001CA342 /* menuicon.png */; };
 		EB9DE12319F03D2D0071FEEB /* AMSlideMenuContentSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9DE11519F03D2D0071FEEB /* AMSlideMenuContentSegue.m */; };
 		EB9DE12419F03D2D0071FEEB /* AMSlideMenuLeftMenuSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9DE11719F03D2D0071FEEB /* AMSlideMenuLeftMenuSegue.m */; };
 		EB9DE12519F03D2D0071FEEB /* AMSlideMenuLeftTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9DE11919F03D2D0071FEEB /* AMSlideMenuLeftTableViewController.m */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EB34E0ED19F4C590001CA342 /* menuicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menuicon.png; sourceTree = "<group>"; };
 		EB9DE11419F03D2D0071FEEB /* AMSlideMenuContentSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideMenuContentSegue.h; sourceTree = "<group>"; };
 		EB9DE11519F03D2D0071FEEB /* AMSlideMenuContentSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMSlideMenuContentSegue.m; sourceTree = "<group>"; };
 		EB9DE11619F03D2D0071FEEB /* AMSlideMenuLeftMenuSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideMenuLeftMenuSegue.h; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				F8A223E219EE6C0D00139991 /* Main.storyboard */,
+				EB34E0ED19F4C590001CA342 /* menuicon.png */,
 				F8A223D819EE6C0D00139991 /* gyoumuApp1-Info.plist */,
 				F8A223D919EE6C0D00139991 /* InfoPlist.strings */,
 				F8A223DC19EE6C0D00139991 /* main.m */,
@@ -287,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8A223E919EE6C0D00139991 /* Images.xcassets in Resources */,
+				EB34E0EE19F4C590001CA342 /* menuicon.png in Resources */,
 				F8A223DB19EE6C0D00139991 /* InfoPlist.strings in Resources */,
 				F8A223E419EE6C0D00139991 /* Main.storyboard in Resources */,
 			);

@@ -39,6 +39,21 @@
     return identifier;
 }
 
+- (void)configureLeftMenuButton:(UIButton *)button
+{
+    CGRect frame = button.frame;
+    frame.origin = (CGPoint){0,0};
+    frame.size = (CGSize){40,40};
+    
+    button.frame = frame;
+    [button setImage:[UIImage imageNamed:@"menuicon"] forState:UIControlStateNormal];
+    
+}
+
+-(CGFloat)leftMenuWidth
+{
+    return 500;
+}
 /*
 #pragma mark - Navigation
 

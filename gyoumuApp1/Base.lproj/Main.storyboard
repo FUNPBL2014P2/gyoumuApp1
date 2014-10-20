@@ -209,7 +209,7 @@
             </objects>
             <point key="canvasLocation" x="5214" y="263"/>
         </scene>
-        <!--View Controller-->
+        <!--ライセンス一覧-->
         <scene sceneID="0PU-tC-Q3F">
             <objects>
                 <viewController id="i8C-HY-wOp" sceneMemberID="viewController">
@@ -230,7 +230,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Ez8-vi-buH"/>
+                    <navigationItem key="navigationItem" title="ライセンス一覧" id="Ez8-vi-buH"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kFu-CZ-wIv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -252,7 +252,7 @@
             </objects>
             <point key="canvasLocation" x="5214" y="-1145"/>
         </scene>
-        <!--View Controller-->
+        <!--ライセンス登録-->
         <scene sceneID="WsD-NW-n8k">
             <objects>
                 <viewController id="9n5-kd-hae" sceneMemberID="viewController">
@@ -273,7 +273,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="zVS-g0-In5"/>
+                    <navigationItem key="navigationItem" title="ライセンス登録" id="zVS-g0-In5"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ffV-Qd-x8j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
