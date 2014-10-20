@@ -31,6 +31,10 @@
             identifier=@"secondSegue";
             break;
 
+        case 2:
+            identifier=@"thirdSegue";
+            break;
+            
         default:
             break;
     }
