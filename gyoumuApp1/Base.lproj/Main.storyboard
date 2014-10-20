@@ -202,12 +202,12 @@
                     <connections>
                         <segue destination="L6H-uK-gWR" kind="custom" identifier="firstSegue" customClass="AMSlideMenuContentSegue" id="20p-xc-n9N"/>
                         <segue destination="gcM-S9-W1J" kind="custom" identifier="secondSegue" customClass="AMSlideMenuContentSegue" id="Ha1-h1-wtt"/>
-                        <segue destination="uis-vy-YRI" kind="custom" identifier="thirdSegue" customClass="AMSlideMenuContentSegue" id="sOE-DV-fnO"/>
+                        <segue destination="BYZ-38-t0r" kind="modal" identifier="thirdSegue" animates="NO" id="ni6-Dg-Yrf"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="db7-ns-El5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4096" y="-209"/>
+            <point key="canvasLocation" x="4064" y="-225"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KJM-fm-ASa">
@@ -251,22 +251,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kFu-CZ-wIv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6094" y="271"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="4F7-U7-CWS">
-            <objects>
-                <navigationController id="uis-vy-YRI" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="LDH-Ie-I1o">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="tYv-n7-GgK"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Inq-Ht-PvI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1416" y="1008"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Upm-LX-BSz">
