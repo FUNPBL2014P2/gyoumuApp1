@@ -35,6 +35,18 @@
             identifier=@"thirdSegue";
             break;
             
+        case 3:
+            identifier=@"fourthSegue";
+            break;
+            
+        case 4:
+            identifier=@"fifthSegue";
+            break;
+            
+        case 5:
+            identifier=@"sixthSegue";
+            break;
+            
         default:
             break;
     }
