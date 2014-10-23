@@ -45,6 +45,28 @@
     [super viewDidLoad];
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 100.0;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UIView *sectionView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 30.0f)];
+    sectionView.backgroundColor = [UIColor clearColor];
+    
+    UILabel *menuLabel = [[UILabel alloc] init];
+    menuLabel.frame = CGRectMake(100, 10, 300, 70);
+    menuLabel.font = [UIFont italicSystemFontOfSize:40];
+    menuLabel.textColor = [UIColor blackColor];
+    menuLabel.backgroundColor = [UIColor cyanColor];
+    menuLabel.textAlignment = NSTextAlignmentCenter;
+    menuLabel.text = @"MENU";
+    
+    [sectionView addSubview:menuLabel];
+    
+    return sectionView;
+}
+
 - (void)openContentNavigationController:(UINavigationController *)nvc
 {
 #ifdef AMSlideMenuWithoutStoryboards
