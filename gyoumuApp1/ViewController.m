@@ -88,11 +88,12 @@
             }
        
         
-        // 生成と同時に各種設定も完了させる例
+        // 生成と同時に各種設定も完了させる
         UIAlertView *alert =
         [[UIAlertView alloc] initWithTitle:@"入力エラー" message:@"もう一度入力してください"
                                   delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alert show];        return NO;
+        [alert show];
+        return NO;
     //一致しないので遷移しない
     }
     if ([sender tag] == 2) {

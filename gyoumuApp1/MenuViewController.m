@@ -7,7 +7,7 @@
 //
 
 #import "MenuViewController.h"
-
+#import "ViewController.h"
 @interface MenuViewController ()
 
 @end
@@ -23,30 +23,39 @@
     NSString *identifier;
     
     switch (indexPath.row) {
+            //ライセンス登録
         case 0:
             identifier=@"firstSegue";
             break;
-            
+            //ライセンス一覧
         case 1:
             identifier=@"secondSegue";
             break;
-
+            //バッジ機能
         case 2:
             identifier=@"thirdSegue";
             break;
-            
+            //研究室一覧
         case 3:
             identifier=@"fourthSegue";
             break;
-            
+            //設定
         case 4:
             identifier=@"fifthSegue";
             break;
-            
+            //ログアウト
         case 5:
-            identifier=@"sixthSegue";
+        {
+            //identifier=@"sixthSegue";
+            //ここにアラートを生成して表示させます
+            UIAlertView *alert = [[UIAlertView alloc]
+                                  initWithTitle:@"ログアウト"
+                                  message:@"よろしいですか？"
+                                  delegate:self
+                                  cancelButtonTitle:@"はい" otherButtonTitles:@"いいえ", nil];
+            [alert show];
             break;
-            
+        }
         default:
             break;
     }
@@ -69,6 +78,26 @@
 -(CGFloat)leftMenuWidth
 {
     return 500;
+}
+
+//アラートボタンが押された時の処理メソッド
+-(void)alertView:(UIAlertView*)alertView
+clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    switch (buttonIndex) {
+        case 0:
+        {
+            //はいボタンが押されたときの処理を記述する
+            //ログイン画面のStoryboard IDは"Login"です
+        ViewController *ViewController2 = [self.storyboard instantiateViewControllerWithIdentifier:@"Login"];
+            [self presentViewController:ViewController2 animated:YES completion:nil];
+            break;
+        }
+        case 1:
+            //いいえボタンが押されたときの処理を記述する
+            break;
+    }
+    
 }
 /*
 #pragma mark - Navigation

@@ -8,7 +8,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Login" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -306,7 +306,6 @@
                     <connections>
                         <segue destination="L6H-uK-gWR" kind="custom" identifier="firstSegue" customClass="AMSlideMenuContentSegue" id="20p-xc-n9N"/>
                         <segue destination="gcM-S9-W1J" kind="custom" identifier="secondSegue" customClass="AMSlideMenuContentSegue" id="Ha1-h1-wtt"/>
-                        <segue destination="BYZ-38-t0r" kind="modal" identifier="sixthSegue" animates="NO" id="ni6-Dg-Yrf"/>
                         <segue destination="EHo-Z7-la5" kind="custom" identifier="thirdSegue" customClass="AMSlideMenuContentSegue" id="Tlx-lG-Qhd"/>
                         <segue destination="Pdh-8Q-qeY" kind="custom" identifier="fourthSegue" customClass="AMSlideMenuContentSegue" id="HTU-kO-6R3"/>
                         <segue destination="a8u-rR-kX8" kind="custom" identifier="fifthSegue" customClass="AMSlideMenuContentSegue" id="2PX-b1-twZ"/>
