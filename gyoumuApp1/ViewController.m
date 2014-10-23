@@ -12,6 +12,7 @@
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *userText;
 @property (weak, nonatomic) IBOutlet UITextField *pwText;
+- (IBAction)GuestBtn:(id)sender;
 
 - (IBAction)loginBtn:(id)sender;
 @end
@@ -37,6 +38,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)GuestBtn:(id)sender {
+}
+
 - (IBAction)loginBtn:(id)sender {
     }
 
@@ -54,6 +58,8 @@
     //ボタンを押した際の処理条件を設定する
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
 {
+    if ([sender tag] == 1) {
+        // do something here
     //全体データを取得する処理
     NSString *orign = @"http://webdb.per.c.fun.ac.jp/sofline/list.php";
     NSString *url = [NSString stringWithFormat:@"%@",orign];
@@ -80,7 +86,18 @@
             return YES;
         }
             }
+        return NO;
     //一致しないので遷移しない
+    }
+    if ([sender tag] == 2) {
+        // do something here
+        return YES;
+    }
     return NO;
+}
+
+-(IBAction)returnMain:(UIStoryboardSegue *)sender
+{
+    
 }
 @end
