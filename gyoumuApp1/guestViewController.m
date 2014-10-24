@@ -13,6 +13,8 @@
 @end
 
 @implementation guestViewController
+//new
+@synthesize backRectBtn;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,6 +29,13 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    //new
+    double btnBorderRectPoint = 2.0;
+    //new
+    backRectBtn.layer.cornerRadius = 10;
+    [[backRectBtn layer] setBorderColor:[[UIColor blackColor]CGColor]];
+    [[backRectBtn layer] setBorderWidth:btnBorderRectPoint];
+
 }
 
 - (void)didReceiveMemoryWarning

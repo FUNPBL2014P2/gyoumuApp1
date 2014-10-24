@@ -9,6 +9,8 @@
 #import "ViewController.h"
 #import "PerViewController.h"
 
+
+
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *userText;
 @property (weak, nonatomic) IBOutlet UITextField *pwText;
@@ -21,11 +23,22 @@
     //引き継がせたい変数の方を設定
     NSArray *sendPerArray;
 }
+//selfがめんどくさいので
+@synthesize loginBtn;
 
 - (void)viewDidLoad
 {
+    //ボタンの枠の太字を設定
+    double btnBorderRectPoint = 2.0;
     [super viewDidLoad];
    	// Do any additional setup after loading the view, typically from a nib.
+    //ボタンの背景の角をラウンドに
+    loginBtn.layer.cornerRadius = 10;
+    //枠の色
+    [[loginBtn layer] setBorderColor:[[UIColor blackColor]CGColor]];
+    //枠の太さ
+    [[loginBtn layer] setBorderWidth:btnBorderRectPoint];
+
        }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -107,4 +120,6 @@
 {
     
 }
+//- (IBAction)loginBtn:(id)sender {
+//}
 @end

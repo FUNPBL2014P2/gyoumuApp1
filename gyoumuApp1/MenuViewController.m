@@ -80,7 +80,7 @@
     return 500;
 }
 
-//アラートボタンが押された時の処理メソッド
+//アラートボタンが押された時のデリゲート
 -(void)alertView:(UIAlertView*)alertView
 clickedButtonAtIndex:(NSInteger)buttonIndex {
     
