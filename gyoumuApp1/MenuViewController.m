@@ -90,7 +90,7 @@ clickedButtonAtIndex:(NSInteger)buttonIndex {
             //はいボタンが押されたときの処理を記述する
             //ログイン画面のStoryboard IDは"Login"です
         ViewController *ViewController2 = [self.storyboard instantiateViewControllerWithIdentifier:@"Login"];
-            [self presentViewController:ViewController2 animated:YES completion:nil];
+            [self presentViewController:ViewController2 animated:NO completion:nil];
             break;
         }
         case 1:
