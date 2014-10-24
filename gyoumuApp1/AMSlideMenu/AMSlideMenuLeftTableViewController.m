@@ -39,15 +39,47 @@
 /*----------------------------------------------------*/
 #pragma mark - Lifecycle -
 /*----------------------------------------------------*/
-
 - (void)viewDidLoad
+
 {
     [super viewDidLoad];
+    menuSource = [[NSArray alloc]initWithObjects:
+                  @"ライセンス登録",
+                  @"ライセンス一覧",
+                  @"バッジ",
+                  @"研究室一覧",
+                  @"設定",
+                  @"ログアウト",
+                  nil];
+}
+
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return [menuSource count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *cellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (!cell) {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        
+    }
+    cell.textLabel.text = [menuSource objectAtIndex:indexPath.row];
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return ([[UIScreen mainScreen]applicationFrame].size.height-sectionHeight)/menuSource.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 100.0;
+    sectionHeight = 100.0;
+    return sectionHeight;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {

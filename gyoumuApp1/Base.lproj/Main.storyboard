@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <deployment defaultVersion="1808" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <deployment defaultVersion="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Login-->
+        <!--View Controller - Login-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
@@ -128,129 +128,38 @@
                     </view>
                     <navigationItem key="navigationItem" id="4u0-8h-H7l"/>
                     <connections>
-                        <segue destination="AZE-a9-BiA" kind="custom" identifier="leftMenu" customClass="AMSlideMenuLeftMenuSegue" id="x6d-4O-wdG"/>
+                        <segue destination="A3s-Vo-7Hw" kind="custom" identifier="leftMenu" customClass="AMSlideMenuLeftMenuSegue" id="6pA-GQ-lJ9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="udX-Kz-y8p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3226" y="-242"/>
+            <point key="canvasLocation" x="3298" y="-250"/>
         </scene>
         <!--Slide Menu Left Table View Controller-->
-        <scene sceneID="b4a-h3-y2e">
+        <scene sceneID="pHI-zt-gyC">
             <objects>
-                <tableViewController id="AZE-a9-BiA" customClass="AMSlideMenuLeftTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="lm1-1D-PwB">
+                <tableViewController id="A3s-Vo-7Hw" customClass="AMSlideMenuLeftTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="8VJ-70-7lD">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <sections>
-                            <tableViewSection id="CiZ-T4-k5o">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="120" id="QBS-IY-Li0">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QBS-IY-Li0" id="Lev-mA-CQr">
-                                            <rect key="frame" x="0.0" y="0.0" width="768" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ライセンス登録" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gm9-CI-DsD">
-                                                    <rect key="frame" x="80" y="8" width="338" height="104"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="120" id="g5b-Sy-V8c">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g5b-Sy-V8c" id="UdC-gQ-APb">
-                                            <rect key="frame" x="0.0" y="0.0" width="768" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ライセンス一覧" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aHY-qb-k5e">
-                                                    <rect key="frame" x="80" y="0.0" width="340" height="112"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="120" id="AJJ-rv-dFb">
-                                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AJJ-rv-dFb" id="zjY-39-w5j">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="バッジ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWL-Ul-j5G">
-                                                    <rect key="frame" x="80" y="0.0" width="340" height="112"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="120" id="Mbe-Fy-LSz">
-                                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mbe-Fy-LSz" id="Qxl-Gb-mm0">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="研究室一覧" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wbx-jO-01Z">
-                                                    <rect key="frame" x="80" y="0.0" width="340" height="112"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="120" id="2q6-pP-rBC">
-                                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2q6-pP-rBC" id="SXe-eW-gO0">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="設定" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z3X-sG-Wrf">
-                                                    <rect key="frame" x="80" y="0.0" width="340" height="112"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="120" id="kVk-1Y-ITz">
-                                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kVk-1Y-ITz" id="4ZJ-wh-NSX">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ログアウト" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rWS-ar-Wvb">
-                                                    <rect key="frame" x="80" y="0.0" width="340" height="112"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
                         <connections>
-                            <outlet property="dataSource" destination="AZE-a9-BiA" id="9bi-GM-tL8"/>
-                            <outlet property="delegate" destination="AZE-a9-BiA" id="TmN-LA-JrD"/>
+                            <outlet property="dataSource" destination="A3s-Vo-7Hw" id="Zx2-Nm-9WH"/>
+                            <outlet property="delegate" destination="A3s-Vo-7Hw" id="DyE-nz-79x"/>
                         </connections>
                     </tableView>
                     <connections>
-                        <segue destination="L6H-uK-gWR" kind="custom" identifier="firstSegue" customClass="AMSlideMenuContentSegue" id="20p-xc-n9N"/>
-                        <segue destination="gcM-S9-W1J" kind="custom" identifier="secondSegue" customClass="AMSlideMenuContentSegue" id="Ha1-h1-wtt"/>
-                        <segue destination="BYZ-38-t0r" kind="modal" identifier="sixthSegue" animates="NO" id="ni6-Dg-Yrf"/>
-                        <segue destination="EHo-Z7-la5" kind="custom" identifier="thirdSegue" customClass="AMSlideMenuContentSegue" id="Tlx-lG-Qhd"/>
-                        <segue destination="Pdh-8Q-qeY" kind="custom" identifier="fourthSegue" customClass="AMSlideMenuContentSegue" id="HTU-kO-6R3"/>
-                        <segue destination="a8u-rR-kX8" kind="custom" identifier="fifthSegue" customClass="AMSlideMenuContentSegue" id="2PX-b1-twZ"/>
+                        <segue destination="L6H-uK-gWR" kind="custom" identifier="firstSegue" customClass="AMSlideMenuContentSegue" id="1Ge-j9-7iQ"/>
+                        <segue destination="gcM-S9-W1J" kind="custom" identifier="secondSegue" customClass="AMSlideMenuContentSegue" id="4dY-pP-oBc"/>
+                        <segue destination="EHo-Z7-la5" kind="custom" identifier="thirdSegue" customClass="AMSlideMenuContentSegue" id="HWH-0W-0O9"/>
+                        <segue destination="Pdh-8Q-qeY" kind="custom" identifier="fourthSegue" customClass="AMSlideMenuContentSegue" id="W4z-mP-f2h"/>
+                        <segue destination="BYZ-38-t0r" kind="modal" identifier="sixthSegue" id="w6h-bz-W5V"/>
+                        <segue destination="a8u-rR-kX8" kind="custom" identifier="fifthSegue" customClass="AMSlideMenuContentSegue" id="P7t-cZ-WGV"/>
                     </connections>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="db7-ns-El5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c3S-10-TP6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4065" y="-242"/>
+            <point key="canvasLocation" x="4169" y="-218"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KJM-fm-ASa">
@@ -284,7 +193,7 @@
             </objects>
             <point key="canvasLocation" x="5062" y="1304"/>
         </scene>
-        <!--バッジ-->
+        <!--View Controller - バッジ-->
         <scene sceneID="YAD-qX-1nO">
             <objects>
                 <viewController id="H4G-DU-vo1" sceneMemberID="viewController">
@@ -311,7 +220,7 @@
             </objects>
             <point key="canvasLocation" x="6014" y="1304"/>
         </scene>
-        <!--ライセンス一覧-->
+        <!--View Controller - ライセンス一覧-->
         <scene sceneID="0PU-tC-Q3F">
             <objects>
                 <viewController id="i8C-HY-wOp" sceneMemberID="viewController">
@@ -354,7 +263,7 @@
             </objects>
             <point key="canvasLocation" x="5062" y="2568"/>
         </scene>
-        <!--研究室一覧-->
+        <!--View Controller - 研究室一覧-->
         <scene sceneID="Z4u-qM-bTP">
             <objects>
                 <viewController id="eLi-4A-0wf" sceneMemberID="viewController">
@@ -389,7 +298,7 @@
             </objects>
             <point key="canvasLocation" x="5054" y="3880"/>
         </scene>
-        <!--設定-->
+        <!--View Controller - 設定-->
         <scene sceneID="hI0-pO-hdb">
             <objects>
                 <viewController id="Hb5-ZA-8Cp" sceneMemberID="viewController">
@@ -424,7 +333,7 @@
             </objects>
             <point key="canvasLocation" x="5062" y="-1149"/>
         </scene>
-        <!--ライセンス登録-->
+        <!--View Controller - ライセンス登録-->
         <scene sceneID="WsD-NW-n8k">
             <objects>
                 <viewController id="9n5-kd-hae" sceneMemberID="viewController">
