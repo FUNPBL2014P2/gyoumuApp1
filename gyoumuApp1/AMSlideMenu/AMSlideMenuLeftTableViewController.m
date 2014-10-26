@@ -87,7 +87,7 @@
     sectionView.backgroundColor = [UIColor clearColor];
     
     UILabel *menuLabel = [[UILabel alloc] init];
-    menuLabel.frame = CGRectMake(100, 10, 300, 70);
+    menuLabel.frame = CGRectMake(100, 29.1, 300, 70);
     menuLabel.font = [UIFont italicSystemFontOfSize:40];
     menuLabel.textColor = [UIColor blackColor];
     menuLabel.backgroundColor = [UIColor cyanColor];
