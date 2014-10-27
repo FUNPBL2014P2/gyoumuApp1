@@ -93,6 +93,7 @@
     menuLabel.backgroundColor = [UIColor cyanColor];
     menuLabel.textAlignment = NSTextAlignmentCenter;
     menuLabel.text = @"MENU";
+    tableView.bounces = NO;
     
     [sectionView addSubview:menuLabel];
     
