@@ -9,9 +9,12 @@
 #import "ViewController.h"
 #import "PerViewController.h"
 
+
+
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *userText;
 @property (weak, nonatomic) IBOutlet UITextField *pwText;
+- (IBAction)GuestBtn:(id)sender;
 
 - (IBAction)loginBtn:(id)sender;
 @end
@@ -20,11 +23,22 @@
     //引き継がせたい変数の方を設定
     NSArray *sendPerArray;
 }
+//selfがめんどくさいので
+@synthesize loginBtn;
 
 - (void)viewDidLoad
 {
+    //ボタンの枠の太字を設定
+    double btnBorderRectPoint = 2.0;
     [super viewDidLoad];
    	// Do any additional setup after loading the view, typically from a nib.
+    //ボタンの背景の角をラウンドに
+    loginBtn.layer.cornerRadius = 10;
+    //枠の色
+    [[loginBtn layer] setBorderColor:[[UIColor blackColor]CGColor]];
+    //枠の太さ
+    [[loginBtn layer] setBorderWidth:btnBorderRectPoint];
+
        }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -35,6 +49,9 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)GuestBtn:(id)sender {
 }
 
 - (IBAction)loginBtn:(id)sender {
@@ -54,6 +71,8 @@
     //ボタンを押した際の処理条件を設定する
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
 {
+    if ([sender tag] == 1) {
+        // do something here
     //全体データを取得する処理
     NSString *orign = @"http://webdb.per.c.fun.ac.jp/sofline/list.php";
     NSString *url = [NSString stringWithFormat:@"%@",orign];
@@ -80,7 +99,27 @@
             return YES;
         }
             }
+       
+        
+        // 生成と同時に各種設定も完了させる
+        UIAlertView *alert =
+        [[UIAlertView alloc] initWithTitle:@"入力エラー" message:@"もう一度入力してください"
+                                  delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+        return NO;
     //一致しないので遷移しない
+    }
+    if ([sender tag] == 2) {
+        // do something here
+        return YES;
+    }
     return NO;
 }
+
+-(IBAction)returnMain:(UIStoryboardSegue *)sender
+{
+    
+}
+//- (IBAction)loginBtn:(id)sender {
+//}
 @end

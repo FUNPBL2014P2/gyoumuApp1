@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "guestViewController.h"
+#import <QuartzCore/QuartzCore.h>
 @interface ViewController : UIViewController
+//loginBtnとしてプロパティ登録
+@property (weak, nonatomic) IBOutlet UIButton *loginBtn;
 
 @end
