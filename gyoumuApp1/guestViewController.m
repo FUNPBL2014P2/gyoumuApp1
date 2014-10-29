@@ -28,6 +28,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setObject:@"guest" forKey:@"userData"];
+    NSLog(@"現在%@なのでユーザデータは保持されていません", [userDefaults stringForKey:@"userData"]);
+
     // Do any additional setup after loading the view.
     //new
     double btnBorderRectPoint = 2.0;

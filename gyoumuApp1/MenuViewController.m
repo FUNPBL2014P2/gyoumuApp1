@@ -15,7 +15,7 @@
 @implementation MenuViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
+       [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
 
@@ -91,6 +91,11 @@ clickedButtonAtIndex:(NSInteger)buttonIndex {
             //ログイン画面のStoryboard IDは"Login"です
         ViewController *ViewController2 = [self.storyboard instantiateViewControllerWithIdentifier:@"Login"];
             [self presentViewController:ViewController2 animated:NO completion:nil];
+            //
+            NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+            [userDefaults setObject:@"guest" forKey:@"userData"];
+            NSLog(@"現在%@なのでユーザデータは保持されていません", [userDefaults stringForKey:@"userData"]);
+
             break;
         }
         case 1:
