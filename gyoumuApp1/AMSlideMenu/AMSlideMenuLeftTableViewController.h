@@ -28,7 +28,10 @@
 
 @class AMSlideMenuMainViewController;
 
-@interface AMSlideMenuLeftTableViewController : UITableViewController
+@interface AMSlideMenuLeftTableViewController : UITableViewController{
+    NSArray *menuSource;
+    NSInteger sectionHeight;
+}
 
 @property (weak, nonatomic) AMSlideMenuMainViewController *mainVC;
 
