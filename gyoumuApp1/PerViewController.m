@@ -28,7 +28,6 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    //ログインしたユーザ名を引き継いだのを渡しています .hファイルを参照
     NSString *str1 = @"Login User:";
     /*
      { //例
@@ -55,8 +54,9 @@
     
 
     NSMutableArray *userData = [userDefaults objectForKey:@"userData"];
-    NSLog(@"現在%@のデータを参照しています", [userData valueForKeyPath:@"message"]);
-    NSString *val = [str1 stringByAppendingString:[userData valueForKeyPath:@"message"]];
+    NSLog(@"現在%@のデータを参照しています", [userData valueForKeyPath:@"name"]);
+    NSLog(@"研究室コード:%@", [userData valueForKeyPath:@"labCode"]);
+    NSString *val = [str1 stringByAppendingString:[userData valueForKeyPath:@"name"]];
     self.labName.text = val;
 }
 
