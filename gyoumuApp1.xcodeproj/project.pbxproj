@@ -16,6 +16,7 @@
 		EB9DE12819F03D2D0071FEEB /* AMSlideMenuRightTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9DE12019F03D2D0071FEEB /* AMSlideMenuRightTableViewController.m */; };
 		EB9DE12919F03D2D0071FEEB /* UIViewController+AMSlideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9DE12219F03D2D0071FEEB /* UIViewController+AMSlideMenu.m */; };
 		EB9DE12C19F03E910071FEEB /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9DE12B19F03E910071FEEB /* MenuViewController.m */; };
+		EBEC8A261A027ECF0094FAAD /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EBEC8A251A027ECF0094FAAD /* background.jpg */; };
 		F87F6A3A19F939740088A0D6 /* guestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F87F6A3919F939740088A0D6 /* guestViewController.m */; };
 		F87F6A7F19FA28E00088A0D6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F87F6A7E19FA28E00088A0D6 /* QuartzCore.framework */; };
 		F889EFAF19EED0760049B3A7 /* PerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F889EFAE19EED0760049B3A7 /* PerViewController.m */; };
@@ -65,6 +66,7 @@
 		EB9DE12219F03D2D0071FEEB /* UIViewController+AMSlideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AMSlideMenu.m"; sourceTree = "<group>"; };
 		EB9DE12A19F03E910071FEEB /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		EB9DE12B19F03E910071FEEB /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		EBEC8A251A027ECF0094FAAD /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		F87F6A3819F939740088A0D6 /* guestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = guestViewController.h; sourceTree = "<group>"; };
 		F87F6A3919F939740088A0D6 /* guestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = guestViewController.m; sourceTree = "<group>"; };
 		F87F6A7E19FA28E00088A0D6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -195,6 +197,7 @@
 			children = (
 				F8A223E219EE6C0D00139991 /* Main.storyboard */,
 				EB34E0ED19F4C590001CA342 /* menuicon.png */,
+				EBEC8A251A027ECF0094FAAD /* background.jpg */,
 				F8F60B921A00D104002717F2 /* jsonUser.txt */,
 				F8A223D819EE6C0D00139991 /* gyoumuApp1-Info.plist */,
 				F8A223D919EE6C0D00139991 /* InfoPlist.strings */,
@@ -304,6 +307,7 @@
 				F8A223E919EE6C0D00139991 /* Images.xcassets in Resources */,
 				EB34E0EE19F4C590001CA342 /* menuicon.png in Resources */,
 				F8F60B931A00D104002717F2 /* jsonUser.txt in Resources */,
+				EBEC8A261A027ECF0094FAAD /* background.jpg in Resources */,
 				F8A223DB19EE6C0D00139991 /* InfoPlist.strings in Resources */,
 				F8A223E419EE6C0D00139991 /* Main.storyboard in Resources */,
 			);
