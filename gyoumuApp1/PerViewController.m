@@ -27,26 +27,43 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-        
     // Do any additional setup after loading the view.
-    //ログインしたユーザ名を引き継いだのを渡しています .hファイルを参照
     NSString *str1 = @"Login User:";
-    /* "datetime": "20141002-133706",
-    "title"
-    "message"
-    "latitude"
-     "longitude"
-    "terminalId"
-    "username"
-    "option0"*/ //ログインユーザのそれぞれの値を取り出せます
-   NSString *val = [str1 stringByAppendingString:[self.receivePerArray valueForKeyPath:@"message"]];
+    /*
+     { //例
+     0"datetime": "20141002-133706",
+     1"title": "Parallels Desktop 9 for Mac",
+     2"message": "安藤",
+     3"latitude": "0",
+     4"longitude": "0",
+     5"terminalId": "MA-015",
+     6"username": "MA-015",
+     7"option0": "箱",
+     8"option1": "",
+     9"option2": "",
+     10"option3": "",
+     11"option4": "",
+     12"option5": "",
+     13"option6": "",
+     14"option7": "",
+     15"option8": "",
+     16"option9": ""
+    }
+     */ //ログインユーザのそれぞれの値を取り出せます
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    
+
+    NSMutableArray *userData = [userDefaults objectForKey:@"userData"];
+    NSLog(@"現在%@のデータを参照しています", [userData valueForKeyPath:@"name"]);
+    NSLog(@"研究室コード:%@", [userData valueForKeyPath:@"labCode"]);
+    NSString *val = [str1 stringByAppendingString:[userData valueForKeyPath:@"name"]];
     self.labName.text = val;
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+         // Dispose of any resources that can be recreated.
 }
 
 /*

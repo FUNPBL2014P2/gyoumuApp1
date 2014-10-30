@@ -1,0 +1,22 @@
+{   
+    "comment": "業務研究室",
+    "0": [
+    {"terminalId": "123","username": "odashota","timestamp": "2014/10/02 13:37:06","title": "2014/10/02 13:37:06 MA-015","path": "/MA-015/20141002-133706","name": "小田将太","labCode": "FUNPB_gyoumu"},
+    {"terminalId": "123","username": "jinatsushi","timestamp": "2014/10/02 13:37:06","title": "2014/10/02 13:37:06 MA-015","path": "/MA-015/20141002-133706","name": "神篤志","labCode": "FUNPB_gyoumu"},
+    {"terminalId": "123","username": "segawatakamasa","timestamp": "2014/10/02 13:37:06","title": "2014/10/02 13:37:06 MA-015","path": "/MA-015/20141002-133706","name": "瀬川貴雅","labCode": "FUNPB_gyoumu"},
+    {"terminalId": "123","username": "nishiurakota","timestamp": "2014/10/02 13:37:06","title": "2014/10/02 13:37:06 MA-015","path": "/MA-015/20141002-133706","name": "西浦康太","labCode": "FUNPB_gyoumu"}],
+   
+    "comment": "TEKITO研究室",
+    "1": [
+    {"terminalId": "123","username": "taro","timestamp": "2014/10/02 13:37:06","title": "2014/10/02 13:37:06 MA-015","path": "/MA-015/20141002-133706","name": "太郎","labCode": "FUNPB_tekito"},
+    {"terminalId": "123","username": "takashi","timestamp": "2014/10/02 13:37:06","title": "2014/10/02 13:37:06 MA-015","path": "/MA-015/20141002-133706","name": "たかし","labCode": "FUNPB_tekito"},
+    {"terminalId": "123","username": "akira","timestamp": "2014/10/02 13:37:06","title": "2014/10/02 13:37:06 MA-015","path": "/MA-015/20141002-133706","name": "あきら","labCode": "FUNPB_tekito"},
+    {"terminalId": "123","username": "yuji","timestamp": "2014/10/02 13:37:06","title": "2014/10/02 13:37:06 MA-015","path": "/MA-015/20141002-133706","name": "ユージ","labCode": "FUNPB_tekito"}],
+    
+    "comment": "外国人研究室",
+    "2": [
+    {"terminalId": "123","username": "john","timestamp": "2014/10/02 13:37:06","title": "2014/10/02 13:37:06 MA-015","path": "/MA-015/20141002-133706","name": "ジョン","labCode": "FUNPB_foreign"},
+    {"terminalId": "123","username": "yao","timestamp": "2014/10/02 13:37:06","title": "2014/10/02 13:37:06 MA-015","path": "/MA-015/20141002-133706","name": "ヤオ","labCode": "FUNPB_foreign"},
+    {"terminalId": "123","username": "jordan","timestamp": "2014/10/02 13:37:06","title": "2014/10/02 13:37:06 MA-015","path": "/MA-015/20141002-133706","name": "ジョーダン","labCode": "FUNPB_foreign"},
+    {"terminalId": "123","username": "anthony","timestamp": "2014/10/02 13:37:06","title": "2014/10/02 13:37:06 MA-015","path": "/MA-015/20141002-133706","name": "アンソニー","labCode": "FUNPB_foreign"}]
+    }

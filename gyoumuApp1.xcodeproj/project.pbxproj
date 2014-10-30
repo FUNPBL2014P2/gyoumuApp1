@@ -33,6 +33,7 @@
 		F8A223F219EE6C0D00139991 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8A223D419EE6C0D00139991 /* UIKit.framework */; };
 		F8A223FA19EE6C0D00139991 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F8A223F819EE6C0D00139991 /* InfoPlist.strings */; };
 		F8A223FC19EE6C0D00139991 /* gyoumuApp1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A223FB19EE6C0D00139991 /* gyoumuApp1Tests.m */; };
+		F8F60B931A00D104002717F2 /* jsonUser.txt in Resources */ = {isa = PBXBuildFile; fileRef = F8F60B921A00D104002717F2 /* jsonUser.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		F8A223F719EE6C0D00139991 /* gyoumuApp1Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "gyoumuApp1Tests-Info.plist"; sourceTree = "<group>"; };
 		F8A223F919EE6C0D00139991 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F8A223FB19EE6C0D00139991 /* gyoumuApp1Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = gyoumuApp1Tests.m; sourceTree = "<group>"; };
+		F8F60B921A00D104002717F2 /* jsonUser.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jsonUser.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +195,7 @@
 			children = (
 				F8A223E219EE6C0D00139991 /* Main.storyboard */,
 				EB34E0ED19F4C590001CA342 /* menuicon.png */,
+				F8F60B921A00D104002717F2 /* jsonUser.txt */,
 				F8A223D819EE6C0D00139991 /* gyoumuApp1-Info.plist */,
 				F8A223D919EE6C0D00139991 /* InfoPlist.strings */,
 				F8A223DC19EE6C0D00139991 /* main.m */,
@@ -300,6 +303,7 @@
 			files = (
 				F8A223E919EE6C0D00139991 /* Images.xcassets in Resources */,
 				EB34E0EE19F4C590001CA342 /* menuicon.png in Resources */,
+				F8F60B931A00D104002717F2 /* jsonUser.txt in Resources */,
 				F8A223DB19EE6C0D00139991 /* InfoPlist.strings in Resources */,
 				F8A223E419EE6C0D00139991 /* Main.storyboard in Resources */,
 			);
