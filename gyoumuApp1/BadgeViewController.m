@@ -2,7 +2,7 @@
 //  BadgeViewController.m
 //  gyoumuApp1
 //
-//  Created by SegawaTakamasa on 2014/10/30.
+//  Created by SegawaTakamasa on 2014/10/31.
 //  Copyright (c) 2014年 shota. All rights reserved.
 //
 
@@ -27,6 +27,10 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    UIImage *backgroundImage  = [UIImage imageNamed:@"background.jpg"];
+    UIImageView *background = [[UIImageView alloc]initWithImage:backgroundImage];
+    background.frame = CGRectMake(0, 0,  self.view.frame.size.width,  self.view.frame.size.height);
+    [self.view addSubview:background];
 }
 
 - (void)didReceiveMemoryWarning
