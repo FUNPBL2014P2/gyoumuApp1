@@ -28,9 +28,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     UIImage *backgroundImage  = [UIImage imageNamed:@"background.jpg"];
+    self.view.layer.contents = (__bridge id)((backgroundImage.CGImage));
+    /*
+    
     UIImageView *background = [[UIImageView alloc]initWithImage:backgroundImage];
     background.frame = CGRectMake(0, 0,  self.view.frame.size.width,  self.view.frame.size.height);
     [self.view addSubview:background];
+     */
 }
 
 - (void)didReceiveMemoryWarning
