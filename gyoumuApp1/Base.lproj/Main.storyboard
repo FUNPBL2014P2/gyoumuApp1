@@ -76,7 +76,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="512" y="-242"/>
+            <point key="canvasLocation" x="128" y="78"/>
         </scene>
         <!--Guest View Controller-->
         <scene sceneID="Q08-bd-Pwi">
@@ -119,7 +119,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rv0-4p-zbJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="9BI-mP-xlF" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="525" y="1008"/>
+            <point key="canvasLocation" x="141" y="1328"/>
         </scene>
         <!--Per View Controller-->
         <scene sceneID="YiB-vn-Srr">
@@ -156,7 +156,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ib2-Fz-SZB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1561" y="-242"/>
+            <point key="canvasLocation" x="1177" y="78"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2FJ-if-y9A">
@@ -172,7 +172,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rxe-bu-MNR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2407" y="-242"/>
+            <point key="canvasLocation" x="2023" y="78"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="TP5-cf-c43">
@@ -194,7 +194,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="udX-Kz-y8p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3298" y="-250"/>
+            <point key="canvasLocation" x="2914" y="70"/>
         </scene>
         <!--Slide Menu Left Table View Controller-->
         <scene sceneID="pHI-zt-gyC">
@@ -219,7 +219,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c3S-10-TP6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4169" y="-218"/>
+            <point key="canvasLocation" x="3785" y="102"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KJM-fm-ASa">
@@ -253,10 +253,10 @@
             </objects>
             <point key="canvasLocation" x="5062" y="1304"/>
         </scene>
-        <!--View Controller - バッジ-->
+        <!--Badge View Controller - バッジ-->
         <scene sceneID="YAD-qX-1nO">
             <objects>
-                <viewController id="H4G-DU-vo1" sceneMemberID="viewController">
+                <viewController id="H4G-DU-vo1" customClass="BadgeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zVC-Uo-BmI"/>
                         <viewControllerLayoutGuide type="bottom" id="Dk8-8Q-B0T"/>
@@ -265,16 +265,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="バッジ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cil-Ka-4Fd">
-                                <rect key="frame" x="197" y="86" width="51" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" placeholderIntrinsicWidth="231" placeholderIntrinsicHeight="128" image="background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="NQU-1D-dE5">
+                                <rect key="frame" x="0.0" y="0.0" width="788" height="1024"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="バッジ" id="vbe-vB-sEX"/>
+                    <connections>
+                        <outlet property="backgroundView" destination="NQU-1D-dE5" id="JBF-3f-GY1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rYV-AO-Hu1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -421,6 +422,9 @@
             <point key="canvasLocation" x="6014" y="-1149"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background.jpg" width="1536" height="2048"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
