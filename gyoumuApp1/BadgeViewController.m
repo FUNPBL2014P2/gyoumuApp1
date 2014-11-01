@@ -36,6 +36,12 @@
     [self.view addSubview:background];
      */
     [self.view sendSubviewToBack:_backgroundView];
+    
+    /*バッジの配置*/
+    /*
+    self.badge1.contentMode = UIViewContentModeScaleAspectFill;
+    self.badge1.image = [UIImage imageNamed:@"badge1.gif"];
+    */
 }
 
 - (void)didReceiveMemoryWarning
