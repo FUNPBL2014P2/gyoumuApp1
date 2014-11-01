@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface BadgeViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundView;
+
 
 @end
