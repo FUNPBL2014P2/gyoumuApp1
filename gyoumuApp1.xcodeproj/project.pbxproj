@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		EB34E0EE19F4C590001CA342 /* menuicon.png in Resources */ = {isa = PBXBuildFile; fileRef = EB34E0ED19F4C590001CA342 /* menuicon.png */; };
 		EB5C75D61A0483D500EDF2A3 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EB5C75D51A0483D500EDF2A3 /* background.jpg */; };
+		EB5C75D81A04C1B900EDF2A3 /* badge1.gif in Resources */ = {isa = PBXBuildFile; fileRef = EB5C75D71A04C1B900EDF2A3 /* badge1.gif */; };
 		EB9DE12319F03D2D0071FEEB /* AMSlideMenuContentSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9DE11519F03D2D0071FEEB /* AMSlideMenuContentSegue.m */; };
 		EB9DE12419F03D2D0071FEEB /* AMSlideMenuLeftMenuSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9DE11719F03D2D0071FEEB /* AMSlideMenuLeftMenuSegue.m */; };
 		EB9DE12519F03D2D0071FEEB /* AMSlideMenuLeftTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9DE11919F03D2D0071FEEB /* AMSlideMenuLeftTableViewController.m */; };
@@ -51,6 +52,7 @@
 /* Begin PBXFileReference section */
 		EB34E0ED19F4C590001CA342 /* menuicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menuicon.png; sourceTree = "<group>"; };
 		EB5C75D51A0483D500EDF2A3 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
+		EB5C75D71A04C1B900EDF2A3 /* badge1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = badge1.gif; sourceTree = "<group>"; };
 		EB9DE11419F03D2D0071FEEB /* AMSlideMenuContentSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideMenuContentSegue.h; sourceTree = "<group>"; };
 		EB9DE11519F03D2D0071FEEB /* AMSlideMenuContentSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMSlideMenuContentSegue.m; sourceTree = "<group>"; };
 		EB9DE11619F03D2D0071FEEB /* AMSlideMenuLeftMenuSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideMenuLeftMenuSegue.h; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				EB5C75D51A0483D500EDF2A3 /* background.jpg */,
+				EB5C75D71A04C1B900EDF2A3 /* badge1.gif */,
 				F8A223E219EE6C0D00139991 /* Main.storyboard */,
 				EB34E0ED19F4C590001CA342 /* menuicon.png */,
 				F8F60B921A00D104002717F2 /* jsonUser.txt */,
@@ -309,6 +312,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB5C75D81A04C1B900EDF2A3 /* badge1.gif in Resources */,
 				F8A223E919EE6C0D00139991 /* Images.xcassets in Resources */,
 				EB34E0EE19F4C590001CA342 /* menuicon.png in Resources */,
 				F8F60B931A00D104002717F2 /* jsonUser.txt in Resources */,
