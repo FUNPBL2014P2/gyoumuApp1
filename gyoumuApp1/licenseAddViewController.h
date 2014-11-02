@@ -10,5 +10,6 @@
 
 @interface licenseAddViewController : UIViewController
 - (IBAction)licenseAddBtn:(UIButton *)sender;
+- (IBAction)BadgeNineResetBtn:(id)sender;
 
 @end

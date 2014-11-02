@@ -48,4 +48,7 @@
 
 - (IBAction)licenseAddBtn:(UIButton *)sender {
 }
+
+- (IBAction)BadgeNineResetBtn:(id)sender {
+}
 @end
