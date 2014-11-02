@@ -77,8 +77,8 @@
             //NSUserDefaultsを設定
             NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
             [userDefaults setObject:jsonArray1[i] forKey:@"userData"];
-            NSMutableArray *test1 = [userDefaults objectForKey:@"userData"];
-            NSLog(@"%@", test1);
+            //NSMutableArray *test1 = [userDefaults objectForKey:@"userData"];
+            //NSLog(@"%@", test1);
             
             //画面を遷移するYES
             return YES;
@@ -91,7 +91,7 @@
         count++;
         
         jsonArray1 = [jsonDlc objectForKey:[NSString stringWithFormat:@"%d",count]];
-            NSLog(@"%@",jsonArray1);
+            //NSLog(@"%@",jsonArray1);
             //ログイン判定のfor文へ
         goto prev;
         }
