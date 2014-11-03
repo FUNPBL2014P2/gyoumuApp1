@@ -61,7 +61,7 @@
     
     //バッジキー配列の作成
     for(int i = 0; i < jsonArray.count; i++) {
-        NSRange badgeKey = [jsonArray[i][@"terminalId"] rangeOfString:@"badge"];//ある文字列を含む
+        NSRange badgeKey = [jsonArray[i][@"terminalId"] rangeOfString:@"badge"];
         if (badgeKey.location == NSNotFound) {
         }
         else {
@@ -80,8 +80,11 @@
         
         [badgeArray addObject:[NSJSONSerialization JSONObjectWithData:jsonDataPersonal options:NSJSONReadingAllowFragments error:nil]];
     }
-    NSLog(@"%@",badgeArray);
 
+    NSSortDescriptor *sort = [[NSSortDescriptor alloc]initWithKey:@"title" ascending:YES];
+    NSArray *sortedBadgeArray = [[NSMutableArray alloc]init];
+    NSArray *sortArray = [NSArray arrayWithObjects:sort, nil];
+    sortedBadgeArray = [badgeArray sortedArrayUsingDescriptors:sortArray];
 }
 
 - (void)didReceiveMemoryWarning
