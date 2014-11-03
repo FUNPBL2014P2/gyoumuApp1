@@ -42,6 +42,46 @@
     self.badge1.contentMode = UIViewContentModeScaleAspectFill;
     self.badge1.image = [UIImage imageNamed:@"badge1.gif"];
     */
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    //全体データを取得する処理
+    NSString *orign = @"http://webdb.per.c.fun.ac.jp/sofline/list.php";
+    NSString *url = [NSString stringWithFormat:@"%@",orign];
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
+    NSData *jsonData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    NSDictionary *jsonDlc = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:nil];
+    //jsonArrayにデータを格納
+    NSArray *jsonArray = [jsonDlc objectForKey:@"data"];
+    
+    NSMutableArray *badgePathArray = [[NSMutableArray alloc]init];
+    
+    //バッジキー配列の作成
+    for(int i = 0; i < jsonArray.count; i++) {
+        NSRange badgeKey = [jsonArray[i][@"terminalId"] rangeOfString:@"badge"];//ある文字列を含む
+        if (badgeKey.location == NSNotFound) {
+        }
+        else {
+            [badgePathArray addObject:[jsonArray objectAtIndex:i]];
+        }
+    }
+    
+    NSMutableArray *badgeArray = [[NSMutableArray alloc]init];
+    
+    //バッジ内容配列の作成
+    for(int i = 0; i < badgePathArray.count; i++) {
+        NSString *baseURL = @"http://webdb.per.c.fun.ac.jp/sofline/view.php?data=";
+        NSString *pathURL = [baseURL stringByAppendingString:badgePathArray[i][@"path"]];
+        NSURLRequest *badgeRequest = [NSURLRequest requestWithURL:[NSURL URLWithString: pathURL]];
+        NSData *jsonDataPersonal = [NSURLConnection sendSynchronousRequest:badgeRequest returningResponse:nil error:nil];
+        
+        [badgeArray addObject:[NSJSONSerialization JSONObjectWithData:jsonDataPersonal options:NSJSONReadingAllowFragments error:nil]];
+    }
+    NSLog(@"%@",badgeArray);
+
 }
 
 - (void)didReceiveMemoryWarning
