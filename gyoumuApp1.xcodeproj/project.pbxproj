@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9C34C2861A05438C00F8B7D0 /* licenseAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C34C2851A05438C00F8B7D0 /* licenseAddViewController.m */; };
 		EB24DAB71A0731A800C791F7 /* BadgeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB24DAB61A0731A800C791F7 /* BadgeDetailViewController.m */; };
+		EB24DAFA1A07374700C791F7 /* badgeDetailBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EB24DAF91A07374700C791F7 /* badgeDetailBackground.jpg */; };
 		EB34E0EE19F4C590001CA342 /* menuicon.png in Resources */ = {isa = PBXBuildFile; fileRef = EB34E0ED19F4C590001CA342 /* menuicon.png */; };
 		EB5C75D61A0483D500EDF2A3 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EB5C75D51A0483D500EDF2A3 /* background.jpg */; };
 		EB5C75D81A04C1B900EDF2A3 /* badge1.gif in Resources */ = {isa = PBXBuildFile; fileRef = EB5C75D71A04C1B900EDF2A3 /* badge1.gif */; };
@@ -57,6 +58,7 @@
 		9C34C2851A05438C00F8B7D0 /* licenseAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = licenseAddViewController.m; sourceTree = "<group>"; };
 		EB24DAB51A0731A800C791F7 /* BadgeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadgeDetailViewController.h; sourceTree = "<group>"; };
 		EB24DAB61A0731A800C791F7 /* BadgeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgeDetailViewController.m; sourceTree = "<group>"; };
+		EB24DAF91A07374700C791F7 /* badgeDetailBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = badgeDetailBackground.jpg; path = "../../../../Documents/business project/画面レイアウト図/badgeDetailBackground.jpg"; sourceTree = "<group>"; };
 		EB34E0ED19F4C590001CA342 /* menuicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menuicon.png; sourceTree = "<group>"; };
 		EB5C75D51A0483D500EDF2A3 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		EB5C75D71A04C1B900EDF2A3 /* badge1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = badge1.gif; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				EB5C75D51A0483D500EDF2A3 /* background.jpg */,
+				EB24DAF91A07374700C791F7 /* badgeDetailBackground.jpg */,
 				EB5C75D71A04C1B900EDF2A3 /* badge1.gif */,
 				F8A223E219EE6C0D00139991 /* Main.storyboard */,
 				EB34E0ED19F4C590001CA342 /* menuicon.png */,
@@ -333,6 +336,7 @@
 				F8F60B931A00D104002717F2 /* jsonUser.txt in Resources */,
 				EB5C75D61A0483D500EDF2A3 /* background.jpg in Resources */,
 				F8A223DB19EE6C0D00139991 /* InfoPlist.strings in Resources */,
+				EB24DAFA1A07374700C791F7 /* badgeDetailBackground.jpg in Resources */,
 				F8A223E419EE6C0D00139991 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -355,7 +355,6 @@
                         <outlet property="badge7" destination="lfv-Hv-cXg" id="gmY-B8-9FD"/>
                         <outlet property="badge8" destination="UYi-K4-b3q" id="rjd-Mk-jU1"/>
                         <outlet property="badge9" destination="zlZ-AS-XkX" id="FV6-rx-Mc9"/>
-                        <segue destination="sPD-aB-Jho" kind="custom" id="Hcc-1A-Sbh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rYV-AO-Hu1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -373,6 +372,12 @@
                     <view key="view" contentMode="scaleToFill" id="tbX-qm-YfV">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="badgeDetailBackground.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="3kp-zq-WYq">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
@@ -537,6 +542,7 @@
     </scenes>
     <resources>
         <image name="background.jpg" width="1536" height="2048"/>
+        <image name="badgeDetailBackground.jpg" width="1536" height="2048"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
