@@ -80,10 +80,8 @@
             
             frag9 +=  +1;
             
-            if(frag9 >= 5){
-                obtain9 = 1;
-            }
-            
+            if(frag9 < 5){
+        
             
             NSURL *url = [NSURL URLWithString:@"http://webdb.per.c.fun.ac.jp/sofline/add.php"];
             NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
@@ -99,13 +97,13 @@
             request.HTTPBody = [cString dataUsingEncoding:NSUTF8StringEncoding];
             NSURLConnection *connection;
             connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-            //NSLog(@"%@",aString);
-            
+            }
         }
         break;
     }
     
     //新しいものが0から格納されていくので、最後尾から検索する
+    if(frag9 <= 5){
     for (int i = (int)jsonArray.count-1; i >= 0; i--) {
         if ([jsonArray[i][@"terminalId"] isEqualToString:@"badge09"]) {
             NSString *strURL = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline/delete.php?data=%@",jsonArray[i][@"path"]];
@@ -117,17 +115,37 @@
             //削除したら抜ける
             break;
             
-            
+            }
         }
     }
-    // 一致しなかった場合のアラート処理
+    // 09バッジのフラグが成立していたら
     if(frag9 == 5){
+        
+        /////////////////取得日時
+        NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
+        [fmt setDateFormat:@"yyyy年MM月dd日 HH時mm分"];
+        NSDate *nowGet = [[NSDate alloc]init];
+        /////////////////////取得日時を送信する処理
+        NSURL *url = [NSURL URLWithString:@"http://webdb.per.c.fun.ac.jp/sofline/add.php"];
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+        [request setHTTPMethod:@"POST"];
+        //パラメータを作成
+        NSString *body = [NSString stringWithFormat:@"title=09&message=&latitude=&longitude=&terminalId=badge09&option0=1&option1=%@&option2=5",[fmt stringFromDate:nowGet]];
+        
+        request.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
+        NSURLConnection *connection;
+        connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+        //////////////////
+
+        
+        
     UIAlertView *alert =
     [[UIAlertView alloc] initWithTitle:@"バッジ取得" message:@"ライセンス管理の始まりバッジ"
                               delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [alert show];
     return ;
     }
+    
 }
 
 //バッジ09リセット処理
