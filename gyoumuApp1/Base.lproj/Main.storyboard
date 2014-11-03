@@ -333,6 +333,16 @@
                                 <rect key="frame" x="66" y="261" width="128" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G6G-sC-lyr">
+                                <rect key="frame" x="675" y="63" width="46" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="sPD-aB-Jho" kind="modal" animates="NO" id="qok-FP-AWA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -360,6 +370,33 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rYV-AO-Hu1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6014" y="1304"/>
+        </scene>
+        <!--Badge Detail View Controller-->
+        <scene sceneID="HSP-mb-X6b">
+            <objects>
+                <viewController id="sPD-aB-Jho" customClass="BadgeDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iB7-re-Q0a"/>
+                        <viewControllerLayoutGuide type="bottom" id="sp8-Hl-vI8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tbX-qm-YfV">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="badgeDetailBackground.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="3kp-zq-WYq">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="detailBackground" destination="3kp-zq-WYq" id="eEg-sY-ca5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PV5-AC-Cif" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6933" y="1304"/>
         </scene>
         <!--View Controller - ライセンス一覧-->
         <scene sceneID="0PU-tC-Q3F">
@@ -518,6 +555,7 @@
     </scenes>
     <resources>
         <image name="background.jpg" width="1536" height="2048"/>
+        <image name="badgeDetailBackground.jpg" width="1536" height="2048"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
