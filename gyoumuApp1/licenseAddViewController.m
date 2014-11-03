@@ -120,6 +120,14 @@
             
         }
     }
+    // 一致しなかった場合のアラート処理
+    if(frag9 == 5){
+    UIAlertView *alert =
+    [[UIAlertView alloc] initWithTitle:@"バッジ取得" message:@"ライセンス管理の始まりバッジ"
+                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
+    return ;
+    }
 }
 
 //バッジ09リセット処理
