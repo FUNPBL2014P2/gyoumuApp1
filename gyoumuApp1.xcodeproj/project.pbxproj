@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9C34C2861A05438C00F8B7D0 /* licenseAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C34C2851A05438C00F8B7D0 /* licenseAddViewController.m */; };
+		EB24DAB71A0731A800C791F7 /* BadgeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB24DAB61A0731A800C791F7 /* BadgeDetailViewController.m */; };
 		EB34E0EE19F4C590001CA342 /* menuicon.png in Resources */ = {isa = PBXBuildFile; fileRef = EB34E0ED19F4C590001CA342 /* menuicon.png */; };
 		EB5C75D61A0483D500EDF2A3 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EB5C75D51A0483D500EDF2A3 /* background.jpg */; };
 		EB5C75D81A04C1B900EDF2A3 /* badge1.gif in Resources */ = {isa = PBXBuildFile; fileRef = EB5C75D71A04C1B900EDF2A3 /* badge1.gif */; };
@@ -54,6 +55,8 @@
 /* Begin PBXFileReference section */
 		9C34C2841A05438C00F8B7D0 /* licenseAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = licenseAddViewController.h; sourceTree = "<group>"; };
 		9C34C2851A05438C00F8B7D0 /* licenseAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = licenseAddViewController.m; sourceTree = "<group>"; };
+		EB24DAB51A0731A800C791F7 /* BadgeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadgeDetailViewController.h; sourceTree = "<group>"; };
+		EB24DAB61A0731A800C791F7 /* BadgeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgeDetailViewController.m; sourceTree = "<group>"; };
 		EB34E0ED19F4C590001CA342 /* menuicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menuicon.png; sourceTree = "<group>"; };
 		EB5C75D51A0483D500EDF2A3 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		EB5C75D71A04C1B900EDF2A3 /* badge1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = badge1.gif; sourceTree = "<group>"; };
@@ -203,6 +206,8 @@
 				EB5C75DA1A04D17300EDF2A3 /* UIBadge.m */,
 				9C34C2841A05438C00F8B7D0 /* licenseAddViewController.h */,
 				9C34C2851A05438C00F8B7D0 /* licenseAddViewController.m */,
+				EB24DAB51A0731A800C791F7 /* BadgeDetailViewController.h */,
+				EB24DAB61A0731A800C791F7 /* BadgeDetailViewController.m */,
 				F8A223E819EE6C0D00139991 /* Images.xcassets */,
 				F8A223D719EE6C0D00139991 /* Supporting Files */,
 			);
@@ -354,6 +359,7 @@
 				EB9DE12319F03D2D0071FEEB /* AMSlideMenuContentSegue.m in Sources */,
 				F8A223E719EE6C0D00139991 /* ViewController.m in Sources */,
 				EB9DE12819F03D2D0071FEEB /* AMSlideMenuRightTableViewController.m in Sources */,
+				EB24DAB71A0731A800C791F7 /* BadgeDetailViewController.m in Sources */,
 				EB9DE12619F03D2D0071FEEB /* AMSlideMenuMainViewController.m in Sources */,
 				F889EFAF19EED0760049B3A7 /* PerViewController.m in Sources */,
 				EB9DE12C19F03E910071FEEB /* MenuViewController.m in Sources */,
