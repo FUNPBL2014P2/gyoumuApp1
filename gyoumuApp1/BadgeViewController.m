@@ -177,7 +177,7 @@
 }
 */
 
-- (IBAction)badge1btn:(id)sender {
+- (IBAction)badge1Btn:(id)sender {
 }
 
 - (IBAction)badge2Btn:(id)sender {
