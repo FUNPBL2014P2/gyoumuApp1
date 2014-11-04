@@ -177,6 +177,8 @@
 }
 */
 
+/*
+
 - (IBAction)badge1Btn:(id)sender {
 }
 
@@ -223,4 +225,6 @@
 }
 
 - (IBAction)badge16Btn:(id)sender {
-}@end
+ }*/
+
+@end

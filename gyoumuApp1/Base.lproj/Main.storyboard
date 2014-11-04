@@ -256,7 +256,6 @@
         <!--Badge View Controller - バッジ-->
         <scene sceneID="YAD-qX-1nO">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rYV-AO-Hu1" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="H4G-DU-vo1" customClass="BadgeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zVC-Uo-BmI"/>
@@ -351,7 +350,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="badge1Btn:" destination="H4G-DU-vo1" eventType="touchUpInside" id="3NF-YE-4NL"/>
+                                    <action selector="badge1Btn:" destination="H4G-DU-vo1" eventType="touchUpInside" id="CQr-TX-tAt"/>
                                     <action selector="badge1btn:" destination="H4G-DU-vo1" eventType="touchUpInside" id="avG-Nu-SmM"/>
                                 </connections>
                             </button>
@@ -535,6 +534,7 @@
                         <outlet property="badge9" destination="zlZ-AS-XkX" id="FV6-rx-Mc9"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rYV-AO-Hu1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6014" y="1304"/>
         </scene>
