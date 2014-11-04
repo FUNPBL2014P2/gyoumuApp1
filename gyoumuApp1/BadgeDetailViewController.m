@@ -12,7 +12,9 @@
 
 @end
 
+
 @implementation BadgeDetailViewController
+@synthesize receiveBadgeName = _receiveBadgeName;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

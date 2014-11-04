@@ -7,10 +7,14 @@
 //
 
 #import "BadgeViewController.h"
+#import "BadgeViewController.h"
 
-@interface BadgeViewController ()
+@interface BadgeViewController () {
+    NSString *_sendBadgeName;
+}
 
 @end
+
 
 @implementation BadgeViewController
 
