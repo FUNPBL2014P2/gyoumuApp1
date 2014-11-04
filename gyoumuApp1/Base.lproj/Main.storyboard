@@ -534,7 +534,7 @@
         <!--Badge Detail View Controller-->
         <scene sceneID="HSP-mb-X6b">
             <objects>
-                <viewController id="sPD-aB-Jho" customClass="BadgeDetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="badgeDetail" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sPD-aB-Jho" customClass="BadgeDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iB7-re-Q0a"/>
                         <viewControllerLayoutGuide type="bottom" id="sp8-Hl-vI8"/>

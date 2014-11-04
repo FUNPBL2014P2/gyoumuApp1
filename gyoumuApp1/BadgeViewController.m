@@ -8,9 +8,16 @@
 
 #import "BadgeViewController.h"
 
-@interface BadgeViewController ()
+//値渡しのためのimport
+#import "BadgeDetailViewController.h"
+
+@interface BadgeViewController () {
+    NSString *sendBadgeName;
+    NSMutableArray *flagArray;
+}
 
 @end
+
 
 @implementation BadgeViewController
 
@@ -86,7 +93,13 @@
     NSArray *sortArray = [NSArray arrayWithObjects:sort, nil];
     sortedBadgeArray = [badgeArray sortedArrayUsingDescriptors:sortArray];
     
-
+    //それぞれのバッジのフラグが成立しているかの情報を格納
+    flagArray = [NSMutableArray array];
+    for (int j=0; j < sortedBadgeArray.count; j++) {
+        [flagArray addObject:sortedBadgeArray[j]];
+        //NSLog(@"%@",flagArray[j][@"option0"]);
+    }
+    ///////////////////////////////////////////
     /*バッジの表示*/
     for(int i = 0; i < sortedBadgeArray.count; i++) {
         if([sortedBadgeArray[i][@"option0"] isEqualToString:@"1"]){
@@ -177,51 +190,135 @@
 }
 */
 
+
+    //sendBadgeNameにBadgeDetailVCのreceiveBadgeNAmeに渡したい文字列を入れる
+    //sendview.receiveBadgeNameに代入することで値の受け渡しをしている
 - (IBAction)badge1Btn:(id)sender {
+            sendBadgeName = [NSString stringWithFormat:@"/%@/%@",flagArray[0][@"terminalId"],flagArray[0][@"datetime"]];
+        //バッジ詳細画面のStoryboard IDは"badgeDetail"です
+        BadgeDetailViewController *sendView = [self.storyboard instantiateViewControllerWithIdentifier:@"badgeDetail"];
+        sendView.receiveBadgeName = [NSString stringWithFormat:@"%@",sendBadgeName];
+        [self presentViewController:sendView animated:NO completion:nil];
+    
 }
 
 - (IBAction)badge2Btn:(id)sender {
+           sendBadgeName = [NSString stringWithFormat:@"/%@/%@",flagArray[1][@"terminalId"],flagArray[1][@"datetime"]];
+        //バッジ詳細画面のStoryboard IDは"badgeDetail"です
+        BadgeDetailViewController *sendView = [self.storyboard instantiateViewControllerWithIdentifier:@"badgeDetail"];
+        sendView.receiveBadgeName = [NSString stringWithFormat:@"%@",sendBadgeName];
+        [self presentViewController:sendView animated:NO completion:nil];
 }
 
 - (IBAction)badge3Btn:(id)sender {
+            sendBadgeName = [NSString stringWithFormat:@"/%@/%@",flagArray[2][@"terminalId"],flagArray[2][@"datetime"]];
+        //バッジ詳細画面のStoryboard IDは"badgeDetail"です
+        BadgeDetailViewController *sendView = [self.storyboard instantiateViewControllerWithIdentifier:@"badgeDetail"];
+        sendView.receiveBadgeName = [NSString stringWithFormat:@"%@",sendBadgeName];
+        [self presentViewController:sendView animated:NO completion:nil];
 }
 
 - (IBAction)badge4Btn:(id)sender {
+            sendBadgeName = [NSString stringWithFormat:@"/%@/%@",flagArray[3][@"terminalId"],flagArray[3][@"datetime"]];
+        //バッジ詳細画面のStoryboard IDは"badgeDetail"です
+        BadgeDetailViewController *sendView = [self.storyboard instantiateViewControllerWithIdentifier:@"badgeDetail"];
+        sendView.receiveBadgeName = [NSString stringWithFormat:@"%@",sendBadgeName];
+        [self presentViewController:sendView animated:NO completion:nil];
 }
 
 - (IBAction)badge5Btn:(id)sender {
+        sendBadgeName = [NSString stringWithFormat:@"/%@/%@",flagArray[4][@"terminalId"],flagArray[4][@"datetime"]];
+       //バッジ詳細画面のStoryboard IDは"badgeDetail"です
+        BadgeDetailViewController *sendView = [self.storyboard instantiateViewControllerWithIdentifier:@"badgeDetail"];
+        sendView.receiveBadgeName = [NSString stringWithFormat:@"%@",sendBadgeName];
+        [self presentViewController:sendView animated:NO completion:nil];
 }
 
 - (IBAction)badge6Btn:(id)sender {
+        sendBadgeName = [NSString stringWithFormat:@"/%@/%@",flagArray[5][@"terminalId"],flagArray[5][@"datetime"]];
+        //バッジ詳細画面のStoryboard IDは"badgeDetail"です
+        BadgeDetailViewController *sendView = [self.storyboard instantiateViewControllerWithIdentifier:@"badgeDetail"];
+        sendView.receiveBadgeName = [NSString stringWithFormat:@"%@",sendBadgeName];
+        [self presentViewController:sendView animated:NO completion:nil];
 }
 
 - (IBAction)badge7Btn:(id)sender {
+        sendBadgeName = [NSString stringWithFormat:@"/%@/%@",flagArray[6][@"terminalId"],flagArray[6][@"datetime"]];
+        //バッジ詳細画面のStoryboard IDは"badgeDetail"です
+        BadgeDetailViewController *sendView = [self.storyboard instantiateViewControllerWithIdentifier:@"badgeDetail"];
+        sendView.receiveBadgeName = [NSString stringWithFormat:@"%@",sendBadgeName];
+        [self presentViewController:sendView animated:NO completion:nil];
 }
 
 - (IBAction)badge8Btn:(id)sender {
+        sendBadgeName = [NSString stringWithFormat:@"/%@/%@",flagArray[7][@"terminalId"],flagArray[7][@"datetime"]];
+        //バッジ詳細画面のStoryboard IDは"badgeDetail"です
+        BadgeDetailViewController *sendView = [self.storyboard instantiateViewControllerWithIdentifier:@"badgeDetail"];
+        sendView.receiveBadgeName = [NSString stringWithFormat:@"%@",sendBadgeName];
+        [self presentViewController:sendView animated:NO completion:nil];
 }
 
 - (IBAction)badge9Btn:(id)sender {
+        sendBadgeName = [NSString stringWithFormat:@"/%@/%@",flagArray[8][@"terminalId"],flagArray[8][@"datetime"]];
+        //バッジ詳細画面のStoryboard IDは"badgeDetail"です
+        BadgeDetailViewController *sendView = [self.storyboard instantiateViewControllerWithIdentifier:@"badgeDetail"];
+        sendView.receiveBadgeName = [NSString stringWithFormat:@"%@",sendBadgeName];
+        [self presentViewController:sendView animated:NO completion:nil];
 }
 
 - (IBAction)badge10Btn:(id)sender {
+        sendBadgeName = [NSString stringWithFormat:@"/%@/%@",flagArray[9][@"terminalId"],flagArray[9][@"datetime"]];
+        //バッジ詳細画面のStoryboard IDは"badgeDetail"です
+        BadgeDetailViewController *sendView = [self.storyboard instantiateViewControllerWithIdentifier:@"badgeDetail"];
+        sendView.receiveBadgeName = [NSString stringWithFormat:@"%@",sendBadgeName];
+        [self presentViewController:sendView animated:NO completion:nil];
 }
 
 - (IBAction)badge11Btn:(id)sender {
+        sendBadgeName = [NSString stringWithFormat:@"/%@/%@",flagArray[10][@"terminalId"],flagArray[10][@"datetime"]];
+        //バッジ詳細画面のStoryboard IDは"badgeDetail"です
+        BadgeDetailViewController *sendView = [self.storyboard instantiateViewControllerWithIdentifier:@"badgeDetail"];
+        sendView.receiveBadgeName = [NSString stringWithFormat:@"%@",sendBadgeName];
+        [self presentViewController:sendView animated:NO completion:nil];
 }
 
 - (IBAction)badge12Btn:(id)sender {
+        sendBadgeName = [NSString stringWithFormat:@"/%@/%@",flagArray[11][@"terminalId"],flagArray[11][@"datetime"]];
+        //バッジ詳細画面のStoryboard IDは"badgeDetail"です
+        BadgeDetailViewController *sendView = [self.storyboard instantiateViewControllerWithIdentifier:@"badgeDetail"];
+        sendView.receiveBadgeName = [NSString stringWithFormat:@"%@",sendBadgeName];
+        [self presentViewController:sendView animated:NO completion:nil];
 }
 
 - (IBAction)badge13Btn:(id)sender {
+        sendBadgeName = [NSString stringWithFormat:@"/%@/%@",flagArray[12][@"terminalId"],flagArray[12][@"datetime"]];
+        //バッジ詳細画面のStoryboard IDは"badgeDetail"です
+        BadgeDetailViewController *sendView = [self.storyboard instantiateViewControllerWithIdentifier:@"badgeDetail"];
+        sendView.receiveBadgeName = [NSString stringWithFormat:@"%@",sendBadgeName];
+        [self presentViewController:sendView animated:NO completion:nil];
 }
 
 - (IBAction)badge14Btn:(id)sender {
+        sendBadgeName = [NSString stringWithFormat:@"/%@/%@",flagArray[13][@"terminalId"],flagArray[13][@"datetime"]];
+        //バッジ詳細画面のStoryboard IDは"badgeDetail"です
+        BadgeDetailViewController *sendView = [self.storyboard instantiateViewControllerWithIdentifier:@"badgeDetail"];
+        sendView.receiveBadgeName = [NSString stringWithFormat:@"%@",sendBadgeName];
+        [self presentViewController:sendView animated:NO completion:nil];
 }
 
 - (IBAction)badge15Btn:(id)sender {
+        sendBadgeName = [NSString stringWithFormat:@"/%@/%@",flagArray[14][@"terminalId"],flagArray[14][@"datetime"]];
+        //バッジ詳細画面のStoryboard IDは"badgeDetail"です
+        BadgeDetailViewController *sendView = [self.storyboard instantiateViewControllerWithIdentifier:@"badgeDetail"];
+        sendView.receiveBadgeName = [NSString stringWithFormat:@"%@",sendBadgeName];
+        [self presentViewController:sendView animated:NO completion:nil];
 }
 
 - (IBAction)badge16Btn:(id)sender {
+        sendBadgeName = [NSString stringWithFormat:@"/%@/%@",flagArray[15][@"terminalId"],flagArray[15][@"datetime"]];
+        //バッジ詳細画面のStoryboard IDは"badgeDetail"です
+        BadgeDetailViewController *sendView = [self.storyboard instantiateViewControllerWithIdentifier:@"badgeDetail"];
+        sendView.receiveBadgeName = [NSString stringWithFormat:@"%@",sendBadgeName];
+        [self presentViewController:sendView animated:NO completion:nil];
 }
 @end
