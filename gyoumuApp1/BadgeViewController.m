@@ -11,6 +11,7 @@
 
 @interface BadgeViewController () {
     NSString *_sendBadgeName;
+    NSMutableArray *flagArray;
 }
 
 @end
@@ -90,7 +91,13 @@
     NSArray *sortArray = [NSArray arrayWithObjects:sort, nil];
     sortedBadgeArray = [badgeArray sortedArrayUsingDescriptors:sortArray];
     
-
+    //それぞれのバッジのフラグが成立しているかの情報を格納
+    flagArray = [NSMutableArray array];
+    for (int j=0; j < sortedBadgeArray.count; j++) {
+        [flagArray addObject:sortedBadgeArray[j][@"option0"]];
+        NSLog(@"%@",flagArray[j]);
+    }
+    ///////////////////////////////////////////
     /*バッジの表示*/
     for(int i = 0; i < sortedBadgeArray.count; i++) {
         if([sortedBadgeArray[i][@"option0"] isEqualToString:@"1"]){
@@ -182,6 +189,9 @@
 */
 
 - (IBAction)badge1Btn:(id)sender {
+    //ログイン画面のStoryboard IDは"Login"です
+    BadgeViewController *sendView = [self.storyboard instantiateViewControllerWithIdentifier:@"badgeDetail"];
+    [self presentViewController:sendView animated:NO completion:nil];
 }
 
 - (IBAction)badge2Btn:(id)sender {
