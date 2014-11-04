@@ -10,7 +10,7 @@
 
 @interface BadgeDetailViewController : UIViewController
 {
-    NSString *_receiveBadgeName;
+    NSString *receiveBadgeName;
 }
 @property (weak, nonatomic) IBOutlet UIImageView *detailBackground;
 @property (copy) NSString *receiveBadgeName;

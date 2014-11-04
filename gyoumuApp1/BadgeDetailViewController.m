@@ -14,7 +14,8 @@
 
 
 @implementation BadgeDetailViewController
-@synthesize receiveBadgeName = _receiveBadgeName;
+
+@synthesize receiveBadgeName;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,6 +31,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
         [self.view sendSubviewToBack:_detailBackground];
+    NSLog(@"%@", receiveBadgeName);
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
