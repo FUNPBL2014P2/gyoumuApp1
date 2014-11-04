@@ -27,5 +27,23 @@
 @property (weak, nonatomic) IBOutlet UIImageView *badge15;
 @property (weak, nonatomic) IBOutlet UIImageView *badge16;
 
+- (IBAction)badge1Btn:(id)sender;
+- (IBAction)badge2Btn:(id)sender;
+- (IBAction)badge3Btn:(id)sender;
+- (IBAction)badge4Btn:(id)sender;
+- (IBAction)badge5Btn:(id)sender;
+- (IBAction)badge6Btn:(id)sender;
+- (IBAction)badge7Btn:(id)sender;
+- (IBAction)badge8Btn:(id)sender;
+- (IBAction)badge9Btn:(id)sender;
+- (IBAction)badge10Btn:(id)sender;
+- (IBAction)badge11Btn:(id)sender;
+- (IBAction)badge12Btn:(id)sender;
+- (IBAction)badge13Btn:(id)sender;
+- (IBAction)badge14Btn:(id)sender;
+- (IBAction)badge15Btn:(id)sender;
+- (IBAction)badge16Btn:(id)sender;
+
+
 
 @end
