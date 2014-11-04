@@ -343,167 +343,164 @@
                                     <segue destination="sPD-aB-Jho" kind="modal" animates="NO" id="qok-FP-AWA"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9b0-a9-vgQ">
-                                <rect key="frame" x="66" y="264" width="128" height="122"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DIq-jw-3Va">
+                                <rect key="frame" x="66" y="261" width="128" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="badge1Btn:" destination="H4G-DU-vo1" eventType="touchUpInside" id="CQr-TX-tAt"/>
-                                    <action selector="badge1btn:" destination="H4G-DU-vo1" eventType="touchUpInside" id="avG-Nu-SmM"/>
+                                    <action selector="badge1Btn:" destination="H4G-DU-vo1" eventType="touchUpInside" id="Uww-fV-XR3"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1OL-rF-TrE">
-                                <rect key="frame" x="243" y="261" width="128" height="125"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i1h-qs-Oqd">
+                                <rect key="frame" x="243" y="261" width="128" height="127"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="badge2Btn:" destination="H4G-DU-vo1" eventType="touchUpInside" id="RGb-WA-q1b"/>
+                                    <action selector="badge2Btn:" destination="H4G-DU-vo1" eventType="touchUpInside" id="DkP-7Y-vgN"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o1o-fC-tim">
-                                <rect key="frame" x="419" y="264" width="128" height="122"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gLK-FD-2mx">
+                                <rect key="frame" x="419" y="261" width="128" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="badge2Btn:" destination="H4G-DU-vo1" eventType="touchUpInside" id="63N-xB-8qz"/>
-                                    <action selector="badge3Btn:" destination="H4G-DU-vo1" eventType="touchUpInside" id="Uao-Jk-ah3"/>
+                                    <action selector="badge3Btn:" destination="H4G-DU-vo1" eventType="touchUpInside" id="14y-Wb-tkf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1FW-x6-gtD">
-                                <rect key="frame" x="593" y="261" width="128" height="125"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zeU-AH-HI3">
+                                <rect key="frame" x="593" y="261" width="128" height="127"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="badge4Btn:" destination="H4G-DU-vo1" eventType="touchUpInside" id="Xwu-wT-qfe"/>
+                                    <action selector="badge4Btn:" destination="H4G-DU-vo1" eventType="touchUpInside" id="GqF-Vt-I9G"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ciF-zt-LLt">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VlC-zg-CFL">
                                 <rect key="frame" x="66" y="432" width="128" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="badge5Btn:" destination="H4G-DU-vo1" eventType="touchUpInside" id="0MC-ab-aUO"/>
+                                    <action selector="badge5Btn:" destination="H4G-DU-vo1" eventType="touchUpInside" id="PmC-Da-B9d"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R1y-uA-XE2">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aDc-2f-XF3">
                                 <rect key="frame" x="243" y="432" width="128" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="badge6Btn:" destination="H4G-DU-vo1" eventType="touchUpInside" id="yd2-w4-9m5"/>
+                                    <action selector="badge6Btn:" destination="H4G-DU-vo1" eventType="touchUpInside" id="8Je-fG-Dvb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZQF-8Y-aK4">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="htn-ku-NCj">
                                 <rect key="frame" x="419" y="432" width="128" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="badge7Btn:" destination="H4G-DU-vo1" eventType="touchUpInside" id="UBD-Gv-q6V"/>
+                                    <action selector="badge7Btn:" destination="H4G-DU-vo1" eventType="touchUpInside" id="E8S-9R-GbD"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yhO-0K-2C2">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bza-sY-zHw">
                                 <rect key="frame" x="593" y="432" width="128" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="badge8Btn:" destination="H4G-DU-vo1" eventType="touchUpInside" id="IXU-FR-HJO"/>
+                                    <action selector="badge8Btn:" destination="H4G-DU-vo1" eventType="touchUpInside" id="mpN-FC-0Le"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dcu-Tx-7Yh">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qhx-Qe-v1M">
                                 <rect key="frame" x="66" y="601" width="128" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="badge9Btn:" destination="H4G-DU-vo1" eventType="touchUpInside" id="nH3-7H-CPA"/>
+                                    <action selector="badge9Btn:" destination="H4G-DU-vo1" eventType="touchUpInside" id="HwK-vn-gp4"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DUJ-fk-Zyy">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Bs-6y-yfq">
                                 <rect key="frame" x="243" y="601" width="128" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="badge10Btn:" destination="H4G-DU-vo1" eventType="touchUpInside" id="9xK-4s-qBd"/>
-                                    <action selector="badge9Btn:" destination="H4G-DU-vo1" eventType="touchUpInside" id="0R3-27-gsY"/>
+                                    <action selector="badge10Btn:" destination="H4G-DU-vo1" eventType="touchUpInside" id="i2g-V5-8lA"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="clh-b8-ZZh">
-                                <rect key="frame" x="419" y="601" width="128" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="badge11Btn:" destination="H4G-DU-vo1" eventType="touchUpInside" id="JPR-ac-lAu"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0a4-8c-I3r">
-                                <rect key="frame" x="593" y="601" width="128" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="badge12Btn:" destination="H4G-DU-vo1" eventType="touchUpInside" id="UbI-Wc-GDm"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c8I-vN-WrF">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zh7-7f-hul">
                                 <rect key="frame" x="66" y="776" width="128" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="badge13Btn:" destination="H4G-DU-vo1" eventType="touchUpInside" id="RCz-uO-lmP"/>
+                                    <action selector="badge13Btn:" destination="H4G-DU-vo1" eventType="touchUpInside" id="F9M-um-YVg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u3S-TD-iPn">
-                                <rect key="frame" x="243" y="776" width="128" height="128"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="not-ix-Tv9">
+                                <rect key="frame" x="243" y="776" width="128" height="129"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="badge14Btn:" destination="H4G-DU-vo1" eventType="touchUpInside" id="BoT-6B-N9p"/>
+                                    <action selector="badge14Btn:" destination="H4G-DU-vo1" eventType="touchUpInside" id="g9C-fQ-aQ7"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sOY-6H-rk5">
-                                <rect key="frame" x="419" y="776" width="128" height="128"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tDV-Ls-kdS">
+                                <rect key="frame" x="419" y="601" width="128" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="badge15Btn:" destination="H4G-DU-vo1" eventType="touchUpInside" id="q1W-hh-zBC"/>
+                                    <action selector="badge11Btn:" destination="H4G-DU-vo1" eventType="touchUpInside" id="Xi6-cM-pag"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Edy-5r-J3Z">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="88f-JG-cWs">
                                 <rect key="frame" x="593" y="776" width="128" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="badge16Btn:" destination="H4G-DU-vo1" eventType="touchUpInside" id="HhV-Oq-6VZ"/>
+                                    <action selector="badge16Btn:" destination="H4G-DU-vo1" eventType="touchUpInside" id="U0K-Bj-809"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aGa-Ue-j4X">
+                                <rect key="frame" x="593" y="601" width="128" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="badge12Btn:" destination="H4G-DU-vo1" eventType="touchUpInside" id="SSO-9l-IwE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7yg-Lk-nus">
+                                <rect key="frame" x="419" y="776" width="128" height="129"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="badge15Btn:" destination="H4G-DU-vo1" eventType="touchUpInside" id="QQU-FA-hpK"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -515,7 +512,6 @@
                         <outlet property="badge1" destination="bvK-Ob-f4w" id="7x6-aM-Kou"/>
                         <outlet property="badge10" destination="GJN-xs-x37" id="otO-Kq-UU4"/>
                         <outlet property="badge11" destination="AM2-09-KeS" id="ulw-M9-C0f"/>
-                        <outlet property="badge11Btn" destination="clh-b8-ZZh" id="hE0-fZ-I14"/>
                         <outlet property="badge12" destination="aVg-o1-d7i" id="hLO-L4-boA"/>
                         <outlet property="badge13" destination="AM2-09-KeS" id="448-z0-P3x"/>
                         <outlet property="badge14" destination="Nck-4s-ZJV" id="2xk-fj-zfe"/>
@@ -523,14 +519,11 @@
                         <outlet property="badge16" destination="toQ-ym-4uz" id="QAo-6U-dV1"/>
                         <outlet property="badge2" destination="Z4I-xv-4Gx" id="lgX-bd-7ob"/>
                         <outlet property="badge3" destination="cDG-LH-VXU" id="ac2-iU-dF6"/>
-                        <outlet property="badge3Btn" destination="o1o-fC-tim" id="BxB-ZO-WXi"/>
                         <outlet property="badge4" destination="EXw-Pr-Tln" id="J2e-m4-x14"/>
                         <outlet property="badge5" destination="ISL-Yz-q8h" id="7Iy-2V-Pvf"/>
-                        <outlet property="badge5Btn" destination="ciF-zt-LLt" id="AVF-uP-X7f"/>
                         <outlet property="badge6" destination="7Lv-N8-j9J" id="BRb-ZV-cuD"/>
                         <outlet property="badge7" destination="lfv-Hv-cXg" id="gmY-B8-9FD"/>
                         <outlet property="badge8" destination="UYi-K4-b3q" id="rjd-Mk-jU1"/>
-                        <outlet property="badge8Btn" destination="yhO-0K-2C2" id="vUb-UK-QpS"/>
                         <outlet property="badge9" destination="zlZ-AS-XkX" id="FV6-rx-Mc9"/>
                     </connections>
                 </viewController>
