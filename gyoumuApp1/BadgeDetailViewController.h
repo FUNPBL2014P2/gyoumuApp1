@@ -19,5 +19,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *badgeGetTimeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *badgeNumLabel;
 @property (weak, nonatomic) IBOutlet UILabel *badgeTitleLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *badgeImage;
 
 @end
