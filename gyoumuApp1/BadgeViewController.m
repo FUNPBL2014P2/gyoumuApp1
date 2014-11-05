@@ -71,12 +71,7 @@
             [flagArray addObject:jsonArray[i]];
         }
     }
-/*    NSSortDescriptor *sort = [[NSSortDescriptor alloc]initWithKey:@"title" ascending:YES];
-    NSArray *sortedBadgeArray = [[NSArray alloc]init];
-    NSArray *sortArray = [NSArray arrayWithObjects:sort, nil];
-    sortedBadgeArray = (NSMutableArray *)[badgeArray sortedArrayUsingDescriptors:sortArray];
-*/
-    
+        //バッジナンバー"title"でソートする
     NSSortDescriptor *sort = [[NSSortDescriptor alloc]initWithKey:@"title" ascending:YES];
     NSArray *sortArray = [NSArray arrayWithObjects:sort, nil];
     flagArray = (NSMutableArray *)[flagArray sortedArrayUsingDescriptors:sortArray];
