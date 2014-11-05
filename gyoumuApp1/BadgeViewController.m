@@ -55,7 +55,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     //全体データを取得する処理
-    NSString *orign = @"http://webdb.per.c.fun.ac.jp/sofline/list.php";
+    NSString *orign = @"http://webdb.per.c.fun.ac.jp/sofline/viewall.php";
     NSString *url = [NSString stringWithFormat:@"%@",orign];
     
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
@@ -63,46 +63,22 @@
     NSDictionary *jsonDlc = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:nil];
     //jsonArrayにデータを格納
     NSArray *jsonArray = [jsonDlc objectForKey:@"data"];
-    
-    NSMutableArray *badgePathArray = [[NSMutableArray alloc]init];
-    
-    //バッジキー配列の作成
-    for(int i = 0; i < jsonArray.count; i++) {
-        NSRange badgeKey = [jsonArray[i][@"terminalId"] rangeOfString:@"badge"];
-        if (badgeKey.location == NSNotFound) {
-        }
-        else {
-            [badgePathArray addObject:[jsonArray objectAtIndex:i]];
-        }
-    }
-    
-    NSMutableArray *badgeArray = [[NSMutableArray alloc]init];
-    
-    //バッジ内容配列の作成
-    for(int i = 0; i < badgePathArray.count; i++) {
-        NSString *baseURL = @"http://webdb.per.c.fun.ac.jp/sofline/view.php?data=";
-        NSString *pathURL = [baseURL stringByAppendingString:badgePathArray[i][@"path"]];
-        NSURLRequest *badgeRequest = [NSURLRequest requestWithURL:[NSURL URLWithString: pathURL]];
-        NSData *jsonDataPersonal = [NSURLConnection sendSynchronousRequest:badgeRequest returningResponse:nil error:nil];
-        
-        [badgeArray addObject:[NSJSONSerialization JSONObjectWithData:jsonDataPersonal options:NSJSONReadingAllowFragments error:nil]];
-    }
-
-    NSSortDescriptor *sort = [[NSSortDescriptor alloc]initWithKey:@"title" ascending:YES];
-    NSArray *sortedBadgeArray = [[NSMutableArray alloc]init];
-    NSArray *sortArray = [NSArray arrayWithObjects:sort, nil];
-    sortedBadgeArray = [badgeArray sortedArrayUsingDescriptors:sortArray];
-    
-    //それぞれのバッジのフラグが成立しているかの情報を格納
     flagArray = [NSMutableArray array];
-    for (int j=0; j < sortedBadgeArray.count; j++) {
-        [flagArray addObject:sortedBadgeArray[j]];
-        //NSLog(@"%@",flagArray[j][@"option0"]);
+     NSRange searchResult;
+    for(int i = 0; i < jsonArray.count; i++){
+        searchResult = [jsonArray[i][@"username"] rangeOfString:@"badge"];
+        if (searchResult.location != NSNotFound) {
+            [flagArray addObject:jsonArray[i]];
+        }
     }
-    ///////////////////////////////////////////
-    /*バッジの表示*/
-    for(int i = 0; i < sortedBadgeArray.count; i++) {
-        if([sortedBadgeArray[i][@"option0"] isEqualToString:@"1"]){
+        //バッジナンバー"title"でソートする
+    NSSortDescriptor *sort = [[NSSortDescriptor alloc]initWithKey:@"title" ascending:YES];
+    NSArray *sortArray = [NSArray arrayWithObjects:sort, nil];
+    flagArray = (NSMutableArray *)[flagArray sortedArrayUsingDescriptors:sortArray];
+ 
+    
+       for(int i = 0; i < flagArray.count; i++) {
+        if([flagArray[i][@"option0"] isEqualToString:@"1"]){
             switch (i) {
                 case 0:
                     self.badge1.contentMode = UIViewContentModeScaleAspectFill;
