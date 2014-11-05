@@ -14,5 +14,8 @@
 }
 @property (weak, nonatomic) IBOutlet UIImageView *detailBackground;
 @property (copy) NSString *receiveBadgeName;
+@property (weak, nonatomic) IBOutlet UILabel *badgeExpLabel;
+@property (weak, nonatomic) IBOutlet UILabel *badgeConditionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *badgeGetTimeLabel;
 
 @end

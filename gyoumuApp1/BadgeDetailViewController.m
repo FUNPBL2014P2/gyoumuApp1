@@ -16,6 +16,10 @@
 @implementation BadgeDetailViewController
 
 @synthesize receiveBadgeName;
+@synthesize badgeExpLabel;
+@synthesize badgeConditionLabel;
+@synthesize badgeGetTimeLabel;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,6 +36,9 @@
     // Do any additional setup after loading the view.
         [self.view sendSubviewToBack:_detailBackground];
     NSLog(@"%@", receiveBadgeName);
+    badgeExpLabel.text = @"ライセンスを５回登録したということでこれからライセンス管理を頑張って欲しいという気持ちが込められたバッジ。気を抜くんじゃないぞ！";
+    badgeConditionLabel.text = @"ライセンスを何でもいいから５回登録だ！";
+    badgeGetTimeLabel.text = @"(例) 2014年11月5日 2時50分";
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
