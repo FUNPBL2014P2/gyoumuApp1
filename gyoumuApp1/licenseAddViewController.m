@@ -130,7 +130,7 @@
         NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
         [request setHTTPMethod:@"POST"];
         //パラメータを作成
-        NSString *body = [NSString stringWithFormat:@"title=09&message=&latitude=&longitude=&terminalId=badge09&option0=1&option1=%@&option2=5",[fmt stringFromDate:nowGet]];
+        NSString *body = [NSString stringWithFormat:@"title=09&message=ライセンス管理の始まりバッジ&latitude=&longitude=&terminalId=badge09&option0=1&option1=%@&option2=5",[fmt stringFromDate:nowGet]];
         
         request.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
         NSURLConnection *connection;
@@ -155,7 +155,7 @@
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     [request setHTTPMethod:@"POST"];
     //パラメータを作成
-    NSString *body = [NSString stringWithFormat:@"title=09&message=&latitude=&longitude=&terminalId=badge09&option0=0&option2=4"];
+    NSString *body = [NSString stringWithFormat:@"title=09&message=ライセンス管理の始まりバッジ&latitude=&longitude=&terminalId=badge09&option0=0&option2=4"];
     
     request.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
     NSURLConnection *connection;

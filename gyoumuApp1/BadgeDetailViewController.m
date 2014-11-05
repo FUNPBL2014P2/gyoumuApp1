@@ -19,7 +19,8 @@
 @synthesize badgeExpLabel;
 @synthesize badgeConditionLabel;
 @synthesize badgeGetTimeLabel;
-
+@synthesize badgeNumLabel;
+@synthesize badgeTitleLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -39,6 +40,8 @@
     badgeExpLabel.text = @"ライセンスを５回登録したということでこれからライセンス管理を頑張って欲しいという気持ちが込められたバッジ。気を抜くんじゃないぞ！";
     badgeConditionLabel.text = @"ライセンスを何でもいいから５回登録だ！";
     badgeGetTimeLabel.text = @"(例) 2014年11月5日 2時50分";
+    badgeNumLabel.text = @"No.09";
+    badgeTitleLabel.text = @"ライセンス管理の始まりバッジ";
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
