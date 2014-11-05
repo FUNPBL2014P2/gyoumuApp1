@@ -50,9 +50,19 @@
         //NSLog(@"%@", viewDic[@"title"]);
     int frag = [viewDic[@"option0"] intValue];
     if(frag == 1){
-
+        
+    NSString *num = [NSString stringWithFormat:@"%@",viewDic[@"title"]];
     badgeNumLabel.text = [NSString stringWithFormat:@"No.%@",viewDic[@"title"]];
     badgeTitleLabel.text = [NSString stringWithFormat:@"%@",viewDic[@"option3"]];
+        
+        NSString *body = [NSString stringWithFormat:@"badge"];
+        
+        NSString *aString = [body stringByAppendingString:[NSString stringWithFormat:@"%@.gif",num]];
+        NSLog(@"%@",aString);
+        self.badgeImage.contentMode = UIViewContentModeScaleAspectFill;
+        self.badgeImage.image = [UIImage imageNamed:aString];
+        
+        
     badgeExpLabel.text = [NSString stringWithFormat:@"%@",viewDic[@"option4"]];
     badgeConditionLabel.text = [NSString stringWithFormat:@"%@",viewDic[@"option5"]];
     badgeGetTimeLabel.text = [NSString stringWithFormat:@"%@",viewDic[@"option1"]];
