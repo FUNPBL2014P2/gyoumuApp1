@@ -47,148 +47,130 @@
 */
 //バッジ09カウンタを04から05へ変更
 - (IBAction)licenseAddBtn:(UIButton *)sender {
-    //badge09の処理
-    int frag9 = 0;
-    int obtain9 = 0;
+    [self addLicense:@"09" badgeFlag:5];
+    }
+
+//バッジ09リセット処理
+- (IBAction)BadgeNineResetBtn:(id)sender {
+
+    //Viewall用
+    NSString *urlList = @"http://webdb.per.c.fun.ac.jp/sofline/viewall.php";
     
-    NSString *urlList = @"http://webdb.per.c.fun.ac.jp/sofline/list.php";
     
     NSURLRequest *requestList = [NSURLRequest requestWithURL:[NSURL URLWithString:urlList]];
     NSData *jsonList = [NSURLConnection sendSynchronousRequest:requestList returningResponse:nil error:nil];
     NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:jsonList options:0 error:nil];
-    //jsonArray = [jsonArray objectForKey:@"data"];
-    //NSLog(@"%@", [jsonArray objectForKey:@"data"]);
     NSArray *jsonArray = [jsonDic objectForKey:@"data"];
-    //新しいものが0から格納されていくので、最後尾から検索する
-    for (int i = 0; i < (int)jsonArray.count-1; i++) {
+    for (int i = 0; jsonArray.count; i++) {
         if ([jsonArray[i][@"terminalId"] isEqualToString:@"badge09"]) {
-            NSString *strURL = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline/view.php?data=%@",jsonArray[i][@"path"]];
-            NSURL *urlView = [NSURL URLWithString:strURL];
-            NSMutableURLRequest *viewRequest = [NSMutableURLRequest requestWithURL:urlView];
-            [viewRequest setHTTPMethod:@"GET"];
-            [NSURLConnection sendSynchronousRequest:viewRequest returningResponse:nil error:nil];
-            ///////////////////
-            
-            NSData *viewList = [NSURLConnection sendSynchronousRequest:viewRequest returningResponse:nil error:nil];
-            NSDictionary *viewDic = [NSJSONSerialization JSONObjectWithData:viewList options:0 error:nil];
-            //NSLog(@"%@", viewDic[@"option2"]);
-            frag9 = [viewDic[@"option2"] intValue];
-            //NSLog(@"%d", frag);
-            
-            //fragの条件が変わることを行ったかをif文に通す？
-            //if(){}
-            
-            frag9 +=  +1;
-            
-            if(frag9 < 5){
-        
             
             NSURL *url = [NSURL URLWithString:@"http://webdb.per.c.fun.ac.jp/sofline/add.php"];
             NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
             [request setHTTPMethod:@"POST"];
             //パラメータを作成
+            NSString *body = [NSString stringWithFormat:@"title=%@&message=&latitude=&longitude=&terminalId=%@&option0=0&option2=4&option3=%@&option4=%@&option5=%@", jsonArray[i][@"title"], jsonArray[i][@"terminalId"], jsonArray[i][@"option3"], jsonArray[i][@"option4"], jsonArray[i][@"option5"]];
             
-            NSString *body = [NSString stringWithFormat:@"title=09&message=&latitude=&longitude=&terminalId=badge09&option0="];
-            
-            NSString *aString = [body stringByAppendingString:[NSString stringWithFormat:@"%d",obtain9]];
-            NSString *bString = [aString stringByAppendingString:[NSString stringWithFormat:@"&option2="]];
-            NSString *cString = [bString stringByAppendingString:[NSString stringWithFormat:@"%d",frag9]];
-            
-            request.HTTPBody = [cString dataUsingEncoding:NSUTF8StringEncoding];
+            request.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
             NSURLConnection *connection;
             connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-            }
-        }
-        break;
-    }
-    
-    //新しいものが0から格納されていくので、最後尾から検索する
-    if(frag9 <= 5){
-    for (int i = (int)jsonArray.count-1; i >= 0; i--) {
-        if ([jsonArray[i][@"terminalId"] isEqualToString:@"badge09"]) {
-            NSString *strURL = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline/delete.php?data=%@",jsonArray[i][@"path"]];
-            NSURL *urlDelete = [NSURL URLWithString:strURL];
-            NSMutableURLRequest *deleteRequest = [NSMutableURLRequest requestWithURL:urlDelete];
-            [deleteRequest setHTTPMethod:@"GET"];
-            [NSURLConnection sendSynchronousRequest:deleteRequest returningResponse:nil error:nil];
-            ///////////////////
-            //削除したら抜ける
-            break;
             
-            }
+            
+            
         }
-    }
-    // 09バッジのフラグが成立していたら
-    if(frag9 == 5){
         
-        /////////////////取得日時
-        NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
-        [fmt setDateFormat:@"yyyy年MM月dd日 HH時mm分"];
-        NSDate *nowGet = [[NSDate alloc]init];
-        /////////////////////取得日時を送信する処理
-        NSURL *url = [NSURL URLWithString:@"http://webdb.per.c.fun.ac.jp/sofline/add.php"];
-        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-        [request setHTTPMethod:@"POST"];
-        //パラメータを作成
-        NSString *body = [NSString stringWithFormat:@"title=09&message=&latitude=&longitude=&terminalId=badge09&option0=1&option1=%@&option2=5",[fmt stringFromDate:nowGet]];
-        
-        request.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
-        NSURLConnection *connection;
-        connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-        //////////////////
+        NSString *strURL = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline/delete.php?data=/%@/%@",jsonArray[i][@"terminalId"], jsonArray[i][@"datetime"]];
+        NSURL *urlDelete = [NSURL URLWithString:strURL];
+        NSMutableURLRequest *deleteRequest = [NSMutableURLRequest requestWithURL:urlDelete];
+        [deleteRequest setHTTPMethod:@"GET"];
+        [NSURLConnection sendSynchronousRequest:deleteRequest returningResponse:nil error:nil];
+        ///////////////////
+        //削除したら抜ける
+        break;
 
         
-        
-    UIAlertView *alert =
-    [[UIAlertView alloc] initWithTitle:@"バッジ取得" message:@"ライセンス管理の始まりバッジ"
-                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [alert show];
-    return ;
     }
     
-}
-
-//バッジ09リセット処理
-- (IBAction)BadgeNineResetBtn:(id)sender {
     /////////////////////
-    NSURL *url = [NSURL URLWithString:@"http://webdb.per.c.fun.ac.jp/sofline/add.php"];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-    [request setHTTPMethod:@"POST"];
-    //パラメータを作成
-    NSString *body = [NSString stringWithFormat:@"title=09&message=&latitude=&longitude=&terminalId=badge09&option0=0&option2=4"];
-    
-    request.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
-    NSURLConnection *connection;
-    connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-    //////////////////
+        //////////////////
     
     ////////////////
     
-    //古い方のbadge09の削除を行う
-    NSString *urlList = @"http://webdb.per.c.fun.ac.jp/sofline/list.php";
     
+
+}
+
+-(void) addLicense:(NSString *)title badgeFlag:(int)flagCount
+{
+    //Viewall用
+    NSString *urlList = @"http://webdb.per.c.fun.ac.jp/sofline/viewall.php";
     
     NSURLRequest *requestList = [NSURLRequest requestWithURL:[NSURL URLWithString:urlList]];
     NSData *jsonList = [NSURLConnection sendSynchronousRequest:requestList returningResponse:nil error:nil];
     NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:jsonList options:0 error:nil];
-    //jsonArray = [jsonArray objectForKey:@"data"];
-    //NSLog(@"%@", [jsonArray objectForKey:@"data"]);
     NSArray *jsonArray = [jsonDic objectForKey:@"data"];
-    //新しいものが0から格納されていくので、最後尾から検索する
-    for (int i = (int)jsonArray.count-1; i >= 0; i--) {
-        if ([jsonArray[i][@"terminalId"] isEqualToString:@"badge09"]) {
-            NSString *strURL = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline/delete.php?data=%@",jsonArray[i][@"path"]];
-            NSURL *urlDelete = [NSURL URLWithString:strURL];
-            NSMutableURLRequest *deleteRequest = [NSMutableURLRequest requestWithURL:urlDelete];
-            [deleteRequest setHTTPMethod:@"GET"];
-            [NSURLConnection sendSynchronousRequest:deleteRequest returningResponse:nil error:nil];
-            ///////////////////
-            //削除したら抜ける
-            break;
+    int count = 0;
+    for (int i = 0; jsonArray.count; i++) {
+        if ([jsonArray[i][@"terminalId"] isEqualToString:[NSString stringWithFormat:@"badge%@",title]]) {
+            if ( [jsonArray[i][@"option0"] isEqualToString:@"1"]) {
+                return;
+            }
+            count = [jsonArray[i][@"option2"] intValue] + 1;
             
+            if (count == flagCount) {
+                /////////////////取得日時
+                NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
+                [fmt setDateFormat:@"yyyy年MM月dd日 HH時mm分"];
+                NSDate *nowGet = [[NSDate alloc]init];
+                /////////////////////取得日時を送信する処理
+                NSURL *url = [NSURL URLWithString:@"http://webdb.per.c.fun.ac.jp/sofline/add.php"];
+                NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+                [request setHTTPMethod:@"POST"];
+                //パラメータを作成
+                NSString *body = [NSString stringWithFormat:@"title=%@&message=&latitude=&longitude=&terminalId=%@&option0=1&option1=%@&option2=%@&option3=%@&option4=%@&option5=%@",title,jsonArray[i][@"terminalId"],[fmt stringFromDate:nowGet],[NSString stringWithFormat:@"%d",flagCount], jsonArray[i][@"option3"],jsonArray[i][@"option4"],jsonArray[i][@"option5"]];
+                request.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
+                NSURLConnection *connection;
+                connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+                //////////////////
+                NSString *strURL = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline/delete.php?data=/%@/%@",jsonArray[i][@"terminalId"], jsonArray[i][@"datetime"]];
+                NSURL *urlDelete = [NSURL URLWithString:strURL];
+                NSMutableURLRequest *deleteRequest = [NSMutableURLRequest requestWithURL:urlDelete];
+                [deleteRequest setHTTPMethod:@"GET"];
+                [NSURLConnection sendSynchronousRequest:deleteRequest returningResponse:nil error:nil];
+                ///////////////////
+                //削除したら抜ける
+
+                //////////////////
+                
+                
+                UIAlertView *alert =
+                [[UIAlertView alloc] initWithTitle:@"バッジ取得" message:@"ライセンス管理の始まりバッジ"
+                                          delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                [alert show];
+                return ;
+            }
+            
+            else if (count < flagCount) {
+                NSURL *url = [NSURL URLWithString:@"http://webdb.per.c.fun.ac.jp/sofline/add.php"];
+                NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+                [request setHTTPMethod:@"POST"];
+                //パラメータを作成
+                NSString *body = [NSString stringWithFormat:@"title=%@&message=&latitude=&longitude=&terminalId=%@&option0=1&option1=%@&option2=&option3=%@&option4=%@&option5=%@",title,jsonArray[i][@"terminalId"],[NSString stringWithFormat:@"%d",count+1], jsonArray[i][@"option3"],jsonArray[i][@"option4"],jsonArray[i][@"option5"]];
+                request.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
+                NSURLConnection *connection;
+                connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+                /////////////////////
+                NSString *strURL = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline/delete.php?data=/%@/%@",jsonArray[i][@"terminalId"], jsonArray[i][@"datetime"]];
+                NSURL *urlDelete = [NSURL URLWithString:strURL];
+                NSMutableURLRequest *deleteRequest = [NSMutableURLRequest requestWithURL:urlDelete];
+                [deleteRequest setHTTPMethod:@"GET"];
+                [NSURLConnection sendSynchronousRequest:deleteRequest returningResponse:nil error:nil];
+                ///////////////////
+                //削除したら抜ける
+
+                /////////////////////
+
+            }
         }
     }
-    
-
 }
 @end
