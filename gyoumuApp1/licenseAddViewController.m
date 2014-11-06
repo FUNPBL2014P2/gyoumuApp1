@@ -143,7 +143,7 @@
                 
                 
                 UIAlertView *alert =
-                [[UIAlertView alloc] initWithTitle:@"バッジ取得" message:@"ライセンス管理の始まりバッジ"
+                [[UIAlertView alloc] initWithTitle:@"バッジ取得" message:jsonArray[i][@"option3"]
                                           delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
                 [alert show];
                 return ;
@@ -166,7 +166,7 @@
                 [NSURLConnection sendSynchronousRequest:deleteRequest returningResponse:nil error:nil];
                 ///////////////////
                 //削除したら抜ける
-
+                return ;
                 /////////////////////
 
             }
