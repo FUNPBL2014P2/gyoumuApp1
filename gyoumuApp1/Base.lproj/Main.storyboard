@@ -511,7 +511,7 @@
                         <outlet property="backgroundView" destination="NQU-1D-dE5" id="JBF-3f-GY1"/>
                         <outlet property="badge1" destination="bvK-Ob-f4w" id="7x6-aM-Kou"/>
                         <outlet property="badge10" destination="GJN-xs-x37" id="otO-Kq-UU4"/>
-                        <outlet property="badge11" destination="AM2-09-KeS" id="ulw-M9-C0f"/>
+                        <outlet property="badge11" destination="TqY-CX-5Sb" id="6Eo-IG-Iqk"/>
                         <outlet property="badge12" destination="aVg-o1-d7i" id="hLO-L4-boA"/>
                         <outlet property="badge13" destination="AM2-09-KeS" id="448-z0-P3x"/>
                         <outlet property="badge14" destination="Nck-4s-ZJV" id="2xk-fj-zfe"/>
