@@ -68,6 +68,8 @@
         
     }
     cell.textLabel.text = [menuSource objectAtIndex:indexPath.row];
+    cell.textLabel.font = [UIFont fontWithName:nil size:40];
+    
     return cell;
 }
 

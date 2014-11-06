@@ -57,7 +57,7 @@
     
     [leftMenu.navigationController setNavigationBarHidden:YES];
     
-    NSIndexPath *initialIndexPath = [mainVC initialIndexPathForLeftMenu];
+    NSIndexPath *initialIndexPath = /*[mainVC initialIndexPathForLeftMenu]*/[NSIndexPath indexPathForItem:1 inSection:1];
     
 #ifndef AMSlideMenuWithoutStoryboards
     if ([mainVC respondsToSelector:@selector(navigationControllerForIndexPathInLeftMenu:)]) {
