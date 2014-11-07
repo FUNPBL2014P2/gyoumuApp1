@@ -58,7 +58,7 @@
         NSString *body = [NSString stringWithFormat:@"badge"];
         
         NSString *aString = [body stringByAppendingString:[NSString stringWithFormat:@"%@.gif",num]];
-        NSLog(@"%@",aString);
+        //NSLog(@"%@",aString);
         self.badgeImage.contentMode = UIViewContentModeScaleAspectFill;
         self.badgeImage.image = [UIImage imageNamed:aString];
         
@@ -70,7 +70,7 @@
     }else if(frag == 0){
         badgeNumLabel.text = [NSString stringWithFormat:@"No.%@",viewDic[@"title"]];
         badgeTitleLabel.text = [NSString stringWithFormat:@"%@",viewDic[@"option3"]];
-        badgeExpLabel.text = [NSString stringWithFormat:@"%@",viewDic[@"option5"]];
+        badgeExpLabel.text = [NSString stringWithFormat:@"%@",viewDic[@"option4"]];
         badgeConditionLabel.text = [NSString stringWithFormat:@"?????????????"];
         badgeGetTimeLabel.text = @"";
         

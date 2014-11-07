@@ -10,6 +10,7 @@
 
 @interface BadgeViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundView;
+@property NSMutableArray *badge;
 @property (weak, nonatomic) IBOutlet UIImageView *badge1;
 @property (weak, nonatomic) IBOutlet UIImageView *badge2;
 @property (weak, nonatomic) IBOutlet UIImageView *badge3;
