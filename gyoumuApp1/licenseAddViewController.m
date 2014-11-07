@@ -73,20 +73,20 @@
             request.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
             NSURLConnection *connection;
             connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-            
-            
+            ///////////////////
+            NSString *strURL = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline/delete.php?data=/%@/%@",jsonArray[i][@"terminalId"], jsonArray[i][@"datetime"]];
+            NSURL *urlDelete = [NSURL URLWithString:strURL];
+            NSMutableURLRequest *deleteRequest = [NSMutableURLRequest requestWithURL:urlDelete];
+            [deleteRequest setHTTPMethod:@"GET"];
+            [NSURLConnection sendSynchronousRequest:deleteRequest returningResponse:nil error:nil];
+            ///////////////////
+            //削除したら抜ける
+            break;
+
             
         }
         
-        NSString *strURL = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline/delete.php?data=/%@/%@",jsonArray[i][@"terminalId"], jsonArray[i][@"datetime"]];
-        NSURL *urlDelete = [NSURL URLWithString:strURL];
-        NSMutableURLRequest *deleteRequest = [NSMutableURLRequest requestWithURL:urlDelete];
-        [deleteRequest setHTTPMethod:@"GET"];
-        [NSURLConnection sendSynchronousRequest:deleteRequest returningResponse:nil error:nil];
-        ///////////////////
-        //削除したら抜ける
-        break;
-
+        
         
     }
     
