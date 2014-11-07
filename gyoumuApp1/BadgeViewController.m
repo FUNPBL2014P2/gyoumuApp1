@@ -80,12 +80,13 @@
     flagArray = (NSMutableArray *)[flagArray sortedArrayUsingDescriptors:sortArray];
  
     
-       for(int i = 0; i < flagArray.count; i++) {
-        if([flagArray[i][@"option0"] isEqualToString:@"1"]){
+       for(int i = 0; i <= flagArray.count; i++) {
             UIImageView *badgeID = [_badge objectAtIndex:i];
             badgeID.contentMode = UIViewContentModeScaleAspectFill;
             badgeID.image = (i<9)? [UIImage imageNamed:[NSString stringWithFormat:@"badge0%d.gif",i+1]]:[UIImage imageNamed:[NSString stringWithFormat:@"badge%d.gif",i+1]];
         }
+        if([flagArray[8][@"option0"] isEqualToString:@"0"]){
+            self.badge9.hidden = YES;
     }
 }
 
