@@ -35,7 +35,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-        [self.view sendSubviewToBack:_detailBackground];
+    [self.view sendSubviewToBack:_detailBackground];
     
     //NSLog(@"%@", receiveBadgeName);
     NSString *strURL = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline/view.php?data=%@",receiveBadgeName];
@@ -47,36 +47,53 @@
     
     NSData *viewList = [NSURLConnection sendSynchronousRequest:viewRequest returningResponse:nil error:nil];
     NSDictionary *viewDic = [NSJSONSerialization JSONObjectWithData:viewList options:0 error:nil];
-        //NSLog(@"%@", viewDic[@"title"]);
+    //NSLog(@"%@", viewDic[@"title"]);
     int frag = [viewDic[@"option0"] intValue];
-    if(frag == 1){
-        
-    NSString *num = [NSString stringWithFormat:@"%@",viewDic[@"title"]];
-    badgeNumLabel.text = [NSString stringWithFormat:@"No.%@",viewDic[@"title"]];
-    badgeTitleLabel.text = [NSString stringWithFormat:@"%@",viewDic[@"option3"]];
-        
-        NSString *body = [NSString stringWithFormat:@"badge"];
-        
-        NSString *aString = [body stringByAppendingString:[NSString stringWithFormat:@"%@.gif",num]];
-        //NSLog(@"%@",aString);
-        self.badgeImage.contentMode = UIViewContentModeScaleAspectFill;
-        self.badgeImage.image = [UIImage imageNamed:aString];
-        
-        
-    badgeExpLabel.text = [NSString stringWithFormat:@"%@",viewDic[@"option4"]];
-    badgeConditionLabel.text = [NSString stringWithFormat:@"%@",viewDic[@"option5"]];
-    badgeGetTimeLabel.text = [NSString stringWithFormat:@"%@",viewDic[@"option1"]];
-        
-    }else if(frag == 0){
-        badgeNumLabel.text = [NSString stringWithFormat:@"No.%@",viewDic[@"title"]];
-        badgeTitleLabel.text = [NSString stringWithFormat:@"%@",viewDic[@"option3"]];
-        badgeExpLabel.text = [NSString stringWithFormat:@"%@",viewDic[@"option4"]];
-        badgeConditionLabel.text = [NSString stringWithFormat:@"?????????????"];
-        badgeGetTimeLabel.text = @"";
+    if([viewDic[@"title"] isEqualToString:@"09"]){
+        if (frag == 1) {
+            NSString *num = [NSString stringWithFormat:@"%@",viewDic[@"title"]];
+            badgeNumLabel.text = [NSString stringWithFormat:@"No.%@",viewDic[@"title"]];
+            badgeTitleLabel.text = [NSString stringWithFormat:@"%@",viewDic[@"option3"]];
+            
+            NSString *body = [NSString stringWithFormat:@"badge"];
+            
+            NSString *aString = [body stringByAppendingString:[NSString stringWithFormat:@"%@.gif",num]];
+            //NSLog(@"%@",aString);
+            self.badgeImage.contentMode = UIViewContentModeScaleAspectFill;
+            self.badgeImage.image = [UIImage imageNamed:aString];
+            
+            
+            badgeExpLabel.text = [NSString stringWithFormat:@"%@",viewDic[@"option4"]];
+            badgeConditionLabel.text = [NSString stringWithFormat:@"%@",viewDic[@"option5"]];
+            badgeGetTimeLabel.text = [NSString stringWithFormat:@"%@",viewDic[@"option1"]];
+            
+            return;
+        } else {
+            badgeNumLabel.text = [NSString stringWithFormat:@"No.%@",viewDic[@"title"]];
+            badgeTitleLabel.text = [NSString stringWithFormat:@"%@",viewDic[@"option3"]];
+            badgeExpLabel.text = [NSString stringWithFormat:@"%@",viewDic[@"option4"]];
+            badgeConditionLabel.text = [NSString stringWithFormat:@"?????????????"];
+            badgeGetTimeLabel.text = @"";
+            return;
+        }
         
     }
     
+    NSString *num = [NSString stringWithFormat:@"%@",viewDic[@"title"]];
+    badgeNumLabel.text = [NSString stringWithFormat:@"No.%@",viewDic[@"title"]];
+    badgeTitleLabel.text = [NSString stringWithFormat:@"%@",viewDic[@"option3"]];
     
+    NSString *body = [NSString stringWithFormat:@"badge"];
+    
+    NSString *aString = [body stringByAppendingString:[NSString stringWithFormat:@"%@.gif",num]];
+    //NSLog(@"%@",aString);
+    self.badgeImage.contentMode = UIViewContentModeScaleAspectFill;
+    self.badgeImage.image = [UIImage imageNamed:aString];
+    
+    
+    badgeExpLabel.text = [NSString stringWithFormat:@"%@",viewDic[@"option4"]];
+    badgeConditionLabel.text = [NSString stringWithFormat:@"%@",viewDic[@"option5"]];
+    badgeGetTimeLabel.text = [NSString stringWithFormat:@"%@",viewDic[@"option1"]];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
