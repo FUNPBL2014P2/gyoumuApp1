@@ -50,6 +50,9 @@
     self.badge1.image = [UIImage imageNamed:@"badge1.gif"];
     */
     
+    self.badge = [[NSMutableArray alloc] initWithObjects:self.badge1,self.badge2,self.badge3,self.badge4,self.badge5,self.badge6,self.badge7,self.badge8,self.badge9,self.badge10,self.badge11,self.badge12,self.badge13,self.badge14,self.badge15,self.badge16,nil];
+    
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -64,7 +67,7 @@
     //jsonArrayにデータを格納
     NSArray *jsonArray = [jsonDlc objectForKey:@"data"];
     flagArray = [NSMutableArray array];
-     NSRange searchResult;
+    NSRange searchResult;
     for(int i = 0; i < jsonArray.count; i++){
         searchResult = [jsonArray[i][@"username"] rangeOfString:@"badge"];
         if (searchResult.location != NSNotFound) {
@@ -79,72 +82,9 @@
     
        for(int i = 0; i < flagArray.count; i++) {
         if([flagArray[i][@"option0"] isEqualToString:@"1"]){
-            switch (i) {
-                case 0:
-                    self.badge1.contentMode = UIViewContentModeScaleAspectFill;
-                    self.badge1.image = [UIImage imageNamed:@"badge01.gif"];
-                    break;
-                case 1:
-                    self.badge2.contentMode = UIViewContentModeScaleAspectFill;
-                    self.badge2.image = [UIImage imageNamed:@"badge02.gif"];
-                    break;
-                case 2:
-                    self.badge3.contentMode = UIViewContentModeScaleAspectFill;
-                    self.badge3.image = [UIImage imageNamed:@"badge03.gif"];
-                    break;
-                case 3:
-                    self.badge4.contentMode = UIViewContentModeScaleAspectFill;
-                    self.badge4.image = [UIImage imageNamed:@"badge04.gif"];
-                    break;
-                case 4:
-                    self.badge5.contentMode = UIViewContentModeScaleAspectFill;
-                    self.badge5.image = [UIImage imageNamed:@"badge05.gif"];
-                    break;
-                case 5:
-                    self.badge6.contentMode = UIViewContentModeScaleAspectFill;
-                    self.badge6.image = [UIImage imageNamed:@"badge06.gif"];
-                    break;
-                case 6:
-                    self.badge7.contentMode = UIViewContentModeScaleAspectFill;
-                    self.badge7.image = [UIImage imageNamed:@"badge07.gif"];
-                    break;
-                case 7:
-                    self.badge8.contentMode = UIViewContentModeScaleAspectFill;
-                    self.badge8.image = [UIImage imageNamed:@"badge08.gif"];
-                    break;
-                case 8:
-                    self.badge9.contentMode = UIViewContentModeScaleAspectFill;
-                    self.badge9.image = [UIImage imageNamed:@"badge09.gif"];
-                    break;
-                case 9:
-                    self.badge10.contentMode = UIViewContentModeScaleAspectFill;
-                    self.badge10.image = [UIImage imageNamed:@"badge10.gif"];
-                    break;
-                case 10:
-                    self.badge11.contentMode = UIViewContentModeScaleAspectFill;
-                    self.badge11.image = [UIImage imageNamed:@"badge11.gif"];
-                    break;
-                case 11:
-                    self.badge12.contentMode = UIViewContentModeScaleAspectFill;
-                    self.badge12.image = [UIImage imageNamed:@"badge12.gif"];
-                    break;
-                case 12:
-                    self.badge13.contentMode = UIViewContentModeScaleAspectFill;
-                    self.badge13.image = [UIImage imageNamed:@"badge13.gif"];
-                    break;
-                case 13:
-                    self.badge14.contentMode = UIViewContentModeScaleAspectFill;
-                    self.badge14.image = [UIImage imageNamed:@"badge14.gif"];
-                    break;
-                case 14:
-                    self.badge15.contentMode = UIViewContentModeScaleAspectFill;
-                    self.badge15.image = [UIImage imageNamed:@"badge15.gif"];
-                    break;
-                case 15:
-                    self.badge16.contentMode = UIViewContentModeScaleAspectFill;
-                    self.badge16.image = [UIImage imageNamed:@"badge16.gif"];
-                    break;
-            }
+            UIImageView *badgeID = [_badge objectAtIndex:i];
+            badgeID.contentMode = UIViewContentModeScaleAspectFill;
+            badgeID.image = (i<9)? [UIImage imageNamed:[NSString stringWithFormat:@"badge0%d.gif",i+1]]:[UIImage imageNamed:[NSString stringWithFormat:@"badge%d.gif",i+1]];
         }
     }
 }
