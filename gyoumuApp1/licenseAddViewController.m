@@ -36,36 +36,36 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 //登録フラグを１つ増やす
 - (IBAction)licenseAddBtn:(UIButton *)sender {
     
     /*
-    NSString *urlList = @"http://webdb.per.c.fun.ac.jp/sofline/viewall.php";
-    
-    NSURLRequest *requestList = [NSURLRequest requestWithURL:[NSURL URLWithString:urlList]];
-    NSData *jsonList = [NSURLConnection sendSynchronousRequest:requestList returningResponse:nil error:nil];
-    NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:jsonList options:0 error:nil];
-    NSArray *jsonArray = [jsonDic objectForKey:@"data"];
-    int div = 0;
-    
-    for (int i = 0; jsonArray.count; i++) {
-        if ([jsonArray[i][@"terminalId"] isEqualToString:[NSString stringWithFormat:@"badge03"]]) {
-            div = [jsonArray[i][@"option2"] intValue] + 1;
-            NSLog(@"%d",div);
-                return;
-        }
-    }
-     */
+     NSString *urlList = @"http://webdb.per.c.fun.ac.jp/sofline/viewall.php";
      
+     NSURLRequest *requestList = [NSURLRequest requestWithURL:[NSURL URLWithString:urlList]];
+     NSData *jsonList = [NSURLConnection sendSynchronousRequest:requestList returningResponse:nil error:nil];
+     NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:jsonList options:0 error:nil];
+     NSArray *jsonArray = [jsonDic objectForKey:@"data"];
+     int div = 0;
+     
+     for (int i = 0; jsonArray.count; i++) {
+     if ([jsonArray[i][@"terminalId"] isEqualToString:[NSString stringWithFormat:@"badge03"]]) {
+     div = [jsonArray[i][@"option2"] intValue] + 1;
+     NSLog(@"%d",div);
+     return;
+     }
+     }
+     */
+    
     
     [self addLicense:@"03" badgeFlag:1];
     [self addLicense:@"09" badgeFlag:5];
@@ -75,7 +75,7 @@
 
 //バッジ09リセット処理
 - (IBAction)BadgeNineResetBtn:(id)sender {
-
+    
     //Viewall用
     NSString *urlList = @"http://webdb.per.c.fun.ac.jp/sofline/viewall.php";
     
@@ -84,6 +84,7 @@
     NSData *jsonList = [NSURLConnection sendSynchronousRequest:requestList returningResponse:nil error:nil];
     NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:jsonList options:0 error:nil];
     NSArray *jsonArray = [jsonDic objectForKey:@"data"];
+    
     for (int i = 0; jsonArray.count; i++) {
         if ([jsonArray[i][@"terminalId"] isEqualToString:@"badge09"]) {
             
@@ -96,6 +97,7 @@
             request.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
             NSURLConnection *connection;
             connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+            
             ///////////////////
             NSString *strURL = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline/delete.php?data=/%@/%@",jsonArray[i][@"terminalId"], jsonArray[i][@"datetime"]];
             NSURL *urlDelete = [NSURL URLWithString:strURL];
@@ -105,12 +107,13 @@
             ///////////////////
             //削除したら抜ける
             break;
-
+            
             
         }
     }
+    
     UIAlertView *alert =
-    [[UIAlertView alloc] initWithTitle:@"Reset" message:@"Reset完了しました"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [[UIAlertView alloc] initWithTitle:@"Reset" message:@"Resetしました"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [alert show];
     return ;
 }
@@ -150,7 +153,7 @@
         }
     }
     UIAlertView *alert =
-    [[UIAlertView alloc] initWithTitle:@"Reset" message:@"Reset完了しました"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [[UIAlertView alloc] initWithTitle:@"Reset" message:@"Resetしました"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [alert show];
     return ;
 }
@@ -190,10 +193,10 @@
         }
     }
     UIAlertView *alert =
-    [[UIAlertView alloc] initWithTitle:@"Reset" message:@"Reset完了しました"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [[UIAlertView alloc] initWithTitle:@"Reset" message:@"Resetしました"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [alert show];
     return ;
-
+    
 }
 
 -(void) addLicense:(NSString *)title badgeFlag:(int)flagCount
@@ -235,7 +238,7 @@
                 [NSURLConnection sendSynchronousRequest:deleteRequest returningResponse:nil error:nil];
                 ///////////////////
                 //削除したら抜ける
-
+                
                 //////////////////
                 
                 
@@ -265,7 +268,6 @@
                 //削除したら抜ける
                 return ;
                 /////////////////////
-
             }
         }
     }

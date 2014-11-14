@@ -12,5 +12,6 @@
 @interface ViewController : UIViewController
 //loginBtnとしてプロパティ登録
 @property (weak, nonatomic) IBOutlet UIButton *loginBtn;
+- (IBAction)BadgeOneResetBtn:(id)sender;
 
 @end
