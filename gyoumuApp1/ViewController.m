@@ -40,6 +40,10 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    
+    NSString *test = @"";
+    if(test.length == 0)NSLog(@"空文字の時に通る条件CLEAR!");
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -83,7 +87,7 @@
                 //画面を遷移するYES
                 [self addLogin2:@"05" badgeFlag:3];
                 [self addLogin:@"01" badgeFlag:1];
-                //[self addLogin:@"06" badgeFlag:10];
+                [self addLogin:@"06" badgeFlag:10];
                 [self addLoginTime];
                 return YES;
             }
@@ -163,6 +167,84 @@
     return ;
 }
 
+- (IBAction)BadgeFiveResetBtn:(id)sender {
+    NSString *urlList = @"http://webdb.per.c.fun.ac.jp/sofline/viewall.php";
+    
+    
+    NSURLRequest *requestList = [NSURLRequest requestWithURL:[NSURL URLWithString:urlList]];
+    NSData *jsonList = [NSURLConnection sendSynchronousRequest:requestList returningResponse:nil error:nil];
+    NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:jsonList options:0 error:nil];
+    NSArray *jsonArray = [jsonDic objectForKey:@"data"];
+    for (int i = 0; jsonArray.count; i++) {
+        if ([jsonArray[i][@"terminalId"] isEqualToString:@"badge05"]) {
+            
+            NSURL *url = [NSURL URLWithString:@"http://webdb.per.c.fun.ac.jp/sofline/add.php"];
+            NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+            [request setHTTPMethod:@"POST"];
+            //パラメータを作成
+            NSString *body = [NSString stringWithFormat:@"title=%@&message=&latitude=&longitude=&terminalId=%@&option0=0&option2=0&option3=%@&option4=%@&option5=%@", jsonArray[i][@"title"], jsonArray[i][@"terminalId"], jsonArray[i][@"option3"], jsonArray[i][@"option4"], jsonArray[i][@"option5"]];
+            
+            request.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
+            NSURLConnection *connection;
+            connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+            ///////////////////
+            NSString *strURL = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline/delete.php?data=/%@/%@",jsonArray[i][@"terminalId"], jsonArray[i][@"datetime"]];
+            NSURL *urlDelete = [NSURL URLWithString:strURL];
+            NSMutableURLRequest *deleteRequest = [NSMutableURLRequest requestWithURL:urlDelete];
+            [deleteRequest setHTTPMethod:@"GET"];
+            [NSURLConnection sendSynchronousRequest:deleteRequest returningResponse:nil error:nil];
+            ///////////////////
+            //削除したら抜ける
+            break;
+            
+            
+        }
+    }
+    UIAlertView *alert =
+    [[UIAlertView alloc] initWithTitle:@"Reset" message:@"Resetしました"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
+    return ;
+}
+
+- (IBAction)BadgeSixResetBtn:(id)sender {
+    NSString *urlList = @"http://webdb.per.c.fun.ac.jp/sofline/viewall.php";
+    
+    
+    NSURLRequest *requestList = [NSURLRequest requestWithURL:[NSURL URLWithString:urlList]];
+    NSData *jsonList = [NSURLConnection sendSynchronousRequest:requestList returningResponse:nil error:nil];
+    NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:jsonList options:0 error:nil];
+    NSArray *jsonArray = [jsonDic objectForKey:@"data"];
+    for (int i = 0; jsonArray.count; i++) {
+        if ([jsonArray[i][@"terminalId"] isEqualToString:@"badge06"]) {
+            
+            NSURL *url = [NSURL URLWithString:@"http://webdb.per.c.fun.ac.jp/sofline/add.php"];
+            NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+            [request setHTTPMethod:@"POST"];
+            //パラメータを作成
+            NSString *body = [NSString stringWithFormat:@"title=%@&message=&latitude=&longitude=&terminalId=%@&option0=0&option2=0&option3=%@&option4=%@&option5=%@", jsonArray[i][@"title"], jsonArray[i][@"terminalId"], jsonArray[i][@"option3"], jsonArray[i][@"option4"], jsonArray[i][@"option5"]];
+            
+            request.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
+            NSURLConnection *connection;
+            connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+            ///////////////////
+            NSString *strURL = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline/delete.php?data=/%@/%@",jsonArray[i][@"terminalId"], jsonArray[i][@"datetime"]];
+            NSURL *urlDelete = [NSURL URLWithString:strURL];
+            NSMutableURLRequest *deleteRequest = [NSMutableURLRequest requestWithURL:urlDelete];
+            [deleteRequest setHTTPMethod:@"GET"];
+            [NSURLConnection sendSynchronousRequest:deleteRequest returningResponse:nil error:nil];
+            ///////////////////
+            //削除したら抜ける
+            break;
+            
+            
+        }
+    }
+    UIAlertView *alert =
+    [[UIAlertView alloc] initWithTitle:@"Reset" message:@"Resetしました"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
+    return ;
+}
+
 -(void) addLoginTime {
     
     NSString *urlList = @"http://webdb.per.c.fun.ac.jp/sofline/viewall.php";
@@ -205,6 +287,7 @@
 {
     //Viewall用
     
+    NSString *subold;
     
     NSString *urlList = @"http://webdb.per.c.fun.ac.jp/sofline/viewall.php";
     
@@ -236,13 +319,22 @@
             time_new = [fmt stringFromDate:nowGet];
             
             //日にちを取得
-            NSString *subold = [time_old substringWithRange:NSMakeRange(8, 2)];
+            NSString *sub = [NSString stringWithFormat:@"%@",time_old];
+            
+            if(sub.length == 0){
+            subold= @"0000年00月00日";
+            }else{
+            subold = [time_old substringWithRange:NSMakeRange(8, 2)];
+            }
+            
             NSString *subnew = [time_new substringWithRange:NSMakeRange(8, 2)];
             
             //同じ日じゃなければcount++
-            if(![subold isEqualToString:subnew]) {
+            if(subold.length == 0){
+                count= 1;
+            }else if(![subold isEqualToString:subnew]) {
                 count++;
-            }
+               }
             
             
             
@@ -307,7 +399,7 @@
 -(void) addLogin2:(NSString *)title badgeFlag:(int)flagCount
 {
     
-    
+    NSString *subold;
     
     NSString *urlList = @"http://webdb.per.c.fun.ac.jp/sofline/viewall.php";
     
@@ -339,7 +431,14 @@
             
             time_new = [fmt stringFromDate:nowGet];
             
-            NSString *subold = [time_old substringWithRange:NSMakeRange(8, 2)];
+            NSString *sub = [NSString stringWithFormat:@"%@",time_old];
+            if(sub.length == 0){
+                subold= @"0000年00月00日";
+            }else{
+                subold = [time_old substringWithRange:NSMakeRange(8, 2)];
+            }
+
+            
             NSString *subnew = [time_new substringWithRange:NSMakeRange(8, 2)];
             
             
@@ -353,6 +452,9 @@
             NSLog(@"%@",subnew);
             NSLog(@"%@",subold);
             NSLog(@"%@",last);
+            
+            
+          
             
             if([subold isEqualToString:last]) {
                 count+= 1;
