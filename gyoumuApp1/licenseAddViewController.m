@@ -45,10 +45,33 @@
     // Pass the selected object to the new view controller.
 }
 */
-//バッジ09カウンタを04から05へ変更
+//登録フラグを１つ増やす
 - (IBAction)licenseAddBtn:(UIButton *)sender {
-    [self addLicense:@"09" badgeFlag:5];
+    
+    /*
+    NSString *urlList = @"http://webdb.per.c.fun.ac.jp/sofline/viewall.php";
+    
+    NSURLRequest *requestList = [NSURLRequest requestWithURL:[NSURL URLWithString:urlList]];
+    NSData *jsonList = [NSURLConnection sendSynchronousRequest:requestList returningResponse:nil error:nil];
+    NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:jsonList options:0 error:nil];
+    NSArray *jsonArray = [jsonDic objectForKey:@"data"];
+    int div = 0;
+    
+    for (int i = 0; jsonArray.count; i++) {
+        if ([jsonArray[i][@"terminalId"] isEqualToString:[NSString stringWithFormat:@"badge03"]]) {
+            div = [jsonArray[i][@"option2"] intValue] + 1;
+            NSLog(@"%d",div);
+                return;
+        }
     }
+     */
+     
+    
+    [self addLicense:@"03" badgeFlag:1];
+    [self addLicense:@"09" badgeFlag:5];
+    [self addLicense:@"10" badgeFlag:10];
+    
+}
 
 //バッジ09リセット処理
 - (IBAction)BadgeNineResetBtn:(id)sender {
@@ -154,7 +177,7 @@
                 NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
                 [request setHTTPMethod:@"POST"];
                 //パラメータを作成
-                NSString *body = [NSString stringWithFormat:@"title=%@&message=&latitude=&longitude=&terminalId=%@&option0=1&option1=%@&option2=&option3=%@&option4=%@&option5=%@",title,jsonArray[i][@"terminalId"],[NSString stringWithFormat:@"%d",count+1], jsonArray[i][@"option3"],jsonArray[i][@"option4"],jsonArray[i][@"option5"]];
+                NSString *body = [NSString stringWithFormat:@"title=%@&message=&latitude=&longitude=&terminalId=%@&option0=0&option1=&option2=%@&option3=%@&option4=%@&option5=%@",title,jsonArray[i][@"terminalId"],[NSString stringWithFormat:@"%d",count], jsonArray[i][@"option3"],jsonArray[i][@"option4"],jsonArray[i][@"option5"]];
                 request.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
                 NSURLConnection *connection;
                 connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
