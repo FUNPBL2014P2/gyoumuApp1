@@ -11,5 +11,8 @@
 @interface licenseAddViewController : UIViewController
 - (IBAction)licenseAddBtn:(UIButton *)sender;
 - (IBAction)BadgeNineResetBtn:(id)sender;
+- (IBAction)BadgeThreeResetBtn:(id)sender;
+- (IBAction)BadgeTenResetBtn:(id)sender;
+
 
 @end
