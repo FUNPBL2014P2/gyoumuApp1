@@ -78,8 +78,8 @@
     NSSortDescriptor *sort = [[NSSortDescriptor alloc]initWithKey:@"title" ascending:YES];
     NSArray *sortArray = [NSArray arrayWithObjects:sort, nil];
     flagArray = (NSMutableArray *)[flagArray sortedArrayUsingDescriptors:sortArray];
- 
-       for(int i = 0; i <= flagArray.count; i++) {
+
+       for(int i = 0; i < flagArray.count; i++) {
         if(i!=8){
             UIImageView *badgeID = [_badge objectAtIndex:i];
             badgeID.contentMode = UIViewContentModeScaleAspectFill;
