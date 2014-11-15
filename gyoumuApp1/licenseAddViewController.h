@@ -13,6 +13,9 @@
 - (IBAction)BadgeNineResetBtn:(id)sender;
 - (IBAction)BadgeThreeResetBtn:(id)sender;
 - (IBAction)BadgeTenResetBtn:(id)sender;
+- (IBAction)BadgeFourteenResetBtn:(id)sender;
+- (IBAction)BadgeFifteenResetBtn:(id)sender;
+- (IBAction)BadgeSixteenResetBtn:(id)sender;
 
 
 @end

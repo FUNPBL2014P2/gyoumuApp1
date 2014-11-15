@@ -71,6 +71,7 @@
     [self addLicense:@"09" badgeFlag:5];
     [self addLicense:@"10" badgeFlag:10];
     
+    
 }
 
 //バッジ09リセット処理
@@ -199,6 +200,131 @@
     
 }
 
+- (IBAction)BadgeFourteenResetBtn:(id)sender {
+    //Viewall用
+    NSString *urlList = @"http://webdb.per.c.fun.ac.jp/sofline/viewall.php";
+    
+    
+    NSURLRequest *requestList = [NSURLRequest requestWithURL:[NSURL URLWithString:urlList]];
+    NSData *jsonList = [NSURLConnection sendSynchronousRequest:requestList returningResponse:nil error:nil];
+    NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:jsonList options:0 error:nil];
+    NSArray *jsonArray = [jsonDic objectForKey:@"data"];
+    for (int i = 0; jsonArray.count; i++) {
+        if ([jsonArray[i][@"terminalId"] isEqualToString:@"badge14"]) {
+            
+            NSURL *url = [NSURL URLWithString:@"http://webdb.per.c.fun.ac.jp/sofline/add.php"];
+            NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+            [request setHTTPMethod:@"POST"];
+            //パラメータを作成
+            NSString *body = [NSString stringWithFormat:@"title=%@&message=&latitude=&longitude=&terminalId=%@&option0=0&option2=0&option3=%@&option4=%@&option5=%@", jsonArray[i][@"title"], jsonArray[i][@"terminalId"], jsonArray[i][@"option3"], jsonArray[i][@"option4"], jsonArray[i][@"option5"]];
+            
+            request.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
+            NSURLConnection *connection;
+            connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+            ///////////////////
+            NSString *strURL = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline/delete.php?data=/%@/%@",jsonArray[i][@"terminalId"], jsonArray[i][@"datetime"]];
+            NSURL *urlDelete = [NSURL URLWithString:strURL];
+            NSMutableURLRequest *deleteRequest = [NSMutableURLRequest requestWithURL:urlDelete];
+            [deleteRequest setHTTPMethod:@"GET"];
+            [NSURLConnection sendSynchronousRequest:deleteRequest returningResponse:nil error:nil];
+            ///////////////////
+            //削除したら抜ける
+            break;
+            
+            
+        }
+    }
+    UIAlertView *alert =
+    [[UIAlertView alloc] initWithTitle:@"Reset" message:@"Resetしました"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
+    return ;
+
+}
+
+- (IBAction)BadgeFifteenResetBtn:(id)sender {
+    //Viewall用
+    NSString *urlList = @"http://webdb.per.c.fun.ac.jp/sofline/viewall.php";
+    
+    
+    NSURLRequest *requestList = [NSURLRequest requestWithURL:[NSURL URLWithString:urlList]];
+    NSData *jsonList = [NSURLConnection sendSynchronousRequest:requestList returningResponse:nil error:nil];
+    NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:jsonList options:0 error:nil];
+    NSArray *jsonArray = [jsonDic objectForKey:@"data"];
+    for (int i = 0; jsonArray.count; i++) {
+        if ([jsonArray[i][@"terminalId"] isEqualToString:@"badge15"]) {
+            
+            NSURL *url = [NSURL URLWithString:@"http://webdb.per.c.fun.ac.jp/sofline/add.php"];
+            NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+            [request setHTTPMethod:@"POST"];
+            //パラメータを作成
+            NSString *body = [NSString stringWithFormat:@"title=%@&message=&latitude=&longitude=&terminalId=%@&option0=0&option2=0&option3=%@&option4=%@&option5=%@", jsonArray[i][@"title"], jsonArray[i][@"terminalId"], jsonArray[i][@"option3"], jsonArray[i][@"option4"], jsonArray[i][@"option5"]];
+            
+            request.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
+            NSURLConnection *connection;
+            connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+            ///////////////////
+            NSString *strURL = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline/delete.php?data=/%@/%@",jsonArray[i][@"terminalId"], jsonArray[i][@"datetime"]];
+            NSURL *urlDelete = [NSURL URLWithString:strURL];
+            NSMutableURLRequest *deleteRequest = [NSMutableURLRequest requestWithURL:urlDelete];
+            [deleteRequest setHTTPMethod:@"GET"];
+            [NSURLConnection sendSynchronousRequest:deleteRequest returningResponse:nil error:nil];
+            ///////////////////
+            //削除したら抜ける
+            break;
+            
+            
+        }
+    }
+    UIAlertView *alert =
+    [[UIAlertView alloc] initWithTitle:@"Reset" message:@"Resetしました"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
+    return ;
+
+}
+
+- (IBAction)BadgeSixteenResetBtn:(id)sender {
+    //Viewall用
+    NSString *urlList = @"http://webdb.per.c.fun.ac.jp/sofline/viewall.php";
+    
+    
+    NSURLRequest *requestList = [NSURLRequest requestWithURL:[NSURL URLWithString:urlList]];
+    NSData *jsonList = [NSURLConnection sendSynchronousRequest:requestList returningResponse:nil error:nil];
+    NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:jsonList options:0 error:nil];
+    NSArray *jsonArray = [jsonDic objectForKey:@"data"];
+    for (int i = 0; jsonArray.count; i++) {
+        if ([jsonArray[i][@"terminalId"] isEqualToString:@"badge16"]) {
+            
+            NSURL *url = [NSURL URLWithString:@"http://webdb.per.c.fun.ac.jp/sofline/add.php"];
+            NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+            [request setHTTPMethod:@"POST"];
+            //パラメータを作成
+            NSString *body = [NSString stringWithFormat:@"title=%@&message=&latitude=&longitude=&terminalId=%@&option0=0&option2=0&option3=%@&option4=%@&option5=%@", jsonArray[i][@"title"], jsonArray[i][@"terminalId"], jsonArray[i][@"option3"], jsonArray[i][@"option4"], jsonArray[i][@"option5"]];
+            
+            request.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
+            NSURLConnection *connection;
+            connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+            ///////////////////
+            NSString *strURL = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline/delete.php?data=/%@/%@",jsonArray[i][@"terminalId"], jsonArray[i][@"datetime"]];
+            NSURL *urlDelete = [NSURL URLWithString:strURL];
+            NSMutableURLRequest *deleteRequest = [NSMutableURLRequest requestWithURL:urlDelete];
+            [deleteRequest setHTTPMethod:@"GET"];
+            [NSURLConnection sendSynchronousRequest:deleteRequest returningResponse:nil error:nil];
+            ///////////////////
+            //削除したら抜ける
+            break;
+            
+            
+        }
+    }
+    UIAlertView *alert =
+    [[UIAlertView alloc] initWithTitle:@"Reset" message:@"Resetしました"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
+    return ;
+
+}
+
+
+
 -(void) addLicense:(NSString *)title badgeFlag:(int)flagCount
 {
     //Viewall用
@@ -246,6 +372,7 @@
                 [[UIAlertView alloc] initWithTitle:@"バッジ取得" message:jsonArray[i][@"option3"]
                                           delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
                 [alert show];
+                [self badgeOwnGet];
                 return ;
             }
             
@@ -272,4 +399,104 @@
         }
     }
 }
+
+//badge14~16のフラグを満たしているかどうか判定するメソッド
+-(void) badgeOwnGet
+{
+    NSString *urlList = @"http://webdb.per.c.fun.ac.jp/sofline/viewall.php";
+    
+    NSURLRequest *requestList = [NSURLRequest requestWithURL:[NSURL URLWithString:urlList]];
+    NSData *jsonList = [NSURLConnection sendSynchronousRequest:requestList returningResponse:nil error:nil];
+    NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:jsonList options:0 error:nil];
+    NSArray *jsonArray = [jsonDic objectForKey:@"data"];
+    //NSMutableArray *badgeArray = [NSMutableArray array];
+    
+    for (int i = 0; i < jsonArray.count; i++) {
+        if ([jsonArray[i][@"terminalId"] isEqualToString:@"badge14"]) {
+            [self badgeOwnCheck:jsonArray[i] badgeFlag:5];
+        }
+        else if ([jsonArray[i][@"terminalId"] isEqualToString:@"badge15"]) {
+            [self badgeOwnCheck:jsonArray[i] badgeFlag:10];
+            
+        }
+        else if ([jsonArray[i][@"terminalId"] isEqualToString:@"badge16"]) {
+            [self badgeOwnCheck:jsonArray[i] badgeFlag:15];
+        }
+        
+    }
+    
+    return;
+}
+
+
+//badgeOwnGetにおいてaddとdeleteを処理するメソッド
+-(void) badgeOwnCheck:(id)badgeArrayobject badgeFlag:(int)flagCount
+{
+    
+    int count = 0;
+    
+    if ( [badgeArrayobject[@"option0"] isEqualToString:@"1"]) {
+        return;
+    }
+    count = [badgeArrayobject[@"option2"] intValue] + 1;
+    
+    if (count == flagCount) {
+        /////////////////取得日時
+        NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
+        [fmt setDateFormat:@"yyyy年MM月dd日 HH時mm分"];
+        NSDate *nowGet = [[NSDate alloc]init];
+        /////////////////////取得日時を送信する処理
+        NSURL *url = [NSURL URLWithString:@"http://webdb.per.c.fun.ac.jp/sofline/add.php"];
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+        [request setHTTPMethod:@"POST"];
+        //パラメータを作成
+        NSString *body = [NSString stringWithFormat:@"title=%@&message=&latitude=&longitude=&terminalId=%@&option0=1&option1=%@&option2=%@&option3=%@&option4=%@&option5=%@",badgeArrayobject[@"title"],badgeArrayobject[@"terminalId"],[fmt stringFromDate:nowGet],[NSString stringWithFormat:@"%d",flagCount], badgeArrayobject[@"option3"],badgeArrayobject[@"option4"],badgeArrayobject[@"option5"]];
+        request.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
+        NSURLConnection *connection;
+        connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+        //////////////////
+        NSString *strURL = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline/delete.php?data=/%@/%@",badgeArrayobject[@"terminalId"], badgeArrayobject[@"datetime"]];
+        NSURL *urlDelete = [NSURL URLWithString:strURL];
+        NSMutableURLRequest *deleteRequest = [NSMutableURLRequest requestWithURL:urlDelete];
+        [deleteRequest setHTTPMethod:@"GET"];
+        [NSURLConnection sendSynchronousRequest:deleteRequest returningResponse:nil error:nil];
+        ///////////////////
+        //削除したら抜ける
+        
+        //////////////////
+        
+        /*
+         UIAlertView *alert =
+         [[UIAlertView alloc] initWithTitle:@"バッジ取得" message:badgeArrayobject[@"option3"]
+         delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+         [alert show];
+         */
+        return ;
+    }
+    
+    else if (count < flagCount) {
+        NSURL *url = [NSURL URLWithString:@"http://webdb.per.c.fun.ac.jp/sofline/add.php"];
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+        [request setHTTPMethod:@"POST"];
+        //パラメータを作成
+        NSString *body = [NSString stringWithFormat:@"title=%@&message=&latitude=&longitude=&terminalId=%@&option0=0&option1=&option2=%@&option3=%@&option4=%@&option5=%@",badgeArrayobject[@"title"],badgeArrayobject[@"terminalId"],[NSString stringWithFormat:@"%d",count], badgeArrayobject[@"option3"],badgeArrayobject[@"option4"],badgeArrayobject[@"option5"]];
+        request.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
+        NSURLConnection *connection;
+        connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+        /////////////////////
+        NSString *strURL = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline/delete.php?data=/%@/%@",badgeArrayobject[@"terminalId"], badgeArrayobject[@"datetime"]];
+        NSURL *urlDelete = [NSURL URLWithString:strURL];
+        NSMutableURLRequest *deleteRequest = [NSMutableURLRequest requestWithURL:urlDelete];
+        [deleteRequest setHTTPMethod:@"GET"];
+        [NSURLConnection sendSynchronousRequest:deleteRequest returningResponse:nil error:nil];
+        ///////////////////
+        //削除したら抜ける
+        return ;
+        /////////////////////
+    }
+    
+    
+}
+
+
 @end
