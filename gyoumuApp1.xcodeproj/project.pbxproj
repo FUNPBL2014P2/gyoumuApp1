@@ -12,7 +12,6 @@
 		EB24DAFC1A07431700C791F7 /* detailBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EB24DAFB1A07431700C791F7 /* detailBackground.jpg */; };
 		EB34E0EE19F4C590001CA342 /* menuicon.png in Resources */ = {isa = PBXBuildFile; fileRef = EB34E0ED19F4C590001CA342 /* menuicon.png */; };
 		EB5C75D61A0483D500EDF2A3 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EB5C75D51A0483D500EDF2A3 /* background.jpg */; };
-		EB5C75DB1A04D17300EDF2A3 /* UIBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5C75DA1A04D17300EDF2A3 /* UIBadge.m */; };
 		EB88FE4D1A0A83800056A932 /* badge02.gif in Resources */ = {isa = PBXBuildFile; fileRef = EB88FE3E1A0A83800056A932 /* badge02.gif */; };
 		EB88FE4E1A0A83800056A932 /* badge03.gif in Resources */ = {isa = PBXBuildFile; fileRef = EB88FE3F1A0A83800056A932 /* badge03.gif */; };
 		EB88FE4F1A0A83800056A932 /* badge04.gif in Resources */ = {isa = PBXBuildFile; fileRef = EB88FE401A0A83800056A932 /* badge04.gif */; };
@@ -86,8 +85,6 @@
 		EB24DAFB1A07431700C791F7 /* detailBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = detailBackground.jpg; sourceTree = "<group>"; };
 		EB34E0ED19F4C590001CA342 /* menuicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menuicon.png; sourceTree = "<group>"; };
 		EB5C75D51A0483D500EDF2A3 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
-		EB5C75D91A04D17300EDF2A3 /* UIBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBadge.h; sourceTree = "<group>"; };
-		EB5C75DA1A04D17300EDF2A3 /* UIBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIBadge.m; sourceTree = "<group>"; };
 		EB88FE3E1A0A83800056A932 /* badge02.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = badge02.gif; sourceTree = "<group>"; };
 		EB88FE3F1A0A83800056A932 /* badge03.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = badge03.gif; sourceTree = "<group>"; };
 		EB88FE401A0A83800056A932 /* badge04.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = badge04.gif; sourceTree = "<group>"; };
@@ -243,6 +240,38 @@
 			path = AMSlideMenu;
 			sourceTree = "<group>";
 		};
+		EBE89AE81A178074002D0DCA /* LicenseAddition */ = {
+			isa = PBXGroup;
+			children = (
+				EBE89A981A176BA4002D0DCA /* selectMakerViewController.h */,
+				EBE89A991A176BA4002D0DCA /* selectMakerViewController.m */,
+				EBE89A9B1A176BFC002D0DCA /* selectSoftwareViewController.h */,
+				EBE89A9C1A176BFC002D0DCA /* selectSoftwareViewController.m */,
+				EBE89A9E1A176C15002D0DCA /* selectVersionViewController.h */,
+				EBE89A9F1A176C15002D0DCA /* selectVersionViewController.m */,
+				EBE89AA11A176C41002D0DCA /* licenseKeyViewController.h */,
+				EBE89AA21A176C41002D0DCA /* licenseKeyViewController.m */,
+				EBE89AA41A176C62002D0DCA /* inputDateViewController.h */,
+				EBE89AA51A176C62002D0DCA /* inputDateViewController.m */,
+				EBE89AA71A176C6F002D0DCA /* confirmViewController.h */,
+				EBE89AA81A176C6F002D0DCA /* confirmViewController.m */,
+			);
+			name = LicenseAddition;
+			sourceTree = "<group>";
+		};
+		EBE89AE91A17809D002D0DCA /* OtherLabView */ = {
+			isa = PBXGroup;
+			children = (
+				EBE89AAA1A1771D4002D0DCA /* labViewController.h */,
+				EBE89AAB1A1771D4002D0DCA /* labViewController.m */,
+				EBE89AE51A177901002D0DCA /* otherBadgeViewController.h */,
+				EBE89AE61A177901002D0DCA /* otherBadgeViewController.m */,
+				EBE89AE21A1778ED002D0DCA /* otherLicenseViewController.h */,
+				EBE89AE31A1778ED002D0DCA /* otherLicenseViewController.m */,
+			);
+			name = OtherLabView;
+			sourceTree = "<group>";
+		};
 		F8A223C419EE6C0D00139991 = {
 			isa = PBXGroup;
 			children = (
@@ -288,8 +317,6 @@
 				EB9DE12B19F03E910071FEEB /* MenuViewController.m */,
 				F8A223E519EE6C0D00139991 /* ViewController.h */,
 				F8A223E619EE6C0D00139991 /* ViewController.m */,
-				EB5C75D91A04D17300EDF2A3 /* UIBadge.h */,
-				EB5C75DA1A04D17300EDF2A3 /* UIBadge.m */,
 				9C34C2841A05438C00F8B7D0 /* licenseAddViewController.h */,
 				9C34C2851A05438C00F8B7D0 /* licenseAddViewController.m */,
 				EBFEFC0E1A032CA100E548B5 /* BadgeViewController.h */,
@@ -298,6 +325,8 @@
 				EB24DAB61A0731A800C791F7 /* BadgeDetailViewController.m */,
 				EBE89A951A1768CF002D0DCA /* licenseViewController.h */,
 				EBE89A961A1768CF002D0DCA /* licenseViewController.m */,
+				EBE89AE81A178074002D0DCA /* LicenseAddition */,
+				EBE89AE91A17809D002D0DCA /* OtherLabView */,
 				F8A223E819EE6C0D00139991 /* Images.xcassets */,
 				F8A223D719EE6C0D00139991 /* Supporting Files */,
 			);
@@ -308,24 +337,6 @@
 			isa = PBXGroup;
 			children = (
 				F8A223E219EE6C0D00139991 /* Main.storyboard */,
-				EBE89AE21A1778ED002D0DCA /* otherLicenseViewController.h */,
-				EBE89AE31A1778ED002D0DCA /* otherLicenseViewController.m */,
-				EBE89AE51A177901002D0DCA /* otherBadgeViewController.h */,
-				EBE89AE61A177901002D0DCA /* otherBadgeViewController.m */,
-				EBE89AAA1A1771D4002D0DCA /* labViewController.h */,
-				EBE89AAB1A1771D4002D0DCA /* labViewController.m */,
-				EBE89A981A176BA4002D0DCA /* selectMakerViewController.h */,
-				EBE89A991A176BA4002D0DCA /* selectMakerViewController.m */,
-				EBE89A9B1A176BFC002D0DCA /* selectSoftwareViewController.h */,
-				EBE89A9C1A176BFC002D0DCA /* selectSoftwareViewController.m */,
-				EBE89A9E1A176C15002D0DCA /* selectVersionViewController.h */,
-				EBE89A9F1A176C15002D0DCA /* selectVersionViewController.m */,
-				EBE89AA11A176C41002D0DCA /* licenseKeyViewController.h */,
-				EBE89AA21A176C41002D0DCA /* licenseKeyViewController.m */,
-				EBE89AA41A176C62002D0DCA /* inputDateViewController.h */,
-				EBE89AA51A176C62002D0DCA /* inputDateViewController.m */,
-				EBE89AA71A176C6F002D0DCA /* confirmViewController.h */,
-				EBE89AA81A176C6F002D0DCA /* confirmViewController.m */,
 				EB88FE3D1A0A83340056A932 /* SourceImages */,
 				F8F60B921A00D104002717F2 /* jsonUser.txt */,
 				F8A223D819EE6C0D00139991 /* gyoumuApp1-Info.plist */,
@@ -496,7 +507,6 @@
 				EB9DE12C19F03E910071FEEB /* MenuViewController.m in Sources */,
 				F8A223E119EE6C0D00139991 /* AppDelegate.m in Sources */,
 				EB9DE12519F03D2D0071FEEB /* AMSlideMenuLeftTableViewController.m in Sources */,
-				EB5C75DB1A04D17300EDF2A3 /* UIBadge.m in Sources */,
 				EB9DE12419F03D2D0071FEEB /* AMSlideMenuLeftMenuSegue.m in Sources */,
 				F8A223DD19EE6C0D00139991 /* main.m in Sources */,
 				EBE89A971A1768CF002D0DCA /* licenseViewController.m in Sources */,
