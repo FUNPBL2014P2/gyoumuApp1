@@ -859,7 +859,6 @@
                                 </state>
                                 <connections>
                                     <action selector="BadgeSixteenResetBtn:" destination="9n5-kd-hae" eventType="touchUpInside" id="vjk-gL-FuM"/>
-				</connections>
 				</button>
 
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SgL-K0-wJN">
