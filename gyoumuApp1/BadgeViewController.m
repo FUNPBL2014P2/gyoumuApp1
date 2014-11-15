@@ -80,18 +80,12 @@
     flagArray = (NSMutableArray *)[flagArray sortedArrayUsingDescriptors:sortArray];
 
        for(int i = 0; i < flagArray.count; i++) {
-        if(i!=8){
-            UIImageView *badgeID = [_badge objectAtIndex:i];
-            badgeID.contentMode = UIViewContentModeScaleAspectFill;
-            badgeID.image = (i<9)? [UIImage imageNamed:[NSString stringWithFormat:@"badge0%d.gif",i+1]]:[UIImage imageNamed:[NSString stringWithFormat:@"badge%d.gif",i+1]];
-        }else{
             if([flagArray[i][@"option0"] isEqualToString:@"1"]){
                 UIImageView *badgeID = [_badge objectAtIndex:i];
                 badgeID.contentMode = UIViewContentModeScaleAspectFill;
                 badgeID.image = (i<9)? [UIImage imageNamed:[NSString stringWithFormat:@"badge0%d.gif",i+1]]:[UIImage imageNamed:[NSString stringWithFormat:@"badge%d.gif",i+1]];
             }
-        }
-    }
+       }
 }
 
 - (void)didReceiveMemoryWarning
