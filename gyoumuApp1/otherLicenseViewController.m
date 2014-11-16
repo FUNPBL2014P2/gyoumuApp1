@@ -7,11 +7,11 @@
 //
 
 #import "otherLicenseViewController.h"
-#import "tabViewController.h"
 
-@interface otherLicenseViewController ()
 
-@property (weak, nonatomic) IBOutlet UILabel *name;
+@interface otherLicenseViewController () 
+
+
 
 @end
 
@@ -26,6 +26,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 /*
 #pragma mark - Navigation
