@@ -1102,10 +1102,10 @@
             </objects>
             <point key="canvasLocation" x="11310" y="-1210"/>
         </scene>
-        <!--Badge View Controller - バッジ-->
+        <!--Other Badge View Controller - バッジ-->
         <scene sceneID="MFa-v4-KUI">
             <objects>
-                <viewController id="z2N-KT-wvC" customClass="BadgeViewController" sceneMemberID="viewController">
+                <viewController id="z2N-KT-wvC" customClass="otherBadgeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="d5H-wT-Faq"/>
                         <viewControllerLayoutGuide type="bottom" id="S0T-nb-t14"/>

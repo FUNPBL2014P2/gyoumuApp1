@@ -7,6 +7,7 @@
 //
 
 #import "labTableViewController.h"
+#import "AppDelegate.h"
 
 @interface labTableViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -42,6 +43,12 @@
 
 #pragma mark - Table view data source
 
+-(void) viewWillAppear:(BOOL)animated
+{
+    AppDelegate *ap = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    //otherLabPathを更新
+    NSLog(@"ライセンス一覧にて%@を閲覧中",ap.LabPath);
+}
 -(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;

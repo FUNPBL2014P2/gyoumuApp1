@@ -8,6 +8,7 @@
 
 #import "labViewController.h"
 #import "tabViewController.h"
+#import "AppDelegate.h"
 
 @interface labViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -28,6 +29,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 /*
 #pragma mark - Navigation
@@ -67,7 +69,10 @@
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"%@を選択しています",testName[indexPath.row]);
+   // NSLog(@"%@を選択しています",testName[indexPath.row]);
+    AppDelegate *ap = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    //otherLabPathを更新
+    ap.LabPath = testName[indexPath.row];
     [self performSegueWithIdentifier:@"tabView" sender:self];
     
 }
