@@ -11,6 +11,7 @@
 
 @interface otherBadgeViewController ()
 
+
 @end
 
 @implementation otherBadgeViewController

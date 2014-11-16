@@ -47,6 +47,7 @@
 		EBE89AAC1A1771D4002D0DCA /* labViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE89AAB1A1771D4002D0DCA /* labViewController.m */; };
 		EBE89AE41A1778ED002D0DCA /* otherLicenseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE89AE31A1778ED002D0DCA /* otherLicenseViewController.m */; };
 		EBE89AE71A177901002D0DCA /* otherBadgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE89AE61A177901002D0DCA /* otherBadgeViewController.m */; };
+		F81A11D41A1898620064103A /* tabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F81A11D31A1898620064103A /* tabViewController.m */; };
 		F87F6A3A19F939740088A0D6 /* guestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F87F6A3919F939740088A0D6 /* guestViewController.m */; };
 		F87F6A7F19FA28E00088A0D6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F87F6A7E19FA28E00088A0D6 /* QuartzCore.framework */; };
 		F889EFAF19EED0760049B3A7 /* PerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F889EFAE19EED0760049B3A7 /* PerViewController.m */; };
@@ -140,6 +141,8 @@
 		EBE89AE51A177901002D0DCA /* otherBadgeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = otherBadgeViewController.h; sourceTree = "<group>"; };
 		EBE89AE61A177901002D0DCA /* otherBadgeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = otherBadgeViewController.m; sourceTree = "<group>"; };
 		EBFEFC0E1A032CA100E548B5 /* BadgeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadgeViewController.h; sourceTree = "<group>"; };
+		F81A11D21A1898620064103A /* tabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tabViewController.h; sourceTree = "<group>"; };
+		F81A11D31A1898620064103A /* tabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tabViewController.m; sourceTree = "<group>"; };
 		F87F6A3819F939740088A0D6 /* guestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = guestViewController.h; sourceTree = "<group>"; };
 		F87F6A3919F939740088A0D6 /* guestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = guestViewController.m; sourceTree = "<group>"; };
 		F87F6A7E19FA28E00088A0D6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -268,6 +271,8 @@
 				EBE89AE61A177901002D0DCA /* otherBadgeViewController.m */,
 				EBE89AE21A1778ED002D0DCA /* otherLicenseViewController.h */,
 				EBE89AE31A1778ED002D0DCA /* otherLicenseViewController.m */,
+				F81A11D21A1898620064103A /* tabViewController.h */,
+				F81A11D31A1898620064103A /* tabViewController.m */,
 			);
 			name = OtherLabView;
 			sourceTree = "<group>";
@@ -493,6 +498,7 @@
 				EB9DE12319F03D2D0071FEEB /* AMSlideMenuContentSegue.m in Sources */,
 				F8A223E719EE6C0D00139991 /* ViewController.m in Sources */,
 				EBE89AE71A177901002D0DCA /* otherBadgeViewController.m in Sources */,
+				F81A11D41A1898620064103A /* tabViewController.m in Sources */,
 				EBE89AA91A176C6F002D0DCA /* confirmViewController.m in Sources */,
 				EB9DE12819F03D2D0071FEEB /* AMSlideMenuRightTableViewController.m in Sources */,
 				EB24DAB71A0731A800C791F7 /* BadgeDetailViewController.m in Sources */,

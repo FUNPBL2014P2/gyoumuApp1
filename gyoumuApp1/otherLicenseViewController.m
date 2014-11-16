@@ -7,8 +7,11 @@
 //
 
 #import "otherLicenseViewController.h"
+#import "tabViewController.h"
 
 @interface otherLicenseViewController ()
+
+@property (weak, nonatomic) IBOutlet UILabel *name;
 
 @end
 
@@ -16,7 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+            // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
