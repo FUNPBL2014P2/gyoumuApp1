@@ -47,6 +47,7 @@
 		EBE89AAC1A1771D4002D0DCA /* labViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE89AAB1A1771D4002D0DCA /* labViewController.m */; };
 		EBE89AE41A1778ED002D0DCA /* otherLicenseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE89AE31A1778ED002D0DCA /* otherLicenseViewController.m */; };
 		EBE89AE71A177901002D0DCA /* otherBadgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE89AE61A177901002D0DCA /* otherBadgeViewController.m */; };
+		F81A121E1A1A2ACF0064103A /* WebdbConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = F81A121D1A1A2ACF0064103A /* WebdbConnect.m */; };
 		F87F6A3A19F939740088A0D6 /* guestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F87F6A3919F939740088A0D6 /* guestViewController.m */; };
 		F87F6A7F19FA28E00088A0D6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F87F6A7E19FA28E00088A0D6 /* QuartzCore.framework */; };
 		F889EFAF19EED0760049B3A7 /* PerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F889EFAE19EED0760049B3A7 /* PerViewController.m */; };
@@ -140,6 +141,8 @@
 		EBE89AE51A177901002D0DCA /* otherBadgeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = otherBadgeViewController.h; sourceTree = "<group>"; };
 		EBE89AE61A177901002D0DCA /* otherBadgeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = otherBadgeViewController.m; sourceTree = "<group>"; };
 		EBFEFC0E1A032CA100E548B5 /* BadgeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadgeViewController.h; sourceTree = "<group>"; };
+		F81A121C1A1A2ACF0064103A /* WebdbConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebdbConnect.h; sourceTree = "<group>"; };
+		F81A121D1A1A2ACF0064103A /* WebdbConnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebdbConnect.m; sourceTree = "<group>"; };
 		F87F6A3819F939740088A0D6 /* guestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = guestViewController.h; sourceTree = "<group>"; };
 		F87F6A3919F939740088A0D6 /* guestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = guestViewController.m; sourceTree = "<group>"; };
 		F87F6A7E19FA28E00088A0D6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -309,14 +312,16 @@
 				EB9DE11319F03D2D0071FEEB /* AMSlideMenu */,
 				F8A223DF19EE6C0D00139991 /* AppDelegate.h */,
 				F8A223E019EE6C0D00139991 /* AppDelegate.m */,
+				F81A121C1A1A2ACF0064103A /* WebdbConnect.h */,
+				F81A121D1A1A2ACF0064103A /* WebdbConnect.m */,
+				F8A223E519EE6C0D00139991 /* ViewController.h */,
+				F8A223E619EE6C0D00139991 /* ViewController.m */,
 				F889EFAD19EED0760049B3A7 /* PerViewController.h */,
 				F889EFAE19EED0760049B3A7 /* PerViewController.m */,
 				F87F6A3819F939740088A0D6 /* guestViewController.h */,
 				F87F6A3919F939740088A0D6 /* guestViewController.m */,
 				EB9DE12A19F03E910071FEEB /* MenuViewController.h */,
 				EB9DE12B19F03E910071FEEB /* MenuViewController.m */,
-				F8A223E519EE6C0D00139991 /* ViewController.h */,
-				F8A223E619EE6C0D00139991 /* ViewController.m */,
 				9C34C2841A05438C00F8B7D0 /* licenseAddViewController.h */,
 				9C34C2851A05438C00F8B7D0 /* licenseAddViewController.m */,
 				EBFEFC0E1A032CA100E548B5 /* BadgeViewController.h */,
@@ -501,6 +506,7 @@
 				EBE89AA61A176C62002D0DCA /* inputDateViewController.m in Sources */,
 				EBE89AE41A1778ED002D0DCA /* otherLicenseViewController.m in Sources */,
 				EBE89AA31A176C41002D0DCA /* licenseKeyViewController.m in Sources */,
+				F81A121E1A1A2ACF0064103A /* WebdbConnect.m in Sources */,
 				EB9DE12619F03D2D0071FEEB /* AMSlideMenuMainViewController.m in Sources */,
 				EBE89AA01A176C15002D0DCA /* selectVersionViewController.m in Sources */,
 				F889EFAF19EED0760049B3A7 /* PerViewController.m in Sources */,
