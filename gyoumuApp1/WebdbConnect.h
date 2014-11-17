@@ -11,5 +11,5 @@
 @interface WebdbConnect : NSObject
 - (void)setLabArray:(NSString *)labCode;
 -(NSArray *)labArray;
-
+-(NSObject *)labBadgeGet:(NSString *)badgeTitle;
 @end

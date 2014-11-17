@@ -29,4 +29,15 @@
 {
     return _labArray;
 }
+
+//badgeのタイトルと一致する情報を返す
+-(NSObject *)labBadgeGet:(NSString *)badgeTitle
+{
+    for (int i = 0; i < _labArray.count; i++) {
+        if ([_labArray[i][@"terminalId"] isEqualToString:[NSString stringWithFormat:@"badge%@",badgeTitle]]) {
+            return _labArray[i];
+        }
+    }
+    return nil;
+}
 @end

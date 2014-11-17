@@ -37,7 +37,7 @@
     [[loginBtn layer] setBorderWidth:btnBorderRectPoint];
     WebdbConnect *test1 = [[WebdbConnect alloc] init];
     [test1 setLabArray:@"1"];
-    NSLog(@"%@", [test1 labArray]);
+    NSLog(@"%@", [[test1 labBadgeGet:@"09"] valueForKeyPath:@"terminalId"]);
 }
 
 - (void)viewDidAppear:(BOOL)animated
