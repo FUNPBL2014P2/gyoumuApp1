@@ -12,4 +12,7 @@
 - (void)setLabArray:(NSString *)labCode;
 -(NSArray *)labArray;
 -(NSObject *)labBadgeGet:(NSString *)badgeTitle;
+
+-(id)initWithLabArray:(NSString *)labCode;
+
 @end

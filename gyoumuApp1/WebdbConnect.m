@@ -40,4 +40,19 @@
     }
     return nil;
 }
+
+-(id)initWithLabArray:(NSString *)labCode
+{
+    self = [super init];
+    if (self) {
+        NSString *urlList = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/viewall.php",labCode];
+        
+        NSURLRequest *requestList = [NSURLRequest requestWithURL:[NSURL URLWithString:urlList]];
+        NSData *jsonList = [NSURLConnection sendSynchronousRequest:requestList returningResponse:nil error:nil];
+        NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:jsonList options:0 error:nil];
+        NSArray *jsonArray = [jsonDic objectForKey:@"data"];
+        _labArray = jsonArray;
+    }
+    return self;
+}
 @end
