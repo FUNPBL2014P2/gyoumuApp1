@@ -9,6 +9,7 @@
 #import "labViewController.h"
 #import "tabViewController.h"
 #import "AppDelegate.h"
+#import "WebdbConnect.h"
 
 @interface labViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -18,6 +19,7 @@
 @implementation labViewController
 {
     NSArray *testName;
+    NSMutableArray *labCheckArray;
 }
 
 - (void)viewDidLoad {
@@ -48,12 +50,33 @@
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSMutableArray *userData = [userDefaults objectForKey:@"userData"];
+    labCheckArray = [NSMutableArray array];
+    int labNumber = 3;
+    NSInteger labCount = 0;
+    for (int i = 0; i < labNumber; i++) {
+        if (i+1 != [[userData valueForKeyPath:@"labCode"] intValue]) {
+            [labCheckArray addObject:[NSNumber numberWithInteger:i+1]];
+            labCount++;
+        }
+    }
+    NSLog(@"%@",labCheckArray);
+    return labCount;
 }
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    testName = [NSArray arrayWithObjects:@"奥野研究室",@"大場研究室",@"伊藤研究室", nil];
+    //Supporting Files内のjsonUser.txtを参照
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"jsonUser" ofType:@"txt"];
+    NSData *jsondata = [NSData dataWithContentsOfFile:path];
+    NSDictionary *jsonDlc = [NSJSONSerialization JSONObjectWithData:jsondata options:0 error:nil];
+    
+    //キーが「lab」研究室一覧を指定
+    NSMutableArray *jsonArray1 = [jsonDlc objectForKey:@"lab"];
+    //NSLog(@"%@",jsonArray1);
+    //
+
     //セルの準備
     NSString *cellIdentifier = @"Cell";
     
@@ -61,9 +84,14 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
-    NSString *title =[NSString stringWithFormat:@"%@",testName[indexPath.row]];
-    cell.textLabel.text = title;
     
+    //labCheckArrayにはログインユーザではない研究室の番号がそれぞれ格納されている。
+    //それをtableViewのindexPath.row(上から１列目は０番目なので)によって指定する
+    //するとlabCheckArrayは他研究室の番号を示すのでintValueで数値に直す
+    //最後にjsonArray1でその数値の対応するjsonUser.txt内の"lab"配列を参照している
+    NSString *title =[NSString stringWithFormat:@"%@",jsonArray1[[labCheckArray[indexPath.row] intValue]-1]];
+    cell.textLabel.text = title;
+   
     return cell;
 }
 
@@ -72,17 +100,27 @@
    // NSLog(@"%@を選択しています",testName[indexPath.row]);
     AppDelegate *ap = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     //otherLabPathを更新
-    ap.LabPath = testName[indexPath.row];
+    ap.LabPath = labCheckArray[indexPath.row];
     [self performSegueWithIdentifier:@"tabView" sender:self];
     
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    //Supporting Files内のjsonUser.txtを参照
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"jsonUser" ofType:@"txt"];
+    NSData *jsondata = [NSData dataWithContentsOfFile:path];
+    NSDictionary *jsonDlc = [NSJSONSerialization JSONObjectWithData:jsondata options:0 error:nil];
+    
+    //キーが「lab」研究室一覧を指定
+    NSMutableArray *jsonArray1 = [jsonDlc objectForKey:@"lab"];
+    //NSLog(@"%@",jsonArray1);
+    //
+
     if ([[segue identifier] isEqualToString:@"tabView"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         tabViewController *chengeView = segue.destinationViewController;
-        chengeView.labName = testName[indexPath.row];
+        chengeView.labName = jsonArray1[[labCheckArray[indexPath.row] intValue]-1];
     }
 }
 @end

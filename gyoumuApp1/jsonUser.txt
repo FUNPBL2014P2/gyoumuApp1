@@ -18,5 +18,9 @@
     {"terminalId": "123","username": "john","timestamp": "2014/10/02 13:37:06","title": "2014/10/02 13:37:06 MA-015","path": "/MA-015/20141002-133706","name": "ジョン","labCode": "3"},
     {"terminalId": "123","username": "yao","timestamp": "2014/10/02 13:37:06","title": "2014/10/02 13:37:06 MA-015","path": "/MA-015/20141002-133706","name": "ヤオ","labCode": "3"},
     {"terminalId": "123","username": "jordan","timestamp": "2014/10/02 13:37:06","title": "2014/10/02 13:37:06 MA-015","path": "/MA-015/20141002-133706","name": "ジョーダン","labCode": "3"},
-    {"terminalId": "123","username": "anthony","timestamp": "2014/10/02 13:37:06","title": "2014/10/02 13:37:06 MA-015","path": "/MA-015/20141002-133706","name": "アンソニー","labCode": "3"}]
+    {"terminalId": "123","username": "anthony","timestamp": "2014/10/02 13:37:06","title": "2014/10/02 13:37:06 MA-015","path": "/MA-015/20141002-133706","name": "アンソニー","labCode": "3"}],
+    
+    "comment": "研究室一覧",
+    "lab": ["業務研究室","観光研究室","教育研究室"]
+
     }

@@ -37,6 +37,15 @@
     [[loginBtn layer] setBorderWidth:btnBorderRectPoint];
     WebdbConnect *test1 = [[WebdbConnect alloc]initWithLabArray:@"1"];
     NSLog(@"%@", [[test1 labBadgeGet:@"09"] valueForKeyPath:@"terminalId"]);
+    //Supporting Files内のjsonUser.txtを参照
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"jsonUser" ofType:@"txt"];
+    NSData *jsondata = [NSData dataWithContentsOfFile:path];
+    NSDictionary *jsonDlc = [NSJSONSerialization JSONObjectWithData:jsondata options:0 error:nil];
+    
+    //キーが「０」の研究室を指定
+    NSMutableArray *jsonArray1 = [jsonDlc objectForKey:@"lab"];
+    
+    NSLog(@"%@",jsonArray1[1]);
 }
 
 
