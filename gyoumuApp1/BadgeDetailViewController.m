@@ -38,7 +38,10 @@
         [self.view sendSubviewToBack:_detailBackground];
     
     //NSLog(@"%@", receiveBadgeName);
-    NSString *strURL = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline/view.php?data=%@",receiveBadgeName];
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSMutableArray *userData = [userDefaults objectForKey:@"userData"];
+
+    NSString *strURL = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/view.php?data=%@",[userData valueForKeyPath:@"labCode"],receiveBadgeName];
     NSURL *urlView = [NSURL URLWithString:strURL];
     NSMutableURLRequest *viewRequest = [NSMutableURLRequest requestWithURL:urlView];
     [viewRequest setHTTPMethod:@"GET"];
