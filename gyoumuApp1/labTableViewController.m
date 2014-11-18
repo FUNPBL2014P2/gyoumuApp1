@@ -8,12 +8,18 @@
 
 #import "labTableViewController.h"
 #import "AppDelegate.h"
+#import "WebdbConnect.h"
 
 @interface labTableViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @end
 
 @implementation labTableViewController
+{
+    WebdbConnect *test;
+    NSMutableArray *testArray;
+}
+
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -27,7 +33,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    test = [[WebdbConnect alloc] init];
+    [test setLabArray:@"1"];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -50,13 +57,24 @@
     NSLog(@"ライセンス一覧にて%@を閲覧中",ap.LabPath);
 }
 -(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView
+
 {
     return 1;
 }
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;
+    int count = 0;
+    NSRange searchResult;
+    testArray = [NSMutableArray array];
+    for (int i =0; i < [test labArray].count; i++) {
+        searchResult = [[test labArray][i][@"username"] rangeOfString:@"badge"];
+        if (searchResult.location != NSNotFound) {
+            [testArray addObject:[test labArray][i]];
+            count++;
+        }
+    }
+    return count;
 }
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -69,7 +87,7 @@
     }
     
     UILabel *label1 = (UILabel *)[cell viewWithTag:1];
-    label1.text = @"Microsoft";
+    label1.text = [NSString stringWithFormat:@"%@",[testArray[indexPath.row] valueForKeyPath:@"terminalId"]];
     UILabel *label2 = (UILabel *)[cell viewWithTag:2];
     label2.text = @"Word";
     UILabel *label3 = (UILabel *)[cell viewWithTag:3];

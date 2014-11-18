@@ -40,13 +40,6 @@
     NSLog(@"%@", [[test1 labBadgeGet:@"09"] valueForKeyPath:@"terminalId"]);
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    
-    NSString *test = @"";
-    if(test.length == 0)NSLog(@"空文字の時に通る条件CLEAR!");
-    
-}
 
 - (void)didReceiveMemoryWarning
 {
