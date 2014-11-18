@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate>{
+    //研究室一覧選択時のパス
+    NSString *LabPath;
+}
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) NSString *LabPath;
 
 @end
