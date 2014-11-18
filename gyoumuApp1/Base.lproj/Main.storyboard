@@ -1338,6 +1338,71 @@
             </objects>
             <point key="canvasLocation" x="8310" y="3372"/>
         </scene>
+        <!--Other Badge Detail View Controller-->
+        <scene sceneID="gmj-2e-LAv">
+            <objects>
+                <viewController storyboardIdentifier="otherBadgeDetail" useStoryboardIdentifierAsRestorationIdentifier="YES" id="GT1-aS-gDp" customClass="otherBadgeDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HeH-GX-7MR"/>
+                        <viewControllerLayoutGuide type="bottom" id="W1J-4g-FtT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleAspectFit" id="I9a-ke-D8U">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="detailBackground.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="eKx-Zp-gy5">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="529" translatesAutoresizingMaskIntoConstraints="NO" id="ESY-vO-n8i">
+                                <rect key="frame" x="121" y="574" width="529" height="87"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="491" translatesAutoresizingMaskIntoConstraints="NO" id="OCs-kE-Qej">
+                                <rect key="frame" x="139" y="736" width="491" height="61"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wTm-1K-s3i">
+                                <rect key="frame" x="139" y="917" width="503" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s5G-5O-gN3">
+                                <rect key="frame" x="121" y="147" width="63" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="8ep-G2-mKl">
+                                <rect key="frame" x="186" y="135" width="396" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5XZ-xB-luS">
+                                <rect key="frame" x="274" y="254" width="221" height="221"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="badgeConditionLabel" destination="OCs-kE-Qej" id="n4f-Ne-KLB"/>
+                        <outlet property="badgeExpLabel" destination="ESY-vO-n8i" id="PIe-v2-EVt"/>
+                        <outlet property="badgeGetTimeLabel" destination="wTm-1K-s3i" id="TKh-wy-l5p"/>
+                        <outlet property="badgeImage" destination="5XZ-xB-luS" id="Hjv-PZ-c7x"/>
+                        <outlet property="badgeNumLabel" destination="s5G-5O-gN3" id="b75-Pf-Hur"/>
+                        <outlet property="badgeTitleLabel" destination="8ep-G2-mKl" id="csI-nD-dVP"/>
+                        <outlet property="detailBackground" destination="eKx-Zp-gy5" id="oTT-kh-xaT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="geB-dG-gsM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="9209" y="3372"/>
+        </scene>
     </scenes>
     <resources>
         <image name="background.jpg" width="1536" height="2048"/>
