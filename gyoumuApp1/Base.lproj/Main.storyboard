@@ -657,8 +657,8 @@
             <objects>
                 <tabBarController id="kWz-IB-FzQ" customClass="tabViewController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="2k6-H8-uG4"/>
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="EgT-rQ-rR6">
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="EgT-rQ-rR6">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -673,12 +673,12 @@
             </objects>
             <point key="canvasLocation" x="7239" y="2482"/>
         </scene>
-        <!--Lab Table View Controller - Item-->
+        <!--Lab Table View Controller - ライセンス情報-->
         <scene sceneID="fiE-rf-wCc">
             <objects>
                 <tableViewController id="pkm-o6-1O1" customClass="labTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="183" sectionHeaderHeight="22" sectionFooterHeight="22" id="e3W-RE-mHW">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="975"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -763,7 +763,7 @@
                             <outlet property="delegate" destination="pkm-o6-1O1" id="fIe-bA-AFL"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="BH7-P3-toT"/>
+                    <tabBarItem key="tabBarItem" title="ライセンス情報" id="BH7-P3-toT"/>
                     <navigationItem key="navigationItem" id="iVj-Wp-khI"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xRR-rI-RdS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1111,62 +1111,62 @@
                         <viewControllerLayoutGuide type="bottom" id="S0T-nb-t14"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="y4L-Vq-EWb">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="975"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="N3r-CF-bZE">
-                                <rect key="frame" x="0.0" y="0.0" width="788" height="1024"/>
+                                <rect key="frame" x="0.0" y="-25" width="788" height="1024"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7bH-cz-ivE">
-                                <rect key="frame" x="243" y="261" width="128" height="128"/>
+                                <rect key="frame" x="243" y="247" width="128" height="128"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="74v-RI-vD0">
-                                <rect key="frame" x="419" y="261" width="128" height="128"/>
+                                <rect key="frame" x="419" y="247" width="128" height="128"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2JU-m3-nPe">
-                                <rect key="frame" x="66" y="432" width="128" height="128"/>
+                                <rect key="frame" x="66" y="408" width="128" height="128"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w5W-KT-oyN">
-                                <rect key="frame" x="243" y="432" width="128" height="128"/>
+                                <rect key="frame" x="243" y="408" width="128" height="128"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x7j-Ua-vn2">
-                                <rect key="frame" x="419" y="432" width="128" height="128"/>
+                                <rect key="frame" x="419" y="408" width="128" height="128"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bYt-9R-E7h">
-                                <rect key="frame" x="593" y="432" width="128" height="128"/>
+                                <rect key="frame" x="593" y="408" width="128" height="128"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ULK-e1-mQC">
-                                <rect key="frame" x="66" y="601" width="128" height="128"/>
+                                <rect key="frame" x="66" y="568" width="128" height="128"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2hQ-Nc-Wvo">
-                                <rect key="frame" x="243" y="601" width="128" height="128"/>
+                                <rect key="frame" x="243" y="568" width="128" height="128"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fnm-bO-655">
-                                <rect key="frame" x="419" y="601" width="128" height="128"/>
+                                <rect key="frame" x="419" y="568" width="128" height="128"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PiJ-EO-NoF">
-                                <rect key="frame" x="593" y="601" width="128" height="128"/>
+                                <rect key="frame" x="593" y="568" width="128" height="128"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hO4-HY-IRy">
-                                <rect key="frame" x="66" y="776" width="128" height="128"/>
+                                <rect key="frame" x="66" y="734" width="128" height="128"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P4X-iY-PI3">
-                                <rect key="frame" x="243" y="776" width="128" height="128"/>
+                                <rect key="frame" x="243" y="734" width="128" height="128"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jha-cF-x7b">
-                                <rect key="frame" x="419" y="776" width="128" height="128"/>
+                                <rect key="frame" x="419" y="734" width="128" height="128"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hqy-7h-bDy">
-                                <rect key="frame" x="593" y="776" width="128" height="128"/>
+                                <rect key="frame" x="593" y="734" width="128" height="128"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6rd-nb-4ts">
-                                <rect key="frame" x="593" y="261" width="128" height="128"/>
+                                <rect key="frame" x="593" y="247" width="128" height="128"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7d3-Vg-kAk">
-                                <rect key="frame" x="66" y="261" width="128" height="128"/>
+                                <rect key="frame" x="66" y="247" width="128" height="128"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="caL-js-8y6">
-                                <rect key="frame" x="66" y="261" width="128" height="128"/>
+                                <rect key="frame" x="66" y="247" width="128" height="128"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1175,7 +1175,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CjE-7W-jaG">
-                                <rect key="frame" x="243" y="261" width="128" height="127"/>
+                                <rect key="frame" x="243" y="247" width="128" height="127"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1184,7 +1184,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TKz-s0-dzA">
-                                <rect key="frame" x="419" y="261" width="128" height="128"/>
+                                <rect key="frame" x="419" y="247" width="128" height="128"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1193,7 +1193,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KIU-He-SKD">
-                                <rect key="frame" x="593" y="261" width="128" height="127"/>
+                                <rect key="frame" x="593" y="247" width="128" height="127"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1202,7 +1202,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5bU-Tq-nCV">
-                                <rect key="frame" x="66" y="432" width="128" height="128"/>
+                                <rect key="frame" x="66" y="408" width="128" height="128"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1211,7 +1211,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Vc-uc-bh6">
-                                <rect key="frame" x="243" y="432" width="128" height="128"/>
+                                <rect key="frame" x="243" y="408" width="128" height="128"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1220,7 +1220,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vhe-X7-jSd">
-                                <rect key="frame" x="419" y="432" width="128" height="128"/>
+                                <rect key="frame" x="419" y="408" width="128" height="128"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1229,7 +1229,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tie-Ng-pSY">
-                                <rect key="frame" x="593" y="432" width="128" height="128"/>
+                                <rect key="frame" x="593" y="408" width="128" height="128"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1238,7 +1238,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fe7-3e-vHo">
-                                <rect key="frame" x="66" y="601" width="128" height="128"/>
+                                <rect key="frame" x="66" y="568" width="128" height="128"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1247,7 +1247,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EIi-VC-7vL">
-                                <rect key="frame" x="243" y="601" width="128" height="128"/>
+                                <rect key="frame" x="243" y="568" width="128" height="128"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1256,7 +1256,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g0l-mJ-07d">
-                                <rect key="frame" x="66" y="776" width="128" height="128"/>
+                                <rect key="frame" x="66" y="734" width="128" height="128"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1265,7 +1265,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TKu-x5-3lp">
-                                <rect key="frame" x="243" y="776" width="128" height="129"/>
+                                <rect key="frame" x="243" y="734" width="128" height="129"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1274,7 +1274,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XC0-ym-FaG">
-                                <rect key="frame" x="419" y="601" width="128" height="128"/>
+                                <rect key="frame" x="419" y="568" width="128" height="128"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1283,7 +1283,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SV8-nP-0F1">
-                                <rect key="frame" x="593" y="776" width="128" height="128"/>
+                                <rect key="frame" x="593" y="734" width="128" height="128"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1292,7 +1292,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZdB-R1-XBK">
-                                <rect key="frame" x="593" y="601" width="128" height="128"/>
+                                <rect key="frame" x="593" y="568" width="128" height="128"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1301,7 +1301,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VTl-gd-Y7a">
-                                <rect key="frame" x="419" y="776" width="128" height="129"/>
+                                <rect key="frame" x="419" y="734" width="128" height="129"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
