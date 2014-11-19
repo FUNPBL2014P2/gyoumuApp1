@@ -51,11 +51,17 @@
     }
      */ //ログインユーザのそれぞれの値を取り出せます
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    
-
     NSMutableArray *userData = [userDefaults objectForKey:@"userData"];
+    //Supporting Files内のjsonUser.txtを参照
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"jsonUser" ofType:@"txt"];
+    NSData *jsondata = [NSData dataWithContentsOfFile:path];
+    NSDictionary *jsonDlc = [NSJSONSerialization JSONObjectWithData:jsondata options:0 error:nil];
+    NSMutableArray *jsonArray1 = [jsonDlc objectForKey:@"lab"];
+    
+    NSString *labName = [NSString stringWithFormat:@"%@",[userData valueForKeyPath:@"labCode"]];
+    int value1 = [labName intValue];
     NSLog(@"現在%@のデータを参照しています", [userData valueForKeyPath:@"name"]);
-    NSLog(@"研究室コード:%@", [userData valueForKeyPath:@"labCode"]);
+    NSLog(@"研究室コード:%@,%@", [userData valueForKeyPath:@"labCode"],jsonArray1[value1-1]);
     NSString *val = [str1 stringByAppendingString:[userData valueForKeyPath:@"name"]];
     self.labName.text = val;
 }
