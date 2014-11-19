@@ -47,11 +47,9 @@
 		EBE89AAC1A1771D4002D0DCA /* labViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE89AAB1A1771D4002D0DCA /* labViewController.m */; };
 		EBE89AE41A1778ED002D0DCA /* otherLicenseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE89AE31A1778ED002D0DCA /* otherLicenseViewController.m */; };
 		EBE89AE71A177901002D0DCA /* otherBadgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE89AE61A177901002D0DCA /* otherBadgeViewController.m */; };
-		F81A121E1A1A2ACF0064103A /* WebdbConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = F81A121D1A1A2ACF0064103A /* WebdbConnect.m */; };
-
 		F81A11D41A1898620064103A /* tabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F81A11D31A1898620064103A /* tabViewController.m */; };
 		F81A11DA1A18C25B0064103A /* labTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F81A11D91A18C25B0064103A /* labTableViewController.m */; };
-
+		F81A121E1A1A2ACF0064103A /* WebdbConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = F81A121D1A1A2ACF0064103A /* WebdbConnect.m */; };
 		F87F6A3A19F939740088A0D6 /* guestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F87F6A3919F939740088A0D6 /* guestViewController.m */; };
 		F87F6A7F19FA28E00088A0D6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F87F6A7E19FA28E00088A0D6 /* QuartzCore.framework */; };
 		F889EFAF19EED0760049B3A7 /* PerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F889EFAE19EED0760049B3A7 /* PerViewController.m */; };
@@ -69,6 +67,7 @@
 		F8A223F219EE6C0D00139991 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8A223D419EE6C0D00139991 /* UIKit.framework */; };
 		F8A223FA19EE6C0D00139991 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F8A223F819EE6C0D00139991 /* InfoPlist.strings */; };
 		F8A223FC19EE6C0D00139991 /* gyoumuApp1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A223FB19EE6C0D00139991 /* gyoumuApp1Tests.m */; };
+		F8A63E3F1A1BCE3200B34842 /* otherBadgeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A63E3E1A1BCE3200B34842 /* otherBadgeDetailViewController.m */; };
 		F8F60B931A00D104002717F2 /* jsonUser.txt in Resources */ = {isa = PBXBuildFile; fileRef = F8F60B921A00D104002717F2 /* jsonUser.txt */; };
 /* End PBXBuildFile section */
 
@@ -145,15 +144,12 @@
 		EBE89AE51A177901002D0DCA /* otherBadgeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = otherBadgeViewController.h; sourceTree = "<group>"; };
 		EBE89AE61A177901002D0DCA /* otherBadgeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = otherBadgeViewController.m; sourceTree = "<group>"; };
 		EBFEFC0E1A032CA100E548B5 /* BadgeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadgeViewController.h; sourceTree = "<group>"; };
-
-		F81A121C1A1A2ACF0064103A /* WebdbConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebdbConnect.h; sourceTree = "<group>"; };
-		F81A121D1A1A2ACF0064103A /* WebdbConnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebdbConnect.m; sourceTree = "<group>"; };
-
 		F81A11D21A1898620064103A /* tabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tabViewController.h; sourceTree = "<group>"; };
 		F81A11D31A1898620064103A /* tabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tabViewController.m; sourceTree = "<group>"; };
 		F81A11D81A18C25B0064103A /* labTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = labTableViewController.h; sourceTree = "<group>"; };
 		F81A11D91A18C25B0064103A /* labTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = labTableViewController.m; sourceTree = "<group>"; };
-
+		F81A121C1A1A2ACF0064103A /* WebdbConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebdbConnect.h; sourceTree = "<group>"; };
+		F81A121D1A1A2ACF0064103A /* WebdbConnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebdbConnect.m; sourceTree = "<group>"; };
 		F87F6A3819F939740088A0D6 /* guestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = guestViewController.h; sourceTree = "<group>"; };
 		F87F6A3919F939740088A0D6 /* guestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = guestViewController.m; sourceTree = "<group>"; };
 		F87F6A7E19FA28E00088A0D6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -178,6 +174,8 @@
 		F8A223F719EE6C0D00139991 /* gyoumuApp1Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "gyoumuApp1Tests-Info.plist"; sourceTree = "<group>"; };
 		F8A223F919EE6C0D00139991 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F8A223FB19EE6C0D00139991 /* gyoumuApp1Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = gyoumuApp1Tests.m; sourceTree = "<group>"; };
+		F8A63E3D1A1BCE3200B34842 /* otherBadgeDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = otherBadgeDetailViewController.h; sourceTree = "<group>"; };
+		F8A63E3E1A1BCE3200B34842 /* otherBadgeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = otherBadgeDetailViewController.m; sourceTree = "<group>"; };
 		F8F60B921A00D104002717F2 /* jsonUser.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jsonUser.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -280,6 +278,8 @@
 				EBE89AAB1A1771D4002D0DCA /* labViewController.m */,
 				EBE89AE51A177901002D0DCA /* otherBadgeViewController.h */,
 				EBE89AE61A177901002D0DCA /* otherBadgeViewController.m */,
+				F8A63E3D1A1BCE3200B34842 /* otherBadgeDetailViewController.h */,
+				F8A63E3E1A1BCE3200B34842 /* otherBadgeDetailViewController.m */,
 				EBE89AE21A1778ED002D0DCA /* otherLicenseViewController.h */,
 				EBE89AE31A1778ED002D0DCA /* otherLicenseViewController.m */,
 				F81A11D21A1898620064103A /* tabViewController.h */,
@@ -525,6 +525,7 @@
 				EBE89AA31A176C41002D0DCA /* licenseKeyViewController.m in Sources */,
 				F81A121E1A1A2ACF0064103A /* WebdbConnect.m in Sources */,
 				EB9DE12619F03D2D0071FEEB /* AMSlideMenuMainViewController.m in Sources */,
+				F8A63E3F1A1BCE3200B34842 /* otherBadgeDetailViewController.m in Sources */,
 				EBE89AA01A176C15002D0DCA /* selectVersionViewController.m in Sources */,
 				F889EFAF19EED0760049B3A7 /* PerViewController.m in Sources */,
 				EB9DE12C19F03E910071FEEB /* MenuViewController.m in Sources */,

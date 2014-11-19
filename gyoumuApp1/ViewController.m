@@ -35,9 +35,8 @@
     [[loginBtn layer] setBorderColor:[[UIColor blackColor]CGColor]];
     //枠の太さ
     [[loginBtn layer] setBorderWidth:btnBorderRectPoint];
-    WebdbConnect *test1 = [[WebdbConnect alloc]initWithLabArray:@"1"];
-    NSLog(@"%@", [[test1 labBadgeGet:@"09"] valueForKeyPath:@"terminalId"]);
-}
+    
+   }
 
 
 - (void)didReceiveMemoryWarning
