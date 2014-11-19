@@ -45,6 +45,7 @@
 		EBD7DC601A1B4275009C6FFF /* progress6.png in Resources */ = {isa = PBXBuildFile; fileRef = EBD7DC5A1A1B4275009C6FFF /* progress6.png */; };
 		EBD7DC621A1B43F9009C6FFF /* adobe.png in Resources */ = {isa = PBXBuildFile; fileRef = EBD7DC611A1B43F9009C6FFF /* adobe.png */; };
 		EBD7DC641A1B45FB009C6FFF /* microsoft.png in Resources */ = {isa = PBXBuildFile; fileRef = EBD7DC631A1B45FB009C6FFF /* microsoft.png */; };
+		EBD7DC6A1A1C6B4E009C6FFF /* additionData.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD7DC691A1C6B4E009C6FFF /* additionData.m */; };
 		EBE89A971A1768CF002D0DCA /* licenseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE89A961A1768CF002D0DCA /* licenseViewController.m */; };
 		EBE89A9A1A176BA4002D0DCA /* selectMakerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE89A991A176BA4002D0DCA /* selectMakerViewController.m */; };
 		EBE89A9D1A176BFC002D0DCA /* selectSoftwareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE89A9C1A176BFC002D0DCA /* selectSoftwareViewController.m */; };
@@ -135,6 +136,8 @@
 		EBD7DC5A1A1B4275009C6FFF /* progress6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = progress6.png; sourceTree = "<group>"; };
 		EBD7DC611A1B43F9009C6FFF /* adobe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = adobe.png; sourceTree = "<group>"; };
 		EBD7DC631A1B45FB009C6FFF /* microsoft.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = microsoft.png; sourceTree = "<group>"; };
+		EBD7DC681A1C6B4E009C6FFF /* additionData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = additionData.h; sourceTree = "<group>"; };
+		EBD7DC691A1C6B4E009C6FFF /* additionData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = additionData.m; sourceTree = "<group>"; };
 		EBE89A951A1768CF002D0DCA /* licenseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = licenseViewController.h; sourceTree = "<group>"; };
 		EBE89A961A1768CF002D0DCA /* licenseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = licenseViewController.m; sourceTree = "<group>"; };
 		EBE89A981A176BA4002D0DCA /* selectMakerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = selectMakerViewController.h; sourceTree = "<group>"; };
@@ -259,6 +262,8 @@
 		EBE89AE81A178074002D0DCA /* LicenseAddition */ = {
 			isa = PBXGroup;
 			children = (
+				EBD7DC681A1C6B4E009C6FFF /* additionData.h */,
+				EBD7DC691A1C6B4E009C6FFF /* additionData.m */,
 				EBE89A981A176BA4002D0DCA /* selectMakerViewController.h */,
 				EBE89A991A176BA4002D0DCA /* selectMakerViewController.m */,
 				EBE89A9B1A176BFC002D0DCA /* selectSoftwareViewController.h */,
@@ -522,6 +527,7 @@
 				EB9DE12719F03D2D0071FEEB /* AMSlideMenuRightMenuSegue.m in Sources */,
 				EBE89A9D1A176BFC002D0DCA /* selectSoftwareViewController.m in Sources */,
 				EBB974641A036BDA00030426 /* BadgeViewController.m in Sources */,
+				EBD7DC6A1A1C6B4E009C6FFF /* additionData.m in Sources */,
 				EB9DE12319F03D2D0071FEEB /* AMSlideMenuContentSegue.m in Sources */,
 				F8A223E719EE6C0D00139991 /* ViewController.m in Sources */,
 				EBE89AE71A177901002D0DCA /* otherBadgeViewController.m in Sources */,

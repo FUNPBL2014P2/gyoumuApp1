@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "additionData.h"
+
 
 @interface selectSoftwareViewController : UIViewController
 

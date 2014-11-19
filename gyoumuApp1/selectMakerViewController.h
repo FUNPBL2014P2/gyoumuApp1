@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "additionData.h"
 
 @interface selectMakerViewController : UIViewController
+- (IBAction)adbBtn:(id)sender;
+- (IBAction)mcrBtn:(id)sender;
 
 @end

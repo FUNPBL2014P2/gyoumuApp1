@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "additionData.h"
 
 @interface licenseKeyViewController : UIViewController
 

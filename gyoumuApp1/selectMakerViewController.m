@@ -34,4 +34,9 @@
 }
 */
 
+- (IBAction)adbBtn:(id)sender {
+}
+
+- (IBAction)mcrBtn:(id)sender {
+}
 @end
