@@ -14,5 +14,6 @@
 -(NSObject *)labBadgeGet:(NSString *)badgeTitle;
 
 -(id)initWithLabArray:(NSString *)labCode;
+-(NSObject *)labEvaluateGet;
 
 @end

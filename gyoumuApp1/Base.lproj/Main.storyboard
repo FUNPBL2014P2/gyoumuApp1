@@ -1309,6 +1309,22 @@
                                     <action selector="badge15Btn:" destination="z2N-KT-wvC" eventType="touchUpInside" id="bFM-Vz-eeF"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nMe-9B-B1y">
+                                <rect key="frame" x="66" y="112" width="45" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="いいね">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="badgeEvaluateBtn:" destination="z2N-KT-wvC" eventType="touchUpInside" id="tVU-3B-yAt"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QkE-0A-vI9">
+                                <rect key="frame" x="119" y="116" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1332,6 +1348,7 @@
                         <outlet property="badge7" destination="x7j-Ua-vn2" id="jf3-i0-9b9"/>
                         <outlet property="badge8" destination="bYt-9R-E7h" id="KFX-av-69U"/>
                         <outlet property="badge9" destination="ULK-e1-mQC" id="E9b-3L-mlY"/>
+                        <outlet property="evaluateNumber" destination="QkE-0A-vI9" id="Skq-5q-YIz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bRw-pY-5bd" userLabel="First Responder" sceneMemberID="firstResponder"/>

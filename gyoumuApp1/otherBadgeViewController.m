@@ -9,6 +9,7 @@
 #import "otherBadgeViewController.h"
 #import "BadgeDetailViewController.h"
 #import "AppDelegate.h"
+#import "WebdbConnect.h"
 //値渡しのためのimport
 #import "BadgeDetailViewController.h"
 
@@ -242,4 +243,19 @@
     sendView.receiveBadgeName = [NSString stringWithFormat:@"%@",sendBadgeName];
     [self presentViewController:sendView animated:NO completion:nil];
 }
+
+- (IBAction)badgeEvaluateBtn:(id)sender {
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSMutableArray *userData = [userDefaults objectForKey:@"userData"];
+    
+    /*NSString *urlList = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/viewall.php",[userData valueForKeyPath:@"labCode"]];*/
+    
+    //NSString *test = [userData valueForKeyPath:@"labCode"];
+    
+    WebdbConnect *test1 = [[WebdbConnect alloc]initWithLabArray:[userData valueForKeyPath:@"labCode"]];
+    NSLog(@"%@", [[test1 labEvaluateGet]
+          valueForKeyPath:@"terminalID"]);
+    
+    }
 @end
