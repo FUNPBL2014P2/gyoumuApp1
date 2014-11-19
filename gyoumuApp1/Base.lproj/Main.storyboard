@@ -902,28 +902,24 @@
                                 <state key="normal" title="ソフトウェア選択へ">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="yP0-yh-eag" kind="push" id="pfP-Az-S7t"/>
-                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5JE-zu-5aJ">
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" restorationIdentifier="adb" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5JE-zu-5aJ">
                                 <rect key="frame" x="124" y="214" width="600" height="200"/>
                                 <state key="normal" title="Button" image="adobe.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="adbBtn:" destination="2TA-s0-PGr" eventType="touchUpInside" id="dN4-OK-Qob"/>
-                                    <segue destination="yP0-yh-eag" kind="push" id="ddZ-us-R9x"/>
+                                    <segue destination="yP0-yh-eag" kind="push" identifier="adb" id="INW-U6-yL3"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F01-bB-AJQ">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="mcr" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F01-bB-AJQ">
                                 <rect key="frame" x="128" y="422" width="600" height="200"/>
                                 <state key="normal" title="Button" image="microsoft.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="mcrBtn:" destination="2TA-s0-PGr" eventType="touchUpInside" id="2H4-FC-pKL"/>
-                                    <segue destination="yP0-yh-eag" kind="push" id="TqQ-3X-rY6"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -947,9 +943,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="5GL-vF-7BJ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="5GL-vF-7BJ" customClass="TableViewControllerr">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="920"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="7Lp-7m-W86">
+                                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7Lp-7m-W86" id="xjJ-DQ-cBw">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="aaaa" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DE2-Nb-ATC">
+                                                    <rect key="frame" x="340" y="0.0" width="42" height="21.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="progress2.png" translatesAutoresizingMaskIntoConstraints="NO" id="bcd-HS-JUl">
                                 <rect key="frame" x="128" y="888" width="510" height="128"/>
@@ -1275,6 +1288,5 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="5C2-zY-tv9"/>
-        <segue reference="pfP-Az-S7t"/>
     </inferredMetricsTieBreakers>
 </document>

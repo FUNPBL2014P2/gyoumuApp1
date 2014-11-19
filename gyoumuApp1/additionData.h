@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface additionData : NSObject
-
 @property NSString *maker;
 @property NSString *software;
 @property NSString *version;
@@ -18,6 +17,4 @@
 @property NSDate *start;
 @property NSDate *period;
 
-
 @end
-
