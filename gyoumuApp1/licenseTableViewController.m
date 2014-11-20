@@ -1,25 +1,23 @@
 //
-//  labTableViewController.m
+//  licenseTableViewController.m
 //  gyoumuApp1
 //
-//  Created by Shota Oda on 2014/11/16.
+//  Created by Shota Oda on 2014/11/20.
 //  Copyright (c) 2014年 shota. All rights reserved.
 //
 
-#import "labTableViewController.h"
-#import "AppDelegate.h"
+#import "licenseTableViewController.h"
 #import "WebdbConnect.h"
 
-@interface labTableViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface licenseTableViewController () <UITableViewDataSource,UITableViewDelegate>
 
 @end
 
-@implementation labTableViewController
+@implementation licenseTableViewController
 {
-    WebdbConnect *test;
-    NSMutableArray *testArray;
+    WebdbConnect *connect;
+    NSMutableArray *licenseArray;
 }
-
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -33,8 +31,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    test = [[WebdbConnect alloc] init];
-    [test setLabArray:@"1"];
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSArray *userdata = [userDefaults objectForKey:@"userData"];
+    connect = [[WebdbConnect alloc] initWithLabArray:[userdata valueForKeyPath:@"labCode"]];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -48,14 +47,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
-
--(void) viewWillAppear:(BOOL)animated
-{
-    AppDelegate *ap = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    //otherLabPathを更新
-    NSLog(@"ライセンス一覧にて%@を閲覧中",ap.LabPath);
-}
 -(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView
 
 {
@@ -66,11 +57,11 @@
 {
     int count = 0;
     NSRange searchResult;
-    testArray = [NSMutableArray array];
-    for (int i =0; i < [test labArray].count; i++) {
-        searchResult = [[test labArray][i][@"username"] rangeOfString:@"badge"];
+    licenseArray = [NSMutableArray array];
+    for (int i =0; i < [connect labArray].count; i++) {
+        searchResult = [[connect labArray][i][@"username"] rangeOfString:@"badge"];
         if (searchResult.location != NSNotFound) {
-            [testArray addObject:[test labArray][i]];
+            [licenseArray addObject:[connect labArray][i]];
             count++;
         }
     }
@@ -87,7 +78,7 @@
     }
     
     UILabel *label1 = (UILabel *)[cell viewWithTag:1];
-    label1.text = [NSString stringWithFormat:@"%@",[testArray[indexPath.row] valueForKeyPath:@"terminalId"]];
+    label1.text = [NSString stringWithFormat:@"%@",[licenseArray[indexPath.row] valueForKeyPath:@"terminalId"]];
     UILabel *label2 = (UILabel *)[cell viewWithTag:2];
     label2.text = @"Word";
     UILabel *label3 = (UILabel *)[cell viewWithTag:3];
@@ -103,17 +94,6 @@
     
 }
 
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-*/
 
 /*
 // Override to support conditional editing of the table view.
