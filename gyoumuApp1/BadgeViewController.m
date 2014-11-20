@@ -33,6 +33,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+        NSLog(@"ログインユーザの研究室バッジ一覧にて閲覧中");
     // Do any additional setup after loading the view.
     //UIImage *backgroundImage  = [UIImage imageNamed:@"background.jpg"];
     //self.view.layer.contents = (__bridge id)((backgroundImage.CGImage));
@@ -58,8 +59,10 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     //全体データを取得する処理
-    NSString *orign = @"http://webdb.per.c.fun.ac.jp/sofline/viewall.php";
-    NSString *url = [NSString stringWithFormat:@"%@",orign];
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSMutableArray *userData = [userDefaults objectForKey:@"userData"];
+    
+    NSString *url = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/viewall.php",[userData valueForKeyPath:@"labCode"]];
     
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
     NSData *jsonData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];

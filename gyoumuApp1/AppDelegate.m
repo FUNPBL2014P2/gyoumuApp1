@@ -9,10 +9,13 @@
 #import "AppDelegate.h"
 
 @implementation AppDelegate
+@synthesize LabPath;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    //LabPathの初期化
+    LabPath = [NSString stringWithFormat:@"none"];
     return YES;
 }
 							

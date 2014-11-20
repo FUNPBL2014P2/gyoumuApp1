@@ -1,5 +1,5 @@
 //
-//  otherLicenseViewController.h
+//  tabViewController.h
 //  gyoumuApp1
 //
 //  Created by Shota Oda on 2014/11/16.
@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface otherLicenseViewController : UITableViewController
+@interface tabViewController : UITabBarController{
+    NSString *_labName;
+}
+@property NSString *labName;
+
 
 @end

@@ -1,19 +1,18 @@
 //
-//  BadgeDetailViewController.m
+//  otherBadgeDetailViewController.m
 //  gyoumuApp1
 //
-//  Created by SegawaTakamasa on 2014/11/03.
+//  Created by Shota Oda on 2014/11/19.
 //  Copyright (c) 2014年 shota. All rights reserved.
 //
 
-#import "BadgeDetailViewController.h"
-
-@interface BadgeDetailViewController ()
+#import "otherBadgeDetailViewController.h"
+#import "AppDelegate.h"
+@interface otherBadgeDetailViewController ()
 
 @end
 
-
-@implementation BadgeDetailViewController
+@implementation otherBadgeDetailViewController
 
 @synthesize receiveBadgeName;
 @synthesize badgeExpLabel;
@@ -35,13 +34,10 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-        [self.view sendSubviewToBack:_detailBackground];
-    
-    //NSLog(@"%@", receiveBadgeName);
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSMutableArray *userData = [userDefaults objectForKey:@"userData"];
-
-    NSString *strURL = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/view.php?data=%@",[userData valueForKeyPath:@"labCode"],receiveBadgeName];
+    [self.view sendSubviewToBack:_detailBackground];
+    AppDelegate *ap = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSLog(@"%@",ap.LabPath);
+    NSString *strURL = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/view.php?data=%@",ap.LabPath,receiveBadgeName];
     NSURL *urlView = [NSURL URLWithString:strURL];
     NSMutableURLRequest *viewRequest = [NSMutableURLRequest requestWithURL:urlView];
     [viewRequest setHTTPMethod:@"GET"];
@@ -50,13 +46,13 @@
     
     NSData *viewList = [NSURLConnection sendSynchronousRequest:viewRequest returningResponse:nil error:nil];
     NSDictionary *viewDic = [NSJSONSerialization JSONObjectWithData:viewList options:0 error:nil];
-        //NSLog(@"%@", viewDic[@"title"]);
+    //NSLog(@"%@", viewDic[@"title"]);
     int frag = [viewDic[@"option0"] intValue];
     if(frag == 1){
         
-    NSString *num = [NSString stringWithFormat:@"%@",viewDic[@"title"]];
-    badgeNumLabel.text = [NSString stringWithFormat:@"No.%@",viewDic[@"title"]];
-    badgeTitleLabel.text = [NSString stringWithFormat:@"%@",viewDic[@"option3"]];
+        NSString *num = [NSString stringWithFormat:@"%@",viewDic[@"title"]];
+        badgeNumLabel.text = [NSString stringWithFormat:@"No.%@",viewDic[@"title"]];
+        badgeTitleLabel.text = [NSString stringWithFormat:@"%@",viewDic[@"option3"]];
         
         NSString *body = [NSString stringWithFormat:@"badge"];
         
@@ -66,9 +62,9 @@
         self.badgeImage.image = [UIImage imageNamed:aString];
         
         
-    badgeExpLabel.text = [NSString stringWithFormat:@"%@",viewDic[@"option4"]];
-    badgeConditionLabel.text = [NSString stringWithFormat:@"%@",viewDic[@"option5"]];
-    badgeGetTimeLabel.text = [NSString stringWithFormat:@"%@",viewDic[@"option1"]];
+        badgeExpLabel.text = [NSString stringWithFormat:@"%@",viewDic[@"option4"]];
+        badgeConditionLabel.text = [NSString stringWithFormat:@"%@",viewDic[@"option5"]];
+        badgeGetTimeLabel.text = [NSString stringWithFormat:@"%@",viewDic[@"option1"]];
         
     }else if(frag == 0){
         badgeNumLabel.text = [NSString stringWithFormat:@"No.%@",viewDic[@"title"]];
@@ -94,14 +90,14 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

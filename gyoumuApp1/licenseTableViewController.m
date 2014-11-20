@@ -1,25 +1,23 @@
 //
-//  otherLicenseViewController.m
+//  licenseTableViewController.m
 //  gyoumuApp1
 //
-//  Created by Shota Oda on 2014/11/16.
+//  Created by Shota Oda on 2014/11/20.
 //  Copyright (c) 2014年 shota. All rights reserved.
 //
 
-#import "otherLicenseViewController.h"
-#import "AppDelegate.h"
+#import "licenseTableViewController.h"
 #import "WebdbConnect.h"
 
-@interface otherLicenseViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface licenseTableViewController () <UITableViewDataSource,UITableViewDelegate>
 
 @end
 
-@implementation otherLicenseViewController
+@implementation licenseTableViewController
 {
     WebdbConnect *connect;
     NSMutableArray *licenseArray;
 }
-
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -33,9 +31,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    AppDelegate *ap = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    connect = [[WebdbConnect alloc] init];
-    [connect setLabArray:ap.LabPath];
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSArray *userdata = [userDefaults objectForKey:@"userData"];
+    connect = [[WebdbConnect alloc] initWithLabArray:[userdata valueForKeyPath:@"labCode"]];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -48,9 +46,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-#pragma mark - Table view data source
-
 
 -(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView
 
@@ -99,17 +94,6 @@
     
 }
 
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-*/
 
 /*
 // Override to support conditional editing of the table view.
