@@ -9,9 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "additionData.h"
 
-@interface selectSoftwareViewController : UIViewController
+@interface selectSoftwareViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
 {
-    additionData *_Receive;
+    additionData *_addData;
+    UITableView *_tableView;
 }
-@property additionData *Receive;
+@property additionData *addData;
+@property IBOutlet UITableView *tableView;
 @end

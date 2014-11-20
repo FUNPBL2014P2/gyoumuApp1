@@ -37,7 +37,6 @@
 		EB9DE12919F03D2D0071FEEB /* UIViewController+AMSlideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9DE12219F03D2D0071FEEB /* UIViewController+AMSlideMenu.m */; };
 		EB9DE12C19F03E910071FEEB /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9DE12B19F03E910071FEEB /* MenuViewController.m */; };
 		EBB4B0351A1CB5C40073EABD /* additionData.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB4B0341A1CB5C40073EABD /* additionData.m */; };
-		EBB4B0381A1CB89C0073EABD /* TableViewControllerr.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB4B0371A1CB89C0073EABD /* TableViewControllerr.m */; };
 		EBB974641A036BDA00030426 /* BadgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB974631A036BDA00030426 /* BadgeViewController.m */; };
 		EBD7DC5B1A1B4275009C6FFF /* progress1.png in Resources */ = {isa = PBXBuildFile; fileRef = EBD7DC551A1B4275009C6FFF /* progress1.png */; };
 		EBD7DC5C1A1B4275009C6FFF /* progress2.png in Resources */ = {isa = PBXBuildFile; fileRef = EBD7DC561A1B4275009C6FFF /* progress2.png */; };
@@ -130,8 +129,6 @@
 		EB9DE12B19F03E910071FEEB /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		EBB4B0331A1CB5C40073EABD /* additionData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = additionData.h; sourceTree = "<group>"; };
 		EBB4B0341A1CB5C40073EABD /* additionData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = additionData.m; sourceTree = "<group>"; };
-		EBB4B0361A1CB89C0073EABD /* TableViewControllerr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewControllerr.h; sourceTree = "<group>"; };
-		EBB4B0371A1CB89C0073EABD /* TableViewControllerr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewControllerr.m; sourceTree = "<group>"; };
 		EBB974631A036BDA00030426 /* BadgeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BadgeViewController.m; sourceTree = "<group>"; };
 		EBD7DC551A1B4275009C6FFF /* progress1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = progress1.png; sourceTree = "<group>"; };
 		EBD7DC561A1B4275009C6FFF /* progress2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = progress2.png; sourceTree = "<group>"; };
@@ -269,8 +266,6 @@
 				EBB4B0341A1CB5C40073EABD /* additionData.m */,
 				EBE89A981A176BA4002D0DCA /* selectMakerViewController.h */,
 				EBE89A991A176BA4002D0DCA /* selectMakerViewController.m */,
-				EBB4B0361A1CB89C0073EABD /* TableViewControllerr.h */,
-				EBB4B0371A1CB89C0073EABD /* TableViewControllerr.m */,
 				EBE89A9B1A176BFC002D0DCA /* selectSoftwareViewController.h */,
 				EBE89A9C1A176BFC002D0DCA /* selectSoftwareViewController.m */,
 				EBE89A9E1A176C15002D0DCA /* selectVersionViewController.h */,
@@ -537,7 +532,6 @@
 				F8A223E719EE6C0D00139991 /* ViewController.m in Sources */,
 				EBE89AE71A177901002D0DCA /* otherBadgeViewController.m in Sources */,
 				EBE89AA91A176C6F002D0DCA /* confirmViewController.m in Sources */,
-				EBB4B0381A1CB89C0073EABD /* TableViewControllerr.m in Sources */,
 				EB9DE12819F03D2D0071FEEB /* AMSlideMenuRightTableViewController.m in Sources */,
 				EB24DAB71A0731A800C791F7 /* BadgeDetailViewController.m in Sources */,
 				EBE89A9A1A176BA4002D0DCA /* selectMakerViewController.m in Sources */,

@@ -7,8 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "additionData.h"
 
 @interface confirmViewController : UIViewController
+{
+    additionData *_addData;
+}
+@property additionData *addData;
+@property (weak, nonatomic) IBOutlet UILabel *makerLabel;
+@property (weak, nonatomic) IBOutlet UILabel *softwareLabel;
+@property (weak, nonatomic) IBOutlet UILabel *versionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *tagLabel;
+@property (weak, nonatomic) IBOutlet UILabel *keyLabel;
+@property (weak, nonatomic) IBOutlet UILabel *startLabel;
+@property (weak, nonatomic) IBOutlet UILabel *periodLabel;
 
 @end

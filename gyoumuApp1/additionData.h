@@ -14,7 +14,8 @@
 @property NSString *version;
 @property NSString *tag;
 @property NSString *key;
-@property NSDate *start;
-@property NSDate *period;
-
+@property NSString *start;
+@property NSString *period;
+-(void)copy: (additionData *)target;
+-(void)debug;
 @end

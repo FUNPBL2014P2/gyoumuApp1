@@ -7,6 +7,7 @@
 //
 
 #import "selectMakerViewController.h"
+#import "selectSoftwareViewController.h"
 #import "additionData.h"
 
 @interface selectMakerViewController ()
@@ -15,12 +16,14 @@
 
 @implementation selectMakerViewController
 {
-    additionData *a;
+    additionData *addData;
 }
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    addData = [[additionData alloc]init];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,21 +39,18 @@
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
-    if([segue.identifier isEqualToString:@"adb"]){
-        
-        selectSoftwareViewController *nextVC = segue.destinationViewController;
-        nextVC.Receive = [[additionData alloc]init];
-        
-        nextVC.Receive.maker = @"adasadasa";
-    }
+    selectSoftwareViewController *nextVC = segue.destinationViewController;
+    nextVC.addData = [[additionData alloc]init];
+    [nextVC.addData copy:addData];
 }
 
 
 - (IBAction)adbBtn:(id)sender {
+    addData.maker = @"Adobe";
 }
 
 - (IBAction)mcrBtn:(id)sender {
+    addData.maker = @"Microsoft";
 }
 
 @end
