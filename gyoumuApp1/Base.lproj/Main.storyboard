@@ -1348,6 +1348,7 @@
                         <outlet property="badge7" destination="x7j-Ua-vn2" id="jf3-i0-9b9"/>
                         <outlet property="badge8" destination="bYt-9R-E7h" id="KFX-av-69U"/>
                         <outlet property="badge9" destination="ULK-e1-mQC" id="E9b-3L-mlY"/>
+                        <outlet property="badgeEvaluate" destination="nMe-9B-B1y" id="CWZ-j0-6YE"/>
                         <outlet property="evaluateNumber" destination="QkE-0A-vI9" id="Skq-5q-YIz"/>
                     </connections>
                 </viewController>

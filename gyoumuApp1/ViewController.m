@@ -294,7 +294,7 @@
     
     int count = 0;
     NSString *time_old;
-    NSString *time_new;;
+    NSString *time_new;
     
     
     for (int i = 0; jsonArray.count; i++) {
@@ -325,7 +325,7 @@
             NSString *subnew = [time_new substringWithRange:NSMakeRange(8, 2)];
             
             //同じ日じゃなければcount++
-            if(subold.length == 0){
+            if(sub.length == 0){
                 count= 1;
             }else if(![subold isEqualToString:subnew]) {
                 count++;

@@ -44,7 +44,7 @@
 -(NSObject *)labEvaluateGet
 {
     for (int i = 0; i < _labArray.count; i++) {
-        if ([_labArray[i][@"terminalId"] isEqualToString:@"evaluate"]) {
+        if ([_labArray[i][@"terminalId"] isEqualToString:@"Evaluate"]) {
             return _labArray[i];
         }
     }

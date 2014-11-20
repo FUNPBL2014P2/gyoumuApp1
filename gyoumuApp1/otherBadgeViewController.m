@@ -38,6 +38,21 @@
 {
     [super viewDidLoad];
     AppDelegate *ap = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSMutableArray *userData = [userDefaults objectForKey:@"userData"];
+    
+    WebdbConnect *otherLab = [[WebdbConnect alloc] initWithLabArray:ap.LabPath];
+    NSString *otherRecvCount = [[otherLab labEvaluateGet]valueForKeyPath:@"option3"];
+    
+    NSString *labCode =[userData valueForKeyPath:@"labCode"];
+    
+    [self evaluateUseCheck:labCode];
+    self.evaluateNumber.text = otherRecvCount;
+    self.evaluateNumber.textColor = [UIColor blueColor];
+    self.badgeEvaluate.layer.cornerRadius = 7;
+    
+    
+    
     //otherLabPathを更新
     NSLog(@"バッジ一覧にて%@を閲覧中",ap.LabPath);
     // Do any additional setup after loading the view.
@@ -58,6 +73,7 @@
      */
     
     self.badge = [[NSMutableArray alloc] initWithObjects:self.badge1,self.badge2,self.badge3,self.badge4,self.badge5,self.badge6,self.badge7,self.badge8,self.badge9,self.badge10,self.badge11,self.badge12,self.badge13,self.badge14,self.badge15,self.badge16,nil];
+    
     
     
 }
@@ -243,13 +259,144 @@
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSMutableArray *userData = [userDefaults objectForKey:@"userData"];
     
-    /*NSString *urlList = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/viewall.php",[userData valueForKeyPath:@"labCode"]];*/
+     AppDelegate *ap = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+   /*
+    NSString *urlList = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/viewall.php",[userData valueForKeyPath:@"labCode"]];*/
     
     //NSString *test = [userData valueForKeyPath:@"labCode"];
     
-    WebdbConnect *test1 = [[WebdbConnect alloc]initWithLabArray:[userData valueForKeyPath:@"labCode"]];
-    NSLog(@"%@", [[test1 labEvaluateGet]
-          valueForKeyPath:@"terminalID"]);
+    WebdbConnect *myLab = [[WebdbConnect alloc] initWithLabArray:[userData valueForKeyPath:@"labCode"]];
+    NSString *myAddCount = [[myLab labEvaluateGet]valueForKeyPath:@"option2"];
+    NSString *myRecvCount = [[myLab labEvaluateGet]valueForKeyPath:@"option3"];
+    int mAddCount = [myAddCount intValue];
+    int mRecvCount = [myRecvCount intValue];
     
+    WebdbConnect *otherLab = [[WebdbConnect alloc] initWithLabArray:ap.LabPath];
+    NSString *otherAddCount = [[otherLab labEvaluateGet]valueForKeyPath:@"option2"];
+    NSString *otherRecvCount = [[otherLab labEvaluateGet]valueForKeyPath:@"option3"];
+    int oAddCount = [otherAddCount intValue];
+    int oRecvCount = [otherRecvCount intValue];
+    
+   
+    NSLog(@"%@", [userData valueForKeyPath:@"labCode"]);
+   
+    //NSLog(@"%@", [[myLab labEvaluateGet]valueForKeyPath:@"terminalId"]);
+    //NSLog(@"%@", [[myLab labEvaluateGet]valueForKeyPath:@"ap.LabPath"]);
+    
+    /*NSURLRequest *requestList = [NSURLRequest requestWithURL:[NSURL URLWithString:urlList]];
+    NSData *jsonList = [NSURLConnection sendSynchronousRequest:requestList returningResponse:nil error:nil];
+    NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:jsonList options:0 error:nil];
+    NSArray *jsonArray = [jsonDic objectForKey:@"data"];*/
+    
+    
+    
+    /////////////////取得日時
+    NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
+    [fmt setDateFormat:@"yyyy年MM月dd日 HH時mm分"];
+    NSDate *nowGet = [[NSDate alloc]init];
+    
+    
+    
+    /////////////////評価した側の処理
+    
+    NSString *urlList = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/add.php",[userData valueForKeyPath:@"labCode"]];
+    
+    NSURL *url = [NSURL URLWithString:urlList];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    [request setHTTPMethod:@"POST"];
+    //パラメータを作成
+    NSString *body = [NSString stringWithFormat:@"title=Evaluation&message=&latitude=&longitude=&terminalId=%@&option0=&option1=%@&option2=%d&option3=%d&option4=&option5=",[[myLab labEvaluateGet]valueForKeyPath:@"terminalId"],[fmt stringFromDate:nowGet],mAddCount+1,mRecvCount];
+    request.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
+    NSURLConnection *connection;
+    connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    
+    //////////////////
+    NSString *strURL = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/delete.php?data=/%@/%@",[userData valueForKeyPath:@"labCode"],[[myLab labEvaluateGet]valueForKeyPath:@"terminalId"],[[myLab labEvaluateGet]valueForKeyPath:@"datetime"]];
+    NSURL *urlDelete = [NSURL URLWithString:strURL];
+    NSMutableURLRequest *deleteRequest = [NSMutableURLRequest requestWithURL:urlDelete];
+    [deleteRequest setHTTPMethod:@"GET"];
+    [NSURLConnection sendSynchronousRequest:deleteRequest returningResponse:nil error:nil];
+    ///////////////////
+   
+    
+    //////////////////評価された側の処理
+  
+    
+    NSString *urlList1 = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/add.php",ap.LabPath];
+    NSLog(@"%@",urlList1);
+    NSURL *url1 = [NSURL URLWithString:urlList1];
+    
+    NSMutableURLRequest *request1 = [NSMutableURLRequest requestWithURL:url1];
+    [request1 setHTTPMethod:@"POST"];
+    //パラメータを作成
+    NSString *body1 = [NSString stringWithFormat:@"title=Evaluation&message=&latitude=&longitude=&terminalId=%@&option0=&option1=%@&option2=%d&option3=%d",[[otherLab labEvaluateGet]valueForKeyPath:@"terminalId"],[[otherLab labEvaluateGet]valueForKeyPath:@"option1"],oAddCount,oRecvCount+1];
+    request1.HTTPBody = [body1 dataUsingEncoding:NSUTF8StringEncoding];
+    NSURLConnection *connection1;
+    connection1 = [[NSURLConnection alloc] initWithRequest:request1 delegate:self];
+    
+    //////////////////
+    NSString *strURL1 = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/delete.php?data=/%@/%@",ap.LabPath,[[otherLab labEvaluateGet]valueForKeyPath:@"terminalId"],[[otherLab labEvaluateGet]valueForKeyPath:@"datetime"]];
+    NSURL *urlDelete1 = [NSURL URLWithString:strURL1];
+    NSMutableURLRequest *deleteRequest1 = [NSMutableURLRequest requestWithURL:urlDelete1];
+    [deleteRequest1 setHTTPMethod:@"GET"];
+    [NSURLConnection sendSynchronousRequest:deleteRequest1 returningResponse:nil error:nil];
+ 
+    [_badgeEvaluate setEnabled:NO];
+}
+
+-(void) evaluateUseCheck:(NSString *)labCode
+{
+    /*NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSMutableArray *userData = [userDefaults objectForKey:@"userData"];*/
+    
+    WebdbConnect *myLab = [[WebdbConnect alloc] initWithLabArray:labCode];
+    
+    NSString *time_old = [[myLab labEvaluateGet]valueForKeyPath:@"option1"];
+    //NSString *otherRecvCount = [[otherLab labEvaluateGet]valueForKeyPath:@"option3"];
+    
+    NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
+    [fmt setDateFormat:@"yyyy年MM月dd日 HH時mm分"];
+    NSDate *nowGet = [[NSDate alloc]init];
+    NSString *time_new;
+    time_new = [fmt stringFromDate:nowGet];
+    
+    NSString *subold;
+    NSString *subold_day;
+    NSString *subold_hour;
+    
+    
+    NSString *timenew_day;
+    NSString *timenew_hour;
+    
+    timenew_day = [time_new substringWithRange:NSMakeRange(8, 2)];
+    timenew_hour = [time_new substringWithRange:NSMakeRange(11, 2)];
+
+    NSString *sub = [NSString stringWithFormat:@"%@",time_old];
+    
+    if(sub.length == 0){
+        subold= @"0000年00月00日";
+    }else{
+        subold_day = [time_old substringWithRange:NSMakeRange(8, 2)];
+        subold_hour = [time_old substringWithRange:NSMakeRange(11, 2)];
     }
+    
+    int timenew_hour_int =[timenew_hour intValue];
+    int subold_hour_int =[subold_hour intValue];
+    
+    //24時間以内だったら評価不可
+    if(sub.length == 0){
+        [_badgeEvaluate setEnabled:YES];
+    }else if([subold_day isEqualToString:timenew_day]) {
+        [_badgeEvaluate setEnabled:NO];
+    }else if(timenew_hour_int - subold_hour_int > 0){
+         [_badgeEvaluate setEnabled:YES];
+    }
+    
+
+    
+}
+
+
 @end
