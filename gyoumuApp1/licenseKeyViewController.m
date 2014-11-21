@@ -39,7 +39,25 @@
 
 
 - (IBAction)next:(id)sender {
+    if(self.tagField.text.length == 0){
+    
+        UIAlertView *alert =
+        [[UIAlertView alloc] initWithTitle:@"入力エラー" message:@"識別子が入力されていません。"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+        return;
+        
+    }else if(self.keyField.text.length == 0){
+    
+        UIAlertView *alert =
+        [[UIAlertView alloc] initWithTitle:@"入力エラー" message:@"ライセンスキーが入力されていません。"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+        return;
+        
+    }
+    
     self.addData.tag = self.tagField.text;
     self.addData.key = self.keyField.text;
+    [self performSegueWithIdentifier:@"key" sender:self];
+    
 }
 @end

@@ -37,14 +37,27 @@
  }
 
 - (IBAction)next:(id)sender {
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
-    self.addData.start = [dateFormatter stringFromDate:self.startPicker.date];
-    self.addData.period = (self.periodState.on)?[dateFormatter stringFromDate:self.periodPiecker.date]:@"";
+    
+    if(self.periodState.on == YES && self.periodPiecker.date == [self.startPicker.date earlierDate:self.periodPiecker.date]){
+        UIAlertView *alert =
+        [[UIAlertView alloc] initWithTitle:@"入力エラー" message:@"購入日時または有効期限の値が不正です。"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+        return;
+    }
+    
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+        self.addData.start = [dateFormatter stringFromDate:self.startPicker.date];
+        self.addData.period = (self.periodState.on)?[dateFormatter stringFromDate:self.periodPiecker.date]:@"";
+        [self performSegueWithIdentifier:@"date" sender:self];
 }
+
 
 -(void)changedSwitchValue:(UISwitch*)state{
     self.periodPiecker.backgroundColor = (state.on) ? [[[[UIApplication sharedApplication] delegate] window] tintColor]:[UIColor lightGrayColor];
+    [self.periodPiecker setUserInteractionEnabled:(state.on) ?YES:NO];
+    self.periodPiecker.maximumDate = (state.on) ? [NSDate dateWithTimeIntervalSinceNow:4]:[NSDate dateWithTimeIntervalSinceNow:0];
+    self.periodPiecker.maximumDate = (state.on) ? [NSDate dateWithTimeIntervalSinceNow:4]:[NSDate dateWithTimeIntervalSinceNow:0];
 }
 
 
