@@ -38,6 +38,6 @@
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd"];
     self.addData.start = [dateFormatter stringFromDate:self.startPicker.date];
-    self.addData.period = [dateFormatter stringFromDate:self.periodPiecker.date];
+    self.addData.period = (self.periodState.on)?[dateFormatter stringFromDate:self.periodPiecker.date]:@"";
 }
 @end
