@@ -20,6 +20,8 @@
     // Do any additional setup after loading the view.
     [self.periodState addTarget:self action:@selector(changedSwitchValue:)
  forControlEvents:UIControlEventValueChanged];
+    [self.startPicker addTarget:self action:@selector(setPeriodMinimum:)
+               forControlEvents:UIControlEventValueChanged];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,12 +40,14 @@
 
 - (IBAction)next:(id)sender {
     
-    if(self.periodState.on == YES && [self.periodPicker.date isEqualToDate:[self.startPicker.date earlierDate:self.periodPicker.date]]){
+    
+    //購入日時 < 期限の時のアラート
+/*    if(self.periodState.on == YES && [self.periodPicker.date isEqualToDate:[self.startPicker.date earlierDate:self.periodPicker.date]]){
         UIAlertView *alert =
         [[UIAlertView alloc] initWithTitle:@"入力エラー" message:@"購入日時または有効期限の値が不正です。"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
         return;
-    }
+    }*/
     
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
         [dateFormatter setDateFormat:@"yyyy-MM-dd"];
@@ -59,5 +63,8 @@
     [self.periodPicker setUserInteractionEnabled:(state.on) ?YES:NO];
 }
 
+-(void)setPeriodMinimum:(UIDatePicker *)picker{
+    self.periodPicker.minimumDate = picker.date;
+}
 
 @end
