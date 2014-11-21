@@ -22,6 +22,7 @@
  forControlEvents:UIControlEventValueChanged];
     [self.startPicker addTarget:self action:@selector(setPeriodMinimum:)
                forControlEvents:UIControlEventValueChanged];
+    self.periodPicker.minimumDate = [NSDate dateWithTimeIntervalSinceNow:0];
 }
 
 - (void)didReceiveMemoryWarning {
