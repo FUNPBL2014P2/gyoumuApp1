@@ -1636,7 +1636,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="609-DA-jA2">
-                                <rect key="frame" x="0.0" y="-39" width="768" height="895"/>
+                                <rect key="frame" x="0.0" y="-39" width="768" height="863"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -1707,7 +1707,7 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="Q1d-Cx-Mv0" id="Np4-GK-rtV"/>
+                                    <outlet property="dataSource" destination="yVv-Ai-n7i" id="cHh-4r-Vmf"/>
                                     <outlet property="delegate" destination="yVv-Ai-n7i" id="KfB-C8-9MG"/>
                                 </connections>
                             </tableView>

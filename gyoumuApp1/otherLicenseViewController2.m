@@ -12,6 +12,7 @@
 
 @interface otherLicenseViewController2 ()  <UITableViewDelegate, UITableViewDataSource>
 
+
 @end
 
 @implementation otherLicenseViewController2
@@ -74,7 +75,10 @@
     }
     return count;
 }
-
+-(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 180;
+}
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *cellIdentifier = @"myCell";
