@@ -1140,6 +1140,12 @@
                                 <date key="date" timeIntervalSinceReferenceDate="438007440.91391402">
                                     <!--2014-11-18 12:44:00 +0000-->
                                 </date>
+                                <date key="minimumDate" timeIntervalSinceReferenceDate="-978267600">
+                                    <!--1970-01-01 11:00:00 +0000-->
+                                </date>
+                                <date key="maximumDate" timeIntervalSinceReferenceDate="1167562800">
+                                    <!--2037-12-31 11:00:00 +0000-->
+                                </date>
                                 <locale key="locale" localeIdentifier="ja_JP"/>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="購入日時" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bPe-35-vGr">
@@ -1168,6 +1174,12 @@
                                 <date key="date" timeIntervalSinceReferenceDate="438007446.08995497">
                                     <!--2014-11-18 12:44:06 +0000-->
                                 </date>
+                                <date key="minimumDate" timeIntervalSinceReferenceDate="-978267600">
+                                    <!--1970-01-01 11:00:00 +0000-->
+                                </date>
+                                <date key="maximumDate" timeIntervalSinceReferenceDate="1167562800">
+                                    <!--2037-12-31 11:00:00 +0000-->
+                                </date>
                                 <locale key="locale" localeIdentifier="ja_JP"/>
                             </datePicker>
                         </subviews>
@@ -1175,6 +1187,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="zFA-Sq-X3L"/>
                     <connections>
+                        <outlet property="periodLabel" destination="hnS-aG-tdK" id="V1a-x5-oou"/>
                         <outlet property="periodPicker" destination="sx5-Lz-edq" id="7xS-9E-toj"/>
                         <outlet property="periodState" destination="Elb-LX-juS" id="Xek-7D-Ize"/>
                         <outlet property="startPicker" destination="zyr-Jw-eX1" id="mex-dk-hnL"/>

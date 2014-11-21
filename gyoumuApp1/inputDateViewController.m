@@ -20,6 +20,9 @@
     // Do any additional setup after loading the view.
     [self.periodState addTarget:self action:@selector(changedSwitchValue:)
  forControlEvents:UIControlEventValueChanged];
+    [self.startPicker addTarget:self action:@selector(setPeriodMinimum:)
+               forControlEvents:UIControlEventValueChanged];
+    self.periodPicker.minimumDate = [NSDate dateWithTimeIntervalSinceNow:0];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,12 +41,14 @@
 
 - (IBAction)next:(id)sender {
     
-    if(self.periodState.on == YES && self.periodPicker.date == [self.startPicker.date earlierDate:self.periodPicker.date]){
+    
+    //購入日時 < 期限の時のアラート
+/*    if(self.periodState.on == YES && [self.periodPicker.date isEqualToDate:[self.startPicker.date earlierDate:self.periodPicker.date]]){
         UIAlertView *alert =
         [[UIAlertView alloc] initWithTitle:@"入力エラー" message:@"購入日時または有効期限の値が不正です。"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
         return;
-    }
+    }*/
     
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
         [dateFormatter setDateFormat:@"yyyy-MM-dd"];
@@ -54,11 +59,13 @@
 
 
 -(void)changedSwitchValue:(UISwitch*)state{
-    self.periodPicker.backgroundColor = (state.on) ? [[[[UIApplication sharedApplication] delegate] window] tintColor]:[UIColor lightGrayColor];
-    [self.periodPicker setUserInteractionEnabled:(state.on) ?YES:NO];
-    self.periodPicker.maximumDate = (state.on) ? [NSDate dateWithTimeIntervalSinceNow:4]:[NSDate dateWithTimeIntervalSinceNow:0];
-    self.periodPicker.maximumDate = (state.on) ? [NSDate dateWithTimeIntervalSinceNow:4]:[NSDate dateWithTimeIntervalSinceNow:0];
+    [self.periodPicker setUserInteractionEnabled:(state.on) ? YES:NO];
+    self.periodPicker.hidden = (state.on) ?NO:YES;
+    self.periodLabel.hidden = (state.on) ?NO:YES;
 }
 
+-(void)setPeriodMinimum:(UIDatePicker *)picker{
+    self.periodPicker.minimumDate = picker.date;
+}
 
 @end
