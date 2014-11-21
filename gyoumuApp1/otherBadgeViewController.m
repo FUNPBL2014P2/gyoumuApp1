@@ -304,6 +304,7 @@
     
     
     /////////////////評価した側の処理
+    mAddCount += 1;
     
     NSString *urlList = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/add.php",[userData valueForKeyPath:@"labCode"]];
     
@@ -312,7 +313,7 @@
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     [request setHTTPMethod:@"POST"];
     //パラメータを作成
-    NSString *body = [NSString stringWithFormat:@"title=Evaluation&message=&latitude=&longitude=&terminalId=%@&option0=&option1=%@&option2=%d&option3=%d&option4=&option5=",[[myLab labEvaluateGet]valueForKeyPath:@"terminalId"],[fmt stringFromDate:nowGet],mAddCount+1,mRecvCount];
+    NSString *body = [NSString stringWithFormat:@"title=Evaluation&message=&latitude=&longitude=&terminalId=%@&option0=&option1=%@&option2=%d&option3=%d&option4=&option5=",[[myLab labEvaluateGet]valueForKeyPath:@"terminalId"],[fmt stringFromDate:nowGet],mAddCount,mRecvCount];
     request.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
     NSURLConnection *connection;
     connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
@@ -327,6 +328,7 @@
     
     
     //////////////////評価された側の処理
+    oRecvCount += 1;
     
     
     NSString *urlList1 = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/add.php",ap.LabPath];
@@ -338,7 +340,7 @@
     //パラメータを作成
     
     
-    NSString *body1 = [NSString stringWithFormat:@"title=Evaluation&message=&latitude=&longitude=&terminalId=%@&option0=&option1=%@&option2=%d&option3=%d",[[otherLab labEvaluateGet]valueForKeyPath:@"terminalId"],[[otherLab labEvaluateGet]valueForKeyPath:@"option1"],oAddCount,oRecvCount+1];
+    NSString *body1 = [NSString stringWithFormat:@"title=Evaluation&message=&latitude=&longitude=&terminalId=%@&option0=&option1=%@&option2=%d&option3=%d",[[otherLab labEvaluateGet]valueForKeyPath:@"terminalId"],[[otherLab labEvaluateGet]valueForKeyPath:@"option1"],oAddCount,oRecvCount];
     request1.HTTPBody = [body1 dataUsingEncoding:NSUTF8StringEncoding];
     NSURLConnection *connection1;
     connection1 = [[NSURLConnection alloc] initWithRequest:request1 delegate:self];
@@ -353,7 +355,7 @@
     /*NSString *RecvCount = [NSString stringWithFormat:@"%d"[oRecvCount]];
      
      self.evaluateNumber.text = RecvCount;*/
-    
+    self.evaluateNumber.text = [NSString stringWithFormat:@"%d",oRecvCount];
     [_badgeEvaluate setEnabled:NO];
 }
 
