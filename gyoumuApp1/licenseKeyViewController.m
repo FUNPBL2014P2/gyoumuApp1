@@ -7,6 +7,7 @@
 //
 
 #import "licenseKeyViewController.h"
+#import "inputDateViewController.h"
 
 @interface licenseKeyViewController ()
 
@@ -24,14 +25,21 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
+
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    inputDateViewController *nextVC = segue.destinationViewController;
+    nextVC.addData = [[additionData alloc]init];
+    [nextVC.addData copy:self.addData];
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
 
+
+
+- (IBAction)next:(id)sender {
+    self.addData.tag = self.tagField.text;
+    self.addData.key = self.keyField.text;
+}
 @end

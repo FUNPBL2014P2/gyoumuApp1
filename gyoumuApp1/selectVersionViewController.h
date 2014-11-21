@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "additionData.h"
 
-@interface selectVersionViewController : UIViewController
-
+@interface selectVersionViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+{
+    additionData *_addData;
+    UITableView *_tableView;
+}
+@property additionData *addData;
+@property IBOutlet UITableView *tableView;
 @end
