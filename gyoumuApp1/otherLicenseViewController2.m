@@ -61,6 +61,25 @@
     return 1;
 }
 
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UIView *containerView = [[UIView alloc] init];
+    UILabel *maker = [[UILabel alloc] initWithFrame:CGRectMake(30, 10, 100, 20)];
+    maker.text = @"メーカー";
+    UILabel *software = [[UILabel alloc] initWithFrame:CGRectMake(maker.frame.origin.x+maker.frame.size.width+40, 10, 200, 20)];
+    software.text = @"ソフトウェア";
+    UILabel *version = [[UILabel alloc] initWithFrame:CGRectMake(software.frame.origin.x+software.frame.size.width+40, 10, 200, 20)];
+    version.text = @"バージョン";
+    UILabel *own = [[UILabel alloc] initWithFrame:CGRectMake(version.frame.origin.x+version.frame.size.width+40, 10, 150, 20)];
+    own.text = @"保管";
+    UILabel *rest = [[UILabel alloc] initWithFrame:CGRectMake(own.frame.origin.x+own.frame.size.width+40, 10, 15, 20)];
+    rest.text =@"残り日数";
+    [containerView addSubview:maker];
+    [containerView addSubview:software];
+    [containerView addSubview:version];
+    [containerView addSubview:own];
+    [containerView addSubview:rest];
+    return containerView;
+}
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     int count = 0;
