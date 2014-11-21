@@ -55,7 +55,6 @@
 		EBE89AAC1A1771D4002D0DCA /* labViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE89AAB1A1771D4002D0DCA /* labViewController.m */; };
 		EBE89AE71A177901002D0DCA /* otherBadgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE89AE61A177901002D0DCA /* otherBadgeViewController.m */; };
 		F81A11D41A1898620064103A /* tabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F81A11D31A1898620064103A /* tabViewController.m */; };
-		F81A11DA1A18C25B0064103A /* otherLicenseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F81A11D91A18C25B0064103A /* otherLicenseViewController.m */; };
 		F81A121E1A1A2ACF0064103A /* WebdbConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = F81A121D1A1A2ACF0064103A /* WebdbConnect.m */; };
 		F86DDF281A1F1C810071510A /* otherLicenseViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = F86DDF271A1F1C810071510A /* otherLicenseViewController2.m */; };
 		F87F6A3A19F939740088A0D6 /* guestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F87F6A3919F939740088A0D6 /* guestViewController.m */; };
@@ -78,6 +77,7 @@
 		F8A63E3F1A1BCE3200B34842 /* otherBadgeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A63E3E1A1BCE3200B34842 /* otherBadgeDetailViewController.m */; };
 		F8B6F8DF1A1DDD2F009983D2 /* licenseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B6F8DE1A1DDD2F009983D2 /* licenseTableViewController.m */; };
 		F8F60B931A00D104002717F2 /* jsonUser.txt in Resources */ = {isa = PBXBuildFile; fileRef = F8F60B921A00D104002717F2 /* jsonUser.txt */; };
+		F8FE9D6C1A1FD8950007D2EA /* otherLicenseViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = F8FE9D6B1A1FD8950007D2EA /* otherLicenseViewController3.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,8 +161,6 @@
 		EBFEFC0E1A032CA100E548B5 /* BadgeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadgeViewController.h; sourceTree = "<group>"; };
 		F81A11D21A1898620064103A /* tabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tabViewController.h; sourceTree = "<group>"; };
 		F81A11D31A1898620064103A /* tabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tabViewController.m; sourceTree = "<group>"; };
-		F81A11D81A18C25B0064103A /* otherLicenseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = otherLicenseViewController.h; sourceTree = "<group>"; };
-		F81A11D91A18C25B0064103A /* otherLicenseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = otherLicenseViewController.m; sourceTree = "<group>"; };
 		F81A121C1A1A2ACF0064103A /* WebdbConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebdbConnect.h; sourceTree = "<group>"; };
 		F81A121D1A1A2ACF0064103A /* WebdbConnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebdbConnect.m; sourceTree = "<group>"; };
 		F86DDF261A1F1C810071510A /* otherLicenseViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = otherLicenseViewController2.h; sourceTree = "<group>"; };
@@ -196,6 +194,8 @@
 		F8B6F8DD1A1DDD2F009983D2 /* licenseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = licenseTableViewController.h; sourceTree = "<group>"; };
 		F8B6F8DE1A1DDD2F009983D2 /* licenseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = licenseTableViewController.m; sourceTree = "<group>"; };
 		F8F60B921A00D104002717F2 /* jsonUser.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jsonUser.txt; sourceTree = "<group>"; };
+		F8FE9D6A1A1FD8950007D2EA /* otherLicenseViewController3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = otherLicenseViewController3.h; sourceTree = "<group>"; };
+		F8FE9D6B1A1FD8950007D2EA /* otherLicenseViewController3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = otherLicenseViewController3.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -303,10 +303,10 @@
 				EBE89AE61A177901002D0DCA /* otherBadgeViewController.m */,
 				F8A63E3D1A1BCE3200B34842 /* otherBadgeDetailViewController.h */,
 				F8A63E3E1A1BCE3200B34842 /* otherBadgeDetailViewController.m */,
+				F8FE9D6A1A1FD8950007D2EA /* otherLicenseViewController3.h */,
+				F8FE9D6B1A1FD8950007D2EA /* otherLicenseViewController3.m */,
 				F86DDF261A1F1C810071510A /* otherLicenseViewController2.h */,
 				F86DDF271A1F1C810071510A /* otherLicenseViewController2.m */,
-				F81A11D81A18C25B0064103A /* otherLicenseViewController.h */,
-				F81A11D91A18C25B0064103A /* otherLicenseViewController.m */,
 			);
 			name = OtherLabView;
 			sourceTree = "<group>";
@@ -548,7 +548,6 @@
 				EBE89A9D1A176BFC002D0DCA /* selectSoftwareViewController.m in Sources */,
 				EBB974641A036BDA00030426 /* BadgeViewController.m in Sources */,
 				EBB4B0351A1CB5C40073EABD /* additionData.m in Sources */,
-				F81A11DA1A18C25B0064103A /* otherLicenseViewController.m in Sources */,
 				EB9DE12319F03D2D0071FEEB /* AMSlideMenuContentSegue.m in Sources */,
 				F86DDF281A1F1C810071510A /* otherLicenseViewController2.m in Sources */,
 				F8A223E719EE6C0D00139991 /* ViewController.m in Sources */,
@@ -557,6 +556,7 @@
 				EBE89AA91A176C6F002D0DCA /* confirmViewController.m in Sources */,
 				EB9DE12819F03D2D0071FEEB /* AMSlideMenuRightTableViewController.m in Sources */,
 				EB24DAB71A0731A800C791F7 /* BadgeDetailViewController.m in Sources */,
+				F8FE9D6C1A1FD8950007D2EA /* otherLicenseViewController3.m in Sources */,
 				EBE89A9A1A176BA4002D0DCA /* selectMakerViewController.m in Sources */,
 				EBE89AAC1A1771D4002D0DCA /* labViewController.m in Sources */,
 				F8B6F8DF1A1DDD2F009983D2 /* licenseTableViewController.m in Sources */,

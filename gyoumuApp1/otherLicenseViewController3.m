@@ -1,21 +1,21 @@
 //
-//  otherLicenseViewController2.m
+//  otherLicenseViewController3.m
 //  gyoumuApp1
 //
-//  Created by Shota Oda on 2014/11/21.
+//  Created by Shota Oda on 2014/11/22.
 //  Copyright (c) 2014年 shota. All rights reserved.
 //
 
-#import "otherLicenseViewController2.h"
+#import "otherLicenseViewController3.h"
 #import "AppDelegate.h"
 #import "WebdbConnect.h"
 
-@interface otherLicenseViewController2 ()  <UITableViewDelegate, UITableViewDataSource>
-
+@interface otherLicenseViewController3 () <UITableViewDataSource, UITableViewDelegate>
 
 @end
 
-@implementation otherLicenseViewController2
+@implementation otherLicenseViewController3
+
 {
     WebdbConnect *connect;
     NSMutableArray *licenseArray;
@@ -61,37 +61,6 @@
     return 1;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 60.0f;
-}
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    
-    UIView *containerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 200)];
-    containerView.backgroundColor = [UIColor colorWithRed:0.0 green:0.6 blue:1.2 alpha:1.0];
-    UILabel *maker = [[UILabel alloc] initWithFrame:CGRectMake(35, 10, 100, 20)];
-    maker.text = @"メーカー";
-    UILabel *software = [[UILabel alloc] initWithFrame:CGRectMake(maker.frame.origin.x+maker.frame.size.width+45, 10, 200, 20)];
-    software.text = @"ソフトウェア";
-    UILabel *version = [[UILabel alloc] initWithFrame:CGRectMake(software.frame.origin.x+software.frame.size.width-10, 10, 100, 20)];
-    version.text = @"バージョン";
-    UILabel *own = [[UILabel alloc] initWithFrame:CGRectMake(version.frame.origin.x+version.frame.size.width+55, 10, 50, 20)];
-    own.text = @"保管";
-    UILabel *rest = [[UILabel alloc] initWithFrame:CGRectMake(own.frame.origin.x+own.frame.size.width+10, 10, 100, 20)];
-    rest.text =@"残り日数";
-    UILabel *detail = [[UILabel alloc] initWithFrame:CGRectMake(rest.frame.origin.x+own.frame.size.width+60, 10, 50, 20)];
-    detail.text = @"詳細";
-   
-    [containerView addSubview:maker];
-    [containerView addSubview:software];
-    [containerView addSubview:version];
-    [containerView addSubview:own];
-    [containerView addSubview:rest];
-    [containerView addSubview:detail];
-
-    return containerView;
-   
-}
-
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -118,7 +87,7 @@
     if (indexPath.row % 2 == 0) {
         cell.backgroundColor = [UIColor groupTableViewBackgroundColor];
     } else
-    cell.backgroundColor = [UIColor lightGrayColor];
+        cell.backgroundColor = [UIColor lightGrayColor];
 }
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
@@ -145,6 +114,7 @@
     UILabel *label5 = (UILabel *)[cell viewWithTag:5];
     label5.text = @"33";
     cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
     
     

@@ -65,6 +65,17 @@
     return labCount;
 }
 
+-(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 70;
+}
+
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+        cell.backgroundColor = [UIColor groupTableViewBackgroundColor];
+}
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //Supporting Files内のjsonUser.txtを参照
@@ -78,7 +89,7 @@
     //
 
     //セルの準備
-    NSString *cellIdentifier = @"Cell";
+    NSString *cellIdentifier = @"labCell";
     
     UITableViewCell  *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
@@ -90,8 +101,10 @@
     //するとlabCheckArrayは他研究室の番号を示すのでintValueで数値に直す
     //最後にjsonArray1でその数値の対応するjsonUser.txt内の"lab"配列を参照している
     NSString *title =[NSString stringWithFormat:@"%@",jsonArray1[[labCheckArray[indexPath.row] intValue]-1]];
-    cell.textLabel.text = title;
-   
+        UILabel *label1 = (UILabel *)[cell viewWithTag:1];
+    label1.text = title;
+    label1.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
+    cell.selectionStyle = UITableViewCellSelectionStyleBlue;
     return cell;
 }
 
