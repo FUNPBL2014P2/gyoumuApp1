@@ -1093,7 +1093,6 @@
                                 </state>
                                 <connections>
                                     <action selector="next:" destination="io5-ch-xae" eventType="touchUpInside" id="HvT-0d-BFa"/>
-                                    <segue destination="qZ4-JY-tNy" kind="push" identifier="key" id="4eJ-i8-5Hq"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1103,6 +1102,7 @@
                     <connections>
                         <outlet property="keyField" destination="7lW-eX-IAq" id="Cgw-u4-Rqz"/>
                         <outlet property="tagField" destination="4IH-5A-Pso" id="epg-NE-bBq"/>
+                        <segue destination="qZ4-JY-tNy" kind="push" identifier="key" id="uu3-EV-pef"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UcQ-KJ-L8q" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1130,7 +1130,6 @@
                                 </state>
                                 <connections>
                                     <action selector="next:" destination="qZ4-JY-tNy" eventType="touchUpInside" id="5GJ-N7-aB6"/>
-                                    <segue destination="YUf-UH-ezE" kind="push" id="Spz-IC-wGF"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="progress5.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ube-R0-aTK">
@@ -1176,9 +1175,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="zFA-Sq-X3L"/>
                     <connections>
-                        <outlet property="periodPiecker" destination="sx5-Lz-edq" id="6fD-hw-uNS"/>
+                        <outlet property="periodPicker" destination="sx5-Lz-edq" id="7xS-9E-toj"/>
                         <outlet property="periodState" destination="Elb-LX-juS" id="Xek-7D-Ize"/>
                         <outlet property="startPicker" destination="zyr-Jw-eX1" id="mex-dk-hnL"/>
+                        <segue destination="YUf-UH-ezE" kind="push" identifier="date" id="4kG-yU-wzZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aLa-Ug-Iyg" userLabel="First Responder" sceneMemberID="firstResponder"/>
