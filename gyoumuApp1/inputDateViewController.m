@@ -38,7 +38,7 @@
 
 - (IBAction)next:(id)sender {
     
-    if(self.periodState.on == YES && self.periodPicker.date == [self.startPicker.date earlierDate:self.periodPicker.date]){
+    if(self.periodState.on == YES && [self.periodPicker.date isEqualToDate:[self.startPicker.date earlierDate:self.periodPicker.date]]){
         UIAlertView *alert =
         [[UIAlertView alloc] initWithTitle:@"入力エラー" message:@"購入日時または有効期限の値が不正です。"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
