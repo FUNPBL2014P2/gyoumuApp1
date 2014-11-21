@@ -59,9 +59,9 @@
 
 
 -(void)changedSwitchValue:(UISwitch*)state{
-    self.periodPicker.backgroundColor = (state.on) ? [[[[UIApplication sharedApplication] delegate] window] tintColor]:[UIColor lightGrayColor];
-    [[UIDatePicker appearance]setTintColor:[UIColor lightGrayColor]];
-    [self.periodPicker setUserInteractionEnabled:(state.on) ?YES:NO];
+    [self.periodPicker setUserInteractionEnabled:(state.on) ? YES:NO];
+    self.periodPicker.hidden = (state.on) ?NO:YES;
+    self.periodLabel.hidden = (state.on) ?NO:YES;
 }
 
 -(void)setPeriodMinimum:(UIDatePicker *)picker{
