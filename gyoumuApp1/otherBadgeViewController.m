@@ -330,7 +330,7 @@
     
     
     NSString *urlList1 = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/add.php",ap.LabPath];
-    NSLog(@"%@",urlList1);
+    //NSLog(@"%@",urlList1);
     NSURL *url1 = [NSURL URLWithString:urlList1];
     
     NSMutableURLRequest *request1 = [NSMutableURLRequest requestWithURL:url1];
@@ -338,7 +338,7 @@
     //パラメータを作成
     
     
-    NSString *body1 = [NSString stringWithFormat:@"title=Evaluation&message=&latitude=&longitude=&terminalId=%@&option0=&option1=%@&option2=%d&option3=%d",[[otherLab labEvaluateGet]valueForKeyPath:@"terminalId"],[[otherLab labEvaluateGet]valueForKeyPath:@"option1"],oAddCount,oRecvCount++];
+    NSString *body1 = [NSString stringWithFormat:@"title=Evaluation&message=&latitude=&longitude=&terminalId=%@&option0=&option1=%@&option2=%d&option3=%d",[[otherLab labEvaluateGet]valueForKeyPath:@"terminalId"],[[otherLab labEvaluateGet]valueForKeyPath:@"option1"],oAddCount,oRecvCount+1];
     request1.HTTPBody = [body1 dataUsingEncoding:NSUTF8StringEncoding];
     NSURLConnection *connection1;
     connection1 = [[NSURLConnection alloc] initWithRequest:request1 delegate:self];
@@ -392,11 +392,11 @@
         subold_day = [time_old substringWithRange:NSMakeRange(8, 2)];
         //subold_hour = [time_old substringWithRange:NSMakeRange(12, 2)];
     }
-   /*
-    int timenew_hour_int =[timenew_hour intValue];
-    int subold_hour_int =[subold_hour intValue];*/
+    /*
+     int timenew_hour_int =[timenew_hour intValue];
+     int subold_hour_int =[subold_hour intValue];*/
     
- 
+    
     
     //24時間以内だったら評価不可
     if(sub.length == 0){
@@ -406,8 +406,6 @@
     }else if([self timeCheck:labCode] > 0){
         [_badgeEvaluate setEnabled:YES];
     }
-    
-    
     
 }
 
@@ -448,15 +446,23 @@
     int timenew_hour_int =[timenew_hour intValue];
     int subold_hour_int =[subold_hour intValue];
     
-    
-    if(timenew_hour_int - subold_hour_int > 0){
+    if((![subold_day isEqualToString:timenew_day]) && (timenew_hour_int - subold_hour_int >= 0)){
+        return 0;
+    }
+    else if(timenew_hour_int - subold_hour_int >= 0){
         return 24 - (timenew_hour_int - subold_hour_int);
     }else{
         return timenew_hour_int - subold_hour_int;
     }
     
+    
 }
 
+-(void) time:(NSString *)labCode{
+    
+    
+
+}
 
 
 
