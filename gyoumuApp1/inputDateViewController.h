@@ -18,5 +18,5 @@
 @property (weak, nonatomic) IBOutlet UIDatePicker *periodPiecker;
 @property (weak, nonatomic) IBOutlet UISwitch *periodState;
 - (IBAction)next:(id)sender;
-
+-(void)changedSwitchValue:(UISwitch*)state;
 @end

@@ -18,6 +18,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self.periodState addTarget:self action:@selector(changedSwitchValue:)
+ forControlEvents:UIControlEventValueChanged];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,4 +42,10 @@
     self.addData.start = [dateFormatter stringFromDate:self.startPicker.date];
     self.addData.period = (self.periodState.on)?[dateFormatter stringFromDate:self.periodPiecker.date]:@"";
 }
+
+-(void)changedSwitchValue:(UISwitch*)state{
+    self.periodPiecker.backgroundColor = (state.on) ? [[[[UIApplication sharedApplication] delegate] window] tintColor]:[UIColor lightGrayColor];
+}
+
+
 @end
