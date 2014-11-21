@@ -55,9 +55,8 @@
 
 -(void)changedSwitchValue:(UISwitch*)state{
     self.periodPicker.backgroundColor = (state.on) ? [[[[UIApplication sharedApplication] delegate] window] tintColor]:[UIColor lightGrayColor];
+    [[UIDatePicker appearance]setTintColor:[UIColor lightGrayColor]];
     [self.periodPicker setUserInteractionEnabled:(state.on) ?YES:NO];
-    self.periodPicker.maximumDate = (state.on) ? [NSDate dateWithTimeIntervalSinceNow:4]:[NSDate dateWithTimeIntervalSinceNow:0];
-    self.periodPicker.maximumDate = (state.on) ? [NSDate dateWithTimeIntervalSinceNow:4]:[NSDate dateWithTimeIntervalSinceNow:0];
 }
 
 
