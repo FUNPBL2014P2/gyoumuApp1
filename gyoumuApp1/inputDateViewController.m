@@ -7,6 +7,7 @@
 //
 
 #import "inputDateViewController.h"
+#import "confirmViewController.h"
 
 @interface inputDateViewController ()
 
@@ -24,14 +25,19 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ confirmViewController *nextVC = segue.destinationViewController;
+ nextVC.addData = [[additionData alloc]init];
+ [nextVC.addData copy:self.addData];
+     
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)next:(id)sender {
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    self.addData.start = [dateFormatter stringFromDate:self.startPicker.date];
+    self.addData.period = [dateFormatter stringFromDate:self.periodPiecker.date];
 }
-*/
-
 @end

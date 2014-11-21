@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "additionData.h"
 
 @interface inputDateViewController : UIViewController
+{
+    additionData *_addData;
+}
+@property additionData *addData;
+@property (weak, nonatomic) IBOutlet UIDatePicker *startPicker;
+@property (weak, nonatomic) IBOutlet UIDatePicker *periodPiecker;
+@property (weak, nonatomic) IBOutlet UISwitch *periodState;
+- (IBAction)next:(id)sender;
 
 @end

@@ -7,16 +7,23 @@
 //
 
 #import "selectMakerViewController.h"
+#import "selectSoftwareViewController.h"
+#import "additionData.h"
 
 @interface selectMakerViewController ()
 
 @end
 
 @implementation selectMakerViewController
+{
+    additionData *addData;
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    addData = [[additionData alloc]init];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -28,10 +35,22 @@
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
 */
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    selectSoftwareViewController *nextVC = segue.destinationViewController;
+    nextVC.addData = [[additionData alloc]init];
+    [nextVC.addData copy:addData];
+}
+
+
+- (IBAction)adbBtn:(id)sender {
+    addData.maker = @"Adobe";
+}
+
+- (IBAction)mcrBtn:(id)sender {
+    addData.maker = @"Microsoft";
+}
 
 @end
