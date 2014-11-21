@@ -630,7 +630,7 @@
             <objects>
                 <tabBarController id="kWz-IB-FzQ" customClass="tabViewController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="2k6-H8-uG4"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="EgT-rQ-rR6">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -647,7 +647,6 @@
             <point key="canvasLocation" x="7239" y="2482"/>
         </scene>
         <!--Other License View Controller - ライセンス情報-->
-
         <scene sceneID="fiE-rf-wCc">
             <objects>
                 <tableViewController id="pkm-o6-1O1" customClass="otherLicenseViewController" sceneMemberID="viewController">
@@ -1283,8 +1282,8 @@
                                     <action selector="badge15Btn:" destination="z2N-KT-wvC" eventType="touchUpInside" id="bFM-Vz-eeF"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nMe-9B-B1y">
-                                <rect key="frame" x="66" y="112" width="45" height="30"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nMe-9B-B1y">
+                                <rect key="frame" x="66" y="112" width="76" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="いいね">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -1293,10 +1292,17 @@
                                     <action selector="badgeEvaluateBtn:" destination="z2N-KT-wvC" eventType="touchUpInside" id="tVU-3B-yAt"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QkE-0A-vI9">
-                                <rect key="frame" x="119" y="116" width="42" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QkE-0A-vI9">
+                                <rect key="frame" x="134" y="116" width="80" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g4P-E0-Uxw">
+                                <rect key="frame" x="66" y="169" width="305" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -1324,6 +1330,7 @@
                         <outlet property="badge9" destination="ULK-e1-mQC" id="E9b-3L-mlY"/>
                         <outlet property="badgeEvaluate" destination="nMe-9B-B1y" id="CWZ-j0-6YE"/>
                         <outlet property="evaluateNumber" destination="QkE-0A-vI9" id="Skq-5q-YIz"/>
+                        <outlet property="evaluateTime" destination="g4P-E0-Uxw" id="Pwp-Cc-O0x"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bRw-pY-5bd" userLabel="First Responder" sceneMemberID="firstResponder"/>

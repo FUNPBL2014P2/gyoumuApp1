@@ -48,6 +48,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *badgeEvaluate;
 - (IBAction)badgeEvaluateBtn:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *evaluateNumber;
+@property (weak, nonatomic) IBOutlet UILabel *evaluateTime;
 
 
 
