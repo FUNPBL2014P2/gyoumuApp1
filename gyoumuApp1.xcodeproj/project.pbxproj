@@ -46,7 +46,6 @@
 		EBD7DC601A1B4275009C6FFF /* progress6.png in Resources */ = {isa = PBXBuildFile; fileRef = EBD7DC5A1A1B4275009C6FFF /* progress6.png */; };
 		EBD7DC621A1B43F9009C6FFF /* adobe.png in Resources */ = {isa = PBXBuildFile; fileRef = EBD7DC611A1B43F9009C6FFF /* adobe.png */; };
 		EBD7DC641A1B45FB009C6FFF /* microsoft.png in Resources */ = {isa = PBXBuildFile; fileRef = EBD7DC631A1B45FB009C6FFF /* microsoft.png */; };
-		EBE89A971A1768CF002D0DCA /* licenseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE89A961A1768CF002D0DCA /* licenseViewController.m */; };
 		EBE89A9A1A176BA4002D0DCA /* selectMakerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE89A991A176BA4002D0DCA /* selectMakerViewController.m */; };
 		EBE89A9D1A176BFC002D0DCA /* selectSoftwareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE89A9C1A176BFC002D0DCA /* selectSoftwareViewController.m */; };
 		EBE89AA01A176C15002D0DCA /* selectVersionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE89A9F1A176C15002D0DCA /* selectVersionViewController.m */; };
@@ -58,6 +57,7 @@
 		F81A11D41A1898620064103A /* tabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F81A11D31A1898620064103A /* tabViewController.m */; };
 		F81A11DA1A18C25B0064103A /* otherLicenseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F81A11D91A18C25B0064103A /* otherLicenseViewController.m */; };
 		F81A121E1A1A2ACF0064103A /* WebdbConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = F81A121D1A1A2ACF0064103A /* WebdbConnect.m */; };
+		F86DDF281A1F1C810071510A /* otherLicenseViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = F86DDF271A1F1C810071510A /* otherLicenseViewController2.m */; };
 		F87F6A3A19F939740088A0D6 /* guestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F87F6A3919F939740088A0D6 /* guestViewController.m */; };
 		F87F6A7F19FA28E00088A0D6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F87F6A7E19FA28E00088A0D6 /* QuartzCore.framework */; };
 		F889EFAF19EED0760049B3A7 /* PerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F889EFAE19EED0760049B3A7 /* PerViewController.m */; };
@@ -142,8 +142,6 @@
 		EBD7DC5A1A1B4275009C6FFF /* progress6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = progress6.png; sourceTree = "<group>"; };
 		EBD7DC611A1B43F9009C6FFF /* adobe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = adobe.png; sourceTree = "<group>"; };
 		EBD7DC631A1B45FB009C6FFF /* microsoft.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = microsoft.png; sourceTree = "<group>"; };
-		EBE89A951A1768CF002D0DCA /* licenseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = licenseViewController.h; sourceTree = "<group>"; };
-		EBE89A961A1768CF002D0DCA /* licenseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = licenseViewController.m; sourceTree = "<group>"; };
 		EBE89A981A176BA4002D0DCA /* selectMakerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = selectMakerViewController.h; sourceTree = "<group>"; };
 		EBE89A991A176BA4002D0DCA /* selectMakerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = selectMakerViewController.m; sourceTree = "<group>"; };
 		EBE89A9B1A176BFC002D0DCA /* selectSoftwareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = selectSoftwareViewController.h; sourceTree = "<group>"; };
@@ -167,6 +165,8 @@
 		F81A11D91A18C25B0064103A /* otherLicenseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = otherLicenseViewController.m; sourceTree = "<group>"; };
 		F81A121C1A1A2ACF0064103A /* WebdbConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebdbConnect.h; sourceTree = "<group>"; };
 		F81A121D1A1A2ACF0064103A /* WebdbConnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebdbConnect.m; sourceTree = "<group>"; };
+		F86DDF261A1F1C810071510A /* otherLicenseViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = otherLicenseViewController2.h; sourceTree = "<group>"; };
+		F86DDF271A1F1C810071510A /* otherLicenseViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = otherLicenseViewController2.m; sourceTree = "<group>"; };
 		F87F6A3819F939740088A0D6 /* guestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = guestViewController.h; sourceTree = "<group>"; };
 		F87F6A3919F939740088A0D6 /* guestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = guestViewController.m; sourceTree = "<group>"; };
 		F87F6A7E19FA28E00088A0D6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -303,6 +303,8 @@
 				EBE89AE61A177901002D0DCA /* otherBadgeViewController.m */,
 				F8A63E3D1A1BCE3200B34842 /* otherBadgeDetailViewController.h */,
 				F8A63E3E1A1BCE3200B34842 /* otherBadgeDetailViewController.m */,
+				F86DDF261A1F1C810071510A /* otherLicenseViewController2.h */,
+				F86DDF271A1F1C810071510A /* otherLicenseViewController2.m */,
 				F81A11D81A18C25B0064103A /* otherLicenseViewController.h */,
 				F81A11D91A18C25B0064103A /* otherLicenseViewController.m */,
 			);
@@ -548,6 +550,7 @@
 				EBB4B0351A1CB5C40073EABD /* additionData.m in Sources */,
 				F81A11DA1A18C25B0064103A /* otherLicenseViewController.m in Sources */,
 				EB9DE12319F03D2D0071FEEB /* AMSlideMenuContentSegue.m in Sources */,
+				F86DDF281A1F1C810071510A /* otherLicenseViewController2.m in Sources */,
 				F8A223E719EE6C0D00139991 /* ViewController.m in Sources */,
 				EBE89AE71A177901002D0DCA /* otherBadgeViewController.m in Sources */,
 				F81A11D41A1898620064103A /* tabViewController.m in Sources */,
