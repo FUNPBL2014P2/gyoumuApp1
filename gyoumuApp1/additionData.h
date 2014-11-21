@@ -17,5 +17,6 @@
 @property NSString *start;
 @property NSString *period;
 -(void)copy: (additionData *)target;
+-(void)format;
 -(void)debug;
 @end
