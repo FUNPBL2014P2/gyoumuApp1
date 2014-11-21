@@ -15,7 +15,7 @@
 }
 @property additionData *addData;
 @property (weak, nonatomic) IBOutlet UIDatePicker *startPicker;
-@property (weak, nonatomic) IBOutlet UIDatePicker *periodPiecker;
+@property (weak, nonatomic) IBOutlet UIDatePicker *periodPicker;
 @property (weak, nonatomic) IBOutlet UISwitch *periodState;
 - (IBAction)next:(id)sender;
 -(void)changedSwitchValue:(UISwitch*)state;

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
+        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
@@ -1174,7 +1175,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="zFA-Sq-X3L"/>
                     <connections>
-                        <outlet property="periodPiecker" destination="sx5-Lz-edq" id="6fD-hw-uNS"/>
+                        <outlet property="periodPicker" destination="sx5-Lz-edq" id="7xS-9E-toj"/>
                         <outlet property="periodState" destination="Elb-LX-juS" id="Xek-7D-Ize"/>
                         <outlet property="startPicker" destination="zyr-Jw-eX1" id="mex-dk-hnL"/>
                         <segue destination="YUf-UH-ezE" kind="push" identifier="date" id="4kG-yU-wzZ"/>
