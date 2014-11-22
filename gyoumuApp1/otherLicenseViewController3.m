@@ -87,7 +87,7 @@
     if (indexPath.row % 2 == 0) {
         cell.backgroundColor = [UIColor groupTableViewBackgroundColor];
     } else
-        cell.backgroundColor = [UIColor lightGrayColor];
+        cell.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.3];
 }
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
