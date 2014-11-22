@@ -21,5 +21,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *keyLabel;
 @property (weak, nonatomic) IBOutlet UILabel *startLabel;
 @property (weak, nonatomic) IBOutlet UILabel *periodLabel;
+- (IBAction)sendBtn:(id)sender;
 
 @end

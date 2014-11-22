@@ -20,6 +20,16 @@
     self.period = target.period;
 }
 
+-(void)format{
+    self.maker = NULL;
+    self.software = NULL;
+    self.version = NULL;
+    self.tag = NULL;
+    self.key = NULL;
+    self.start = NULL;
+    self.period = NULL;
+}
+
 -(void)debug{
     NSLog(@"Maker :%@",self.maker);
     NSLog(@"Software :%@",self.software);

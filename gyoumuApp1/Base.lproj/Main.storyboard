@@ -1263,6 +1263,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="sendBtn:" destination="YUf-UH-ezE" eventType="touchUpInside" id="gVL-Hd-d5u"/>
                                     <segue destination="CEI-3q-4PM" kind="modal" animates="NO" id="5C2-zY-tv9"/>
                                 </connections>
                             </button>
