@@ -51,6 +51,7 @@
  }
  */
 - (void)sendLicenseData{
+    NSString *option7 = [self.addData.maker stringByAppendingString:[self.addData.software stringByAppendingString:self.addData.version]];
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSMutableArray *userData = [userDefaults objectForKey:@"userData"];
     NSString *urlList = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/add.php",[userData valueForKeyPath:@"labCode"]];
@@ -59,7 +60,7 @@
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     [request setHTTPMethod:@"POST"];
     //パラメータを作成
-    NSString *body = [NSString stringWithFormat:@"title=ライセンス&message=&latitude=&longitude=&terminalId=ライセンス&option0=%@&option1=%@&option2=%@&option3=%@&option4=%@&option5=%@&option6=%@",self.addData.maker, self.addData.software, self.addData.version, self.addData.tag, self.addData.key, self.addData.start, self.addData.period];
+    NSString *body = [NSString stringWithFormat:@"title=ライセンス&message=&latitude=&longitude=&terminalId=ライセンス&option0=%@&option1=%@&option2=%@&option3=%@&option4=%@&option5=%@&option6=%@&option7=%@",self.addData.maker, self.addData.software, self.addData.version, self.addData.tag, self.addData.key, self.addData.start, self.addData.period,option7];
     request.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
     NSURLConnection *connection;
     connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
