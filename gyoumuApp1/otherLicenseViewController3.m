@@ -9,6 +9,7 @@
 #import "otherLicenseViewController3.h"
 #import "AppDelegate.h"
 #import "WebdbConnect.h"
+#import "otherLicenseDetailViewController.h"
 
 @interface otherLicenseViewController3 () <UITableViewDataSource, UITableViewDelegate>
 
@@ -19,7 +20,10 @@
 {
     WebdbConnect *connect;
     NSMutableArray *licenseArray;
+    NSMutableArray *licenseTableArray;
+    NSArray *sortedArray;
 }
+
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -39,6 +43,43 @@
     AppDelegate *ap = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     connect = [[WebdbConnect alloc] init];
     [connect setLabArray:ap.LabPath];
+        
+    NSMutableArray  *licenseArrayTset = [NSMutableArray arrayWithArray:[connect labLicenseGet]];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"option7" ascending:YES];
+    sortedArray = [licenseArrayTset sortedArrayUsingDescriptors:@[sortDescriptor]];
+    
+    licenseArray = [[NSMutableArray alloc] init];
+    NSString *comp = @"init";
+    int count = 0;
+    licenseTableArray = [NSMutableArray array];
+    comp = @"init";
+    for (int i = 0; i < sortedArray.count; i++) {
+        
+        if (![comp isEqualToString:[sortedArray[i] valueForKeyPath:@"option7"]]) {
+            comp = [sortedArray[i]valueForKeyPath:@"option7"];
+            for (int j = i; j < sortedArray.count; j++) {
+                if ([comp isEqualToString:[sortedArray[j] valueForKeyPath:@"option7"]]) {
+                    count++;
+                }
+                
+            }
+            [licenseTableArray addObject:[NSString stringWithFormat:@"%d",count]];
+            [licenseArray addObject:sortedArray[i]];
+            count = 0;
+            
+        }
+    }
+    
+    NSLog(@"%@", licenseTableArray);
+    NSLog(@"%@", sortedArray);
+    //for (int i = 0; i < [connect labArray].count; i++) {
+    
+    //}
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
+    
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -64,17 +105,8 @@
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    int count = 0;
-    NSRange searchResult;
-    licenseArray = [NSMutableArray array];
-    for (int i =0; i < [connect labArray].count; i++) {
-        searchResult = [[connect labArray][i][@"username"] rangeOfString:@"badge"];
-        if (searchResult.location != NSNotFound) {
-            [licenseArray addObject:[connect labArray][i]];
-            count++;
-        }
-    }
-    return count;
+    //同名ソフトウェアの数
+    return licenseTableArray.count;
 }
 
 -(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -92,6 +124,10 @@
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
+    otherLicenseDetailViewController *ViewController2 = [self.storyboard instantiateViewControllerWithIdentifier:@"otherLicenseDetail"];
+    ViewController2.softReceiveData =[licenseArray[indexPath.row] valueForKeyPath:@"option7"];
+    [self presentViewController:ViewController2 animated:NO completion:nil];
+    
     NSLog(@"押されたんご");
 }
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -104,20 +140,22 @@
     }
     
     UILabel *label1 = (UILabel *)[cell viewWithTag:1];
-    label1.text = [NSString stringWithFormat:@"%@",[licenseArray[indexPath.row] valueForKeyPath:@"terminalId"]];
+    label1.text = [NSString stringWithFormat:@"%@",[licenseArray[indexPath.row] valueForKeyPath:@"option0"]];
     UILabel *label2 = (UILabel *)[cell viewWithTag:2];
-    label2.text = @"Word";
-    UILabel *label3 = (UILabel *)[cell viewWithTag:3];
-    label3.text = @"2013";
+    label2.text = [NSString stringWithFormat:@"%@",[licenseArray[indexPath.row] valueForKeyPath:@"option1"]];    UILabel *label3 = (UILabel *)[cell viewWithTag:3];
+    label3.text = [NSString stringWithFormat:@"%@",[licenseArray[indexPath.row] valueForKeyPath:@"option2"]];
     UILabel *label4 = (UILabel *)[cell viewWithTag:4];
-    label4.text = @"3";
-    UILabel *label5 = (UILabel *)[cell viewWithTag:5];
-    label5.text = @"33";
+    label4.text = [NSString stringWithFormat:@"%@", licenseTableArray[indexPath.row]];
     cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
     
     
+    
+}
+
+-(IBAction)returnMain5:(UIStoryboardSegue *)sender
+{
     
 }
 

@@ -1,21 +1,22 @@
 //
-//  licenseDetailViewController.m
+//  otherLicenseDetailViewController.m
 //  gyoumuApp1
 //
 //  Created by Shota Oda on 2014/11/23.
 //  Copyright (c) 2014年 shota. All rights reserved.
 //
 
-#import "licenseDetailViewController.h"
+#import "otherLicenseDetailViewController.h"
 #import "WebdbConnect.h"
+#import "AppDelegate.h"
 
-@interface licenseDetailViewController () <UITableViewDataSource,UITableViewDelegate>
+@interface otherLicenseDetailViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *makerLabel;
 @property (weak, nonatomic) IBOutlet UILabel *softwareLabel;
 
 @end
 
-@implementation licenseDetailViewController
+@implementation otherLicenseDetailViewController
 {
     NSArray *softArray;
 }
@@ -35,15 +36,15 @@
 {
     [super viewDidLoad];
     NSLog(@"%@",softReceiveData);
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSArray *userdata = [userDefaults objectForKey:@"userData"];
-    WebdbConnect *connect = [[WebdbConnect alloc] initWithLabArray:[userdata valueForKeyPath:@"labCode"]];
+    AppDelegate *ap = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    WebdbConnect *connect = [[WebdbConnect alloc] initWithLabArray:ap.LabPath];
     //[connect labLicenseCodeGet:softReceiveData];
     NSLog(@"%@",[connect labLicenseCodeGet:softReceiveData]);
     softArray = [[NSArray alloc] init];
     softArray = [connect labLicenseCodeGet:softReceiveData];
     self.makerLabel.text = [softArray[0] valueForKeyPath:@"option0"];
     self.softwareLabel.text = [softArray[0] valueForKeyPath:@"option1"];
+
     // Do any additional setup after loading the view.
 }
 
@@ -104,65 +105,5 @@
     
 }
 
-
-/*
- - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
- {
- UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
- 
- // Configure the cell...
- 
- return cell;
- }
- */
-
-/*
- // Override to support conditional editing of the table view.
- - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Return NO if you do not want the specified item to be editable.
- return YES;
- }
- */
-
-/*
- // Override to support editing the table view.
- - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
- {
- if (editingStyle == UITableViewCellEditingStyleDelete) {
- // Delete the row from the data source
- [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
- } else if (editingStyle == UITableViewCellEditingStyleInsert) {
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
- }
- }
- */
-
-/*
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
- {
- }
- */
-
-/*
- // Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Return NO if you do not want the item to be re-orderable.
- return YES;
- }
- */
-
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
- {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
 
 @end

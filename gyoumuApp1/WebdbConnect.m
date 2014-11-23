@@ -81,4 +81,16 @@
 }
 
 
+-(NSMutableArray *)labLicenseCodeGet:(NSString *)code
+{
+    NSMutableArray* licenseArray = [[NSMutableArray alloc]init];
+    
+    for (int i = 0; i < _labArray.count; i++) {
+        if ([_labArray[i][@"option7"] isEqualToString:code]) {
+            [licenseArray addObject:_labArray[i]];
+        }
+    }
+    return licenseArray;
+}
+
 @end

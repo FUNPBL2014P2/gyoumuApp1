@@ -1,5 +1,5 @@
 //
-//  licenseDetailViewController.h
+//  otherLicenseDetailViewController.h
 //  gyoumuApp1
 //
 //  Created by Shota Oda on 2014/11/23.
@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface licenseDetailViewController : UIViewController{
+@interface otherLicenseDetailViewController : UIViewController{
     NSString *softReceiveData;
 }
 
 @property NSString *softReceiveData;
+
+
 @end

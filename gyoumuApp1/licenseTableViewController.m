@@ -40,7 +40,7 @@
     connect = [[WebdbConnect alloc] initWithLabArray:[userdata valueForKeyPath:@"labCode"]];
     
     NSMutableArray  *licenseArrayTset = [NSMutableArray arrayWithArray:[connect labLicenseGet]];
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"option0" ascending:YES];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"option7" ascending:YES];
     sortedArray = [licenseArrayTset sortedArrayUsingDescriptors:@[sortDescriptor]];
     
     licenseArray = [[NSMutableArray alloc] init];
@@ -50,10 +50,10 @@
     comp = @"init";
     for (int i = 0; i < sortedArray.count; i++) {
         
-        if (![comp isEqualToString:[sortedArray[i] valueForKeyPath:@"option0"]]) {
-            comp = [sortedArray[i]valueForKeyPath:@"option0"];
+        if (![comp isEqualToString:[sortedArray[i] valueForKeyPath:@"option7"]]) {
+            comp = [sortedArray[i]valueForKeyPath:@"option7"];
         for (int j = i; j < sortedArray.count; j++) {
-            if ([comp isEqualToString:[sortedArray[j] valueForKeyPath:@"option0"]]) {
+            if ([comp isEqualToString:[sortedArray[j] valueForKeyPath:@"option7"]]) {
                 count++;
             }
             
@@ -112,7 +112,9 @@
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
     licenseDetailViewController *ViewController2 = [self.storyboard instantiateViewControllerWithIdentifier:@"licenseDetail"];
+    ViewController2.softReceiveData =[licenseArray[indexPath.row] valueForKeyPath:@"option7"];
     [self presentViewController:ViewController2 animated:NO completion:nil];
+    
     NSLog(@"押されたんご");
 }
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -125,11 +127,10 @@
     }
     
     UILabel *label1 = (UILabel *)[cell viewWithTag:1];
-    label1.text = [NSString stringWithFormat:@"%@",[licenseArray[indexPath.row] valueForKeyPath:@"terminalId"]];
+    label1.text = [NSString stringWithFormat:@"%@",[licenseArray[indexPath.row] valueForKeyPath:@"option0"]];
     UILabel *label2 = (UILabel *)[cell viewWithTag:2];
-    label2.text = @"Word";
-    UILabel *label3 = (UILabel *)[cell viewWithTag:3];
-    label3.text = @"2013";
+    label2.text = [NSString stringWithFormat:@"%@",[licenseArray[indexPath.row] valueForKeyPath:@"option1"]];    UILabel *label3 = (UILabel *)[cell viewWithTag:3];
+    label3.text = [NSString stringWithFormat:@"%@",[licenseArray[indexPath.row] valueForKeyPath:@"option2"]];
     UILabel *label4 = (UILabel *)[cell viewWithTag:4];
     label4.text = [NSString stringWithFormat:@"%@", licenseTableArray[indexPath.row]];
     cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
@@ -140,7 +141,10 @@
     
 }
 
-
+-(IBAction)returnMain3:(UIStoryboardSegue *)sender
+{
+    
+}
 /*
  - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
  {
