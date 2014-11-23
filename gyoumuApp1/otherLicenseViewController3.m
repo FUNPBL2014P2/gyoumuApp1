@@ -124,11 +124,9 @@
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
-    otherLicenseDetailViewController *ViewController2 = [self.storyboard instantiateViewControllerWithIdentifier:@"otherLicenseDetail"];
-    ViewController2.softReceiveData =[licenseArray[indexPath.row] valueForKeyPath:@"option7"];
-    [self presentViewController:ViewController2 animated:NO completion:nil];
-    
-    NSLog(@"押されたんご");
+    AppDelegate *ap = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    ap.softwareCode =[licenseArray[indexPath.row] valueForKeyPath:@"option7"];
+    [self performSegueWithIdentifier:@"otherLicenseDetail" sender:self];    NSLog(@"押されたんご");
 }
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {

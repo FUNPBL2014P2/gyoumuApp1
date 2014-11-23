@@ -8,8 +8,7 @@
 
 #import "licenseTableViewController.h"
 #import "WebdbConnect.h"
-#import "licenseDetailViewController.h"
-
+#import "AppDelegate.h"
 @interface licenseTableViewController () <UITableViewDataSource,UITableViewDelegate>
 
 @end
@@ -111,9 +110,10 @@
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
-    licenseDetailViewController *ViewController2 = [self.storyboard instantiateViewControllerWithIdentifier:@"licenseDetail"];
-    ViewController2.softReceiveData =[licenseArray[indexPath.row] valueForKeyPath:@"option7"];
-    [self presentViewController:ViewController2 animated:NO completion:nil];
+    
+    AppDelegate *ap = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    ap.softwareCode =[licenseArray[indexPath.row] valueForKeyPath:@"option7"];
+    [self performSegueWithIdentifier:@"licenseDetail" sender:self];
     
     NSLog(@"押されたんご");
 }

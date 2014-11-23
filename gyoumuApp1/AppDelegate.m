@@ -10,12 +10,14 @@
 
 @implementation AppDelegate
 @synthesize LabPath;
+@synthesize softwareCode;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
     //LabPathの初期化
     LabPath = [NSString stringWithFormat:@"none"];
+    softwareCode = [NSString stringWithFormat:@"none"];
     return YES;
 }
 							

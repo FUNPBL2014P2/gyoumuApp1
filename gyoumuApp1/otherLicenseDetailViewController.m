@@ -22,7 +22,6 @@
     NSArray *softArray;
 }
 
-@synthesize softReceiveData;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -36,13 +35,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"%@",softReceiveData);
+    
     AppDelegate *ap = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     WebdbConnect *connect = [[WebdbConnect alloc] initWithLabArray:ap.LabPath];
     //[connect labLicenseCodeGet:softReceiveData];
-    NSLog(@"%@",[connect labLicenseCodeGet:softReceiveData]);
+    NSLog(@"%@",[connect labLicenseCodeGet:ap.softwareCode]);
     softArray = [[NSArray alloc] init];
-    softArray = [connect labLicenseCodeGet:softReceiveData];
+    softArray = [connect labLicenseCodeGet:ap.softwareCode];
     self.makerLabel.text = [softArray[0] valueForKeyPath:@"option0"];
     self.softwareLabel.text = [softArray[0] valueForKeyPath:@"option1"];
     self.verLabel.text = [softArray[0] valueForKeyPath:@"option2"];

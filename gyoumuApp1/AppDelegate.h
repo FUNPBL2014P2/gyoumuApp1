@@ -11,9 +11,11 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>{
     //研究室一覧選択時のパス
     NSString *LabPath;
+    NSString *softwareCode;
 }
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) NSString *LabPath;
+@property (strong, nonatomic) NSString *softwareCode;
 
 @end

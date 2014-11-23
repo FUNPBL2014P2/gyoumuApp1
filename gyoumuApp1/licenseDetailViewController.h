@@ -8,9 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface licenseDetailViewController : UIViewController{
-    NSString *softReceiveData;
-}
+@interface licenseDetailViewController : UIViewController
 
-@property NSString *softReceiveData;
 @end

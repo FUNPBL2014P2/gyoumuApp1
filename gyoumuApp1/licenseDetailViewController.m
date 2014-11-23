@@ -8,6 +8,7 @@
 
 #import "licenseDetailViewController.h"
 #import "WebdbConnect.h"
+#import "AppDelegate.h"
 
 @interface licenseDetailViewController () <UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *makerLabel;
@@ -21,7 +22,7 @@
     NSArray *softArray;
 }
 
-@synthesize softReceiveData;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,14 +36,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"%@",softReceiveData);
+    AppDelegate *ap = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSArray *userdata = [userDefaults objectForKey:@"userData"];
     WebdbConnect *connect = [[WebdbConnect alloc] initWithLabArray:[userdata valueForKeyPath:@"labCode"]];
     //[connect labLicenseCodeGet:softReceiveData];
-    NSLog(@"%@",[connect labLicenseCodeGet:softReceiveData]);
+   
     softArray = [[NSArray alloc] init];
-    softArray = [connect labLicenseCodeGet:softReceiveData];
+    softArray = [connect labLicenseCodeGet:ap.softwareCode];
     self.makerLabel.text = [softArray[0] valueForKeyPath:@"option0"];
     self.softwareLabel.text = [softArray[0] valueForKeyPath:@"option1"];
     self.verLabel.text = [softArray[0] valueForKeyPath:@"option2"];
