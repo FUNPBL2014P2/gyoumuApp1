@@ -77,6 +77,7 @@
 		F8A223FC19EE6C0D00139991 /* gyoumuApp1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A223FB19EE6C0D00139991 /* gyoumuApp1Tests.m */; };
 		F8A63E3F1A1BCE3200B34842 /* otherBadgeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A63E3E1A1BCE3200B34842 /* otherBadgeDetailViewController.m */; };
 		F8B6F8DF1A1DDD2F009983D2 /* licenseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B6F8DE1A1DDD2F009983D2 /* licenseTableViewController.m */; };
+		F8C24FC51A22078C006DB833 /* licenseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C24FC41A22078C006DB833 /* licenseDetailViewController.m */; };
 		F8F60B931A00D104002717F2 /* jsonUser.txt in Resources */ = {isa = PBXBuildFile; fileRef = F8F60B921A00D104002717F2 /* jsonUser.txt */; };
 		F8FE9D6C1A1FD8950007D2EA /* otherLicenseViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = F8FE9D6B1A1FD8950007D2EA /* otherLicenseViewController3.m */; };
 /* End PBXBuildFile section */
@@ -196,6 +197,8 @@
 		F8A63E3E1A1BCE3200B34842 /* otherBadgeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = otherBadgeDetailViewController.m; sourceTree = "<group>"; };
 		F8B6F8DD1A1DDD2F009983D2 /* licenseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = licenseTableViewController.h; sourceTree = "<group>"; };
 		F8B6F8DE1A1DDD2F009983D2 /* licenseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = licenseTableViewController.m; sourceTree = "<group>"; };
+		F8C24FC31A22078C006DB833 /* licenseDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = licenseDetailViewController.h; sourceTree = "<group>"; };
+		F8C24FC41A22078C006DB833 /* licenseDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = licenseDetailViewController.m; sourceTree = "<group>"; };
 		F8F60B921A00D104002717F2 /* jsonUser.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jsonUser.txt; sourceTree = "<group>"; };
 		F8FE9D6A1A1FD8950007D2EA /* otherLicenseViewController3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = otherLicenseViewController3.h; sourceTree = "<group>"; };
 		F8FE9D6B1A1FD8950007D2EA /* otherLicenseViewController3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = otherLicenseViewController3.m; sourceTree = "<group>"; };
@@ -379,6 +382,8 @@
 				EB24DAB61A0731A800C791F7 /* BadgeDetailViewController.m */,
 				F8B6F8DD1A1DDD2F009983D2 /* licenseTableViewController.h */,
 				F8B6F8DE1A1DDD2F009983D2 /* licenseTableViewController.m */,
+				F8C24FC31A22078C006DB833 /* licenseDetailViewController.h */,
+				F8C24FC41A22078C006DB833 /* licenseDetailViewController.m */,
 				EBE89AE81A178074002D0DCA /* LicenseAddition */,
 				EBE89AE91A17809D002D0DCA /* OtherLabView */,
 				EBD7DC551A1B4275009C6FFF /* progress1.png */,
@@ -574,6 +579,7 @@
 				EBE89AAC1A1771D4002D0DCA /* labViewController.m in Sources */,
 				F8B6F8DF1A1DDD2F009983D2 /* licenseTableViewController.m in Sources */,
 				EBE89AA61A176C62002D0DCA /* inputDateViewController.m in Sources */,
+				F8C24FC51A22078C006DB833 /* licenseDetailViewController.m in Sources */,
 				EBE89AA31A176C41002D0DCA /* licenseKeyViewController.m in Sources */,
 				F88AB1891A21D05000CCE4E8 /* licenseCollect.m in Sources */,
 				F81A121E1A1A2ACF0064103A /* WebdbConnect.m in Sources */,

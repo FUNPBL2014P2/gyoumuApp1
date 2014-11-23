@@ -8,6 +8,7 @@
 
 #import "licenseTableViewController.h"
 #import "WebdbConnect.h"
+#import "licenseDetailViewController.h"
 
 @interface licenseTableViewController () <UITableViewDataSource,UITableViewDelegate>
 
@@ -110,6 +111,8 @@
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
+    licenseDetailViewController *ViewController2 = [self.storyboard instantiateViewControllerWithIdentifier:@"licenseDetail"];
+    [self presentViewController:ViewController2 animated:NO completion:nil];
     NSLog(@"押されたんご");
 }
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

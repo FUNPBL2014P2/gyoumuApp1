@@ -1637,6 +1637,24 @@
             </objects>
             <point key="canvasLocation" x="6184" y="78"/>
         </scene>
+        <!--License Detail View Controller-->
+        <scene sceneID="Qc9-a3-Pxq">
+            <objects>
+                <viewController storyboardIdentifier="licenseDetail" useStoryboardIdentifierAsRestorationIdentifier="YES" id="v1P-P4-hAE" customClass="licenseDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8RV-TS-Va6"/>
+                        <viewControllerLayoutGuide type="bottom" id="ShF-Ka-ZUb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0Ca-OJ-SCx">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OGb-gF-pvv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7269" y="99"/>
+        </scene>
         <!--Other Badge View Controller - バッジ-->
         <scene sceneID="2oW-vl-qmn">
             <objects>
