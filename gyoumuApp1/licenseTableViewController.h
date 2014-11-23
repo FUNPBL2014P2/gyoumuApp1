@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface licenseTableViewController : UITableViewController
+@interface licenseTableViewController : UIViewController
 
 @end

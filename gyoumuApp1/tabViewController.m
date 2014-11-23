@@ -28,6 +28,8 @@
 {
     [super viewDidLoad];
     self.name.title = self.labName;
+    
+    
     // Do any additional setup after loading the view.
 }
 
