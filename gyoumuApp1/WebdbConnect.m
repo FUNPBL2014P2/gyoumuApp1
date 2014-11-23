@@ -67,4 +67,18 @@
     }
     return self;
 }
+
+-(NSMutableArray *)labLicenseGet
+{
+    NSMutableArray* licenseArray = [[NSMutableArray alloc]init];
+    
+    for (int i = 0; i < _labArray.count; i++) {
+        if ([_labArray[i][@"terminalId"] isEqualToString:@"ライセンス"]) {
+            [licenseArray addObject:_labArray[i]];
+        }
+    }
+    return licenseArray;
+}
+
+
 @end

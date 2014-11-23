@@ -60,6 +60,7 @@
 		F87F6A3A19F939740088A0D6 /* guestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F87F6A3919F939740088A0D6 /* guestViewController.m */; };
 		F87F6A7F19FA28E00088A0D6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F87F6A7E19FA28E00088A0D6 /* QuartzCore.framework */; };
 		F889EFAF19EED0760049B3A7 /* PerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F889EFAE19EED0760049B3A7 /* PerViewController.m */; };
+		F88AB1891A21D05000CCE4E8 /* licenseCollect.m in Sources */ = {isa = PBXBuildFile; fileRef = F88AB1881A21D05000CCE4E8 /* licenseCollect.m */; };
 		F8A223D119EE6C0D00139991 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8A223D019EE6C0D00139991 /* Foundation.framework */; };
 		F8A223D319EE6C0D00139991 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8A223D219EE6C0D00139991 /* CoreGraphics.framework */; };
 		F8A223D519EE6C0D00139991 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8A223D419EE6C0D00139991 /* UIKit.framework */; };
@@ -170,6 +171,8 @@
 		F87F6A7E19FA28E00088A0D6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F889EFAD19EED0760049B3A7 /* PerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerViewController.h; sourceTree = "<group>"; };
 		F889EFAE19EED0760049B3A7 /* PerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerViewController.m; sourceTree = "<group>"; };
+		F88AB1871A21D05000CCE4E8 /* licenseCollect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = licenseCollect.h; sourceTree = "<group>"; };
+		F88AB1881A21D05000CCE4E8 /* licenseCollect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = licenseCollect.m; sourceTree = "<group>"; };
 		F8A223CD19EE6C0D00139991 /* gyoumuApp1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gyoumuApp1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8A223D019EE6C0D00139991 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F8A223D219EE6C0D00139991 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -311,6 +314,17 @@
 			name = OtherLabView;
 			sourceTree = "<group>";
 		};
+		F88AB18A1A21D08400CCE4E8 /* originClass */ = {
+			isa = PBXGroup;
+			children = (
+				F88AB1871A21D05000CCE4E8 /* licenseCollect.h */,
+				F88AB1881A21D05000CCE4E8 /* licenseCollect.m */,
+				F81A121C1A1A2ACF0064103A /* WebdbConnect.h */,
+				F81A121D1A1A2ACF0064103A /* WebdbConnect.m */,
+			);
+			name = originClass;
+			sourceTree = "<group>";
+		};
 		F8A223C419EE6C0D00139991 = {
 			isa = PBXGroup;
 			children = (
@@ -346,10 +360,9 @@
 			isa = PBXGroup;
 			children = (
 				EB9DE11319F03D2D0071FEEB /* AMSlideMenu */,
+				F88AB18A1A21D08400CCE4E8 /* originClass */,
 				F8A223DF19EE6C0D00139991 /* AppDelegate.h */,
 				F8A223E019EE6C0D00139991 /* AppDelegate.m */,
-				F81A121C1A1A2ACF0064103A /* WebdbConnect.h */,
-				F81A121D1A1A2ACF0064103A /* WebdbConnect.m */,
 				F8A223E519EE6C0D00139991 /* ViewController.h */,
 				F8A223E619EE6C0D00139991 /* ViewController.m */,
 				F889EFAD19EED0760049B3A7 /* PerViewController.h */,
@@ -562,6 +575,7 @@
 				F8B6F8DF1A1DDD2F009983D2 /* licenseTableViewController.m in Sources */,
 				EBE89AA61A176C62002D0DCA /* inputDateViewController.m in Sources */,
 				EBE89AA31A176C41002D0DCA /* licenseKeyViewController.m in Sources */,
+				F88AB1891A21D05000CCE4E8 /* licenseCollect.m in Sources */,
 				F81A121E1A1A2ACF0064103A /* WebdbConnect.m in Sources */,
 				EB9DE12619F03D2D0071FEEB /* AMSlideMenuMainViewController.m in Sources */,
 				F8A63E3F1A1BCE3200B34842 /* otherBadgeDetailViewController.m in Sources */,

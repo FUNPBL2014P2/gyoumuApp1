@@ -17,6 +17,8 @@
 {
     WebdbConnect *connect;
     NSMutableArray *licenseArray;
+    NSMutableArray *licenseTableArray;
+    NSArray *sortedArray;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -35,6 +37,38 @@
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSArray *userdata = [userDefaults objectForKey:@"userData"];
     connect = [[WebdbConnect alloc] initWithLabArray:[userdata valueForKeyPath:@"labCode"]];
+    
+    NSMutableArray  *licenseArrayTset = [NSMutableArray arrayWithArray:[connect labLicenseGet]];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"option0" ascending:YES];
+    sortedArray = [licenseArrayTset sortedArrayUsingDescriptors:@[sortDescriptor]];
+    
+    licenseArray = [[NSMutableArray alloc] init];
+    NSString *comp = @"init";
+    int count = 0;
+    licenseTableArray = [NSMutableArray array];
+    comp = @"init";
+    for (int i = 0; i < sortedArray.count; i++) {
+        
+        if (![comp isEqualToString:[sortedArray[i] valueForKeyPath:@"option0"]]) {
+            comp = [sortedArray[i]valueForKeyPath:@"option0"];
+        for (int j = i; j < sortedArray.count; j++) {
+            if ([comp isEqualToString:[sortedArray[j] valueForKeyPath:@"option0"]]) {
+                count++;
+            }
+            
+          }
+           [licenseTableArray addObject:[NSString stringWithFormat:@"%d",count]];
+            [licenseArray addObject:sortedArray[i]];
+            count = 0;
+           
+        }
+    }
+    
+    NSLog(@"%@", licenseTableArray);
+    NSLog(@"%@", sortedArray);
+    //for (int i = 0; i < [connect labArray].count; i++) {
+        
+    //}
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -57,17 +91,8 @@
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    int count = 0;
-    NSRange searchResult;
-    licenseArray = [NSMutableArray array];
-    for (int i =0; i < [connect labArray].count; i++) {
-        searchResult = [[connect labArray][i][@"username"] rangeOfString:@"badge"];
-        if (searchResult.location != NSNotFound) {
-            [licenseArray addObject:[connect labArray][i]];
-            count++;
-        }
-    }
-    return count;
+        //同名ソフトウェアの数
+       return licenseTableArray.count;
 }
 
 -(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -103,9 +128,7 @@
     UILabel *label3 = (UILabel *)[cell viewWithTag:3];
     label3.text = @"2013";
     UILabel *label4 = (UILabel *)[cell viewWithTag:4];
-    label4.text = @"3";
-    UILabel *label5 = (UILabel *)[cell viewWithTag:5];
-    label5.text = @"33";
+    label4.text = [NSString stringWithFormat:@"%@", licenseTableArray[indexPath.row]];
     cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;

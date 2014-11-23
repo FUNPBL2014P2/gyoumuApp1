@@ -13,6 +13,7 @@
 -(NSArray *)labArray;
 -(NSObject *)labBadgeGet:(NSString *)badgeTitle;
 -(NSMutableArray *)labMasterGet;
+-(NSMutableArray *)labLicenseGet;
 
 -(id)initWithLabArray:(NSString *)labCode;
 
