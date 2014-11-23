@@ -13,6 +13,7 @@
 @interface otherLicenseDetailViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *makerLabel;
 @property (weak, nonatomic) IBOutlet UILabel *softwareLabel;
+@property (weak, nonatomic) IBOutlet UILabel *verLabel;
 
 @end
 
@@ -44,7 +45,7 @@
     softArray = [connect labLicenseCodeGet:softReceiveData];
     self.makerLabel.text = [softArray[0] valueForKeyPath:@"option0"];
     self.softwareLabel.text = [softArray[0] valueForKeyPath:@"option1"];
-
+    self.verLabel.text = [softArray[0] valueForKeyPath:@"option2"];
     // Do any additional setup after loading the view.
 }
 
