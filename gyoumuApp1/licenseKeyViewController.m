@@ -39,7 +39,68 @@
 
 
 - (IBAction)next:(id)sender {
+
+    if(self.tagField.text.length >= 32){
+        
+        UIAlertView *alert =
+        [[UIAlertView alloc] initWithTitle:@"入力エラー" message:@"識別子が長過ぎます。"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+        return;
+        
+    }else if(self.tagField.text.length == 0){
+    
+        UIAlertView *alert =
+        [[UIAlertView alloc] initWithTitle:@"入力エラー" message:@"識別子が入力されていません。"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+        return;
+        
+    }else if([self havingInvalidPatternIn:self.tagField.text]){
+        
+        UIAlertView *alert =
+        [[UIAlertView alloc] initWithTitle:@"入力エラー" message:@"識別子に不正な文字を含んでいます。"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+        return;
+        
+        
+    }else if(self.tagField.text.length >= 32){
+        
+        UIAlertView *alert =
+        [[UIAlertView alloc] initWithTitle:@"入力エラー" message:@"キーが長過ぎます。"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+        return;
+        
+    }else if(self.keyField.text.length == 0){
+    
+        UIAlertView *alert =
+        [[UIAlertView alloc] initWithTitle:@"入力エラー" message:@"ライセンスキーが入力されていません。"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+        return;
+        
+    }else if([self havingInvalidPatternIn:self.keyField.text]){
+        
+        UIAlertView *alert =
+        [[UIAlertView alloc] initWithTitle:@"入力エラー" message:@"ライセンスキーに不正な文字を含んでいます。"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+        return;
+        
+        
+    }
+    
     self.addData.tag = self.tagField.text;
     self.addData.key = self.keyField.text;
+    [self performSegueWithIdentifier:@"key" sender:self];
+    
 }
+
+- (BOOL)havingInvalidPatternIn:(NSString *)txt{
+    NSRange spaceResult = [txt rangeOfString:@" "];
+    
+    if(spaceResult.location != NSNotFound){
+        return YES;
+    }else if(![txt canBeConvertedToEncoding:NSASCIIStringEncoding]){
+        return YES;
+    }
+    return NO;
+}
+
 @end

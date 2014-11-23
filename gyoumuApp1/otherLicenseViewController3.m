@@ -1,23 +1,26 @@
 //
-//  licenseTableViewController.m
+//  otherLicenseViewController3.m
 //  gyoumuApp1
 //
-//  Created by Shota Oda on 2014/11/20.
+//  Created by Shota Oda on 2014/11/22.
 //  Copyright (c) 2014年 shota. All rights reserved.
 //
 
-#import "licenseTableViewController.h"
+#import "otherLicenseViewController3.h"
+#import "AppDelegate.h"
 #import "WebdbConnect.h"
 
-@interface licenseTableViewController () <UITableViewDataSource,UITableViewDelegate>
+@interface otherLicenseViewController3 () <UITableViewDataSource, UITableViewDelegate>
 
 @end
 
-@implementation licenseTableViewController
+@implementation otherLicenseViewController3
+
 {
     WebdbConnect *connect;
     NSMutableArray *licenseArray;
 }
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,12 +32,13 @@
 }
 
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSArray *userdata = [userDefaults objectForKey:@"userData"];
-    connect = [[WebdbConnect alloc] initWithLabArray:[userdata valueForKeyPath:@"labCode"]];
+    AppDelegate *ap = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    connect = [[WebdbConnect alloc] init];
+    [connect setLabArray:ap.LabPath];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -47,6 +51,9 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - Table view data source
+
 
 -(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView
 

@@ -81,7 +81,7 @@
                 [self addLogin2:@"05" badgeFlag:3];
                 [self addLogin:@"01" badgeFlag:1];
                 [self addLogin:@"06" badgeFlag:10];
-                [self addLoginTime];
+                
                 return YES;
             }
             
@@ -238,42 +238,6 @@
     return ;
 }
 
--(void) addLoginTime {
-    
-    NSString *urlList = @"http://webdb.per.c.fun.ac.jp/sofline/viewall.php";
-    
-    NSURLRequest *requestList = [NSURLRequest requestWithURL:[NSURL URLWithString:urlList]];
-    NSData *jsonList = [NSURLConnection sendSynchronousRequest:requestList returningResponse:nil error:nil];
-    NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:jsonList options:0 error:nil];
-    NSArray *jsonArray = [jsonDic objectForKey:@"data"];
-    
-    
-    for (int i = 0; jsonArray.count; i++) {
-        if ([jsonArray[i][@"terminalId"] isEqualToString:@"loginTime"]) {
-            NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
-            [fmt setDateFormat:@"yyyy年MM月dd日 HH時mm分"];
-            NSDate *nowGet = [[NSDate alloc]init];
-            /////////////////////取得日時を送信する処理
-            NSURL *url = [NSURL URLWithString:@"http://webdb.per.c.fun.ac.jp/sofline/add.php"];
-            NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-            [request setHTTPMethod:@"POST"];
-            //パラメータを作成
-            NSString *body = [NSString stringWithFormat:@"title=login&message=&latitude=&longitude=&terminalId=loginTime&option0=&option1=%@&option2=&option3=&option4=&option5=",[fmt stringFromDate:nowGet]];
-            request.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
-            NSURLConnection *connection;
-            connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-            
-            
-            NSString *strURL = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline/delete.php?data=/%@/%@",jsonArray[i][@"terminalId"], jsonArray[i][@"datetime"]];
-            NSURL *urlDelete = [NSURL URLWithString:strURL];
-            NSMutableURLRequest *deleteRequest = [NSMutableURLRequest requestWithURL:urlDelete];
-            [deleteRequest setHTTPMethod:@"GET"];
-            [NSURLConnection sendSynchronousRequest:deleteRequest returningResponse:nil error:nil];
-            
-            return ;
-        }
-    }
-}
 
 //ログイン日数用
 -(void) addLogin:(NSString *)title badgeFlag:(int)flagCount

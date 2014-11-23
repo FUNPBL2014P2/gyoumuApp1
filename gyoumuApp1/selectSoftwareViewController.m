@@ -8,16 +8,24 @@
 
 #import "selectSoftwareViewController.h"
 #import "selectVersionViewController.h"
+#import "WebdbConnect.h"
 
 @interface selectSoftwareViewController ()
 
 @end
 
 @implementation selectSoftwareViewController
+@synthesize  masterArray;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    WebdbConnect *master = [[WebdbConnect alloc]initWithLabArray:@""];
+    self.masterArray = [[NSMutableArray alloc]init];
+    self.masterArray = [master labMasterGet];
+    
+    self.softwareArray = [[NSArray alloc]init];
+    self.softwareArray = [self detectSoftware:self.masterArray];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -27,7 +35,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     // セルの数になる
-    return 3;
+    return self.softwareArray.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView
@@ -40,7 +48,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"softwareCell" forIndexPath:indexPath];
     
     UILabel *softwareName = (UILabel *)[cell viewWithTag:1];
-    softwareName.text = @"microsoft";
+    softwareName.text = [self.softwareArray objectAtIndex:indexPath.row];
     return cell;
     
 }
@@ -61,9 +69,20 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
         selectVersionViewController *nextVC = segue.destinationViewController;
         nextVC.addData = [[additionData alloc]init];
         [nextVC.addData copy:self.addData];
+        nextVC.masterArray = [self.masterArray mutableCopy];
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
 
+- (NSArray *)detectSoftware:(NSMutableArray *)array{
+    NSMutableSet *softwareSet = [NSMutableSet set];
+    for(int i=0;i<array.count;i++){
+        if([self.addData.maker isEqualToString:[array[i] valueForKey:@"option0"]]){
+            [softwareSet addObject:[array[i] valueForKey:@"option1"]];
+        }
+    }
+    NSArray *softwareArray = [softwareSet allObjects];
+    return softwareArray;
+}
 
 @end
