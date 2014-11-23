@@ -41,6 +41,18 @@
     return nil;
 }
 
+-(NSMutableArray *)labMasterGet
+{
+    NSMutableArray* masterArray = [[NSMutableArray alloc]init];
+    
+        for (int i = 0; i < _labArray.count; i++) {
+                if ([_labArray[i][@"terminalId"] isEqualToString:@"マスタ"]) {
+                    [masterArray addObject:_labArray[i]];
+                    }
+            }
+        return masterArray;
+    }
+
 -(id)initWithLabArray:(NSString *)labCode
 {
     self = [super init];

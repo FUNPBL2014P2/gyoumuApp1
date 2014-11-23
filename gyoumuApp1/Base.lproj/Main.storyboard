@@ -908,7 +908,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZ2-Kj-QuU">
-                                                    <rect key="frame" x="112" y="0.0" width="82" height="21"/>
+                                                    <rect key="frame" x="112" y="11" width="220" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -961,7 +961,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A33-hP-5Q5">
-                                                    <rect key="frame" x="112" y="0.0" width="82" height="21"/>
+                                                    <rect key="frame" x="112" y="11" width="237" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1034,7 +1034,6 @@
                                 </state>
                                 <connections>
                                     <action selector="next:" destination="io5-ch-xae" eventType="touchUpInside" id="HvT-0d-BFa"/>
-                                    <segue destination="qZ4-JY-tNy" kind="push" identifier="key" id="4eJ-i8-5Hq"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1044,6 +1043,7 @@
                     <connections>
                         <outlet property="keyField" destination="7lW-eX-IAq" id="Cgw-u4-Rqz"/>
                         <outlet property="tagField" destination="4IH-5A-Pso" id="epg-NE-bBq"/>
+                        <segue destination="qZ4-JY-tNy" kind="push" identifier="key" id="uu3-EV-pef"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UcQ-KJ-L8q" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1071,7 +1071,6 @@
                                 </state>
                                 <connections>
                                     <action selector="next:" destination="qZ4-JY-tNy" eventType="touchUpInside" id="5GJ-N7-aB6"/>
-                                    <segue destination="YUf-UH-ezE" kind="push" id="Spz-IC-wGF"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="progress5.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ube-R0-aTK">
@@ -1081,6 +1080,12 @@
                                 <rect key="frame" x="117" y="136" width="532" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="438007440.91391402">
                                     <!--2014-11-18 12:44:00 +0000-->
+                                </date>
+                                <date key="minimumDate" timeIntervalSinceReferenceDate="-978267600">
+                                    <!--1970-01-01 11:00:00 +0000-->
+                                </date>
+                                <date key="maximumDate" timeIntervalSinceReferenceDate="1167562800">
+                                    <!--2037-12-31 11:00:00 +0000-->
                                 </date>
                                 <locale key="locale" localeIdentifier="ja_JP"/>
                             </datePicker>
@@ -1110,6 +1115,12 @@
                                 <date key="date" timeIntervalSinceReferenceDate="438007446.08995497">
                                     <!--2014-11-18 12:44:06 +0000-->
                                 </date>
+                                <date key="minimumDate" timeIntervalSinceReferenceDate="-978267600">
+                                    <!--1970-01-01 11:00:00 +0000-->
+                                </date>
+                                <date key="maximumDate" timeIntervalSinceReferenceDate="1167562800">
+                                    <!--2037-12-31 11:00:00 +0000-->
+                                </date>
                                 <locale key="locale" localeIdentifier="ja_JP"/>
                             </datePicker>
                         </subviews>
@@ -1117,9 +1128,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="zFA-Sq-X3L"/>
                     <connections>
-                        <outlet property="periodPiecker" destination="sx5-Lz-edq" id="6fD-hw-uNS"/>
+                        <outlet property="periodLabel" destination="hnS-aG-tdK" id="V1a-x5-oou"/>
+                        <outlet property="periodPicker" destination="sx5-Lz-edq" id="7xS-9E-toj"/>
                         <outlet property="periodState" destination="Elb-LX-juS" id="Xek-7D-Ize"/>
                         <outlet property="startPicker" destination="zyr-Jw-eX1" id="mex-dk-hnL"/>
+                        <segue destination="YUf-UH-ezE" kind="push" identifier="date" id="4kG-yU-wzZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aLa-Ug-Iyg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1191,6 +1204,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="sendBtn:" destination="YUf-UH-ezE" eventType="touchUpInside" id="gVL-Hd-d5u"/>
                                     <segue destination="CEI-3q-4PM" kind="modal" animates="NO" id="5C2-zY-tv9"/>
                                 </connections>
                             </button>

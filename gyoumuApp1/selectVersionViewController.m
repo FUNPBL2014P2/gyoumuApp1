@@ -18,6 +18,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.versionArray = [[NSArray alloc]init];
+    self.versionArray = [self detectVersion:self.masterArray];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -28,7 +30,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     // セルの数になる
-    return 3;
+    return self.versionArray.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView
@@ -40,8 +42,8 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"versionCell" forIndexPath:indexPath];
     
-    UILabel *softwareName = (UILabel *)[cell viewWithTag:1];
-    softwareName.text = @"2014";
+    UILabel *versionName = (UILabel *)[cell viewWithTag:1];
+    versionName.text = [self.versionArray objectAtIndex:indexPath.row];
     return cell;
     
 }
@@ -66,5 +68,17 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
+
+- (NSArray *)detectVersion:(NSMutableArray *)array{
+    NSMutableSet *versionSet = [NSMutableSet set];
+    for(int i=0;i<array.count;i++){
+        if([self.addData.software isEqualToString:[array[i] valueForKey:@"option1"]]){
+            [versionSet addObject:[array[i] valueForKey:@"option2"]];
+        }
+    }
+    NSArray *versionArray = [versionSet allObjects];
+    return versionArray;
+}
+
 
 @end
