@@ -383,6 +383,10 @@
      
      self.evaluateNumber.text = RecvCount;*/
     self.evaluateNumber.text = [NSString stringWithFormat:@"%d",oRecvCount];
+    _time = 24*60*60;
+    int time_hour = _time/3600;
+    int time_minute = (_time - time_hour*3600)/60;
+    self.evaluateTime.text = [NSString stringWithFormat:@"評価可能まであと%02d時間:%02d分です",time_hour,time_minute];
     [_evaluateBtn setEnabled:NO];
     
 }
