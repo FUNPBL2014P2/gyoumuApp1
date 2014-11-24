@@ -12,6 +12,7 @@
 		EB24DAFC1A07431700C791F7 /* detailBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EB24DAFB1A07431700C791F7 /* detailBackground.jpg */; };
 		EB34E0EE19F4C590001CA342 /* menuicon.png in Resources */ = {isa = PBXBuildFile; fileRef = EB34E0ED19F4C590001CA342 /* menuicon.png */; };
 		EB5C75D61A0483D500EDF2A3 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EB5C75D51A0483D500EDF2A3 /* background.jpg */; };
+		EB7EB4391A23910500047F67 /* finishAddingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB7EB4381A23910500047F67 /* finishAddingViewController.m */; };
 		EB88FE4D1A0A83800056A932 /* badge02.gif in Resources */ = {isa = PBXBuildFile; fileRef = EB88FE3E1A0A83800056A932 /* badge02.gif */; };
 		EB88FE4E1A0A83800056A932 /* badge03.gif in Resources */ = {isa = PBXBuildFile; fileRef = EB88FE3F1A0A83800056A932 /* badge03.gif */; };
 		EB88FE4F1A0A83800056A932 /* badge04.gif in Resources */ = {isa = PBXBuildFile; fileRef = EB88FE401A0A83800056A932 /* badge04.gif */; };
@@ -101,6 +102,8 @@
 		EB24DAFB1A07431700C791F7 /* detailBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = detailBackground.jpg; sourceTree = "<group>"; };
 		EB34E0ED19F4C590001CA342 /* menuicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menuicon.png; sourceTree = "<group>"; };
 		EB5C75D51A0483D500EDF2A3 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
+		EB7EB4371A23910500047F67 /* finishAddingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = finishAddingViewController.h; sourceTree = "<group>"; };
+		EB7EB4381A23910500047F67 /* finishAddingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = finishAddingViewController.m; sourceTree = "<group>"; };
 		EB88FE3E1A0A83800056A932 /* badge02.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = badge02.gif; sourceTree = "<group>"; };
 		EB88FE3F1A0A83800056A932 /* badge03.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = badge03.gif; sourceTree = "<group>"; };
 		EB88FE401A0A83800056A932 /* badge04.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = badge04.gif; sourceTree = "<group>"; };
@@ -297,6 +300,8 @@
 				EBE89AA51A176C62002D0DCA /* inputDateViewController.m */,
 				EBE89AA71A176C6F002D0DCA /* confirmViewController.h */,
 				EBE89AA81A176C6F002D0DCA /* confirmViewController.m */,
+				EB7EB4371A23910500047F67 /* finishAddingViewController.h */,
+				EB7EB4381A23910500047F67 /* finishAddingViewController.m */,
 			);
 			name = LicenseAddition;
 			sourceTree = "<group>";
@@ -585,6 +590,7 @@
 				F8B6F8DF1A1DDD2F009983D2 /* licenseTableViewController.m in Sources */,
 				EBE89AA61A176C62002D0DCA /* inputDateViewController.m in Sources */,
 				F8C24FC51A22078C006DB833 /* licenseDetailViewController.m in Sources */,
+				EB7EB4391A23910500047F67 /* finishAddingViewController.m in Sources */,
 				EBE89AA31A176C41002D0DCA /* licenseKeyViewController.m in Sources */,
 				F88AB1891A21D05000CCE4E8 /* licenseCollect.m in Sources */,
 				F81A121E1A1A2ACF0064103A /* WebdbConnect.m in Sources */,

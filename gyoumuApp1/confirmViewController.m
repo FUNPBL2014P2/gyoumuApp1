@@ -7,6 +7,7 @@
 //
 
 #import "confirmViewController.h"
+#import "finishAddingViewController.h"
 
 @interface confirmViewController ()
 
@@ -32,6 +33,10 @@
     self.periodLabel.text = self.addData.period;
 }
 
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:YES];
+    [self.addData format];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -50,6 +55,15 @@
  // Pass the selected object to the new view controller.
  }
  */
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    finishAddingViewController *nextVC = segue.destinationViewController;
+    nextVC.addData = [[additionData alloc]init];
+    [nextVC.addData copy:self.addData];
+    
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+
 - (void)sendLicenseData{
     NSString *option7 = [self.addData.maker stringByAppendingString:[self.addData.software stringByAppendingString:self.addData.version]];
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
@@ -72,6 +86,6 @@
                       }
 - (IBAction)sendBtn:(id)sender {
     [self sendLicenseData];
-    [self.addData format];
+    [self performSegueWithIdentifier:@"finish" sender:self];
 }
 @end
