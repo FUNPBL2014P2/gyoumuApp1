@@ -9,6 +9,7 @@
 #import "otherLicenseDetailViewController.h"
 #import "WebdbConnect.h"
 #import "AppDelegate.h"
+#import "licenseDetail.h"
 
 @interface otherLicenseDetailViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *makerLabel;
@@ -19,7 +20,7 @@
 
 @implementation otherLicenseDetailViewController
 {
-    NSArray *softArray;
+    licenseDetail *ld;
 }
 
 
@@ -39,12 +40,11 @@
     AppDelegate *ap = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     WebdbConnect *connect = [[WebdbConnect alloc] initWithLabArray:ap.LabPath];
     //[connect labLicenseCodeGet:softReceiveData];
-    NSLog(@"%@",[connect labLicenseCodeGet:ap.softwareCode]);
-    softArray = [[NSArray alloc] init];
-    softArray = [connect labLicenseCodeGet:ap.softwareCode];
-    self.makerLabel.text = [softArray[0] valueForKeyPath:@"option0"];
-    self.softwareLabel.text = [softArray[0] valueForKeyPath:@"option1"];
-    self.verLabel.text = [softArray[0] valueForKeyPath:@"option2"];
+    ld = [[licenseDetail alloc] init];
+    [ld setLicendeDetail:connect];
+    self.makerLabel.text = ld.maker;
+    self.softwareLabel.text = ld.software;
+    self.verLabel.text = ld.version;
     // Do any additional setup after loading the view.
 }
 
@@ -64,12 +64,12 @@
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     //同名ソフトウェアの数
-    return softArray.count;
+    return ld.countRow;
 }
 
 -(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 70;
+    return 45;
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
@@ -91,11 +91,11 @@
     }
     
     UILabel *label1 = (UILabel *)[cell viewWithTag:1];
-    label1.text = [NSString stringWithFormat:@"%@",[softArray[indexPath.row] valueForKeyPath:@"option3"]];
+    label1.text = [NSString stringWithFormat:@"%@",[ld identifier:(int)indexPath.row]];
     UILabel *label2 = (UILabel *)[cell viewWithTag:2];
-    label2.text = [NSString stringWithFormat:@"%@",[softArray[indexPath.row] valueForKeyPath:@"option5"]];
+    label2.text = [NSString stringWithFormat:@"%@",[ld purchaseDate:(int)indexPath.row]];
     UILabel *label3 = (UILabel *)[cell viewWithTag:3];
-    label3.text = [NSString stringWithFormat:@"%@",[softArray[indexPath.row] valueForKeyPath:@"option6"]];
+    label3.text = [NSString stringWithFormat:@"%@",[ld expirationDate:(int)indexPath.row]];
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     

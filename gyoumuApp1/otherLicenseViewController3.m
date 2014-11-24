@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "WebdbConnect.h"
 #import "otherLicenseDetailViewController.h"
+#import "licenseCollect.h"
 
 @interface otherLicenseViewController3 () <UITableViewDataSource, UITableViewDelegate>
 
@@ -18,10 +19,7 @@
 @implementation otherLicenseViewController3
 
 {
-    WebdbConnect *connect;
-    NSMutableArray *licenseArray;
-    NSMutableArray *licenseTableArray;
-    NSArray *sortedArray;
+    licenseCollect *lc;
 }
 
 
@@ -41,37 +39,10 @@
 {
     [super viewDidLoad];
     AppDelegate *ap = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    connect = [[WebdbConnect alloc] init];
+    WebdbConnect *connect = [[WebdbConnect alloc] init];
     [connect setLabArray:ap.LabPath];
-        
-    NSMutableArray  *licenseArrayTset = [NSMutableArray arrayWithArray:[connect labLicenseGet]];
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"option7" ascending:YES];
-    sortedArray = [licenseArrayTset sortedArrayUsingDescriptors:@[sortDescriptor]];
-    
-    licenseArray = [[NSMutableArray alloc] init];
-    NSString *comp = @"init";
-    int count = 0;
-    licenseTableArray = [NSMutableArray array];
-    comp = @"init";
-    for (int i = 0; i < sortedArray.count; i++) {
-        
-        if (![comp isEqualToString:[sortedArray[i] valueForKeyPath:@"option7"]]) {
-            comp = [sortedArray[i]valueForKeyPath:@"option7"];
-            for (int j = i; j < sortedArray.count; j++) {
-                if ([comp isEqualToString:[sortedArray[j] valueForKeyPath:@"option7"]]) {
-                    count++;
-                }
-                
-            }
-            [licenseTableArray addObject:[NSString stringWithFormat:@"%d",count]];
-            [licenseArray addObject:sortedArray[i]];
-            count = 0;
-            
-        }
-    }
-    
-    NSLog(@"%@", licenseTableArray);
-    NSLog(@"%@", sortedArray);
+    lc = [[licenseCollect alloc] init];
+    [lc setLicenseArray:connect];
     //for (int i = 0; i < [connect labArray].count; i++) {
     
     //}
@@ -106,7 +77,7 @@
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     //同名ソフトウェアの数
-    return licenseTableArray.count;
+    return lc.countRow;
 }
 
 -(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -125,8 +96,8 @@
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
     AppDelegate *ap = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    ap.softwareCode =[licenseArray[indexPath.row] valueForKeyPath:@"option7"];
-    [self performSegueWithIdentifier:@"otherLicenseDetail" sender:self];    NSLog(@"押されたんご");
+    ap.softwareCode =[lc softwareCode:(int)indexPath.row];
+    [self performSegueWithIdentifier:@"otherLicenseDetail" sender:self];
 }
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -138,12 +109,13 @@
     }
     
     UILabel *label1 = (UILabel *)[cell viewWithTag:1];
-    label1.text = [NSString stringWithFormat:@"%@",[licenseArray[indexPath.row] valueForKeyPath:@"option0"]];
+    label1.text = [NSString stringWithFormat:@"%@",[lc maker:(int)indexPath.row]];
     UILabel *label2 = (UILabel *)[cell viewWithTag:2];
-    label2.text = [NSString stringWithFormat:@"%@",[licenseArray[indexPath.row] valueForKeyPath:@"option1"]];    UILabel *label3 = (UILabel *)[cell viewWithTag:3];
-    label3.text = [NSString stringWithFormat:@"%@",[licenseArray[indexPath.row] valueForKeyPath:@"option2"]];
+    label2.text = [NSString stringWithFormat:@"%@",[lc software:(int)indexPath.row]];
+    UILabel *label3 = (UILabel *)[cell viewWithTag:3];
+    label3.text = [NSString stringWithFormat:@"%@",[lc version:(int)indexPath.row]];
     UILabel *label4 = (UILabel *)[cell viewWithTag:4];
-    label4.text = [NSString stringWithFormat:@"%@", licenseTableArray[indexPath.row]];
+    label4.text = [NSString stringWithFormat:@"%@",[lc ownCount:(int)indexPath.row]];
     cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
