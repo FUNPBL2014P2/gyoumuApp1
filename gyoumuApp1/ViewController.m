@@ -258,7 +258,7 @@
     
     int count = 0;
     NSString *time_old;
-    NSString *time_new;;
+    NSString *time_new;
     
     
     for (int i = 0; jsonArray.count; i++) {
@@ -281,19 +281,19 @@
             NSString *sub = [NSString stringWithFormat:@"%@",time_old];
             
             if(sub.length == 0){
-            subold= @"0000年00月00日";
+                subold= @"0000年00月00日";
             }else{
-            subold = [time_old substringWithRange:NSMakeRange(8, 2)];
+                subold = [time_old substringWithRange:NSMakeRange(8, 2)];
             }
             
             NSString *subnew = [time_new substringWithRange:NSMakeRange(8, 2)];
             
             //同じ日じゃなければcount++
-            if(subold.length == 0){
+            if(sub.length == 0){
                 count= 1;
             }else if(![subold isEqualToString:subnew]) {
                 count++;
-               }
+            }
             
             
             
@@ -303,7 +303,7 @@
                 
                 /////////////////////取得日時を送信する処理
                 NSString *urlList = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/add.php",[userData valueForKeyPath:@"labCode"]];
-
+                
                 NSURL *url = [NSURL URLWithString:urlList];
                 NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
                 [request setHTTPMethod:@"POST"];
@@ -368,7 +368,7 @@
     
     NSString *urlList = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/viewall.php",[userData valueForKeyPath:@"labCode"]];
     
-
+    
     
     NSURLRequest *requestList = [NSURLRequest requestWithURL:[NSURL URLWithString:urlList]];
     NSData *jsonList = [NSURLConnection sendSynchronousRequest:requestList returningResponse:nil error:nil];
@@ -404,7 +404,7 @@
             }else{
                 subold = [time_old substringWithRange:NSMakeRange(8, 2)];
             }
-
+            
             
             NSString *subnew = [time_new substringWithRange:NSMakeRange(8, 2)];
             
@@ -421,7 +421,7 @@
             NSLog(@"%@",last);
             
             
-          
+            
             
             if([subold isEqualToString:last]) {
                 count+= 1;

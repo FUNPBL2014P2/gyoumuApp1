@@ -45,5 +45,13 @@
 - (IBAction)badge15Btn:(id)sender;
 - (IBAction)badge16Btn:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UIButton *evaluateBtn;
+- (IBAction)evaluateBtn:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *evaluateNumber;
+@property (weak, nonatomic) IBOutlet UILabel *evaluateTime;
+
+
+
+
 
 @end

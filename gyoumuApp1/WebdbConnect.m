@@ -41,6 +41,16 @@
     return nil;
 }
 
+-(NSObject *)labEvaluateGet
+{
+    for (int i = 0; i < _labArray.count; i++) {
+        if ([_labArray[i][@"terminalId"] isEqualToString:@"Evaluate"]) {
+            return _labArray[i];
+        }
+    }
+    return nil;
+}
+
 -(NSMutableArray *)labMasterGet
 {
     NSMutableArray* masterArray = [[NSMutableArray alloc]init];
@@ -52,6 +62,7 @@
             }
         return masterArray;
     }
+
 
 -(id)initWithLabArray:(NSString *)labCode
 {
