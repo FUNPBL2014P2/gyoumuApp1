@@ -56,10 +56,11 @@
 		EBE89AE71A177901002D0DCA /* otherBadgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE89AE61A177901002D0DCA /* otherBadgeViewController.m */; };
 		F81A11D41A1898620064103A /* tabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F81A11D31A1898620064103A /* tabViewController.m */; };
 		F81A121E1A1A2ACF0064103A /* WebdbConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = F81A121D1A1A2ACF0064103A /* WebdbConnect.m */; };
-		F86DDF281A1F1C810071510A /* otherLicenseViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = F86DDF271A1F1C810071510A /* otherLicenseViewController2.m */; };
+		F8560B3D1A22B84B005AAEA9 /* licenseDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = F8560B3C1A22B84B005AAEA9 /* licenseDetail.m */; };
 		F87F6A3A19F939740088A0D6 /* guestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F87F6A3919F939740088A0D6 /* guestViewController.m */; };
 		F87F6A7F19FA28E00088A0D6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F87F6A7E19FA28E00088A0D6 /* QuartzCore.framework */; };
 		F889EFAF19EED0760049B3A7 /* PerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F889EFAE19EED0760049B3A7 /* PerViewController.m */; };
+		F88AB1891A21D05000CCE4E8 /* licenseCollect.m in Sources */ = {isa = PBXBuildFile; fileRef = F88AB1881A21D05000CCE4E8 /* licenseCollect.m */; };
 		F8A223D119EE6C0D00139991 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8A223D019EE6C0D00139991 /* Foundation.framework */; };
 		F8A223D319EE6C0D00139991 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8A223D219EE6C0D00139991 /* CoreGraphics.framework */; };
 		F8A223D519EE6C0D00139991 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8A223D419EE6C0D00139991 /* UIKit.framework */; };
@@ -76,6 +77,8 @@
 		F8A223FC19EE6C0D00139991 /* gyoumuApp1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A223FB19EE6C0D00139991 /* gyoumuApp1Tests.m */; };
 		F8A63E3F1A1BCE3200B34842 /* otherBadgeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A63E3E1A1BCE3200B34842 /* otherBadgeDetailViewController.m */; };
 		F8B6F8DF1A1DDD2F009983D2 /* licenseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B6F8DE1A1DDD2F009983D2 /* licenseTableViewController.m */; };
+		F8C24FC51A22078C006DB833 /* licenseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C24FC41A22078C006DB833 /* licenseDetailViewController.m */; };
+		F8C24FC81A22268F006DB833 /* otherLicenseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C24FC71A22268F006DB833 /* otherLicenseDetailViewController.m */; };
 		F8F60B931A00D104002717F2 /* jsonUser.txt in Resources */ = {isa = PBXBuildFile; fileRef = F8F60B921A00D104002717F2 /* jsonUser.txt */; };
 		F8FE9D6C1A1FD8950007D2EA /* otherLicenseViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = F8FE9D6B1A1FD8950007D2EA /* otherLicenseViewController3.m */; };
 /* End PBXBuildFile section */
@@ -163,13 +166,15 @@
 		F81A11D31A1898620064103A /* tabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tabViewController.m; sourceTree = "<group>"; };
 		F81A121C1A1A2ACF0064103A /* WebdbConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebdbConnect.h; sourceTree = "<group>"; };
 		F81A121D1A1A2ACF0064103A /* WebdbConnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebdbConnect.m; sourceTree = "<group>"; };
-		F86DDF261A1F1C810071510A /* otherLicenseViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = otherLicenseViewController2.h; sourceTree = "<group>"; };
-		F86DDF271A1F1C810071510A /* otherLicenseViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = otherLicenseViewController2.m; sourceTree = "<group>"; };
+		F8560B3B1A22B84B005AAEA9 /* licenseDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = licenseDetail.h; sourceTree = "<group>"; };
+		F8560B3C1A22B84B005AAEA9 /* licenseDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = licenseDetail.m; sourceTree = "<group>"; };
 		F87F6A3819F939740088A0D6 /* guestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = guestViewController.h; sourceTree = "<group>"; };
 		F87F6A3919F939740088A0D6 /* guestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = guestViewController.m; sourceTree = "<group>"; };
 		F87F6A7E19FA28E00088A0D6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F889EFAD19EED0760049B3A7 /* PerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerViewController.h; sourceTree = "<group>"; };
 		F889EFAE19EED0760049B3A7 /* PerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerViewController.m; sourceTree = "<group>"; };
+		F88AB1871A21D05000CCE4E8 /* licenseCollect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = licenseCollect.h; sourceTree = "<group>"; };
+		F88AB1881A21D05000CCE4E8 /* licenseCollect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = licenseCollect.m; sourceTree = "<group>"; };
 		F8A223CD19EE6C0D00139991 /* gyoumuApp1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gyoumuApp1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8A223D019EE6C0D00139991 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F8A223D219EE6C0D00139991 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -193,6 +198,10 @@
 		F8A63E3E1A1BCE3200B34842 /* otherBadgeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = otherBadgeDetailViewController.m; sourceTree = "<group>"; };
 		F8B6F8DD1A1DDD2F009983D2 /* licenseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = licenseTableViewController.h; sourceTree = "<group>"; };
 		F8B6F8DE1A1DDD2F009983D2 /* licenseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = licenseTableViewController.m; sourceTree = "<group>"; };
+		F8C24FC31A22078C006DB833 /* licenseDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = licenseDetailViewController.h; sourceTree = "<group>"; };
+		F8C24FC41A22078C006DB833 /* licenseDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = licenseDetailViewController.m; sourceTree = "<group>"; };
+		F8C24FC61A22268F006DB833 /* otherLicenseDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = otherLicenseDetailViewController.h; sourceTree = "<group>"; };
+		F8C24FC71A22268F006DB833 /* otherLicenseDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = otherLicenseDetailViewController.m; sourceTree = "<group>"; };
 		F8F60B921A00D104002717F2 /* jsonUser.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jsonUser.txt; sourceTree = "<group>"; };
 		F8FE9D6A1A1FD8950007D2EA /* otherLicenseViewController3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = otherLicenseViewController3.h; sourceTree = "<group>"; };
 		F8FE9D6B1A1FD8950007D2EA /* otherLicenseViewController3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = otherLicenseViewController3.m; sourceTree = "<group>"; };
@@ -298,17 +307,30 @@
 				EBE89AAA1A1771D4002D0DCA /* labViewController.h */,
 				EBE89AAB1A1771D4002D0DCA /* labViewController.m */,
 				F81A11D21A1898620064103A /* tabViewController.h */,
-				F81A11D31A1898620064103A /* tabViewController.m */,
 				EBE89AE51A177901002D0DCA /* otherBadgeViewController.h */,
+				F81A11D31A1898620064103A /* tabViewController.m */,
 				EBE89AE61A177901002D0DCA /* otherBadgeViewController.m */,
 				F8A63E3D1A1BCE3200B34842 /* otherBadgeDetailViewController.h */,
 				F8A63E3E1A1BCE3200B34842 /* otherBadgeDetailViewController.m */,
 				F8FE9D6A1A1FD8950007D2EA /* otherLicenseViewController3.h */,
 				F8FE9D6B1A1FD8950007D2EA /* otherLicenseViewController3.m */,
-				F86DDF261A1F1C810071510A /* otherLicenseViewController2.h */,
-				F86DDF271A1F1C810071510A /* otherLicenseViewController2.m */,
+				F8C24FC61A22268F006DB833 /* otherLicenseDetailViewController.h */,
+				F8C24FC71A22268F006DB833 /* otherLicenseDetailViewController.m */,
 			);
 			name = OtherLabView;
+			sourceTree = "<group>";
+		};
+		F88AB18A1A21D08400CCE4E8 /* originClass */ = {
+			isa = PBXGroup;
+			children = (
+				F88AB1871A21D05000CCE4E8 /* licenseCollect.h */,
+				F88AB1881A21D05000CCE4E8 /* licenseCollect.m */,
+				F8560B3B1A22B84B005AAEA9 /* licenseDetail.h */,
+				F8560B3C1A22B84B005AAEA9 /* licenseDetail.m */,
+				F81A121C1A1A2ACF0064103A /* WebdbConnect.h */,
+				F81A121D1A1A2ACF0064103A /* WebdbConnect.m */,
+			);
+			name = originClass;
 			sourceTree = "<group>";
 		};
 		F8A223C419EE6C0D00139991 = {
@@ -346,10 +368,9 @@
 			isa = PBXGroup;
 			children = (
 				EB9DE11319F03D2D0071FEEB /* AMSlideMenu */,
+				F88AB18A1A21D08400CCE4E8 /* originClass */,
 				F8A223DF19EE6C0D00139991 /* AppDelegate.h */,
 				F8A223E019EE6C0D00139991 /* AppDelegate.m */,
-				F81A121C1A1A2ACF0064103A /* WebdbConnect.h */,
-				F81A121D1A1A2ACF0064103A /* WebdbConnect.m */,
 				F8A223E519EE6C0D00139991 /* ViewController.h */,
 				F8A223E619EE6C0D00139991 /* ViewController.m */,
 				F889EFAD19EED0760049B3A7 /* PerViewController.h */,
@@ -366,6 +387,8 @@
 				EB24DAB61A0731A800C791F7 /* BadgeDetailViewController.m */,
 				F8B6F8DD1A1DDD2F009983D2 /* licenseTableViewController.h */,
 				F8B6F8DE1A1DDD2F009983D2 /* licenseTableViewController.m */,
+				F8C24FC31A22078C006DB833 /* licenseDetailViewController.h */,
+				F8C24FC41A22078C006DB833 /* licenseDetailViewController.m */,
 				EBE89AE81A178074002D0DCA /* LicenseAddition */,
 				EBE89AE91A17809D002D0DCA /* OtherLabView */,
 				EBD7DC551A1B4275009C6FFF /* progress1.png */,
@@ -543,13 +566,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C34C2861A05438C00F8B7D0 /* licenseAddViewController.m in Sources */,
+				F8C24FC81A22268F006DB833 /* otherLicenseDetailViewController.m in Sources */,
 				EB9DE12919F03D2D0071FEEB /* UIViewController+AMSlideMenu.m in Sources */,
 				EB9DE12719F03D2D0071FEEB /* AMSlideMenuRightMenuSegue.m in Sources */,
 				EBE89A9D1A176BFC002D0DCA /* selectSoftwareViewController.m in Sources */,
 				EBB974641A036BDA00030426 /* BadgeViewController.m in Sources */,
 				EBB4B0351A1CB5C40073EABD /* additionData.m in Sources */,
 				EB9DE12319F03D2D0071FEEB /* AMSlideMenuContentSegue.m in Sources */,
-				F86DDF281A1F1C810071510A /* otherLicenseViewController2.m in Sources */,
 				F8A223E719EE6C0D00139991 /* ViewController.m in Sources */,
 				EBE89AE71A177901002D0DCA /* otherBadgeViewController.m in Sources */,
 				F81A11D41A1898620064103A /* tabViewController.m in Sources */,
@@ -561,7 +584,9 @@
 				EBE89AAC1A1771D4002D0DCA /* labViewController.m in Sources */,
 				F8B6F8DF1A1DDD2F009983D2 /* licenseTableViewController.m in Sources */,
 				EBE89AA61A176C62002D0DCA /* inputDateViewController.m in Sources */,
+				F8C24FC51A22078C006DB833 /* licenseDetailViewController.m in Sources */,
 				EBE89AA31A176C41002D0DCA /* licenseKeyViewController.m in Sources */,
+				F88AB1891A21D05000CCE4E8 /* licenseCollect.m in Sources */,
 				F81A121E1A1A2ACF0064103A /* WebdbConnect.m in Sources */,
 				EB9DE12619F03D2D0071FEEB /* AMSlideMenuMainViewController.m in Sources */,
 				F8A63E3F1A1BCE3200B34842 /* otherBadgeDetailViewController.m in Sources */,
@@ -572,6 +597,7 @@
 				EB9DE12519F03D2D0071FEEB /* AMSlideMenuLeftTableViewController.m in Sources */,
 				EB9DE12419F03D2D0071FEEB /* AMSlideMenuLeftMenuSegue.m in Sources */,
 				F8A223DD19EE6C0D00139991 /* main.m in Sources */,
+				F8560B3D1A22B84B005AAEA9 /* licenseDetail.m in Sources */,
 				F87F6A3A19F939740088A0D6 /* guestViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,6 +9,8 @@
 #import "otherLicenseViewController3.h"
 #import "AppDelegate.h"
 #import "WebdbConnect.h"
+#import "otherLicenseDetailViewController.h"
+#import "licenseCollect.h"
 
 @interface otherLicenseViewController3 () <UITableViewDataSource, UITableViewDelegate>
 
@@ -17,9 +19,9 @@
 @implementation otherLicenseViewController3
 
 {
-    WebdbConnect *connect;
-    NSMutableArray *licenseArray;
+    licenseCollect *lc;
 }
+
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -37,8 +39,18 @@
 {
     [super viewDidLoad];
     AppDelegate *ap = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    connect = [[WebdbConnect alloc] init];
+    WebdbConnect *connect = [[WebdbConnect alloc] init];
     [connect setLabArray:ap.LabPath];
+    lc = [[licenseCollect alloc] init];
+    [lc setLicenseArray:connect];
+    //for (int i = 0; i < [connect labArray].count; i++) {
+    
+    //}
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
+    
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -64,17 +76,8 @@
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    int count = 0;
-    NSRange searchResult;
-    licenseArray = [NSMutableArray array];
-    for (int i =0; i < [connect labArray].count; i++) {
-        searchResult = [[connect labArray][i][@"username"] rangeOfString:@"badge"];
-        if (searchResult.location != NSNotFound) {
-            [licenseArray addObject:[connect labArray][i]];
-            count++;
-        }
-    }
-    return count;
+    //同名ソフトウェアの数
+    return lc.countRow;
 }
 
 -(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -92,7 +95,9 @@
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"押されたんご");
+    AppDelegate *ap = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    ap.softwareCode =[lc softwareCode:(int)indexPath.row];
+    [self performSegueWithIdentifier:@"otherLicenseDetail" sender:self];
 }
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -104,20 +109,23 @@
     }
     
     UILabel *label1 = (UILabel *)[cell viewWithTag:1];
-    label1.text = [NSString stringWithFormat:@"%@",[licenseArray[indexPath.row] valueForKeyPath:@"terminalId"]];
+    label1.text = [NSString stringWithFormat:@"%@",[lc maker:(int)indexPath.row]];
     UILabel *label2 = (UILabel *)[cell viewWithTag:2];
-    label2.text = @"Word";
+    label2.text = [NSString stringWithFormat:@"%@",[lc software:(int)indexPath.row]];
     UILabel *label3 = (UILabel *)[cell viewWithTag:3];
-    label3.text = @"2013";
+    label3.text = [NSString stringWithFormat:@"%@",[lc version:(int)indexPath.row]];
     UILabel *label4 = (UILabel *)[cell viewWithTag:4];
-    label4.text = @"3";
-    UILabel *label5 = (UILabel *)[cell viewWithTag:5];
-    label5.text = @"33";
+    label4.text = [NSString stringWithFormat:@"%@",[lc ownCount:(int)indexPath.row]];
     cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
     
     
+    
+}
+
+-(IBAction)returnMain5:(UIStoryboardSegue *)sender
+{
     
 }
 

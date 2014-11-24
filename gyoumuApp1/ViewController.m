@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "WebdbConnect.h"
-
+#import "licenseCollect.h"
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *userText;
@@ -35,8 +35,8 @@
     [[loginBtn layer] setBorderColor:[[UIColor blackColor]CGColor]];
     //枠の太さ
     [[loginBtn layer] setBorderWidth:btnBorderRectPoint];
-    
-   }
+
+}
 
 
 - (void)didReceiveMemoryWarning
