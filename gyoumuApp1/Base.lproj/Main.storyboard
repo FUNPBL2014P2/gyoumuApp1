@@ -1758,7 +1758,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="5jT-1M-L51">
-                                <rect key="frame" x="0.0" y="-25" width="788" height="1024"/>
+                                <rect key="frame" x="0.0" y="-24" width="788" height="1024"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OFo-Bj-cn3">
                                 <rect key="frame" x="243" y="233" width="128" height="128"/>
@@ -1952,6 +1952,29 @@
                                     <action selector="badge15Btn:" destination="5db-W9-m4M" eventType="touchUpInside" id="dBg-gV-E4y"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PJg-oj-PME">
+                                <rect key="frame" x="107" y="92" width="45" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="いいね">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="evaluateBtn:" destination="5db-W9-m4M" eventType="touchUpInside" id="H2m-aS-aCI"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRB-el-0kK">
+                                <rect key="frame" x="160" y="96" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gP-fy-HWz">
+                                <rect key="frame" x="107" y="155" width="270" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1976,6 +1999,9 @@
                         <outlet property="badge7" destination="wf2-uD-xvp" id="fGW-2C-C76"/>
                         <outlet property="badge8" destination="Uzh-G0-3Nt" id="RFF-HA-9nY"/>
                         <outlet property="badge9" destination="A8e-CU-gvS" id="Jpn-1G-sCY"/>
+                        <outlet property="evaluateBtn" destination="PJg-oj-PME" id="Hj1-ui-EuQ"/>
+                        <outlet property="evaluateNumber" destination="eRB-el-0kK" id="buc-OJ-C9R"/>
+                        <outlet property="evaluateTime" destination="9gP-fy-HWz" id="5X4-jw-OBq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="und-W2-ZRy" userLabel="First Responder" sceneMemberID="firstResponder"/>

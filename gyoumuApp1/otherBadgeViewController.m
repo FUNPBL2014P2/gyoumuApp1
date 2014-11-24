@@ -14,6 +14,8 @@
 #import "WebdbConnect.h"
 
 @interface otherBadgeViewController ()
+@property (nonatomic) int time;
+@property (nonatomic, strong) NSTimer *countdown_timer;
 
 
 @end
@@ -44,22 +46,33 @@
     
     WebdbConnect *otherLab = [[WebdbConnect alloc] initWithLabArray:ap.LabPath];
     NSString *otherRecvCount = [[otherLab labEvaluateGet]valueForKeyPath:@"option3"];
-    
     NSString *labCode =[userData valueForKeyPath:@"labCode"];
+    
+    _countdown_timer = [NSTimer scheduledTimerWithTimeInterval:1
+                                                        target:self
+                                                      selector:@selector(update)
+                                                      userInfo:nil
+                                                       repeats:YES];
+    _time = [self timeReverse:labCode];
+    [_countdown_timer fire];
     
     [self evaluateUseCheck:labCode];
     self.evaluateNumber.text = otherRecvCount;
     self.evaluateNumber.textColor = [UIColor blueColor];
-    self.badgeEvaluate.layer.cornerRadius = 7;
+    self.evaluateBtn.layer.cornerRadius = 7;
     //NSString *time = [NSString stringWithFormat:@"%d",abs([self timeCheck:labCode])];
     //NSLog(@"%d",[self timeCheck:labCode]);
-    self.evaluateTime.text = [NSString stringWithFormat:@"評価可能まで後%d時間くらいです",abs([self timeCheck:labCode])];
+    int time_hour = _time/3600;
+    int time_minute = (_time - time_hour*3600)/60;
+    self.evaluateTime.text = [NSString stringWithFormat:@"評価可能まであと%02d時間:%02d分です",time_hour,time_minute];
     self.evaluateTime.textColor = [UIColor blueColor];
+    
     
     
     
     //otherLabPathを更新
     NSLog(@"バッジ一覧にて%@を閲覧中",ap.LabPath);
+    NSLog(@"c%d",[self timeReverse:labCode]);
     // Do any additional setup after loading the view.
     //UIImage *backgroundImage  = [UIImage imageNamed:@"background.jpg"];
     //self.view.layer.contents = (__bridge id)((backgroundImage.CGImage));
@@ -107,6 +120,19 @@
             badgeID.contentMode = UIViewContentModeScaleAspectFill;
             badgeID.image = (i<9)? [UIImage imageNamed:[NSString stringWithFormat:@"badge0%d.gif",i+1]]:[UIImage imageNamed:[NSString stringWithFormat:@"badge%d.gif",i+1]];
         }
+    }
+}
+
+- (void) update{
+    if (_time <= 0.0) {
+        [_countdown_timer invalidate];
+        [_evaluateBtn setEnabled:YES];
+    }
+    else {
+        _time--;
+        int time_hour = _time/3600;
+        int time_minute = (_time - time_hour*3600)/60;
+        self.evaluateTime.text = [NSString stringWithFormat:@"評価可能まであと%02d時間:%02d分です",time_hour,time_minute];
     }
 }
 
@@ -259,7 +285,8 @@
     [self presentViewController:sendView animated:NO completion:nil];
 }
 
-- (IBAction)badgeEvaluateBtn:(id)sender {
+- (IBAction)evaluateBtn:(id)sender {
+    
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSMutableArray *userData = [userDefaults objectForKey:@"userData"];
@@ -356,7 +383,8 @@
      
      self.evaluateNumber.text = RecvCount;*/
     self.evaluateNumber.text = [NSString stringWithFormat:@"%d",oRecvCount];
-    [_badgeEvaluate setEnabled:NO];
+    [_evaluateBtn setEnabled:NO];
+    
 }
 
 -(void) evaluateUseCheck:(NSString *)labCode
@@ -402,16 +430,16 @@
     
     //24時間以内だったら評価不可
     if(sub.length == 0){
-        [_badgeEvaluate setEnabled:YES];
+        [_evaluateBtn setEnabled:YES];
     }else if([subold_day isEqualToString:timenew_day]) {
-        [_badgeEvaluate setEnabled:NO];
-    }else if([self timeCheck:labCode] > 0){
-        [_badgeEvaluate setEnabled:YES];
+        [_evaluateBtn setEnabled:NO];
+    }else if(_time > 0){
+        [_evaluateBtn setEnabled:YES];
     }
     
 }
 
--(int) timeCheck:(NSString *)labCode{
+-(int) timeReverse:(NSString *)labCode{
     
     WebdbConnect *myLab = [[WebdbConnect alloc] initWithLabArray:labCode];
     
@@ -424,17 +452,26 @@
     NSString *time_new;
     time_new = [fmt stringFromDate:nowGet];
     
+    NSDate *resDate = [nowGet initWithTimeInterval:-1*24*60*60 sinceDate:nowGet];
+    NSString *lastday= [fmt stringFromDate:resDate];
+    
+    NSString *last = [lastday substringWithRange:NSMakeRange(8, 2)];
+    
     NSString *subold;
     NSString *subold_day;
     NSString *subold_hour;
+    NSString *subold_minute;
     
     
     NSString *timenew_day;
     NSString *timenew_hour;
+    NSString *timenew_minute;
     
     timenew_day = [time_new substringWithRange:NSMakeRange(8, 2)];
     timenew_hour = [time_new substringWithRange:NSMakeRange(12, 2)];
-    NSLog(@"%@",timenew_hour);
+    timenew_minute = [time_new substringWithRange:NSMakeRange(15, 2)];
+    
+    //NSLog(@"%@",timenew_hour);
     
     NSString *sub = [NSString stringWithFormat:@"%@",time_old];
     
@@ -443,29 +480,48 @@
     }else{
         subold_day = [time_old substringWithRange:NSMakeRange(8, 2)];
         subold_hour = [time_old substringWithRange:NSMakeRange(12, 2)];
+        subold_minute = [time_old substringWithRange:NSMakeRange(15, 2)];
     }
+    //NSLog(@"%@",subold_day);
+    //NSLog(@"%@",subold_hour);
+    //NSLog(@"%@",subold_minute);
     
     int timenew_hour_int =[timenew_hour intValue];
     int subold_hour_int =[subold_hour intValue];
+    int timenew_minute_int =[timenew_minute intValue];
+    int subold_minute_int =[subold_minute intValue];
     
-    if((![subold_day isEqualToString:timenew_day]) && (timenew_hour_int - subold_hour_int >= 0)){
-        return 0;
-    }
-    else if(timenew_hour_int - subold_hour_int >= 0){
-        return 24 - (timenew_hour_int - subold_hour_int);
+    //NSLog(@"%d",timenew_hour_int);
+    NSLog(@"??%d",timenew_minute_int);
+    
+    int reverse_minute = timenew_minute_int - subold_minute_int;
+    int reverse_hour;
+    
+    if(reverse_minute < 0){
+        reverse_hour = (timenew_hour_int - subold_hour_int) - 1;
+        reverse_minute = 60 + reverse_minute;
     }else{
-        return timenew_hour_int - subold_hour_int;
+        reverse_hour = timenew_hour_int - subold_hour_int;
     }
     
+    NSLog(@"a%d",reverse_hour);
+    NSLog(@"b%d",reverse_minute);
     
+    int total_second1 = (subold_hour_int * 60 * 60) + (subold_minute_int * 60);
+    int total_second2 = 24*60*60 - (abs(reverse_hour * 60 * 60) + (reverse_minute * 60));
+    
+    if((![subold_day isEqualToString:timenew_day]) && (reverse_hour >= 0)){
+        return 0;
+    }else if(![last isEqualToString:subold_day] && ![subold_day isEqualToString:timenew_day]){
+        return 0;
+    }else if([last isEqualToString:subold_day] && reverse_hour <= 0){
+        return total_second1;
+    }else if([subold_day isEqualToString:timenew_day] && reverse_hour >=0){
+        return total_second2;
+    }
+    
+    return 10;
+
 }
-
--(void) time:(NSString *)labCode{
-    
-    
-
-}
-
-
 
 @end
