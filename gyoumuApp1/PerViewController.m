@@ -65,6 +65,7 @@
     NSLog(@"研究室コード:%@,%@", [userData valueForKeyPath:@"labCode"],jsonArray1[value1-1]);
     NSString *val = [str1 stringByAppendingString:[userData valueForKeyPath:@"name"]];
     self.labName.text = val;
+    [self evaluateRecieveCheck:5 :@"07"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -100,8 +101,7 @@
         return;
         
     }
-    int count;
-    //int count = [[myLab labEvaluateGet]valueForKeyPath:@"option3"] intValue];
+    int count = [[[myLab labEvaluateGet]valueForKeyPath:@"option3"] intValue];
     
     
     
