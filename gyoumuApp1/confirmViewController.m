@@ -70,8 +70,51 @@
     connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];}
                        */
                       }
+
+- (BOOL)checkInputData{
+    if(self.addData.maker.length == 0){
+        UIAlertView *alert =
+        [[UIAlertView alloc] initWithTitle:@"入力エラー" message:@"メーカーの値が不正です。"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+        return NO;
+        
+    }else if(self.addData.software.length == 0){
+        UIAlertView *alert =
+        [[UIAlertView alloc] initWithTitle:@"入力エラー" message:@"ソフトウェアの値が不正です。"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+        return NO;
+        
+    }else if(self.addData.version.length == 0){
+        UIAlertView *alert =
+        [[UIAlertView alloc] initWithTitle:@"入力エラー" message:@"バージョンの値が不正です。"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+        return NO;
+        
+    }else if(self.addData.tag.length == 0){
+        UIAlertView *alert =
+        [[UIAlertView alloc] initWithTitle:@"入力エラー" message:@"識別名の値が不正です。"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+        return NO;
+        
+    }else if(self.addData.key.length == 0){
+        UIAlertView *alert =
+        [[UIAlertView alloc] initWithTitle:@"入力エラー" message:@"ライセンスキーの値が不正です。"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+        return NO;
+        
+    }else if(self.addData.start.length == 0){
+        UIAlertView *alert =
+        [[UIAlertView alloc] initWithTitle:@"入力エラー" message:@"購入日時の値が不正です。"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+        return NO;
+    }
+    return YES;
+}
+
 - (IBAction)sendBtn:(id)sender {
+    if(![self checkInputData])return;
     [self sendLicenseData];
     [self.addData format];
+    [self performSegueWithIdentifier:@"finish" sender:self];
 }
 @end

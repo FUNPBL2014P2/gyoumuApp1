@@ -1290,7 +1290,6 @@
                                 </state>
                                 <connections>
                                     <action selector="sendBtn:" destination="YUf-UH-ezE" eventType="touchUpInside" id="gVL-Hd-d5u"/>
-                                    <segue destination="CEI-3q-4PM" kind="modal" animates="NO" id="5C2-zY-tv9"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="有効日時" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4OM-h3-4iP">
@@ -1353,6 +1352,7 @@
                         <outlet property="startLabel" destination="LA9-8J-Xk9" id="S87-SM-3BG"/>
                         <outlet property="tagLabel" destination="t1T-zu-Dd4" id="7C2-Ey-vEZ"/>
                         <outlet property="versionLabel" destination="8Rs-f0-Kln" id="aln-Xk-BkW"/>
+                        <segue destination="CEI-3q-4PM" kind="modal" identifier="finish" id="Cp5-63-e5N"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bh7-1U-p3a" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2170,7 +2170,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="5C2-zY-tv9"/>
+        <segue reference="Cp5-63-e5N"/>
         <segue reference="pRY-ID-Y80"/>
     </inferredMetricsTieBreakers>
 </document>
