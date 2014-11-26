@@ -775,10 +775,10 @@
             </objects>
             <point key="canvasLocation" x="5054" y="3880"/>
         </scene>
-        <!--View Controller - 設定-->
+        <!--Setting View Controller - 設定-->
         <scene sceneID="hI0-pO-hdb">
             <objects>
-                <viewController id="Hb5-ZA-8Cp" sceneMemberID="viewController">
+                <viewController id="Hb5-ZA-8Cp" customClass="settingViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="o0I-23-PA3"/>
                         <viewControllerLayoutGuide type="bottom" id="bWc-nR-HcC"/>
@@ -786,6 +786,18 @@
                     <view key="view" contentMode="scaleToFill" id="Ea5-f3-WXh">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Kw-VY-4Mh">
+                                <rect key="frame" x="329" y="293" width="111" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="AllReset">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="allResetBtn:" destination="Hb5-ZA-8Cp" eventType="touchUpInside" id="tPD-6D-e3s"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="設定" id="dcg-5C-y9Z"/>

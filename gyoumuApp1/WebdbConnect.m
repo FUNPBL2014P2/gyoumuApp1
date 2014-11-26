@@ -58,10 +58,23 @@
         for (int i = 0; i < _labArray.count; i++) {
                 if ([_labArray[i][@"terminalId"] isEqualToString:@"マスタ"]) {
                     [masterArray addObject:_labArray[i]];
-                    }
-            }
+                }
+        }
         return masterArray;
+}
+
+-(NSMutableArray *)labBadgeAllGet
+{
+    NSMutableArray* badgeArray = [[NSMutableArray alloc]init];
+    
+    for (int i = 0; i < _labArray.count; i++) {
+        NSString *terminal_badge = [_labArray[i][@"terminalId"] substringWithRange:NSMakeRange(0, 5)];
+        if ([terminal_badge isEqualToString:@"badge"]) {
+            [badgeArray addObject:_labArray[i]];
+        }
     }
+    return badgeArray;
+}
 
 
 -(id)initWithLabArray:(NSString *)labCode
