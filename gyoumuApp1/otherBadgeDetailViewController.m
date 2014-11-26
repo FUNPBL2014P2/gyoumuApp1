@@ -56,7 +56,7 @@
         
         NSString *body = [NSString stringWithFormat:@"badge"];
         
-        NSString *aString = [body stringByAppendingString:[NSString stringWithFormat:@"%@.gif",num]];
+        NSString *aString = [body stringByAppendingString:[NSString stringWithFormat:@"%@.png",num]];
         //NSLog(@"%@",aString);
         self.badgeImage.contentMode = UIViewContentModeScaleAspectFill;
         self.badgeImage.image = [UIImage imageNamed:aString];
