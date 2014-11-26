@@ -87,7 +87,7 @@
     /*バッジの配置*/
     /*
      self.badge1.contentMode = UIViewContentModeScaleAspectFill;
-     self.badge1.image = [UIImage imageNamed:@"badge1.gif"];
+     self.badge1.image = [UIImage imageNamed:@"badge01.png"];
      */
     
     self.badge = [[NSMutableArray alloc] initWithObjects:self.badge1,self.badge2,self.badge3,self.badge4,self.badge5,self.badge6,self.badge7,self.badge8,self.badge9,self.badge10,self.badge11,self.badge12,self.badge13,self.badge14,self.badge15,self.badge16,nil];
@@ -118,7 +118,7 @@
         if([flagArray[i][@"option0"] isEqualToString:@"1"]){
             UIImageView *badgeID = [_badge objectAtIndex:i];
             badgeID.contentMode = UIViewContentModeScaleAspectFill;
-            badgeID.image = (i<9)? [UIImage imageNamed:[NSString stringWithFormat:@"badge0%d.gif",i+1]]:[UIImage imageNamed:[NSString stringWithFormat:@"badge%d.gif",i+1]];
+            badgeID.image = (i<9)? [UIImage imageNamed:[NSString stringWithFormat:@"badge0%d.png",i+1]]:[UIImage imageNamed:[NSString stringWithFormat:@"badge%d.png",i+1]];
         }
     }
 }
