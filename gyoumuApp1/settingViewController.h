@@ -10,5 +10,14 @@
 
 @interface settingViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *allResetLabel;
 - (IBAction)allResetBtn:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *allBadgeResetLabel;
+- (IBAction)allBadgeResetBtn:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *badgeResetLabel;
+@property (weak, nonatomic) IBOutlet UILabel *badgeResetNumberLabel;
+@property (weak, nonatomic) IBOutlet UITextField *resetBadgeNumber;
+- (IBAction)badgeResetBtn:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *evaluateResetLabel;
+- (IBAction)evaluateResetBtn:(id)sender;
 @end
