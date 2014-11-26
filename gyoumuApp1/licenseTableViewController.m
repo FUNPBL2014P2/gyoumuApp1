@@ -40,8 +40,8 @@
     lc = [[licenseCollect alloc] init];
     [lc setLicenseArray:connect];
     
-       //for (int i = 0; i < [connect labArray].count; i++) {
-        
+    //for (int i = 0; i < [connect labArray].count; i++) {
+    
     //}
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -65,8 +65,8 @@
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-        //同名ソフトウェアの数
-       return lc.countRow;
+    //同名ソフトウェアの数
+    return lc.countRow;
 }
 
 -(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -119,64 +119,209 @@
 {
     
 }
-/*
- - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
- {
- UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
- 
- // Configure the cell...
- 
- return cell;
- }
- */
+-(void) licenseCheck:(int) flagCount :(NSString *) badgeTitle
+{
+    //Viewall用
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    NSMutableArray *userData = [userDefaults objectForKey:@"userData"];
+    
+    
+    
+    //NSString *urlList = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/viewall.php",[userData valueForKeyPath:@"labCode"]];
+    
+    
+    
+    WebdbConnect *myLab = [[WebdbConnect alloc] initWithLabArray:[userData valueForKeyPath:@"labCode"]];
+    
+    
+    
+    NSObject *jsonArray =[myLab labBadgeGet:badgeTitle];
+    
+    
+    
+    if ( [[jsonArray valueForKeyPath:@"option0"] isEqualToString:@"1"]) {
+        
+        return;
+        
+    }
+    
+    
+    
+    int count = [[jsonArray valueForKeyPath:@"option2"] intValue] + 1;
+    
+    
+    
+    if (count == flagCount) {
+        
+        /////////////////取得日時
+        
+        NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
+        
+        [fmt setDateFormat:@"yyyy年MM月dd日 HH時mm分"];
+        
+        NSDate *nowGet = [[NSDate alloc]init];
+        
+        /////////////////////取得日時を送信する処理
+        
+        NSString *urlList = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/add.php",[userData valueForKeyPath:@"labCode"]];
+        
+        
+        
+        NSURL *url = [NSURL URLWithString:urlList];
+        
+        
+        
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+        
+        [request setHTTPMethod:@"POST"];
+        
+        //パラメータを作成
+        
+        NSString *body =[NSString stringWithFormat:@"title=%@&message=&latitude=&longitude=&terminalId=%@&option0=1&option1=%@&option2=%@&option3=%@&option4=%@&option5=%@",[jsonArray valueForKeyPath:@"title"],[jsonArray valueForKeyPath:@"terminalId"],[fmt stringFromDate:nowGet],[NSString stringWithFormat:@"%d",flagCount], [jsonArray valueForKeyPath:@"option3"],[jsonArray valueForKeyPath:@"option4"],[jsonArray valueForKeyPath:@"option5"]];
+        
+        request.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
+        
+        NSURLConnection *connection;
+        
+        connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+        
+        //////////////////
+        
+        NSString *strURL = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/delete.php?data=/%@/%@",[userData valueForKeyPath:@"labCode"],[jsonArray valueForKeyPath:@"terminalId"], [jsonArray valueForKeyPath:@"datetime"]];
+        
+        NSURL *urlDelete = [NSURL URLWithString:strURL];
+        
+        NSMutableURLRequest *deleteRequest = [NSMutableURLRequest requestWithURL:urlDelete];
+        
+        [deleteRequest setHTTPMethod:@"GET"];
+        
+        [NSURLConnection sendSynchronousRequest:deleteRequest returningResponse:nil error:nil];
+        
+        ///////////////////
+        
+        //削除したら抜ける
+        
+        //////////////////
+        
+        
+        UIAlertView *alert =
+        
+        [[UIAlertView alloc] initWithTitle:@"バッジ取得" message:[jsonArray valueForKeyPath:@"option3"]
+         
+                                  delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        
+        [alert show];
+        
+        return ;
+        
+    }
+    
+    else if (count < flagCount) {
+        
+        NSString *urlList = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/add.php",[userData valueForKeyPath:@"labCode"]];
+        
+        
+        NSURL *url = [NSURL URLWithString:urlList];
+        
+        
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+        
+        [request setHTTPMethod:@"POST"];
+        
+        //パラメータを作成
+        
+        NSString *body = [NSString stringWithFormat:@"title=%@&message=&latitude=&longitude=&terminalId=%@&option0=0&option1=&option2=%d&option3=%@&option4=%@&option5=%@",[jsonArray valueForKeyPath:@"title"],[jsonArray valueForKeyPath:@"terminalId"],count,[jsonArray valueForKeyPath:@"option3"],[jsonArray valueForKeyPath:@"option4"],[jsonArray valueForKeyPath:@"option5"]];
+        
+        request.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
+        
+        NSURLConnection *connection;
+        
+        connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+        
+        /////////////////////
+        
+        NSString *strURL = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/delete.php?data=/%@/%@",[userData valueForKeyPath:@"labCode"],[jsonArray valueForKeyPath:@"terminalId"], [jsonArray valueForKeyPath:@"datetime"]];
+        
+        NSURL *urlDelete = [NSURL URLWithString:strURL];
+        
+        NSMutableURLRequest *deleteRequest = [NSMutableURLRequest requestWithURL:urlDelete];
+        
+        [deleteRequest setHTTPMethod:@"GET"];
+        
+        [NSURLConnection sendSynchronousRequest:deleteRequest returningResponse:nil error:nil];
+        
+        ///////////////////
+        
+        //削除したら抜ける
+        
+        return ;
+        
+        /////////////////////
+        
+    }
+    
+}
 
-/*
- // Override to support conditional editing of the table view.
- - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Return NO if you do not want the specified item to be editable.
- return YES;
- }
- */
-
-/*
- // Override to support editing the table view.
- - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
- {
- if (editingStyle == UITableViewCellEditingStyleDelete) {
- // Delete the row from the data source
- [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
- } else if (editingStyle == UITableViewCellEditingStyleInsert) {
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
- }
- }
- */
-
-/*
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
- {
- }
- */
-
-/*
- // Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Return NO if you do not want the item to be re-orderable.
- return YES;
- }
- */
-
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
- {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
-
-@end
+    /*
+     - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+     {
+     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+     
+     // Configure the cell...
+     
+     return cell;
+     }
+     */
+    
+    /*
+     // Override to support conditional editing of the table view.
+     - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+     {
+     // Return NO if you do not want the specified item to be editable.
+     return YES;
+     }
+     */
+    
+    /*
+     // Override to support editing the table view.
+     - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+     {
+     if (editingStyle == UITableViewCellEditingStyleDelete) {
+     // Delete the row from the data source
+     [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+     }
+     }
+     */
+    
+    /*
+     // Override to support rearranging the table view.
+     - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
+     {
+     }
+     */
+    
+    /*
+     // Override to support conditional rearranging of the table view.
+     - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+     {
+     // Return NO if you do not want the item to be re-orderable.
+     return YES;
+     }
+     */
+    
+    /*
+     #pragma mark - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+     {
+     // Get the new view controller using [segue destinationViewController].
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
+    @end
