@@ -7,6 +7,7 @@
 //
 
 #import "confirmViewController.h"
+#import "additionData.h"
 #import "WebdbConnect.h"
 #import "selectMakerViewController.h"
 #import "selectSoftwareViewController.h"
@@ -76,6 +77,70 @@
     connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];}
                        */
                       }
+
+- (BOOL)checkInputData{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSMutableArray *userData = [userDefaults objectForKey:@"userData"];
+    
+    if(self.addData.maker.length == 0){
+        UIAlertView *alert =
+        [[UIAlertView alloc] initWithTitle:@"入力エラー" message:@"メーカーの値が不正です。"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+        return NO;
+        
+    }else if(self.addData.software.length == 0){
+        UIAlertView *alert =
+        [[UIAlertView alloc] initWithTitle:@"入力エラー" message:@"ソフトウェアの値が不正です。"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+        return NO;
+        
+    }else if(self.addData.version.length == 0){
+        UIAlertView *alert =
+        [[UIAlertView alloc] initWithTitle:@"入力エラー" message:@"バージョンの値が不正です。"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+        return NO;
+        
+    }else if(self.addData.tag.length == 0){
+        UIAlertView *alert =
+        [[UIAlertView alloc] initWithTitle:@"入力エラー" message:@"識別名の値が不正です。"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+        return NO;
+        
+    }else if(self.addData.key.length == 0){
+        UIAlertView *alert =
+        [[UIAlertView alloc] initWithTitle:@"入力エラー" message:@"ライセンスキーの値が不正です。"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+        return NO;
+        
+    }else if(self.addData.start.length == 0){
+        UIAlertView *alert =
+        [[UIAlertView alloc] initWithTitle:@"入力エラー" message:@"購入日時の値が不正です。"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+        return NO;
+    }else if([self.addData isDuplicatedTag: [userData valueForKeyPath:@"labCode"]:self.addData.tag]){
+        UIAlertView *alert =
+        [[UIAlertView alloc] initWithTitle:@"入力エラー" message:@"識別名が重複しています。"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+    return NO;
+    }
+    return YES;
+}
+
+- (IBAction)sendBtn:(id)sender {
+    if(![self checkInputData])return;
+    NSLog(@"s%@",self.addData.maker);
+    
+    if([self.addData.maker  isEqualToString:@"Microsoft"]){
+        [self addLicenseBtn:5 :@"11"];
+    }else if([self.addData.maker isEqualToString:@"Adobe"]){
+        [self addLicenseBtn:5 :@"12"];
+    }
+    
+    [self sendLicenseData];
+    [self.addData format];
+    [self performSegueWithIdentifier:@"finish" sender:self];
+}
+    
 - (IBAction)makerEdit:(id)sender {
     [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:1] animated:YES];
 }
@@ -85,31 +150,23 @@
 }
 
 - (IBAction)versionEdit:(id)sender {
-    [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:3] animated:YES];}
+    [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:3] animated:YES];
+}
 
 - (IBAction)tagEdit:(id)sender {
-    [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:4] animated:YES];}
+    [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:4] animated:YES];
+}
 
 - (IBAction)keyEdit:(id)sender {
         [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:4] animated:YES];
 }
 
 - (IBAction)startEdit:(id)sender {
-    [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:5] animated:YES];}
+    [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:5] animated:YES];
+}
 
 - (IBAction)periodEdit:(id)sender {
-    [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:5] animated:YES];}
-
-- (IBAction)sendBtn:(id)sender {
-    NSLog(@"s%@",self.addData.maker);
-    if([self.addData.maker  isEqualToString:@"Microsoft"]){
-        [self addLicenseBtn:5 :@"11"];
-    }else if([self.addData.maker isEqualToString:@"Adobe"]){
-        [self addLicenseBtn:5 :@"12"];
-    }
-    [self sendLicenseData];
-    [self.addData format];
-  
+    [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:5] animated:YES];
 }
 
 -(void) addLicenseBtn:(int) flagCount :(NSString *) badgeTitle
