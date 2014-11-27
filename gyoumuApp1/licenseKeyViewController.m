@@ -43,21 +43,21 @@
     if(self.tagField.text.length >= 32){
         
         UIAlertView *alert =
-        [[UIAlertView alloc] initWithTitle:@"入力エラー" message:@"識別子が長過ぎます。"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [[UIAlertView alloc] initWithTitle:@"入力エラー" message:@"識別名が長過ぎます。"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
         return;
         
     }else if(self.tagField.text.length == 0){
     
         UIAlertView *alert =
-        [[UIAlertView alloc] initWithTitle:@"入力エラー" message:@"識別子が入力されていません。"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [[UIAlertView alloc] initWithTitle:@"入力エラー" message:@"識別名が入力されていません。"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
         return;
         
     }else if([self havingInvalidPatternIn:self.tagField.text]){
         
         UIAlertView *alert =
-        [[UIAlertView alloc] initWithTitle:@"入力エラー" message:@"識別子に不正な文字を含んでいます。"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [[UIAlertView alloc] initWithTitle:@"入力エラー" message:@"識別名に不正な文字を含んでいます。"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
         return;
         
