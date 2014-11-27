@@ -7,6 +7,7 @@
 //
 
 #import "confirmViewController.h"
+#import "additionData.h"
 
 @interface confirmViewController ()
 
@@ -72,6 +73,9 @@
                       }
 
 - (BOOL)checkInputData{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSMutableArray *userData = [userDefaults objectForKey:@"userData"];
+    
     if(self.addData.maker.length == 0){
         UIAlertView *alert =
         [[UIAlertView alloc] initWithTitle:@"入力エラー" message:@"メーカーの値が不正です。"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
@@ -107,6 +111,11 @@
         [[UIAlertView alloc] initWithTitle:@"入力エラー" message:@"購入日時の値が不正です。"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
         return NO;
+    }else if([self.addData isDuplicatedTag: [userData valueForKeyPath:@"labCode"]:self.addData.tag]){
+        UIAlertView *alert =
+        [[UIAlertView alloc] initWithTitle:@"入力エラー" message:@"識別名が重複しています。"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+    return NO;
     }
     return YES;
 }
