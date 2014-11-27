@@ -15,9 +15,7 @@
 }
 @property additionData *addData;
 @property (weak, nonatomic) IBOutlet UILabel *message;
-- (IBAction)continueBtn:(id)sender;
 - (IBAction)returnBtn:(id)sender;
-@property (weak, nonatomic) IBOutlet UIButton *continueBtn;
 @property (weak, nonatomic) IBOutlet UIButton *returnBtn;
 
 @end

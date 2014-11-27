@@ -1287,39 +1287,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hKh-7F-ePW">
-                                <rect key="frame" x="205" y="417" width="360" height="65"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="continueBtn:" destination="B2Z-hr-bNb" eventType="touchUpInside" id="pmg-tU-bVx"/>
-                                    <segue destination="CEI-3q-4PM" kind="modal" id="LJG-UZ-aOr"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4BX-wb-DOL">
-                                <rect key="frame" x="204" y="627" width="360" height="65"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="returnBtn:" destination="B2Z-hr-bNb" eventType="touchUpInside" id="Yzy-Lw-fpx"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfB-ik-Bb8">
                                 <rect key="frame" x="39" y="144" width="690" height="87"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4BX-wb-DOL">
+                                <rect key="frame" x="204" y="449" width="360" height="65"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="returnBtn:" destination="B2Z-hr-bNb" eventType="touchUpInside" id="Yzy-Lw-fpx"/>
+                                    <segue destination="CEI-3q-4PM" kind="modal" id="GUN-Fg-IWC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="EWg-il-VVD"/>
                     <connections>
-                        <outlet property="continueBtn" destination="hKh-7F-ePW" id="c7O-hF-EgZ"/>
                         <outlet property="message" destination="cfB-ik-Bb8" id="8bX-75-yc8"/>
                         <outlet property="returnBtn" destination="4BX-wb-DOL" id="eBV-4O-uRb"/>
                     </connections>
@@ -2116,7 +2105,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="LJG-UZ-aOr"/>
         <segue reference="pRY-ID-Y80"/>
+        <segue reference="GUN-Fg-IWC"/>
     </inferredMetricsTieBreakers>
 </document>

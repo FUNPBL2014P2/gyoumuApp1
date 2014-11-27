@@ -21,11 +21,9 @@
     // Do any additional setup after loading the view.
     if([self isAdded:self.addData]){
         self.message.text = @"ライセンス情報が登録されました。";
-        [self.continueBtn setTitle:@"続けて登録する" forState:UIControlStateNormal];
         [self.returnBtn setTitle:@"ライセンス一覧へ戻る" forState:UIControlStateNormal];
     }else{
     self.message.text = @"エラー：ライセンス情報が登録されませんでした。";
-            [self.continueBtn setTitle:@"始めからやり直す" forState:UIControlStateNormal];
             [self.returnBtn setTitle:@"ライセンス一覧へ戻る" forState:UIControlStateNormal];
     }
 }
@@ -49,9 +47,6 @@
     // Pass the selected object to the new view controller.
 }
 */
-
-- (IBAction)continueBtn:(id)sender {
-}
 
 - (IBAction)returnBtn:(id)sender {
 }
