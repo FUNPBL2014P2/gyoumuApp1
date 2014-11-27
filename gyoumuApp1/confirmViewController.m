@@ -8,6 +8,11 @@
 
 #import "confirmViewController.h"
 #import "WebdbConnect.h"
+#import "selectMakerViewController.h"
+#import "selectSoftwareViewController.h"
+#import "selectVersionViewController.h"
+#import "licenseKeyViewController.h"
+#import "inputDateViewController.h"
 
 @interface confirmViewController ()
 
@@ -70,8 +75,31 @@
     NSURLConnection *connection;
     connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];}
                        */
-    NSLog(@"a%@",self.addData.maker);
                       }
+- (IBAction)makerEdit:(id)sender {
+    [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:1] animated:YES];
+}
+
+- (IBAction)softwareEdit:(id)sender {
+    [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:2] animated:YES];
+}
+
+- (IBAction)versionEdit:(id)sender {
+    [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:3] animated:YES];}
+
+- (IBAction)tagEdit:(id)sender {
+    [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:4] animated:YES];}
+
+- (IBAction)keyEdit:(id)sender {
+        [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:4] animated:YES];
+}
+
+- (IBAction)startEdit:(id)sender {
+    [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:5] animated:YES];}
+
+- (IBAction)periodEdit:(id)sender {
+    [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:5] animated:YES];}
+
 - (IBAction)sendBtn:(id)sender {
     NSLog(@"s%@",self.addData.maker);
     if([self.addData.maker  isEqualToString:@"Microsoft"]){

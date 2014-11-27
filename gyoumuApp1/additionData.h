@@ -16,6 +16,7 @@
 @property NSString *key;
 @property NSString *start;
 @property NSString *period;
+@property BOOL isFromConfirm;
 -(void)copy: (additionData *)target;
 -(void)format;
 -(void)debug;
