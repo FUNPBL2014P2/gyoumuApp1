@@ -21,6 +21,18 @@
 @property (weak, nonatomic) IBOutlet UILabel *keyLabel;
 @property (weak, nonatomic) IBOutlet UILabel *startLabel;
 @property (weak, nonatomic) IBOutlet UILabel *periodLabel;
+
+
+- (IBAction)makerEdit:(id)sender;
+- (IBAction)softwareEdit:(id)sender;
+- (IBAction)versionEdit:(id)sender;
+- (IBAction)tagEdit:(id)sender;
+- (IBAction)keyEdit:(id)sender;
+- (IBAction)startEdit:(id)sender;
+- (IBAction)periodEdit:(id)sender;
+
+
+
 - (IBAction)sendBtn:(id)sender;
 
 @end

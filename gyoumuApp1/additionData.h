@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "WebdbConnect.h"
 
 @interface additionData : NSObject
 @property NSString *maker;
@@ -16,7 +17,10 @@
 @property NSString *key;
 @property NSString *start;
 @property NSString *period;
+@property WebdbConnect *Labdb;
+@property BOOL isFromConfirm;
 -(void)copy: (additionData *)target;
 -(void)format;
 -(void)debug;
+-(BOOL)isDuplicatedTag:(NSString *)code :(NSString *)tag;
 @end

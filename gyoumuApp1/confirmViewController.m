@@ -8,6 +8,13 @@
 
 #import "confirmViewController.h"
 #import "finishAddingViewController.h"
+#import "additionData.h"
+#import "WebdbConnect.h"
+#import "selectMakerViewController.h"
+#import "selectSoftwareViewController.h"
+#import "selectVersionViewController.h"
+#import "licenseKeyViewController.h"
+#import "inputDateViewController.h"
 
 @interface confirmViewController ()
 
@@ -84,8 +91,170 @@
     connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];}
                        */
                       }
+
+- (BOOL)checkInputData{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSMutableArray *userData = [userDefaults objectForKey:@"userData"];
+    
+    if(self.addData.maker.length == 0){
+        UIAlertView *alert =
+        [[UIAlertView alloc] initWithTitle:@"入力エラー" message:@"メーカーの値が不正です。"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+        return NO;
+        
+    }else if(self.addData.software.length == 0){
+        UIAlertView *alert =
+        [[UIAlertView alloc] initWithTitle:@"入力エラー" message:@"ソフトウェアの値が不正です。"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+        return NO;
+        
+    }else if(self.addData.version.length == 0){
+        UIAlertView *alert =
+        [[UIAlertView alloc] initWithTitle:@"入力エラー" message:@"バージョンの値が不正です。"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+        return NO;
+        
+    }else if(self.addData.tag.length == 0){
+        UIAlertView *alert =
+        [[UIAlertView alloc] initWithTitle:@"入力エラー" message:@"識別名の値が不正です。"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+        return NO;
+        
+    }else if(self.addData.key.length == 0){
+        UIAlertView *alert =
+        [[UIAlertView alloc] initWithTitle:@"入力エラー" message:@"ライセンスキーの値が不正です。"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+        return NO;
+        
+    }else if(self.addData.start.length == 0){
+        UIAlertView *alert =
+        [[UIAlertView alloc] initWithTitle:@"入力エラー" message:@"購入日時の値が不正です。"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+        return NO;
+    }else if([self.addData isDuplicatedTag: [userData valueForKeyPath:@"labCode"]:self.addData.tag]){
+        UIAlertView *alert =
+        [[UIAlertView alloc] initWithTitle:@"入力エラー" message:@"識別名が重複しています。"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+    return NO;
+    }
+    return YES;
+}
+
 - (IBAction)sendBtn:(id)sender {
+    if(![self checkInputData])return;
+    NSLog(@"s%@",self.addData.maker);
+    
+    if([self.addData.maker  isEqualToString:@"Microsoft"]){
+        [self addLicenseBtn:5 :@"11"];
+    }else if([self.addData.maker isEqualToString:@"Adobe"]){
+        [self addLicenseBtn:5 :@"12"];
+    }
+    
     [self sendLicenseData];
+    [self.addData format];
     [self performSegueWithIdentifier:@"finish" sender:self];
+}
+    
+- (IBAction)makerEdit:(id)sender {
+    [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:1] animated:YES];
+}
+
+- (IBAction)softwareEdit:(id)sender {
+    [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:2] animated:YES];
+}
+
+- (IBAction)versionEdit:(id)sender {
+    [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:3] animated:YES];
+}
+
+- (IBAction)tagEdit:(id)sender {
+    [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:4] animated:YES];
+}
+
+- (IBAction)keyEdit:(id)sender {
+        [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:4] animated:YES];
+}
+
+- (IBAction)startEdit:(id)sender {
+    [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:5] animated:YES];
+}
+
+- (IBAction)periodEdit:(id)sender {
+    [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:5] animated:YES];
+}
+
+-(void) addLicenseBtn:(int) flagCount :(NSString *) badgeTitle
+{
+    //Viewall用
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSMutableArray *userData = [userDefaults objectForKey:@"userData"];
+    WebdbConnect *myLab = [[WebdbConnect alloc] initWithLabArray:[userData valueForKeyPath:@"labCode"]];
+    NSObject *jsonArray =[myLab labBadgeGet:badgeTitle];
+    
+    if ( [[jsonArray valueForKeyPath:@"option0"] isEqualToString:@"1"]) {
+        return;
+    }
+    
+    int count = [[jsonArray valueForKeyPath:@"option2"] intValue] + 1;
+    
+    if (count == flagCount) {
+        
+        /////////////////取得日時
+        
+        NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
+        [fmt setDateFormat:@"yyyy年MM月dd日 HH時mm分"];
+        NSDate *nowGet = [[NSDate alloc]init];
+        
+        /////////////////////取得日時を送信する処理
+        
+        NSString *urlList = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/add.php",[userData valueForKeyPath:@"labCode"]];
+        NSURL *url = [NSURL URLWithString:urlList];
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+        [request setHTTPMethod:@"POST"];
+        
+        //パラメータを作成
+        
+        NSString *body =[NSString stringWithFormat:@"title=%@&message=&latitude=&longitude=&terminalId=%@&option0=1&option1=%@&option2=%@&option3=%@&option4=%@&option5=%@",[jsonArray valueForKeyPath:@"title"],[jsonArray valueForKeyPath:@"terminalId"],[fmt stringFromDate:nowGet],[NSString stringWithFormat:@"%d",flagCount], [jsonArray valueForKeyPath:@"option3"],[jsonArray valueForKeyPath:@"option4"],[jsonArray valueForKeyPath:@"option5"]];
+        
+        request.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
+        NSURLConnection *connection;
+        connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+        
+        //////////////////
+        
+        NSString *strURL = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/delete.php?data=/%@/%@",[userData valueForKeyPath:@"labCode"],[jsonArray valueForKeyPath:@"terminalId"], [jsonArray valueForKeyPath:@"datetime"]];
+        NSURL *urlDelete = [NSURL URLWithString:strURL];
+        NSMutableURLRequest *deleteRequest = [NSMutableURLRequest requestWithURL:urlDelete];
+        [deleteRequest setHTTPMethod:@"GET"];
+        [NSURLConnection sendSynchronousRequest:deleteRequest returningResponse:nil error:nil];
+        UIAlertView *alert =[[UIAlertView alloc] initWithTitle:@"バッジ取得" message:[jsonArray valueForKeyPath:@"option3"] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+
+        return ;
+    }else if (count < flagCount) {
+        
+        NSString *urlList = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/add.php",[userData valueForKeyPath:@"labCode"]];
+        NSURL *url = [NSURL URLWithString:urlList];
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+        [request setHTTPMethod:@"POST"];
+        
+        //パラメータを作成
+        
+        NSString *body = [NSString stringWithFormat:@"title=%@&message=&latitude=&longitude=&terminalId=%@&option0=0&option1=&option2=%d&option3=%@&option4=%@&option5=%@",[jsonArray valueForKeyPath:@"title"],[jsonArray valueForKeyPath:@"terminalId"],count,[jsonArray valueForKeyPath:@"option3"],[jsonArray valueForKeyPath:@"option4"],[jsonArray valueForKeyPath:@"option5"]];
+        request.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
+        NSURLConnection *connection;
+        connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+        
+        /////////////////////
+        
+        NSString *strURL = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/delete.php?data=/%@/%@",[userData valueForKeyPath:@"labCode"],[jsonArray valueForKeyPath:@"terminalId"], [jsonArray valueForKeyPath:@"datetime"]];
+        NSURL *urlDelete = [NSURL URLWithString:strURL];
+        NSMutableURLRequest *deleteRequest = [NSMutableURLRequest requestWithURL:urlDelete];
+        [deleteRequest setHTTPMethod:@"GET"];
+        [NSURLConnection sendSynchronousRequest:deleteRequest returningResponse:nil error:nil];
+        
+        //削除したら抜ける
+        return ;
+    }
 }
 @end

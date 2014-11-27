@@ -17,6 +17,7 @@
 -(NSMutableArray *)labLicenseCodeGet:(NSString *)code;
 
 -(id)initWithLabArray:(NSString *)labCode;
+-(NSObject *)labEvaluateGet;
 
 
 @end
