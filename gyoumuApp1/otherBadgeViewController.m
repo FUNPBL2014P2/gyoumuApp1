@@ -64,7 +64,7 @@
     //NSLog(@"%d",[self timeCheck:labCode]);
     int time_hour = _time/3600;
     int time_minute = (_time - time_hour*3600)/60;
-    self.evaluateTime.text = [NSString stringWithFormat:@"評価可能まであと%02d時間:%02d分です",time_hour,time_minute];
+    self.evaluateTime.text = [NSString stringWithFormat:@"評価可能まであと%02d時間%02d分です",time_hour,time_minute];
     self.evaluateTime.textColor = [UIColor blueColor];
     
     
@@ -87,12 +87,10 @@
     /*バッジの配置*/
     /*
      self.badge1.contentMode = UIViewContentModeScaleAspectFill;
-     self.badge1.image = [UIImage imageNamed:@"badge1.gif"];
+     self.badge1.image = [UIImage imageNamed:@"badge01.png"];
      */
     
     self.badge = [[NSMutableArray alloc] initWithObjects:self.badge1,self.badge2,self.badge3,self.badge4,self.badge5,self.badge6,self.badge7,self.badge8,self.badge9,self.badge10,self.badge11,self.badge12,self.badge13,self.badge14,self.badge15,self.badge16,nil];
-    
-    
     
 }
 
@@ -118,7 +116,7 @@
         if([flagArray[i][@"option0"] isEqualToString:@"1"]){
             UIImageView *badgeID = [_badge objectAtIndex:i];
             badgeID.contentMode = UIViewContentModeScaleAspectFill;
-            badgeID.image = (i<9)? [UIImage imageNamed:[NSString stringWithFormat:@"badge0%d.gif",i+1]]:[UIImage imageNamed:[NSString stringWithFormat:@"badge%d.gif",i+1]];
+            badgeID.image = (i<9)? [UIImage imageNamed:[NSString stringWithFormat:@"badge0%d.png",i+1]]:[UIImage imageNamed:[NSString stringWithFormat:@"badge%d.png",i+1]];
         }
     }
 }
@@ -132,7 +130,7 @@
         _time--;
         int time_hour = _time/3600;
         int time_minute = (_time - time_hour*3600)/60;
-        self.evaluateTime.text = [NSString stringWithFormat:@"評価可能まであと%02d時間:%02d分です",time_hour,time_minute];
+        self.evaluateTime.text = [NSString stringWithFormat:@"評価可能まであと%02d時間%02d分です",time_hour,time_minute];
     }
 }
 
@@ -386,8 +384,11 @@
     _time = 24*60*60;
     int time_hour = _time/3600;
     int time_minute = (_time - time_hour*3600)/60;
-    self.evaluateTime.text = [NSString stringWithFormat:@"評価可能まであと%02d時間:%02d分です",time_hour,time_minute];
+    self.evaluateTime.text = [NSString stringWithFormat:@"評価可能まであと%02d時間%02d分です",time_hour,time_minute];
     [_evaluateBtn setEnabled:NO];
+    
+    [self evaluateAddCheck:1 :@"04"];
+    [self evaluateAddCheck:5 :@"08"];
     
 }
 
@@ -435,10 +436,10 @@
     //24時間以内だったら評価不可
     if(sub.length == 0){
         [_evaluateBtn setEnabled:YES];
-    }else if([subold_day isEqualToString:timenew_day]) {
-        [_evaluateBtn setEnabled:NO];
-    }else if(_time > 0){
+    }else if(_time == 0){
         [_evaluateBtn setEnabled:YES];
+    }else if(_time > 0){
+        [_evaluateBtn setEnabled:NO];
     }
     
 }
@@ -511,7 +512,7 @@
     NSLog(@"a%d",reverse_hour);
     NSLog(@"b%d",reverse_minute);
     
-    int total_second1 = (subold_hour_int * 60 * 60) + (subold_minute_int * 60);
+    int total_second1 = ((subold_hour_int - timenew_hour_int) * 60 * 60) + ((subold_minute_int - timenew_minute_int) * 60);
     int total_second2 = 24*60*60 - (abs(reverse_hour * 60 * 60) + (reverse_minute * 60));
     
     if((![subold_day isEqualToString:timenew_day]) && (reverse_hour >= 0)){
@@ -527,5 +528,150 @@
     return 10;
 
 }
+
+-(void) evaluateAddCheck:(int) flagCount :(NSString *) badgeTitle
+{
+    //Viewall用
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    NSMutableArray *userData = [userDefaults objectForKey:@"userData"];
+    
+    
+    
+    //NSString *urlList = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/viewall.php",[userData valueForKeyPath:@"labCode"]];
+    
+    
+    
+    WebdbConnect *myLab = [[WebdbConnect alloc] initWithLabArray:[userData valueForKeyPath:@"labCode"]];
+    
+    
+    
+    NSObject *jsonArray = [myLab labBadgeGet:badgeTitle];
+    
+    
+    
+    if ( [[jsonArray valueForKeyPath:@"option0"] isEqualToString:@"1"]) {
+        
+        return;
+        
+    }
+    int count = [[[myLab labEvaluateGet]valueForKeyPath:@"option2"] intValue];
+    
+    
+    
+    if (count == flagCount) {
+        
+        /////////////////取得日時
+        
+        NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
+        
+        [fmt setDateFormat:@"yyyy年MM月dd日 HH時mm分"];
+        
+        NSDate *nowGet = [[NSDate alloc]init];
+        
+        /////////////////////取得日時を送信する処理
+        
+        NSString *urlList = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/add.php",[userData valueForKeyPath:@"labCode"]];
+        
+        
+        
+        NSURL *url = [NSURL URLWithString:urlList];
+        
+        
+        
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+        
+        [request setHTTPMethod:@"POST"];
+        
+        //パラメータを作成
+        
+        NSString *body =[NSString stringWithFormat:@"title=%@&message=&latitude=&longitude=&terminalId=%@&option0=1&option1=%@&option2=%@&option3=%@&option4=%@&option5=%@",[jsonArray valueForKeyPath:@"title"],[jsonArray valueForKeyPath:@"terminalId"],[fmt stringFromDate:nowGet],[NSString stringWithFormat:@"%d",flagCount], [jsonArray valueForKeyPath:@"option3"],[jsonArray valueForKeyPath:@"option4"],[jsonArray valueForKeyPath:@"option5"]];
+        
+        request.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
+        
+        NSURLConnection *connection;
+        
+        connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+        
+        //////////////////
+        
+        NSString *strURL = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/delete.php?data=/%@/%@",[userData valueForKeyPath:@"labCode"],[jsonArray valueForKeyPath:@"terminalId"], [jsonArray valueForKeyPath:@"datetime"]];
+        
+        NSURL *urlDelete = [NSURL URLWithString:strURL];
+        
+        NSMutableURLRequest *deleteRequest = [NSMutableURLRequest requestWithURL:urlDelete];
+        
+        [deleteRequest setHTTPMethod:@"GET"];
+        
+        [NSURLConnection sendSynchronousRequest:deleteRequest returningResponse:nil error:nil];
+        
+        ///////////////////
+        
+        //削除したら抜ける
+    
+        //////////////////
+        
+        
+        UIAlertView *alert =
+        
+        [[UIAlertView alloc] initWithTitle:@"バッジ取得" message:[jsonArray valueForKeyPath:@"option3"]
+         
+                                  delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        
+        [alert show];
+        
+        return ;
+        
+    }
+    else if (count < flagCount) {
+        
+        NSString *urlList = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/add.php",[userData valueForKeyPath:@"labCode"]];
+        
+        
+        
+        NSURL *url = [NSURL URLWithString:urlList];
+        
+        
+        
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+        
+        [request setHTTPMethod:@"POST"];
+        
+        //パラメータを作成
+        
+        NSString *body = [NSString stringWithFormat:@"title=%@&message=&latitude=&longitude=&terminalId=%@&option0=0&option1=&option2=%d&option3=%@&option4=%@&option5=%@",[jsonArray valueForKeyPath:@"title"],[jsonArray valueForKeyPath:@"terminalId"],count,[jsonArray valueForKeyPath:@"option3"],[jsonArray valueForKeyPath:@"option4"],[jsonArray valueForKeyPath:@"option5"]];
+        
+        request.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
+        
+        NSURLConnection *connection;
+        
+        connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+        
+        /////////////////////
+        
+        NSString *strURL = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/delete.php?data=/%@/%@",[userData valueForKeyPath:@"labCode"],[jsonArray valueForKeyPath:@"terminalId"], [jsonArray valueForKeyPath:@"datetime"]];
+        
+        NSURL *urlDelete = [NSURL URLWithString:strURL];
+        
+        NSMutableURLRequest *deleteRequest = [NSMutableURLRequest requestWithURL:urlDelete];
+        
+        [deleteRequest setHTTPMethod:@"GET"];
+        
+        [NSURLConnection sendSynchronousRequest:deleteRequest returningResponse:nil error:nil];
+        
+        ///////////////////
+        
+        //削除したら抜ける
+        
+        return ;
+        
+        /////////////////////
+        
+        
+        
+    }
+}
+
 
 @end
