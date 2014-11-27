@@ -86,7 +86,7 @@
             if([flagArray[i][@"option0"] isEqualToString:@"1"]){
                 UIImageView *badgeID = [_badge objectAtIndex:i];
                 badgeID.contentMode = UIViewContentModeScaleAspectFill;
-                badgeID.image = (i<9)? [UIImage imageNamed:[NSString stringWithFormat:@"badge0%d.gif",i+1]]:[UIImage imageNamed:[NSString stringWithFormat:@"badge%d.gif",i+1]];
+                badgeID.image = (i<9)? [UIImage imageNamed:[NSString stringWithFormat:@"badge0%d.png",i+1]]:[UIImage imageNamed:[NSString stringWithFormat:@"badge%d.png",i+1]];
             }
        }
 }
