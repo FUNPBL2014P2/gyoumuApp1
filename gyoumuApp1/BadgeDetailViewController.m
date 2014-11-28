@@ -101,7 +101,7 @@
         
         NSString *body = [NSString stringWithFormat:@"badge"];
         
-        NSString *aString = [body stringByAppendingString:[NSString stringWithFormat:@"%@.gif",[jsonArray valueForKeyPath:@"title"]]];
+        NSString *aString = [body stringByAppendingString:[NSString stringWithFormat:@"%@.png",[jsonArray valueForKeyPath:@"title"]]];
         
         self.badgeImage.contentMode = UIViewContentModeScaleAspectFill;
         self.badgeImage.image = [UIImage imageNamed:aString];
