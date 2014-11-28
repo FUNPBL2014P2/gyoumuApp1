@@ -3,6 +3,7 @@
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -184,6 +185,7 @@
         <scene sceneID="2FJ-if-y9A">
             <objects>
                 <navigationController id="CEI-3q-4PM" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="VHm-qg-Je1"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="AWV-5D-Ir2">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -247,6 +249,7 @@
         <scene sceneID="KJM-fm-ASa">
             <objects>
                 <navigationController id="gcM-S9-W1J" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="k6a-0c-Izh"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3Cd-Y1-TpQ">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -795,6 +798,7 @@
         <scene sceneID="Upm-LX-BSz">
             <objects>
                 <navigationController id="L6H-uK-gWR" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Yw8-Cn-E9a"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="4qb-JC-nB1">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1226,7 +1230,7 @@
         <!--Confirm View Controller-->
         <scene sceneID="lhA-Fb-vZ4">
             <objects>
-                <viewController id="YUf-UH-ezE" customClass="confirmViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Finish" id="YUf-UH-ezE" customClass="confirmViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tc1-zu-OnO"/>
                         <viewControllerLayoutGuide type="bottom" id="Ii6-uw-c8T"/>
@@ -1412,12 +1416,54 @@
                         <outlet property="startLabel" destination="LA9-8J-Xk9" id="S87-SM-3BG"/>
                         <outlet property="tagLabel" destination="t1T-zu-Dd4" id="7C2-Ey-vEZ"/>
                         <outlet property="versionLabel" destination="8Rs-f0-Kln" id="aln-Xk-BkW"/>
-                        <segue destination="CEI-3q-4PM" kind="modal" identifier="finish" id="Cp5-63-e5N"/>
+                        <segue destination="B2Z-hr-bNb" kind="modal" identifier="finish" id="yBH-b4-Iqx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bh7-1U-p3a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="11310" y="-1210"/>
+        </scene>
+        <!--Finish Adding View Controller-->
+        <scene sceneID="eUl-eJ-eyV">
+            <objects>
+                <viewController id="B2Z-hr-bNb" customClass="finishAddingViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kD1-Ds-5fH"/>
+                        <viewControllerLayoutGuide type="bottom" id="juZ-k1-MBQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="261-E4-bM1">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfB-ik-Bb8">
+                                <rect key="frame" x="39" y="144" width="690" height="87"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4BX-wb-DOL">
+                                <rect key="frame" x="204" y="449" width="360" height="65"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="returnBtn:" destination="B2Z-hr-bNb" eventType="touchUpInside" id="Yzy-Lw-fpx"/>
+                                    <segue destination="CEI-3q-4PM" kind="modal" id="GUN-Fg-IWC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="EWg-il-VVD"/>
+                    <connections>
+                        <outlet property="message" destination="cfB-ik-Bb8" id="8bX-75-yc8"/>
+                        <outlet property="returnBtn" destination="4BX-wb-DOL" id="eBV-4O-uRb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NBp-vj-d8j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="12256" y="-1254"/>
         </scene>
         <!--Other Badge Detail View Controller-->
         <scene sceneID="gmj-2e-LAv">
@@ -2231,7 +2277,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Cp5-63-e5N"/>
+        <segue reference="GUN-Fg-IWC"/>
         <segue reference="pRY-ID-Y80"/>
     </inferredMetricsTieBreakers>
 </document>

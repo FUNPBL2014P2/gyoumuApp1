@@ -7,6 +7,7 @@
 //
 
 #import "confirmViewController.h"
+#import "finishAddingViewController.h"
 #import "additionData.h"
 #import "WebdbConnect.h"
 #import "selectMakerViewController.h"
@@ -39,6 +40,10 @@
     self.periodLabel.text = self.addData.period;
 }
 
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:YES];
+    [self.addData format];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -57,6 +62,15 @@
  // Pass the selected object to the new view controller.
  }
  */
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    finishAddingViewController *nextVC = segue.destinationViewController;
+    nextVC.addData = [[additionData alloc]init];
+    [nextVC.addData copy:self.addData];
+    
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+
 - (void)sendLicenseData{
     NSString *option7 = [self.addData.maker stringByAppendingString:[self.addData.software stringByAppendingString:self.addData.version]];
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
@@ -71,12 +85,7 @@
     request.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
     NSURLConnection *connection;
     connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-                      /*
-    request.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
-    NSURLConnection *connection;
-    connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];}
-                       */
-                      }
+    }
 
 - (BOOL)checkInputData{
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
@@ -117,6 +126,7 @@
         [[UIAlertView alloc] initWithTitle:@"入力エラー" message:@"購入日時の値が不正です。"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
         return NO;
+        
     }else if([self.addData isDuplicatedTag: [userData valueForKeyPath:@"labCode"]:self.addData.tag]){
         UIAlertView *alert =
         [[UIAlertView alloc] initWithTitle:@"入力エラー" message:@"識別名が重複しています。"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
@@ -128,16 +138,14 @@
 
 - (IBAction)sendBtn:(id)sender {
     if(![self checkInputData])return;
-    NSLog(@"s%@",self.addData.maker);
+    
+    [self sendLicenseData];
     
     if([self.addData.maker  isEqualToString:@"Microsoft"]){
         [self addLicenseBtn:5 :@"11"];
     }else if([self.addData.maker isEqualToString:@"Adobe"]){
         [self addLicenseBtn:5 :@"12"];
     }
-    
-    [self sendLicenseData];
-    [self.addData format];
     [self performSegueWithIdentifier:@"finish" sender:self];
 }
     
@@ -158,7 +166,7 @@
 }
 
 - (IBAction)keyEdit:(id)sender {
-        [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:4] animated:YES];
+    [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:4] animated:YES];
 }
 
 - (IBAction)startEdit:(id)sender {
