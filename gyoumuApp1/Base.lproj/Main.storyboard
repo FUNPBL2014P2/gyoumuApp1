@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
         <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -747,99 +745,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yft-4h-w5s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5062" y="-1149"/>
-        </scene>
-        <!--License Add View Controller - ライセンス登録-->
-        <scene sceneID="WsD-NW-n8k">
-            <objects>
-                <viewController id="9n5-kd-hae" customClass="licenseAddViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="yKA-oz-MLQ"/>
-                        <viewControllerLayoutGuide type="bottom" id="J7z-ox-u17"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="FEY-yn-q2q">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Wb-Lk-29P">
-                                <rect key="frame" x="332" y="497" width="126" height="29"/>
-                                <state key="normal" title="ライセンス登録">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="licenseAddBtn:" destination="9n5-kd-hae" eventType="touchUpInside" id="FrL-6G-MG6"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J9D-V4-6s1">
-                                <rect key="frame" x="568" y="856" width="116" height="30"/>
-                                <state key="normal" title="Badge09のReset">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="BadgeNineResetBtn:" destination="9n5-kd-hae" eventType="touchUpInside" id="qef-e8-fxF"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZOG-xf-QjZ">
-                                <rect key="frame" x="90" y="856" width="108" height="30"/>
-                                <state key="normal" title="Badge3のReset">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="BadgeThreeResetBtn:" destination="9n5-kd-hae" eventType="touchUpInside" id="5lv-DF-Ndd"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vog-6j-evx">
-                                <rect key="frame" x="337" y="856" width="116" height="30"/>
-                                <state key="normal" title="Badge10のReset">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="BadgeTenResetBtn:" destination="9n5-kd-hae" eventType="touchUpInside" id="pdo-Lo-D77"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6vX-6L-fI3">
-                                <rect key="frame" x="90" y="974" width="116" height="30"/>
-                                <state key="normal" title="Badge14のReset">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="BadgeFourteenResetBtn:" destination="9n5-kd-hae" eventType="touchUpInside" id="DqO-2w-b71"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FxQ-EV-HdG">
-                                <rect key="frame" x="337" y="974" width="116" height="30"/>
-                                <state key="normal" title="Badge15のReset">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="BadgeFifteenResetBtn:" destination="9n5-kd-hae" eventType="touchUpInside" id="yi7-VL-mqn"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fss-jY-chz">
-                                <rect key="frame" x="568" y="974" width="116" height="30"/>
-                                <state key="normal" title="Badge16のReset">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="BadgeSixteenResetBtn:" destination="9n5-kd-hae" eventType="touchUpInside" id="vjk-gL-FuM"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SgL-K0-wJN">
-                                <rect key="frame" x="602" y="95" width="90" height="30"/>
-                                <state key="normal" title="登録手続きへ">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="2TA-s0-PGr" kind="push" id="Z4l-zx-EZg"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="ライセンス登録" id="zVS-g0-In5"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ffV-Qd-x8j" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6014" y="-1149"/>
         </scene>
         <!--Select Maker View Controller-->
         <scene sceneID="5T0-d7-VqJ">
@@ -2214,7 +2119,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="pRY-ID-Y80"/>
         <segue reference="LGs-ic-s6S"/>
+        <segue reference="pRY-ID-Y80"/>
     </inferredMetricsTieBreakers>
 </document>
