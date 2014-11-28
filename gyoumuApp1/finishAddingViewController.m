@@ -23,8 +23,8 @@
         self.message.text = @"ライセンス情報が登録されました。";
         [self.returnBtn setTitle:@"ライセンス一覧へ戻る" forState:UIControlStateNormal];
     }else{
-    self.message.text = @"エラー：ライセンス情報が登録されませんでした。";
-            [self.returnBtn setTitle:@"ライセンス一覧へ戻る" forState:UIControlStateNormal];
+        self.message.text = @"エラー：ライセンス情報が登録されませんでした。";
+        [self.returnBtn setTitle:@"ライセンス一覧へ戻る" forState:UIControlStateNormal];
     }
 }
 
@@ -56,6 +56,7 @@
     WebdbConnect *labDB = [[WebdbConnect alloc]initWithLabArray:[[userdefault objectForKey:@"userData"]valueForKey:@"labCode"]];
     NSMutableArray *LicenseArray = [[NSMutableArray alloc]init];
     LicenseArray = [labDB labLicenseGet];
+    NSLog(@"%@",LicenseArray);
     
     
     for(int i=0;i<LicenseArray.count;i++){

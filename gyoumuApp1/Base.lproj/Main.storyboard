@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
@@ -1143,7 +1142,7 @@
         <!--Confirm View Controller-->
         <scene sceneID="lhA-Fb-vZ4">
             <objects>
-                <viewController id="YUf-UH-ezE" customClass="confirmViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Finish" id="YUf-UH-ezE" customClass="confirmViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tc1-zu-OnO"/>
                         <viewControllerLayoutGuide type="bottom" id="Ii6-uw-c8T"/>
@@ -1329,7 +1328,7 @@
                         <outlet property="startLabel" destination="LA9-8J-Xk9" id="S87-SM-3BG"/>
                         <outlet property="tagLabel" destination="t1T-zu-Dd4" id="7C2-Ey-vEZ"/>
                         <outlet property="versionLabel" destination="8Rs-f0-Kln" id="aln-Xk-BkW"/>
-                        <segue destination="CEI-3q-4PM" kind="modal" identifier="finish" id="Cp5-63-e5N"/>
+                        <segue destination="B2Z-hr-bNb" kind="modal" identifier="finish" id="yBH-b4-Iqx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bh7-1U-p3a" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1376,7 +1375,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NBp-vj-d8j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="12166" y="-1210"/>
+            <point key="canvasLocation" x="12256" y="-1254"/>
         </scene>
         <!--Other Badge Detail View Controller-->
         <scene sceneID="gmj-2e-LAv">
@@ -2189,7 +2188,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="jJd-Y8-HYr"/>
+        <segue reference="GUN-Fg-IWC"/>
         <segue reference="pRY-ID-Y80"/>
     </inferredMetricsTieBreakers>
 </document>

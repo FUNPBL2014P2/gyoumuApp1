@@ -85,12 +85,7 @@
     request.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
     NSURLConnection *connection;
     connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-                      /*
-    request.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
-    NSURLConnection *connection;
-    connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];}
-                       */
-                      }
+    }
 
 - (BOOL)checkInputData{
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
@@ -131,6 +126,7 @@
         [[UIAlertView alloc] initWithTitle:@"入力エラー" message:@"購入日時の値が不正です。"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
         return NO;
+        
     }else if([self.addData isDuplicatedTag: [userData valueForKeyPath:@"labCode"]:self.addData.tag]){
         UIAlertView *alert =
         [[UIAlertView alloc] initWithTitle:@"入力エラー" message:@"識別名が重複しています。"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
@@ -142,16 +138,14 @@
 
 - (IBAction)sendBtn:(id)sender {
     if(![self checkInputData])return;
-    NSLog(@"s%@",self.addData.maker);
+    
+    [self sendLicenseData];
     
     if([self.addData.maker  isEqualToString:@"Microsoft"]){
         [self addLicenseBtn:5 :@"11"];
     }else if([self.addData.maker isEqualToString:@"Adobe"]){
         [self addLicenseBtn:5 :@"12"];
     }
-    
-    [self sendLicenseData];
-    [self.addData format];
     [self performSegueWithIdentifier:@"finish" sender:self];
 }
     
@@ -172,7 +166,7 @@
 }
 
 - (IBAction)keyEdit:(id)sender {
-        [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:4] animated:YES];
+    [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:4] animated:YES];
 }
 
 - (IBAction)startEdit:(id)sender {
