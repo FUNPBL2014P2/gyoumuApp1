@@ -15,7 +15,7 @@
 -(NSMutableArray *)labMasterGet;
 -(NSMutableArray *)labLicenseGet;
 -(NSMutableArray *)labLicenseCodeGet:(NSString *)code;
-
+-(NSMutableArray *)labBadgeAllGet;
 -(id)initWithLabArray:(NSString *)labCode;
 -(NSObject *)labEvaluateGet;
 
