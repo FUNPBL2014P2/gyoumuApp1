@@ -150,31 +150,31 @@
 }
     
 - (IBAction)makerEdit:(id)sender {
-    [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:1] animated:YES];
+    [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:0] animated:YES];
 }
 
 - (IBAction)softwareEdit:(id)sender {
-    [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:2] animated:YES];
+    [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:1] animated:YES];
 }
 
 - (IBAction)versionEdit:(id)sender {
-    [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:3] animated:YES];
+    [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:2] animated:YES];
 }
 
 - (IBAction)tagEdit:(id)sender {
-    [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:4] animated:YES];
+    [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:3] animated:YES];
 }
 
 - (IBAction)keyEdit:(id)sender {
-    [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:4] animated:YES];
+    [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:3] animated:YES];
 }
 
 - (IBAction)startEdit:(id)sender {
-    [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:5] animated:YES];
+    [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:4] animated:YES];
 }
 
 - (IBAction)periodEdit:(id)sender {
-    [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:5] animated:YES];
+    [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:4] animated:YES];
 }
 
 -(void) addLicenseBtn:(int) flagCount :(NSString *) badgeTitle

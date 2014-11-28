@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
         <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
@@ -45,7 +46,7 @@
                                 <state key="normal" title="ログイン"/>
                                 <connections>
                                     <action selector="loginBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uLF-BI-zSF"/>
-                                    <segue destination="X7H-lg-RQD" kind="modal" identifier="next" modalTransitionStyle="crossDissolve" id="BgG-4K-HnS"/>
+                                    <segue destination="CEI-3q-4PM" kind="modal" identifier="next" animates="NO" id="LGs-ic-s6S"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ユーザログイン" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BXy-hW-EQO">
@@ -61,33 +62,6 @@
                                 <connections>
                                     <action selector="GuestBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="INC-Kd-Lsy"/>
                                     <segue destination="DfP-v2-jaG" kind="modal" modalTransitionStyle="crossDissolve" id="Vdm-1D-km3"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hBw-Rq-tOc">
-                                <rect key="frame" x="72" y="878" width="116" height="30"/>
-                                <state key="normal" title="Badge01のReset">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="BadgeOneResetBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jci-bF-ptn"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U1d-Nt-vPl">
-                                <rect key="frame" x="72" y="788" width="116" height="30"/>
-                                <state key="normal" title="Badge05のReset">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="BadgeFiveResetBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dI2-FV-x5R"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mu3-0t-C3C">
-                                <rect key="frame" x="72" y="705" width="116" height="30"/>
-                                <state key="normal" title="Badge06のReset">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="BadgeSixResetBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZfD-Sm-cBB"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -143,43 +117,6 @@
                 <exit id="9BI-mP-xlF" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="141" y="1328"/>
-        </scene>
-        <!--Per View Controller-->
-        <scene sceneID="YiB-vn-Srr">
-            <objects>
-                <viewController id="X7H-lg-RQD" customClass="PerViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="3zJ-U1-wh7"/>
-                        <viewControllerLayoutGuide type="bottom" id="lvK-14-gmT"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="F3J-RY-9DZ">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IDu-Hk-ZPW">
-                                <rect key="frame" x="243" y="34" width="298" height="52"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6N3-kF-gZv">
-                                <rect key="frame" x="645" y="59" width="46" height="30"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="CEI-3q-4PM" kind="modal" animates="NO" id="jJd-Y8-HYr"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <connections>
-                        <outlet property="labName" destination="IDu-Hk-ZPW" id="BOH-22-nnQ"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ib2-Fz-SZB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1177" y="78"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2FJ-if-y9A">
@@ -804,7 +741,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="9n5-kd-hae" kind="relationship" relationship="rootViewController" id="haL-C5-jSh"/>
+                        <segue destination="2TA-s0-PGr" kind="relationship" relationship="rootViewController" id="1Fr-12-8C8"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yft-4h-w5s" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2277,7 +2214,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="GUN-Fg-IWC"/>
         <segue reference="pRY-ID-Y80"/>
+        <segue reference="LGs-ic-s6S"/>
     </inferredMetricsTieBreakers>
 </document>
