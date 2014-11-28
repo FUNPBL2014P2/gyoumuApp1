@@ -25,16 +25,7 @@
 
 - (void)viewDidLoad
 {
-    //ボタンの枠の太字を設定
-    double btnBorderRectPoint = 2.0;
-    [super viewDidLoad];
-   	// Do any additional setup after loading the view, typically from a nib.
-    //ボタンの背景の角をラウンドに
-    loginBtn.layer.cornerRadius = 10;
-    //枠の色
-    [[loginBtn layer] setBorderColor:[[UIColor blackColor]CGColor]];
-    //枠の太さ
-    [[loginBtn layer] setBorderWidth:btnBorderRectPoint];
+    
 
 }
 
