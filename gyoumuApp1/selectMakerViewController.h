@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "additionData.h"
 
-@interface selectMakerViewController : UIViewController
+@interface selectMakerViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
+{
+    additionData *_addData;
+    UITableView *_tableView;
+}
 
-- (IBAction)adbBtn:(id)sender;
-- (IBAction)mcrBtn:(id)sender;
+@property additionData *addData;
+@property IBOutlet UITableView *tableView;
 @end
