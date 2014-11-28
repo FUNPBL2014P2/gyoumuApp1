@@ -20,7 +20,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    WebdbConnect *master = [[WebdbConnect alloc]initWithLabArray:@""];
+    NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
+    NSMutableArray *userData = [user objectForKey:@"userData"];
+    
+    WebdbConnect *master = [[WebdbConnect alloc]initWithLabArray:[userData valueForKey:@"labCode"]];
     self.masterArray = [[NSMutableArray alloc]init];
     self.masterArray = [master labMasterGet];
     
