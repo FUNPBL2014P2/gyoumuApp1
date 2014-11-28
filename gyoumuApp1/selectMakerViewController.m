@@ -15,20 +15,55 @@
 @end
 
 @implementation selectMakerViewController
-{
-    additionData *addData;
-}
+
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    addData = [[additionData alloc]init];
+    self.addData = [[additionData alloc]init];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    // セルの数になる
+    return 2;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView
+heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 100;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"makerCell" forIndexPath:indexPath];
+    
+    UILabel *softwareName = (UILabel *)[cell viewWithTag:1];
+    switch (indexPath.row) {
+        case 0:
+            softwareName.text = @"Adobe";
+            break;
+            
+        case 1:
+            softwareName.text = @"Microsoft";
+            break;
+    }
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView
+didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell* cell = [[UITableViewCell alloc]init];
+    cell = [tableView cellForRowAtIndexPath:indexPath];
+    UILabel *targetCell = (UILabel *)[cell viewWithTag:1];
+    self.addData.maker = targetCell.text;
+    NSLog(@"%@",self.addData.maker);
+    [self performSegueWithIdentifier:@"maker" sender:self];
 }
 
 /*
@@ -41,16 +76,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     selectSoftwareViewController *nextVC = segue.destinationViewController;
     nextVC.addData = [[additionData alloc]init];
-    [nextVC.addData copy:addData];
-}
-
-
-- (IBAction)adbBtn:(id)sender {
-    addData.maker = @"Adobe";
-}
-
-- (IBAction)mcrBtn:(id)sender {
-    addData.maker = @"Microsoft";
+    [nextVC.addData copy:self.addData];
 }
 
 @end
