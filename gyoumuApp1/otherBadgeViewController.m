@@ -64,7 +64,7 @@
     //NSLog(@"%d",[self timeCheck:labCode]);
     int time_hour = _time/3600;
     int time_minute = (_time - time_hour*3600)/60;
-    self.evaluateTime.text = [NSString stringWithFormat:@"評価可能まであと%02d時間:%02d分です",time_hour,time_minute];
+    self.evaluateTime.text = [NSString stringWithFormat:@"評価可能まであと%02d時間%02d分です",time_hour,time_minute];
     self.evaluateTime.textColor = [UIColor blueColor];
     
     
@@ -87,7 +87,7 @@
     /*バッジの配置*/
     /*
      self.badge1.contentMode = UIViewContentModeScaleAspectFill;
-     self.badge1.image = [UIImage imageNamed:@"badge1.gif"];
+     self.badge1.image = [UIImage imageNamed:@"badge01.png"];
      */
     
     self.badge = [[NSMutableArray alloc] initWithObjects:self.badge1,self.badge2,self.badge3,self.badge4,self.badge5,self.badge6,self.badge7,self.badge8,self.badge9,self.badge10,self.badge11,self.badge12,self.badge13,self.badge14,self.badge15,self.badge16,nil];
@@ -116,7 +116,7 @@
         if([flagArray[i][@"option0"] isEqualToString:@"1"]){
             UIImageView *badgeID = [_badge objectAtIndex:i];
             badgeID.contentMode = UIViewContentModeScaleAspectFill;
-            badgeID.image = (i<9)? [UIImage imageNamed:[NSString stringWithFormat:@"badge0%d.gif",i+1]]:[UIImage imageNamed:[NSString stringWithFormat:@"badge%d.gif",i+1]];
+            badgeID.image = (i<9)? [UIImage imageNamed:[NSString stringWithFormat:@"badge0%d.png",i+1]]:[UIImage imageNamed:[NSString stringWithFormat:@"badge%d.png",i+1]];
         }
     }
 }
@@ -130,7 +130,7 @@
         _time--;
         int time_hour = _time/3600;
         int time_minute = (_time - time_hour*3600)/60;
-        self.evaluateTime.text = [NSString stringWithFormat:@"評価可能まであと%02d時間:%02d分です",time_hour,time_minute];
+        self.evaluateTime.text = [NSString stringWithFormat:@"評価可能まであと%02d時間%02d分です",time_hour,time_minute];
     }
 }
 
@@ -384,7 +384,7 @@
     _time = 24*60*60;
     int time_hour = _time/3600;
     int time_minute = (_time - time_hour*3600)/60;
-    self.evaluateTime.text = [NSString stringWithFormat:@"評価可能まであと%02d時間:%02d分です",time_hour,time_minute];
+    self.evaluateTime.text = [NSString stringWithFormat:@"評価可能まであと%02d時間%02d分です",time_hour,time_minute];
     [_evaluateBtn setEnabled:NO];
     
     [self evaluateAddCheck:1 :@"04"];
@@ -436,10 +436,10 @@
     //24時間以内だったら評価不可
     if(sub.length == 0){
         [_evaluateBtn setEnabled:YES];
-    }else if([subold_day isEqualToString:timenew_day]) {
-        [_evaluateBtn setEnabled:NO];
-    }else if(_time > 0){
+    }else if(_time == 0){
         [_evaluateBtn setEnabled:YES];
+    }else if(_time > 0){
+        [_evaluateBtn setEnabled:NO];
     }
     
 }
@@ -512,7 +512,7 @@
     NSLog(@"a%d",reverse_hour);
     NSLog(@"b%d",reverse_minute);
     
-    int total_second1 = (subold_hour_int * 60 * 60) + (subold_minute_int * 60);
+    int total_second1 = ((subold_hour_int - timenew_hour_int) * 60 * 60) + ((subold_minute_int - timenew_minute_int) * 60);
     int total_second2 = 24*60*60 - (abs(reverse_hour * 60 * 60) + (reverse_minute * 60));
     
     if((![subold_day isEqualToString:timenew_day]) && (reverse_hour >= 0)){
