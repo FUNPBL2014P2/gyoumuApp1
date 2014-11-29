@@ -90,8 +90,10 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     for(int i=0;i<array.count;i++){
             [makerSet addObject:[array[i] valueForKeyPath:@"option0"]];
     }
-    NSArray *softwareArray = [makerSet allObjects];
-    return softwareArray;
+    NSArray *makerArray = [makerSet allObjects];
+    NSArray *sortedMakerArray = [[NSArray alloc]init];
+    sortedMakerArray = [makerArray sortedArrayUsingSelector:@selector(compare:)];
+    return sortedMakerArray;
 }
 
 @end
