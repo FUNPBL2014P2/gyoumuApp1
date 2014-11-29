@@ -20,7 +20,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    WebdbConnect *master = [[WebdbConnect alloc]initWithLabArray:@""];
+    NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
+    NSMutableArray *userData = [user objectForKey:@"userData"];
+    
+    WebdbConnect *master = [[WebdbConnect alloc]initWithLabArray:[userData valueForKeyPath:@"labCode"]];
     self.masterArray = [[NSMutableArray alloc]init];
     self.masterArray = [master labMasterGet];
     
@@ -77,8 +80,8 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 - (NSArray *)detectSoftware:(NSMutableArray *)array{
     NSMutableSet *softwareSet = [NSMutableSet set];
     for(int i=0;i<array.count;i++){
-        if([self.addData.maker isEqualToString:[array[i] valueForKey:@"option0"]]){
-            [softwareSet addObject:[array[i] valueForKey:@"option1"]];
+        if([self.addData.maker isEqualToString:[array[i] valueForKeyPath:@"option0"]]){
+            [softwareSet addObject:[array[i] valueForKeyPath:@"option1"]];
         }
     }
     NSArray *softwareArray = [softwareSet allObjects];

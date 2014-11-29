@@ -72,8 +72,8 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 - (NSArray *)detectVersion:(NSMutableArray *)array{
     NSMutableSet *versionSet = [NSMutableSet set];
     for(int i=0;i<array.count;i++){
-        if([self.addData.software isEqualToString:[array[i] valueForKey:@"option1"]]){
-            [versionSet addObject:[array[i] valueForKey:@"option2"]];
+        if([self.addData.software isEqualToString:[array[i] valueForKeyPath:@"option1"]]){
+            [versionSet addObject:[array[i] valueForKeyPath:@"option2"]];
         }
     }
     NSArray *versionArray = [versionSet allObjects];
