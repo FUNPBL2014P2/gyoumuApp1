@@ -29,7 +29,14 @@
 
 }
 
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    // ここにtextデータの処理
+    
+    // キーボードを閉じる
+    [self.userText resignFirstResponder];
+    [self.pwText resignFirstResponder];
 
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

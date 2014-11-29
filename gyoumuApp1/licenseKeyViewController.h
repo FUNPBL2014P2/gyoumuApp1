@@ -14,7 +14,7 @@
     additionData *_addData;
 }
 @property additionData *addData;
-@property (weak, nonatomic) IBOutlet UITextField *tagField;
-@property (weak, nonatomic) IBOutlet UITextField *keyField;
+//@property (weak, nonatomic) IBOutlet UITextField *tagField;
+//@property (weak, nonatomic) IBOutlet UITextField *keyField;
 - (IBAction)next:(id)sender;
 @end

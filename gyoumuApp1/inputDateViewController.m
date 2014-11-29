@@ -10,6 +10,7 @@
 #import "confirmViewController.h"
 
 @interface inputDateViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *yukoKigen;
 
 @end
 
@@ -17,7 +18,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
+
+        // Do any additional setup after loading the view.
     [self.periodState addTarget:self action:@selector(changedSwitchValue:)
  forControlEvents:UIControlEventValueChanged];
     [self.startPicker addTarget:self action:@selector(setPeriodMinimum:)
@@ -63,6 +66,7 @@
     [self.periodPicker setUserInteractionEnabled:(state.on) ? YES:NO];
     self.periodPicker.hidden = (state.on) ?NO:YES;
     self.periodLabel.hidden = (state.on) ?NO:YES;
+    self.yukoKigen.hidden = (state.on)  ?NO:YES;
 }
 
 -(void)setPeriodMinimum:(UIDatePicker *)picker{
