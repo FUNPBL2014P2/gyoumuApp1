@@ -824,7 +824,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="98" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="XNo-sT-VwP">
-                                <rect key="frame" x="147" y="189" width="472" height="731"/>
+                                <rect key="frame" x="148" y="165" width="472" height="731"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="softwareCell" rowHeight="101" id="GUC-y1-CHH">
@@ -850,7 +850,7 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ソフトウェアを選択してください" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="jRb-2i-XFJ">
-                                <rect key="frame" x="257" y="120" width="254" height="21"/>
+                                <rect key="frame" x="257" y="103" width="254" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
@@ -885,7 +885,7 @@
                                 <rect key="frame" x="128" y="888" width="510" height="128"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="101" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="SEG-7a-mly">
-                                <rect key="frame" x="148" y="205" width="472" height="731"/>
+                                <rect key="frame" x="148" y="165" width="472" height="731"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="versionCell" rowHeight="101" id="8hU-ll-t9k">
@@ -911,7 +911,7 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="バージョンを選択してください" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="BgA-FJ-DKO">
-                                <rect key="frame" x="266" y="123" width="236" height="21"/>
+                                <rect key="frame" x="266" y="103" width="236" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
@@ -929,7 +929,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TbI-Kf-Paw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8722" y="-1172"/>
+            <point key="canvasLocation" x="8722" y="-1136"/>
         </scene>
         <!--License Key View Controller - 識別名&ライセンスキー-->
         <scene sceneID="3OI-7M-ypp">
@@ -981,7 +981,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UcQ-KJ-L8q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9550" y="-1227"/>
+            <point key="canvasLocation" x="9550" y="-1136"/>
         </scene>
         <!--Input Date View Controller - 購入日時&有効期限-->
         <scene sceneID="sxr-sS-iEZ">
@@ -1070,7 +1070,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aLa-Ug-Iyg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="10398" y="-1222"/>
+            <point key="canvasLocation" x="10398" y="-1131"/>
         </scene>
         <!--Confirm View Controller - 登録情報確認-->
         <scene sceneID="lhA-Fb-vZ4">
@@ -1272,7 +1272,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bh7-1U-p3a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="11310" y="-1210"/>
+            <point key="canvasLocation" x="11310" y="-1119"/>
         </scene>
         <!--Finish Adding View Controller-->
         <scene sceneID="eUl-eJ-eyV">
