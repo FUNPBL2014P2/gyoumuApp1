@@ -28,22 +28,24 @@
 @property (weak, nonatomic) IBOutlet UIImageView *badge15;
 @property (weak, nonatomic) IBOutlet UIImageView *badge16;
 
-- (IBAction)badge1Btn:(id)sender;
-- (IBAction)badge2Btn:(id)sender;
-- (IBAction)badge3Btn:(id)sender;
-- (IBAction)badge4Btn:(id)sender;
-- (IBAction)badge5Btn:(id)sender;
-- (IBAction)badge6Btn:(id)sender;
-- (IBAction)badge7Btn:(id)sender;
-- (IBAction)badge8Btn:(id)sender;
-- (IBAction)badge9Btn:(id)sender;
-- (IBAction)badge10Btn:(id)sender;
-- (IBAction)badge11Btn:(id)sender;
-- (IBAction)badge12Btn:(id)sender;
-- (IBAction)badge13Btn:(id)sender;
-- (IBAction)badge14Btn:(id)sender;
-- (IBAction)badge15Btn:(id)sender;
-- (IBAction)badge16Btn:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *badge1Btn;
+@property (weak, nonatomic) IBOutlet UIButton *badge2Btn;
+@property (weak, nonatomic) IBOutlet UIButton *badge3Btn;
+@property (weak, nonatomic) IBOutlet UIButton *badge4Btn;
+@property (weak, nonatomic) IBOutlet UIButton *badge5Btn;
+@property (weak, nonatomic) IBOutlet UIButton *badge6Btn;
+@property (weak, nonatomic) IBOutlet UIButton *badge7Btn;
+@property (weak, nonatomic) IBOutlet UIButton *badge8Btn;
+@property (weak, nonatomic) IBOutlet UIButton *badge9Btn;
+@property (weak, nonatomic) IBOutlet UIButton *badge10Btn;
+@property (weak, nonatomic) IBOutlet UIButton *badge11Btn;
+@property (weak, nonatomic) IBOutlet UIButton *badge12Btn;
+@property (weak, nonatomic) IBOutlet UIButton *badge13Btn;
+@property (weak, nonatomic) IBOutlet UIButton *badge14Btn;
+@property (weak, nonatomic) IBOutlet UIButton *badge15Btn;
+@property (weak, nonatomic) IBOutlet UIButton *badge16Btn;
+
+
 
 @property (weak, nonatomic) IBOutlet UIButton *evaluateBtn;
 - (IBAction)evaluateBtn:(id)sender;
