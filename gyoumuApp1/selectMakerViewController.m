@@ -34,12 +34,12 @@
     // セルの数になる
     return 2;
 }
-
+/*
 - (CGFloat)tableView:(UITableView *)tableView
 heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 100;
 }
-
+*/
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"makerCell" forIndexPath:indexPath];

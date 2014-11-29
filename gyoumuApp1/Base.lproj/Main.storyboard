@@ -736,7 +736,7 @@
             </objects>
             <point key="canvasLocation" x="5062" y="-1149"/>
         </scene>
-        <!--Select Maker View Controller - メーカー選択-ライセンス登録- -->
+        <!--Select Maker View Controller - メーカー選択-->
         <scene sceneID="5T0-d7-VqJ">
             <objects>
                 <viewController id="2TA-s0-PGr" customClass="selectMakerViewController" sceneMemberID="viewController">
@@ -751,20 +751,20 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="progress1.png" translatesAutoresizingMaskIntoConstraints="NO" id="MA1-ma-SrA">
                                 <rect key="frame" x="128" y="888" width="510" height="128"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="RD8-tC-pEH">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="101" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="RD8-tC-pEH">
                                 <rect key="frame" x="148" y="165" width="472" height="731"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="makerCell" id="LUv-B9-tsz">
-                                        <rect key="frame" x="0.0" y="22" width="472" height="44"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="makerCell" rowHeight="101" id="LUv-B9-tsz">
+                                        <rect key="frame" x="0.0" y="22" width="472" height="101"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LUv-B9-tsz" id="2aO-Gi-Qtg">
-                                            <rect key="frame" x="0.0" y="0.0" width="472" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="472" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xLa-cS-Ix1">
-                                                    <rect key="frame" x="64" y="0.0" width="166" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="xLa-cS-Ix1">
+                                                    <rect key="frame" x="65" y="39" width="220" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -787,7 +787,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="メーカー選択-ライセンス登録-" id="vLa-so-wQu">
+                    <navigationItem key="navigationItem" title="メーカー選択" id="vLa-so-wQu">
                         <barButtonItem key="backBarButtonItem" title="メーカー選択" id="wCc-lh-uU4"/>
                     </navigationItem>
                     <connections>
@@ -799,7 +799,7 @@
             </objects>
             <point key="canvasLocation" x="6946" y="-1100"/>
         </scene>
-        <!--Select Software View Controller - ソフトウェア選択-ライセンス登録- -->
+        <!--Select Software View Controller - ソフトウェア選択-->
         <scene sceneID="7hv-7l-Nui">
             <objects>
                 <viewController id="yP0-yh-eag" customClass="selectSoftwareViewController" sceneMemberID="viewController">
@@ -823,20 +823,20 @@
                                     <segue destination="6hg-Fd-tD5" kind="push" identifier="software" id="5Nd-lp-vfD"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="XNo-sT-VwP">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="98" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="XNo-sT-VwP">
                                 <rect key="frame" x="147" y="189" width="472" height="731"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="softwareCell" id="GUC-y1-CHH">
-                                        <rect key="frame" x="0.0" y="22" width="472" height="44"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="softwareCell" rowHeight="101" id="GUC-y1-CHH">
+                                        <rect key="frame" x="0.0" y="22" width="472" height="101"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GUC-y1-CHH" id="jla-Pa-RgQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="472" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="472" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZ2-Kj-QuU">
-                                                    <rect key="frame" x="112" y="11" width="220" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="KZ2-Kj-QuU">
+                                                    <rect key="frame" x="65" y="39" width="264" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -858,7 +858,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="ソフトウェア選択-ライセンス登録-" id="Le0-eJ-cw7">
+                    <navigationItem key="navigationItem" title="ソフトウェア選択" id="Le0-eJ-cw7">
                         <barButtonItem key="backBarButtonItem" title="ソフトウェア選択" id="HZ0-B7-9sU"/>
                     </navigationItem>
                     <connections>
@@ -869,7 +869,7 @@
             </objects>
             <point key="canvasLocation" x="7869" y="-1136"/>
         </scene>
-        <!--Select Version View Controller - バージョン選択-ライセンス登録- -->
+        <!--Select Version View Controller - バージョン選択-->
         <scene sceneID="9uJ-VV-HhS">
             <objects>
                 <viewController id="6hg-Fd-tD5" customClass="selectVersionViewController" sceneMemberID="viewController">
@@ -884,20 +884,20 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="progress3.png" translatesAutoresizingMaskIntoConstraints="NO" id="64h-Nz-Qqa">
                                 <rect key="frame" x="128" y="888" width="510" height="128"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="SEG-7a-mly">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="101" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="SEG-7a-mly">
                                 <rect key="frame" x="148" y="205" width="472" height="731"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="versionCell" id="8hU-ll-t9k">
-                                        <rect key="frame" x="0.0" y="22" width="472" height="44"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="versionCell" rowHeight="101" id="8hU-ll-t9k">
+                                        <rect key="frame" x="0.0" y="22" width="472" height="101"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8hU-ll-t9k" id="0oX-km-AE1">
-                                            <rect key="frame" x="0.0" y="0.0" width="472" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="472" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A33-hP-5Q5">
-                                                    <rect key="frame" x="112" y="11" width="237" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="A33-hP-5Q5">
+                                                    <rect key="frame" x="65" y="39" width="237" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -919,7 +919,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="バージョン選択-ライセンス登録-" id="22f-0W-wWz">
+                    <navigationItem key="navigationItem" title="バージョン選択" id="22f-0W-wWz">
                         <barButtonItem key="backBarButtonItem" title="バージョン選択" id="045-Wm-sAE"/>
                     </navigationItem>
                     <connections>
@@ -931,7 +931,7 @@
             </objects>
             <point key="canvasLocation" x="8722" y="-1172"/>
         </scene>
-        <!--License Key View Controller - ソフトウェア情報登録-ライセンス登録- -->
+        <!--License Key View Controller - 識別名&ライセンスキー-->
         <scene sceneID="3OI-7M-ypp">
             <objects>
                 <viewController id="io5-ch-xae" customClass="licenseKeyViewController" sceneMemberID="viewController">
@@ -982,8 +982,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="ソフトウェア情報登録-ライセンス登録-" id="Y6c-t8-uW9">
-                        <barButtonItem key="backBarButtonItem" title="識別名&amp;ライセンスキー入力" id="kBW-WD-gXW"/>
+                    <navigationItem key="navigationItem" title="識別名&amp;ライセンスキー" id="Y6c-t8-uW9">
+                        <barButtonItem key="backBarButtonItem" title="識別名&amp;ライセンスキー" id="kBW-WD-gXW"/>
                     </navigationItem>
                     <connections>
                         <outlet property="keyField" destination="7lW-eX-IAq" id="Cgw-u4-Rqz"/>
@@ -995,7 +995,7 @@
             </objects>
             <point key="canvasLocation" x="9550" y="-1227"/>
         </scene>
-        <!--Input Date View Controller - ソフトウェア情報2-ライセンス登録- -->
+        <!--Input Date View Controller - 購入日時&有効期限-->
         <scene sceneID="sxr-sS-iEZ">
             <objects>
                 <viewController id="qZ4-JY-tNy" customClass="inputDateViewController" sceneMemberID="viewController">
@@ -1071,7 +1071,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="ソフトウェア情報2-ライセンス登録-" id="zFA-Sq-X3L"/>
+                    <navigationItem key="navigationItem" title="購入日時&amp;有効期限" id="zFA-Sq-X3L"/>
                     <connections>
                         <outlet property="periodLabel" destination="hnS-aG-tdK" id="V1a-x5-oou"/>
                         <outlet property="periodPicker" destination="sx5-Lz-edq" id="7xS-9E-toj"/>
@@ -1084,7 +1084,7 @@
             </objects>
             <point key="canvasLocation" x="10398" y="-1222"/>
         </scene>
-        <!--Confirm View Controller - 登録情報確認-ライセンス登録- -->
+        <!--Confirm View Controller - 登録情報確認-->
         <scene sceneID="lhA-Fb-vZ4">
             <objects>
                 <viewController storyboardIdentifier="Finish" id="YUf-UH-ezE" customClass="confirmViewController" sceneMemberID="viewController">
@@ -1270,7 +1270,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="登録情報確認-ライセンス登録-" id="wqO-MB-Gx3"/>
+                    <navigationItem key="navigationItem" title="登録情報確認" id="wqO-MB-Gx3"/>
                     <connections>
                         <outlet property="keyLabel" destination="Vob-RZ-e9s" id="Vaa-nU-nsS"/>
                         <outlet property="makerLabel" destination="bRF-AV-2vy" id="HL5-p2-B1C"/>
