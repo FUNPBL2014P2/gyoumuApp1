@@ -946,16 +946,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="progress4.png" translatesAutoresizingMaskIntoConstraints="NO" id="hLc-VH-5eB">
                                 <rect key="frame" x="128" y="888" width="510" height="128"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4IH-5A-Pso">
-                                <rect key="frame" x="158" y="177" width="451" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7lW-eX-IAq">
-                                <rect key="frame" x="158" y="351" width="451" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="識別名を入力してください（１〜２０文字まで）" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="N9j-xA-itg">
                                 <rect key="frame" x="158" y="131" width="373" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -963,7 +953,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ライセンスキーを入力してください" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Ia7-HT-MPV">
-                                <rect key="frame" x="162" y="312" width="269" height="21"/>
+                                <rect key="frame" x="162" y="373" width="269" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -986,8 +976,6 @@
                         <barButtonItem key="backBarButtonItem" title="識別名&amp;ライセンスキー" id="kBW-WD-gXW"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="keyField" destination="7lW-eX-IAq" id="Cgw-u4-Rqz"/>
-                        <outlet property="tagField" destination="4IH-5A-Pso" id="epg-NE-bBq"/>
                         <segue destination="qZ4-JY-tNy" kind="push" identifier="key" id="uu3-EV-pef"/>
                     </connections>
                 </viewController>
@@ -2138,6 +2126,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="LGs-ic-s6S"/>
+        <segue reference="GUN-Fg-IWC"/>
     </inferredMetricsTieBreakers>
 </document>
