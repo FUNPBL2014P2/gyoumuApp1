@@ -12,6 +12,7 @@
 
 @interface finishAddingViewController ()
 - (IBAction)againAdd:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *againBtn;
 
 @end
 
@@ -28,9 +29,11 @@
     
     if([self isAdded:self.addData]){
         self.message.text = @"ライセンス情報が登録されました。";
+        [self.againBtn setTitle:@"別のライセンスを登録する" forState:UIControlStateNormal];
         [self.returnBtn setTitle:@"ライセンス一覧へ戻る" forState:UIControlStateNormal];
     }else{
         self.message.text = @"エラー：ライセンス情報が登録されませんでした。";
+        [self.againBtn setTitle:@"初めからやり直す" forState:UIControlStateNormal];
         [self.returnBtn setTitle:@"ライセンス一覧へ戻る" forState:UIControlStateNormal];
     }
 }
