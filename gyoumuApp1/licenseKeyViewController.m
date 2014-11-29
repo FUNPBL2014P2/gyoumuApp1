@@ -33,7 +33,7 @@
     
     //ライセンスキーのtextField
     keyField =
-    [[UITextField alloc] initWithFrame:CGRectMake(158, 393, 451, 60)];
+    [[UITextField alloc] initWithFrame:CGRectMake(158, 419, 451, 60)];
     keyField.borderStyle = UITextBorderStyleRoundedRect;
     keyField.keyboardType = UIKeyboardTypeASCIICapable;
     keyField.placeholder = @"ライセンスキーを入力してください";
