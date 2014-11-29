@@ -53,19 +53,19 @@
 
 -(BOOL)isAdded:(additionData *)checkArray{
     NSUserDefaults *userdefault = [NSUserDefaults standardUserDefaults];
-    WebdbConnect *labDB = [[WebdbConnect alloc]initWithLabArray:[[userdefault objectForKey:@"userData"]valueForKey:@"labCode"]];
+    WebdbConnect *labDB = [[WebdbConnect alloc]initWithLabArray:[[userdefault objectForKey:@"userData"]valueForKeyPath:@"labCode"]];
     NSMutableArray *LicenseArray = [[NSMutableArray alloc]init];
     LicenseArray = [labDB labLicenseGet];
     NSLog(@"%@",LicenseArray);
     
     
     for(int i=0;i<LicenseArray.count;i++){
-        if([[LicenseArray[i] valueForKey:@"option0"] isEqualToString:checkArray.maker]&&
-           [[LicenseArray[i] valueForKey:@"option1"] isEqualToString:checkArray.software]&&
-           [[LicenseArray[i] valueForKey:@"option2"] isEqualToString:checkArray.version]&&
-           [[LicenseArray[i] valueForKey:@"option3"] isEqualToString:checkArray.tag]&&
-           [[LicenseArray[i] valueForKey:@"option4"] isEqualToString:checkArray.key]&&
-           [[LicenseArray[i] valueForKey:@"option5"] isEqualToString:checkArray.start]){
+        if([[LicenseArray[i] valueForKeyPath:@"option0"] isEqualToString:checkArray.maker]&&
+           [[LicenseArray[i] valueForKeyPath:@"option1"] isEqualToString:checkArray.software]&&
+           [[LicenseArray[i] valueForKeyPath:@"option2"] isEqualToString:checkArray.version]&&
+           [[LicenseArray[i] valueForKeyPath:@"option3"] isEqualToString:checkArray.tag]&&
+           [[LicenseArray[i] valueForKeyPath:@"option4"] isEqualToString:checkArray.key]&&
+           [[LicenseArray[i] valueForKeyPath:@"option5"] isEqualToString:checkArray.start]){
             return YES;
         }
     }
