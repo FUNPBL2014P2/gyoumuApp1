@@ -17,6 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+        self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
     // Do any additional setup after loading the view.
     [self.periodState addTarget:self action:@selector(changedSwitchValue:)
  forControlEvents:UIControlEventValueChanged];

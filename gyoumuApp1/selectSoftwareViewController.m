@@ -19,6 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+        self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
     // Do any additional setup after loading the view.
     WebdbConnect *master = [[WebdbConnect alloc]initWithLabArray:@""];
     self.masterArray = [[NSMutableArray alloc]init];

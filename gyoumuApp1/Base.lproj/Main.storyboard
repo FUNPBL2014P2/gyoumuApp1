@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <deployment defaultVersion="1808" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -215,7 +213,7 @@
             </objects>
             <point key="canvasLocation" x="5062" y="1304"/>
         </scene>
-        <!--バッジ-->
+        <!--Badge View Controller - バッジ-->
         <scene sceneID="YAD-qX-1nO">
             <objects>
                 <viewController id="H4G-DU-vo1" customClass="BadgeViewController" sceneMemberID="viewController">
@@ -531,7 +529,7 @@
             </objects>
             <point key="canvasLocation" x="5062" y="2568"/>
         </scene>
-        <!--研究室一覧-->
+        <!--Lab View Controller - 研究室一覧-->
         <scene sceneID="Z4u-qM-bTP">
             <objects>
                 <viewController id="eLi-4A-0wf" customClass="labViewController" sceneMemberID="viewController">
@@ -625,7 +623,7 @@
             </objects>
             <point key="canvasLocation" x="5054" y="3880"/>
         </scene>
-        <!--設定-->
+        <!--Setting View Controller - 設定-->
         <scene sceneID="hI0-pO-hdb">
             <objects>
                 <viewController id="Hb5-ZA-8Cp" customClass="settingViewController" sceneMemberID="viewController">
@@ -721,11 +719,11 @@
             </objects>
             <point key="canvasLocation" x="6014" y="3844"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation Controller - ライセンス登録-->
         <scene sceneID="Upm-LX-BSz">
             <objects>
                 <navigationController id="L6H-uK-gWR" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="Yw8-Cn-E9a"/>
+                    <navigationItem key="navigationItem" title="ライセンス登録" id="Yw8-Cn-E9a"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="4qb-JC-nB1">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -738,7 +736,7 @@
             </objects>
             <point key="canvasLocation" x="5062" y="-1149"/>
         </scene>
-        <!--Select Maker View Controller-->
+        <!--Select Maker View Controller - メーカー選択-ライセンス登録- -->
         <scene sceneID="5T0-d7-VqJ">
             <objects>
                 <viewController id="2TA-s0-PGr" customClass="selectMakerViewController" sceneMemberID="viewController">
@@ -754,17 +752,18 @@
                                 <rect key="frame" x="128" y="888" width="510" height="128"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="RD8-tC-pEH">
-                                <rect key="frame" x="148" y="101" width="472" height="731"/>
+                                <rect key="frame" x="148" y="165" width="472" height="731"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="makerCell" id="LUv-B9-tsz">
-                                        <rect key="frame" x="0.0" y="0.0" width="472" height="44"/>
+                                        <rect key="frame" x="0.0" y="22" width="472" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LUv-B9-tsz" id="2aO-Gi-Qtg">
+                                            <rect key="frame" x="0.0" y="0.0" width="472" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xLa-cS-Ix1">
-                                                    <rect key="frame" x="64" y="11" width="166" height="21"/>
+                                                    <rect key="frame" x="64" y="0.0" width="166" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -778,10 +777,19 @@
                                     <outlet property="delegate" destination="2TA-s0-PGr" id="kRq-cb-QNM"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ソフトウェアのメーカーを選択してください" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="hkI-zF-Q7J">
+                                <rect key="frame" x="215" y="103" width="338" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="vLa-so-wQu"/>
+                    <navigationItem key="navigationItem" title="メーカー選択-ライセンス登録-" id="vLa-so-wQu">
+                        <barButtonItem key="backBarButtonItem" title="メーカー選択" id="wCc-lh-uU4"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="RD8-tC-pEH" id="YfB-zN-lLh"/>
                         <segue destination="yP0-yh-eag" kind="push" identifier="maker" id="9fW-ib-Jps"/>
@@ -791,7 +799,7 @@
             </objects>
             <point key="canvasLocation" x="6946" y="-1100"/>
         </scene>
-        <!--Select Software View Controller-->
+        <!--Select Software View Controller - ソフトウェア選択-ライセンス登録- -->
         <scene sceneID="7hv-7l-Nui">
             <objects>
                 <viewController id="yP0-yh-eag" customClass="selectSoftwareViewController" sceneMemberID="viewController">
@@ -816,7 +824,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="XNo-sT-VwP">
-                                <rect key="frame" x="148" y="101" width="472" height="731"/>
+                                <rect key="frame" x="147" y="189" width="472" height="731"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="softwareCell" id="GUC-y1-CHH">
@@ -841,10 +849,18 @@
                                     <outlet property="delegate" destination="yP0-yh-eag" id="CE4-e0-s4G"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ソフトウェアを選択してください" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="jRb-2i-XFJ">
+                                <rect key="frame" x="257" y="120" width="254" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Le0-eJ-cw7"/>
+                    <navigationItem key="navigationItem" title="ソフトウェア選択-ライセンス登録-" id="Le0-eJ-cw7">
+                        <barButtonItem key="backBarButtonItem" title="ソフトウェア選択" id="HZ0-B7-9sU"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="XNo-sT-VwP" id="Lu4-bl-8wh"/>
                     </connections>
@@ -853,7 +869,7 @@
             </objects>
             <point key="canvasLocation" x="7869" y="-1136"/>
         </scene>
-        <!--Select Version View Controller-->
+        <!--Select Version View Controller - バージョン選択-ライセンス登録- -->
         <scene sceneID="9uJ-VV-HhS">
             <objects>
                 <viewController id="6hg-Fd-tD5" customClass="selectVersionViewController" sceneMemberID="viewController">
@@ -869,7 +885,7 @@
                                 <rect key="frame" x="128" y="888" width="510" height="128"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="SEG-7a-mly">
-                                <rect key="frame" x="148" y="101" width="472" height="731"/>
+                                <rect key="frame" x="148" y="205" width="472" height="731"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="versionCell" id="8hU-ll-t9k">
@@ -894,10 +910,18 @@
                                     <outlet property="delegate" destination="6hg-Fd-tD5" id="uBI-Q3-DC8"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="バージョンを選択してください" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="BgA-FJ-DKO">
+                                <rect key="frame" x="266" y="123" width="236" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="22f-0W-wWz"/>
+                    <navigationItem key="navigationItem" title="バージョン選択-ライセンス登録-" id="22f-0W-wWz">
+                        <barButtonItem key="backBarButtonItem" title="バージョン選択" id="045-Wm-sAE"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="SEG-7a-mly" id="R5y-Hl-T6T"/>
                         <segue destination="io5-ch-xae" kind="push" identifier="version" id="HDA-Xd-UVJ"/>
@@ -907,7 +931,7 @@
             </objects>
             <point key="canvasLocation" x="8722" y="-1172"/>
         </scene>
-        <!--License Key View Controller-->
+        <!--License Key View Controller - ソフトウェア情報-ライセンス登録- -->
         <scene sceneID="3OI-7M-ypp">
             <objects>
                 <viewController id="io5-ch-xae" customClass="licenseKeyViewController" sceneMemberID="viewController">
@@ -932,14 +956,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="識別名" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N9j-xA-itg">
-                                <rect key="frame" x="158" y="131" width="51" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="識別名を入力してください（１〜２０文字まで）" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="N9j-xA-itg">
+                                <rect key="frame" x="158" y="131" width="373" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ライセンスキー" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ia7-HT-MPV">
-                                <rect key="frame" x="162" y="312" width="119" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ライセンスキーを入力してください" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Ia7-HT-MPV">
+                                <rect key="frame" x="162" y="312" width="269" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -958,7 +982,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Y6c-t8-uW9"/>
+                    <navigationItem key="navigationItem" title="ソフトウェア情報-ライセンス登録-" id="Y6c-t8-uW9">
+                        <barButtonItem key="backBarButtonItem" title="ソフトウェア情報" id="kBW-WD-gXW"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="keyField" destination="7lW-eX-IAq" id="Cgw-u4-Rqz"/>
                         <outlet property="tagField" destination="4IH-5A-Pso" id="epg-NE-bBq"/>
@@ -969,7 +995,7 @@
             </objects>
             <point key="canvasLocation" x="9550" y="-1227"/>
         </scene>
-        <!--Input Date View Controller-->
+        <!--Input Date View Controller - ソフトウェア情報2-ライセンス登録- -->
         <scene sceneID="sxr-sS-iEZ">
             <objects>
                 <viewController id="qZ4-JY-tNy" customClass="inputDateViewController" sceneMemberID="viewController">
@@ -1008,14 +1034,14 @@
                                 </date>
                                 <locale key="locale" localeIdentifier="ja_JP"/>
                             </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="購入日時" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bPe-35-vGr">
-                                <rect key="frame" x="117" y="107" width="68" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="購入日時を選択してください" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="bPe-35-vGr">
+                                <rect key="frame" x="117" y="107" width="220" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="有効期限" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hnS-aG-tdK">
-                                <rect key="frame" x="117" y="408" width="68" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="有効期限を選択してください" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="hnS-aG-tdK">
+                                <rect key="frame" x="117" y="408" width="220" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -1045,7 +1071,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="zFA-Sq-X3L"/>
+                    <navigationItem key="navigationItem" title="ソフトウェア情報2-ライセンス登録-" id="zFA-Sq-X3L">
+                        <barButtonItem key="backBarButtonItem" title="ソフトウェア情報２" id="yHx-ZW-AyD"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="periodLabel" destination="hnS-aG-tdK" id="V1a-x5-oou"/>
                         <outlet property="periodPicker" destination="sx5-Lz-edq" id="7xS-9E-toj"/>
@@ -1058,7 +1086,7 @@
             </objects>
             <point key="canvasLocation" x="10398" y="-1222"/>
         </scene>
-        <!--Confirm View Controller-->
+        <!--Confirm View Controller - 登録情報確認-ライセンス登録- -->
         <scene sceneID="lhA-Fb-vZ4">
             <objects>
                 <viewController storyboardIdentifier="Finish" id="YUf-UH-ezE" customClass="confirmViewController" sceneMemberID="viewController">
@@ -1070,8 +1098,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="登録内容" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wvp-tI-SLs">
-                                <rect key="frame" x="371" y="94" width="68" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="登録内容を確認して下さい" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="wvp-tI-SLs">
+                                <rect key="frame" x="283" y="95" width="203" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -1235,10 +1263,16 @@
                                     <action selector="startEdit:" destination="YUf-UH-ezE" eventType="touchUpInside" id="7CE-sy-6ic"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="上記の登録内容でよろしければ送信ボタンを押してください" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Gav-lt-Ztc">
+                                <rect key="frame" x="177" y="643" width="457" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="wqO-MB-Gx3"/>
+                    <navigationItem key="navigationItem" title="登録情報確認-ライセンス登録-" id="wqO-MB-Gx3"/>
                     <connections>
                         <outlet property="keyLabel" destination="Vob-RZ-e9s" id="Vaa-nU-nsS"/>
                         <outlet property="makerLabel" destination="bRF-AV-2vy" id="HL5-p2-B1C"/>
@@ -1247,7 +1281,7 @@
                         <outlet property="startLabel" destination="LA9-8J-Xk9" id="S87-SM-3BG"/>
                         <outlet property="tagLabel" destination="t1T-zu-Dd4" id="7C2-Ey-vEZ"/>
                         <outlet property="versionLabel" destination="8Rs-f0-Kln" id="aln-Xk-BkW"/>
-                        <segue destination="B2Z-hr-bNb" kind="modal" identifier="finish" id="yBH-b4-Iqx"/>
+                        <segue destination="B2Z-hr-bNb" kind="modal" identifier="finish" animates="NO" id="yBH-b4-Iqx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bh7-1U-p3a" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1280,7 +1314,7 @@
                                 </state>
                                 <connections>
                                     <action selector="returnBtn:" destination="B2Z-hr-bNb" eventType="touchUpInside" id="Yzy-Lw-fpx"/>
-                                    <segue destination="CEI-3q-4PM" kind="modal" id="GUN-Fg-IWC"/>
+                                    <segue destination="CEI-3q-4PM" kind="modal" animates="NO" id="GUN-Fg-IWC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1361,7 +1395,7 @@
             </objects>
             <point key="canvasLocation" x="9257" y="3844"/>
         </scene>
-        <!--ライセンス一覧-->
+        <!--License Table View Controller - ライセンス一覧-->
         <scene sceneID="QTB-34-FDp">
             <objects>
                 <viewController id="W1i-hP-gZn" customClass="licenseTableViewController" sceneMemberID="viewController">
@@ -1596,7 +1630,7 @@
             </objects>
             <point key="canvasLocation" x="7213" y="94"/>
         </scene>
-        <!--バッジ-->
+        <!--Other Badge View Controller - バッジ-->
         <scene sceneID="2oW-vl-qmn">
             <objects>
                 <viewController extendedLayoutIncludesOpaqueBars="YES" id="5db-W9-m4M" customClass="otherBadgeViewController" sceneMemberID="viewController">
@@ -1856,7 +1890,7 @@
             </objects>
             <point key="canvasLocation" x="8158" y="3776"/>
         </scene>
-        <!--ライセンス一覧-->
+        <!--Other License View Controller3 - ライセンス一覧-->
         <scene sceneID="w3F-i4-Wsh">
             <objects>
                 <viewController id="b3N-wC-eMg" customClass="otherLicenseViewController3" sceneMemberID="viewController">
@@ -2106,7 +2140,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="LGs-ic-s6S"/>
-
+        <segue reference="GUN-Fg-IWC"/>
     </inferredMetricsTieBreakers>
 </document>
