@@ -1009,8 +1009,18 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="progress5.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ube-R0-aTK">
                                 <rect key="frame" x="128" y="888" width="510" height="128"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HR8-Vb-txg">
+                                <rect key="frame" x="117" y="155" width="533" height="216"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MTi-Re-3xa">
+                                <rect key="frame" x="117" y="437" width="532" height="216"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="zyr-Jw-eX1">
-                                <rect key="frame" x="117" y="136" width="532" height="216"/>
+                                <rect key="frame" x="117" y="155" width="532" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="438007440.91391402">
                                     <!--2014-11-18 12:44:00 +0000-->
                                 </date>
@@ -1023,7 +1033,7 @@
                                 <locale key="locale" localeIdentifier="ja_JP"/>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="購入日時を選択してください" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="bPe-35-vGr">
-                                <rect key="frame" x="117" y="107" width="220" height="21"/>
+                                <rect key="frame" x="117" y="126" width="220" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -1065,6 +1075,7 @@
                         <outlet property="periodPicker" destination="sx5-Lz-edq" id="7xS-9E-toj"/>
                         <outlet property="periodState" destination="Elb-LX-juS" id="Xek-7D-Ize"/>
                         <outlet property="startPicker" destination="zyr-Jw-eX1" id="mex-dk-hnL"/>
+                        <outlet property="yukoKigen" destination="MTi-Re-3xa" id="98V-pg-zeW"/>
                         <segue destination="YUf-UH-ezE" kind="push" identifier="date" id="4kG-yU-wzZ"/>
                     </connections>
                 </viewController>
@@ -1092,6 +1103,11 @@
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="progress6.png" translatesAutoresizingMaskIntoConstraints="NO" id="B6M-26-lmv">
                                 <rect key="frame" x="128" y="888" width="510" height="128"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fMK-JC-4JX">
+                                <rect key="frame" x="113" y="153" width="585" height="446"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="メーカー" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wx7-Pl-AgM">
                                 <rect key="frame" x="150" y="188" width="68" height="21"/>
@@ -1250,7 +1266,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="上記の登録内容でよろしければ送信ボタンを押してください" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Gav-lt-Ztc">
-                                <rect key="frame" x="177" y="643" width="457" height="28"/>
+                                <rect key="frame" x="177" y="653" width="457" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
