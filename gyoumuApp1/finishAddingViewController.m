@@ -11,6 +11,8 @@
 #import "additionData.h"
 
 @interface finishAddingViewController ()
+- (IBAction)againAdd:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *againBtn;
 
 @end
 
@@ -18,12 +20,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    //leftBarButtonを削除する記述
+    UIView* tempView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
+    UIBarButtonItem* tempButton = [[UIBarButtonItem alloc] initWithCustomView:tempView];
+    tempButton.enabled = NO;
+    self.navigationItem.leftBarButtonItem = tempButton;    // Do any additional setup after loading the view.
+    
+    
     if([self isAdded:self.addData]){
         self.message.text = @"ライセンス情報が登録されました。";
+        [self.againBtn setTitle:@"別のライセンスを登録する" forState:UIControlStateNormal];
         [self.returnBtn setTitle:@"ライセンス一覧へ戻る" forState:UIControlStateNormal];
     }else{
         self.message.text = @"エラー：ライセンス情報が登録されませんでした。";
+        [self.againBtn setTitle:@"初めからやり直す" forState:UIControlStateNormal];
         [self.returnBtn setTitle:@"ライセンス一覧へ戻る" forState:UIControlStateNormal];
     }
 }
@@ -72,4 +82,7 @@
     return NO;
 }
 
+- (IBAction)againAdd:(id)sender {
+    [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:0] animated:NO];
+}
 @end
