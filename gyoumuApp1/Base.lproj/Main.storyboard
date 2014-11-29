@@ -30,7 +30,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GfC-3a-T26">
                                 <rect key="frame" x="72" y="319" width="386" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tx3-Rd-t74">
                                 <rect key="frame" x="72" y="470" width="386" height="30"/>
@@ -931,7 +931,7 @@
             </objects>
             <point key="canvasLocation" x="8722" y="-1172"/>
         </scene>
-        <!--License Key View Controller - ソフトウェア情報-ライセンス登録- -->
+        <!--License Key View Controller - ソフトウェア情報登録-ライセンス登録- -->
         <scene sceneID="3OI-7M-ypp">
             <objects>
                 <viewController id="io5-ch-xae" customClass="licenseKeyViewController" sceneMemberID="viewController">
@@ -949,12 +949,12 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4IH-5A-Pso">
                                 <rect key="frame" x="158" y="177" width="451" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7lW-eX-IAq">
                                 <rect key="frame" x="158" y="351" width="451" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="識別名を入力してください（１〜２０文字まで）" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="N9j-xA-itg">
                                 <rect key="frame" x="158" y="131" width="373" height="21"/>
@@ -982,8 +982,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="ソフトウェア情報-ライセンス登録-" id="Y6c-t8-uW9">
-                        <barButtonItem key="backBarButtonItem" title="ソフトウェア情報" id="kBW-WD-gXW"/>
+                    <navigationItem key="navigationItem" title="ソフトウェア情報登録-ライセンス登録-" id="Y6c-t8-uW9">
+                        <barButtonItem key="backBarButtonItem" title="識別名&amp;ライセンスキー入力" id="kBW-WD-gXW"/>
                     </navigationItem>
                     <connections>
                         <outlet property="keyField" destination="7lW-eX-IAq" id="Cgw-u4-Rqz"/>
@@ -1071,9 +1071,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="ソフトウェア情報2-ライセンス登録-" id="zFA-Sq-X3L">
-                        <barButtonItem key="backBarButtonItem" title="ソフトウェア情報２" id="yHx-ZW-AyD"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="ソフトウェア情報2-ライセンス登録-" id="zFA-Sq-X3L"/>
                     <connections>
                         <outlet property="periodLabel" destination="hnS-aG-tdK" id="V1a-x5-oou"/>
                         <outlet property="periodPicker" destination="sx5-Lz-edq" id="7xS-9E-toj"/>
@@ -1281,7 +1279,7 @@
                         <outlet property="startLabel" destination="LA9-8J-Xk9" id="S87-SM-3BG"/>
                         <outlet property="tagLabel" destination="t1T-zu-Dd4" id="7C2-Ey-vEZ"/>
                         <outlet property="versionLabel" destination="8Rs-f0-Kln" id="aln-Xk-BkW"/>
-                        <segue destination="B2Z-hr-bNb" kind="modal" identifier="finish" animates="NO" id="yBH-b4-Iqx"/>
+                        <segue destination="B2Z-hr-bNb" kind="modal" identifier="finish" id="yBH-b4-Iqx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bh7-1U-p3a" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1314,7 +1312,7 @@
                                 </state>
                                 <connections>
                                     <action selector="returnBtn:" destination="B2Z-hr-bNb" eventType="touchUpInside" id="Yzy-Lw-fpx"/>
-                                    <segue destination="CEI-3q-4PM" kind="modal" animates="NO" id="GUN-Fg-IWC"/>
+                                    <segue destination="CEI-3q-4PM" kind="modal" id="GUN-Fg-IWC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -2140,6 +2138,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="GUN-Fg-IWC"/>
+        <segue reference="LGs-ic-s6S"/>
     </inferredMetricsTieBreakers>
 </document>

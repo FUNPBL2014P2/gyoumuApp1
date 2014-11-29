@@ -17,10 +17,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-        self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
     // Do any additional setup after loading the view.
 }
 
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    // ここにtextデータの処理
+    
+    // キーボードを閉じる
+    [self.tagField resignFirstResponder];
+    [self.keyField resignFirstResponder];
+    
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
