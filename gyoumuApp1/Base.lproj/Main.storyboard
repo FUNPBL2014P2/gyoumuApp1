@@ -1283,7 +1283,7 @@
                         <outlet property="startLabel" destination="LA9-8J-Xk9" id="S87-SM-3BG"/>
                         <outlet property="tagLabel" destination="t1T-zu-Dd4" id="7C2-Ey-vEZ"/>
                         <outlet property="versionLabel" destination="8Rs-f0-Kln" id="aln-Xk-BkW"/>
-                        <segue destination="B2Z-hr-bNb" kind="modal" identifier="finish" id="yBH-b4-Iqx"/>
+                        <segue destination="B2Z-hr-bNb" kind="push" identifier="finish" id="yBH-b4-Iqx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bh7-1U-p3a" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1317,6 +1317,17 @@
                                 <connections>
                                     <action selector="returnBtn:" destination="B2Z-hr-bNb" eventType="touchUpInside" id="Yzy-Lw-fpx"/>
                                     <segue destination="CEI-3q-4PM" kind="modal" id="GUN-Fg-IWC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wTJ-95-x9a">
+                                <rect key="frame" x="204" y="346" width="360" height="65"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="別のライセンスを登録する">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="againAdd:" destination="B2Z-hr-bNb" eventType="touchUpInside" id="DU7-7W-d1d"/>
+                                    <action selector="returnBtn:" destination="B2Z-hr-bNb" eventType="touchUpInside" id="aT2-ED-Zt6"/>
                                 </connections>
                             </button>
                         </subviews>
