@@ -46,7 +46,7 @@
     licenseArray = [labdb labLicenseGet];
     for(int i=0;i<licenseArray.count;i++){
         if([[licenseArray[i] valueForKey:@"option7"]isEqualToString:[NSString stringWithFormat:@"%@%@%@",self.maker,self.software,self.version]]){
-            if([[licenseArray[i] valueForKey:@"option3"]isEqualToString:tag]){
+            if([[licenseArray[i] valueForKeyPath:@"option3"]isEqualToString:tag]){
                 return YES;
             }
         }
