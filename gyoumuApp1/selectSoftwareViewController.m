@@ -82,7 +82,9 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
         }
     }
     NSArray *softwareArray = [softwareSet allObjects];
-    return softwareArray;
+    NSArray *sortedSoftwareArray = [[NSArray alloc]init];
+    sortedSoftwareArray = [softwareArray sortedArrayUsingSelector:@selector(compare:)];
+    return sortedSoftwareArray;
 }
 
 @end

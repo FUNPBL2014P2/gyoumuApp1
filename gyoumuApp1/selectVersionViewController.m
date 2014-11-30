@@ -74,7 +74,9 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
         }
     }
     NSArray *versionArray = [versionSet allObjects];
-    return versionArray;
+    NSArray *sortedVersionArray = [[NSArray alloc]init];
+    sortedVersionArray = [versionArray sortedArrayUsingSelector:@selector(compare:)];
+    return sortedVersionArray;
 }
 
 
