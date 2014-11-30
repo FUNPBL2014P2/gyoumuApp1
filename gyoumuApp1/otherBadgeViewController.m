@@ -62,6 +62,7 @@
     self.communeNumberImage.image = [UIImage imageNamed: [NSString stringWithFormat:@"checkLog.png"]];
     [self.view sendSubviewToBack:self.communeNumberImage];
     self.evaluateNumber.textColor = [UIColor blueColor];
+    self.evaluateNumber.textAlignment = NSTextAlignmentCenter;
     self.evaluateBtn.layer.cornerRadius = 7;
     //NSString *time = [NSString stringWithFormat:@"%d",abs([self timeCheck:labCode])];
     //NSLog(@"%d",[self timeCheck:labCode]);
@@ -201,7 +202,7 @@
 
 - (IBAction)evaluateBtn:(id)sender {
     
-    
+    self.communeImage.image = [UIImage imageNamed: [NSString stringWithFormat:@"checkBtn2.png"]];
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSMutableArray *userData = [userDefaults objectForKey:@"userData"];
     
@@ -281,7 +282,7 @@
     int time_minute = (_time - time_hour*3600)/60;
     self.evaluateTime.text = [NSString stringWithFormat:@"評価可能まであと%02d時間%02d分です",time_hour,time_minute];
     [_evaluateBtn setEnabled:NO];
-     self.communeImage.image = [UIImage imageNamed: [NSString stringWithFormat:@"checkBtn2.png"]];
+    
     [self evaluateAddCheck:1 :@"04"];
     [self evaluateAddCheck:5 :@"08"];
     
