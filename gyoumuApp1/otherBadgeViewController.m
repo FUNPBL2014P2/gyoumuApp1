@@ -59,6 +59,8 @@
     
     [self evaluateUseCheck:labCode];
     self.evaluateNumber.text = otherRecvCount;
+    self.communeNumberImage.image = [UIImage imageNamed: [NSString stringWithFormat:@"checkLog.png"]];
+    [self.view sendSubviewToBack:self.communeNumberImage];
     self.evaluateNumber.textColor = [UIColor blueColor];
     self.evaluateBtn.layer.cornerRadius = 7;
     //NSString *time = [NSString stringWithFormat:@"%d",abs([self timeCheck:labCode])];
@@ -67,9 +69,6 @@
     int time_minute = (_time - time_hour*3600)/60;
     self.evaluateTime.text = [NSString stringWithFormat:@"評価可能まであと%02d時間%02d分です",time_hour,time_minute];
     self.evaluateTime.textColor = [UIColor blueColor];
-    
-    
-    
     
     //otherLabPathを更新
     NSLog(@"バッジ一覧にて%@を閲覧中",ap.LabPath);
@@ -126,6 +125,7 @@
     if (_time <= 0.0) {
         [_countdown_timer invalidate];
         [_evaluateBtn setEnabled:YES];
+         self.communeImage.image = [UIImage imageNamed: [NSString stringWithFormat:@"checkBtn.png"]];
     }
     else {
         _time--;
@@ -206,11 +206,7 @@
     NSMutableArray *userData = [userDefaults objectForKey:@"userData"];
     
     AppDelegate *ap = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    
-    /*
-     NSString *urlList = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/viewall.php",[userData valueForKeyPath:@"labCode"]];*/
-    
-    //NSString *test = [userData valueForKeyPath:@"labCode"];
+
     
     WebdbConnect *myLab = [[WebdbConnect alloc] initWithLabArray:[userData valueForKeyPath:@"labCode"]];
     NSString *myAddCount = [[myLab labEvaluateGet]valueForKeyPath:@"option2"];
@@ -224,25 +220,10 @@
     int oAddCount = [otherAddCount intValue];
     int oRecvCount = [otherRecvCount intValue];
     
-    
-    NSLog(@"%@", [userData valueForKeyPath:@"labCode"]);
-    
-    //NSLog(@"%@", [[myLab labEvaluateGet]valueForKeyPath:@"terminalId"]);
-    //NSLog(@"%@", [[myLab labEvaluateGet]valueForKeyPath:@"ap.LabPath"]);
-    
-    /*NSURLRequest *requestList = [NSURLRequest requestWithURL:[NSURL URLWithString:urlList]];
-     NSData *jsonList = [NSURLConnection sendSynchronousRequest:requestList returningResponse:nil error:nil];
-     NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:jsonList options:0 error:nil];
-     NSArray *jsonArray = [jsonDic objectForKey:@"data"];*/
-    
-    
-    
     /////////////////取得日時
     NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
     [fmt setDateFormat:@"yyyy年MM月dd日 HH時mm分"];
     NSDate *nowGet = [[NSDate alloc]init];
-    
-    
     
     /////////////////評価した側の処理
     mAddCount += 1;
@@ -267,10 +248,8 @@
     [NSURLConnection sendSynchronousRequest:deleteRequest returningResponse:nil error:nil];
     ///////////////////
     
-    
     //////////////////評価された側の処理
     oRecvCount += 1;
-    
     
     NSString *urlList1 = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/add.php",ap.LabPath];
     //NSLog(@"%@",urlList1);
@@ -302,7 +281,7 @@
     int time_minute = (_time - time_hour*3600)/60;
     self.evaluateTime.text = [NSString stringWithFormat:@"評価可能まであと%02d時間%02d分です",time_hour,time_minute];
     [_evaluateBtn setEnabled:NO];
-    
+     self.communeImage.image = [UIImage imageNamed: [NSString stringWithFormat:@"checkBtn2.png"]];
     [self evaluateAddCheck:1 :@"04"];
     [self evaluateAddCheck:5 :@"08"];
     
@@ -310,13 +289,10 @@
 
 -(void) evaluateUseCheck:(NSString *)labCode
 {
-    /*NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-     NSMutableArray *userData = [userDefaults objectForKey:@"userData"];*/
     
     WebdbConnect *myLab = [[WebdbConnect alloc] initWithLabArray:labCode];
     
     NSString *time_old = [[myLab labEvaluateGet]valueForKeyPath:@"option1"];
-    //NSString *otherRecvCount = [[otherLab labEvaluateGet]valueForKeyPath:@"option3"];
     
     NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
     [fmt setDateFormat:@"yyyy年MM月dd日 HH時mm分"];
@@ -326,14 +302,9 @@
     
     NSString *subold;
     NSString *subold_day;
-    //NSString *subold_hour;
-    
-    
     NSString *timenew_day;
-    //NSString *timenew_hour;
-    
+
     timenew_day = [time_new substringWithRange:NSMakeRange(8, 2)];
-    //timenew_hour = [time_new substringWithRange:NSMakeRange(12, 2)];
     
     NSString *sub = [NSString stringWithFormat:@"%@",time_old];
     
@@ -341,21 +312,19 @@
         subold= @"0000年00月00日 00時00分";
     }else{
         subold_day = [time_old substringWithRange:NSMakeRange(8, 2)];
-        //subold_hour = [time_old substringWithRange:NSMakeRange(12, 2)];
     }
-    /*
-     int timenew_hour_int =[timenew_hour intValue];
-     int subold_hour_int =[subold_hour intValue];*/
-    
     
     
     //24時間以内だったら評価不可
     if(sub.length == 0){
         [_evaluateBtn setEnabled:YES];
+         self.communeImage.image = [UIImage imageNamed: [NSString stringWithFormat:@"checkBtn.png"]];
     }else if(_time == 0){
         [_evaluateBtn setEnabled:YES];
+         self.communeImage.image = [UIImage imageNamed: [NSString stringWithFormat:@"checkBtn.png"]];
     }else if(_time > 0){
         [_evaluateBtn setEnabled:NO];
+        self.communeImage.image = [UIImage imageNamed: [NSString stringWithFormat:@"checkBtn2.png"]];
     }
     
 }
@@ -363,9 +332,7 @@
 -(int) timeReverse:(NSString *)labCode{
     
     WebdbConnect *myLab = [[WebdbConnect alloc] initWithLabArray:labCode];
-    
     NSString *time_old = [[myLab labEvaluateGet]valueForKeyPath:@"option1"];
-    //NSString *otherRecvCount = [[otherLab labEvaluateGet]valueForKeyPath:@"option3"];
     
     NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
     [fmt setDateFormat:@"yyyy年MM月dd日 HH時mm分"];
@@ -383,7 +350,6 @@
     NSString *subold_hour;
     NSString *subold_minute;
     
-    
     NSString *timenew_day;
     NSString *timenew_hour;
     NSString *timenew_minute;
@@ -391,8 +357,6 @@
     timenew_day = [time_new substringWithRange:NSMakeRange(8, 2)];
     timenew_hour = [time_new substringWithRange:NSMakeRange(12, 2)];
     timenew_minute = [time_new substringWithRange:NSMakeRange(15, 2)];
-    
-    //NSLog(@"%@",timenew_hour);
     
     NSString *sub = [NSString stringWithFormat:@"%@",time_old];
     
@@ -403,18 +367,12 @@
         subold_hour = [time_old substringWithRange:NSMakeRange(12, 2)];
         subold_minute = [time_old substringWithRange:NSMakeRange(15, 2)];
     }
-    //NSLog(@"%@",subold_day);
-    //NSLog(@"%@",subold_hour);
-    //NSLog(@"%@",subold_minute);
     
     int timenew_hour_int =[timenew_hour intValue];
     int subold_hour_int =[subold_hour intValue];
     int timenew_minute_int =[timenew_minute intValue];
     int subold_minute_int =[subold_minute intValue];
-    
-    //NSLog(@"%d",timenew_hour_int);
-    NSLog(@"??%d",timenew_minute_int);
-    
+
     int reverse_minute = timenew_minute_int - subold_minute_int;
     int reverse_hour;
     
@@ -447,34 +405,17 @@
 
 -(void) evaluateAddCheck:(int) flagCount :(NSString *) badgeTitle
 {
-    //Viewall用
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    
     NSMutableArray *userData = [userDefaults objectForKey:@"userData"];
     
-    
-    
-    //NSString *urlList = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/viewall.php",[userData valueForKeyPath:@"labCode"]];
-    
-    
-    
     WebdbConnect *myLab = [[WebdbConnect alloc] initWithLabArray:[userData valueForKeyPath:@"labCode"]];
-    
-    
-    
     NSObject *jsonArray = [myLab labBadgeGet:badgeTitle];
     
-    
-    
     if ( [[jsonArray valueForKeyPath:@"option0"] isEqualToString:@"1"]) {
-        
         return;
-        
     }
     int count = [[[myLab labEvaluateGet]valueForKeyPath:@"option2"] intValue];
-    
-    
     
     if (count == flagCount) {
         
@@ -489,13 +430,7 @@
         /////////////////////取得日時を送信する処理
         
         NSString *urlList = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/add.php",[userData valueForKeyPath:@"labCode"]];
-        
-        
-        
         NSURL *url = [NSURL URLWithString:urlList];
-        
-        
-        
         NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
         
         [request setHTTPMethod:@"POST"];
@@ -522,13 +457,6 @@
         
         [NSURLConnection sendSynchronousRequest:deleteRequest returningResponse:nil error:nil];
         
-        ///////////////////
-        
-        //削除したら抜ける
-    
-        //////////////////
-        
-        
         UIAlertView *alert =
         
         [[UIAlertView alloc] initWithTitle:@"バッジ取得" message:[jsonArray valueForKeyPath:@"option3"]
@@ -536,7 +464,6 @@
                                   delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         
         [alert show];
-        
         return ;
         
     }
@@ -544,12 +471,7 @@
         
         NSString *urlList = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/add.php",[userData valueForKeyPath:@"labCode"]];
         
-        
-        
         NSURL *url = [NSURL URLWithString:urlList];
-        
-        
-        
         NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
         
         [request setHTTPMethod:@"POST"];
@@ -577,11 +499,7 @@
         [NSURLConnection sendSynchronousRequest:deleteRequest returningResponse:nil error:nil];
         
         ///////////////////
-        
-        //削除したら抜ける
-        
         return ;
-        
         /////////////////////
         
         
