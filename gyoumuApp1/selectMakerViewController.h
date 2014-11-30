@@ -17,4 +17,6 @@
 
 @property additionData *addData;
 @property IBOutlet UITableView *tableView;
+@property NSMutableArray *masterArray;
+@property NSArray *makerArray;
 @end

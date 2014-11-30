@@ -9,6 +9,7 @@
 #import "selectMakerViewController.h"
 #import "selectSoftwareViewController.h"
 #import "additionData.h"
+#import "WebdbConnect.h"
 
 @interface selectMakerViewController ()
 
@@ -21,8 +22,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
+    NSMutableArray *userData = [user objectForKey:@"userData"];
+    
     self.addData = [[additionData alloc]init];
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    
+    WebdbConnect *master = [[WebdbConnect alloc]initWithLabArray:[userData valueForKeyPath:@"labCode"]];
+    self.masterArray = [[NSMutableArray alloc]init];
+    self.masterArray = [master labMasterGet];
+    
+    self.makerArray = [[NSArray alloc]init];
+    self.makerArray = [self detectMaker:self.masterArray];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,7 +45,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     // セルの数になる
-    return 2;
+    return self.makerArray.count;
 }
 /*
 - (CGFloat)tableView:(UITableView *)tableView
@@ -45,15 +58,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"makerCell" forIndexPath:indexPath];
     
     UILabel *softwareName = (UILabel *)[cell viewWithTag:1];
-    switch (indexPath.row) {
-        case 0:
-            softwareName.text = @"Adobe";
-            break;
-            
-        case 1:
-            softwareName.text = @"Microsoft";
-            break;
-    }
+    softwareName.text = [self.makerArray objectAtIndex:indexPath.row];
     return cell;
 }
 
@@ -78,6 +83,17 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     selectSoftwareViewController *nextVC = segue.destinationViewController;
     nextVC.addData = [[additionData alloc]init];
     [nextVC.addData copy:self.addData];
+}
+
+- (NSArray *)detectMaker:(NSMutableArray *)array{
+    NSMutableSet *makerSet = [NSMutableSet set];
+    for(int i=0;i<array.count;i++){
+            [makerSet addObject:[array[i] valueForKeyPath:@"option0"]];
+    }
+    NSArray *makerArray = [makerSet allObjects];
+    NSArray *sortedMakerArray = [[NSArray alloc]init];
+    sortedMakerArray = [makerArray sortedArrayUsingSelector:@selector(compare:)];
+    return sortedMakerArray;
 }
 
 @end
