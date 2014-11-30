@@ -271,13 +271,7 @@
         [deleteRequest setHTTPMethod:@"GET"];
         [NSURLConnection sendSynchronousRequest:deleteRequest returningResponse:nil error:nil];
         
-        ///////////////////
-        
-        //削除したら抜ける
-        
         return ;
-        
-        /////////////////////
     }
 }
 
