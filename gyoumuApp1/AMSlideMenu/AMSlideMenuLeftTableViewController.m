@@ -68,6 +68,7 @@
         
     }
     cell.textLabel.text = [menuSource objectAtIndex:indexPath.row];
+    cell.textLabel.font = [UIFont fontWithName:@"Hiragino Kaku Gothic ProN W3" size:30];
     return cell;
 }
 
