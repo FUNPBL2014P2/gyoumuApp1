@@ -130,7 +130,6 @@
     if ( [[jsonArray valueForKeyPath:@"option0"] isEqualToString:@"1"]) {
         return;
     }
-    
     int count = [[jsonArray valueForKeyPath:@"option2"] intValue] + 1;
     
     if (count == flagCount) {
@@ -192,11 +191,8 @@
         [NSURLConnection sendSynchronousRequest:deleteRequest returningResponse:nil error:nil];
         
         ///////////////////
-        
         //削除したら抜ける
-        
         return ;
-        
         /////////////////////
     }
 }
@@ -271,13 +267,7 @@
         [deleteRequest setHTTPMethod:@"GET"];
         [NSURLConnection sendSynchronousRequest:deleteRequest returningResponse:nil error:nil];
         
-        ///////////////////
-        
-        //削除したら抜ける
-        
         return ;
-        
-        /////////////////////
     }
 }
 

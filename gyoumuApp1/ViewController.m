@@ -402,24 +402,10 @@
             }else{
                 subold = [time_old substringWithRange:NSMakeRange(8, 2)];
             }
-            
-            
             NSString *subnew = [time_new substringWithRange:NSMakeRange(8, 2)];
-            
-            
-            
             NSDate *resDate = [nowGet initWithTimeInterval:-1*24*60*60 sinceDate:nowGet];
             NSString *lastday= [fmt stringFromDate:resDate];
-            
             NSString *last = [lastday substringWithRange:NSMakeRange(8, 2)];
-            
-            
-            NSLog(@"%@",subnew);
-            NSLog(@"%@",subold);
-            NSLog(@"%@",last);
-            
-            
-            
             
             if([subold isEqualToString:last]) {
                 count+= 1;

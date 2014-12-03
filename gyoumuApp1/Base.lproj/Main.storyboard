@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <deployment defaultVersion="1808" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <deployment defaultVersion="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -213,7 +213,7 @@
             </objects>
             <point key="canvasLocation" x="5062" y="1304"/>
         </scene>
-        <!--バッジ-->
+        <!--Badge View Controller - バッジ-->
         <scene sceneID="YAD-qX-1nO">
             <objects>
                 <viewController id="H4G-DU-vo1" customClass="BadgeViewController" sceneMemberID="viewController">
@@ -497,7 +497,7 @@
             </objects>
             <point key="canvasLocation" x="5062" y="2568"/>
         </scene>
-        <!--研究室一覧-->
+        <!--Lab View Controller - 研究室一覧-->
         <scene sceneID="Z4u-qM-bTP">
             <objects>
                 <viewController id="eLi-4A-0wf" customClass="labViewController" sceneMemberID="viewController">
@@ -591,7 +591,7 @@
             </objects>
             <point key="canvasLocation" x="5054" y="3880"/>
         </scene>
-        <!--設定-->
+        <!--Setting View Controller - 設定-->
         <scene sceneID="hI0-pO-hdb">
             <objects>
                 <viewController id="Hb5-ZA-8Cp" customClass="settingViewController" sceneMemberID="viewController">
@@ -687,7 +687,7 @@
             </objects>
             <point key="canvasLocation" x="6014" y="3844"/>
         </scene>
-        <!--ライセンス登録-->
+        <!--Navigation Controller - ライセンス登録-->
         <scene sceneID="Upm-LX-BSz">
             <objects>
                 <navigationController id="L6H-uK-gWR" sceneMemberID="viewController">
@@ -704,7 +704,7 @@
             </objects>
             <point key="canvasLocation" x="5062" y="-1149"/>
         </scene>
-        <!--メーカー選択-->
+        <!--Select Maker View Controller - メーカー選択-->
         <scene sceneID="5T0-d7-VqJ">
             <objects>
                 <viewController id="2TA-s0-PGr" customClass="selectMakerViewController" sceneMemberID="viewController">
@@ -766,7 +766,7 @@
             </objects>
             <point key="canvasLocation" x="6946" y="-1100"/>
         </scene>
-        <!--ソフトウェア選択-->
+        <!--Select Software View Controller - ソフトウェア選択-->
         <scene sceneID="7hv-7l-Nui">
             <objects>
                 <viewController id="yP0-yh-eag" customClass="selectSoftwareViewController" sceneMemberID="viewController">
@@ -835,7 +835,7 @@
             </objects>
             <point key="canvasLocation" x="7869" y="-1136"/>
         </scene>
-        <!--バージョン選択-->
+        <!--Select Version View Controller - バージョン選択-->
         <scene sceneID="9uJ-VV-HhS">
             <objects>
                 <viewController id="6hg-Fd-tD5" customClass="selectVersionViewController" sceneMemberID="viewController">
@@ -896,7 +896,7 @@
             </objects>
             <point key="canvasLocation" x="8722" y="-1136"/>
         </scene>
-        <!--識別名&ライセンスキー-->
+        <!--License Key View Controller - 識別名&ライセンスキー-->
         <scene sceneID="3OI-7M-ypp">
             <objects>
                 <viewController id="io5-ch-xae" customClass="licenseKeyViewController" sceneMemberID="viewController">
@@ -948,7 +948,7 @@
             </objects>
             <point key="canvasLocation" x="9550" y="-1136"/>
         </scene>
-        <!--購入日時&有効期限-->
+        <!--Input Date View Controller - 購入日時&有効期限-->
         <scene sceneID="sxr-sS-iEZ">
             <objects>
                 <viewController id="qZ4-JY-tNy" customClass="inputDateViewController" sceneMemberID="viewController">
@@ -1046,7 +1046,7 @@
             </objects>
             <point key="canvasLocation" x="10398" y="-1131"/>
         </scene>
-        <!--登録情報確認-->
+        <!--Confirm View Controller - 登録情報確認-->
         <scene sceneID="lhA-Fb-vZ4">
             <objects>
                 <viewController storyboardIdentifier="Finish" id="YUf-UH-ezE" customClass="confirmViewController" sceneMemberID="viewController">
@@ -1370,7 +1370,7 @@
             </objects>
             <point key="canvasLocation" x="9257" y="3844"/>
         </scene>
-        <!--ライセンス一覧-->
+        <!--License Table View Controller - ライセンス一覧-->
         <scene sceneID="QTB-34-FDp">
             <objects>
                 <viewController id="W1i-hP-gZn" customClass="licenseTableViewController" sceneMemberID="viewController">
@@ -1605,7 +1605,7 @@
             </objects>
             <point key="canvasLocation" x="7213" y="94"/>
         </scene>
-        <!--バッジ-->
+        <!--Other Badge View Controller - バッジ-->
         <scene sceneID="2oW-vl-qmn">
             <objects>
                 <viewController extendedLayoutIncludesOpaqueBars="YES" id="5db-W9-m4M" customClass="otherBadgeViewController" sceneMemberID="viewController">
@@ -1618,7 +1618,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="5jT-1M-L51">
-                                <rect key="frame" x="0.0" y="-2" width="788" height="1024"/>
+                                <rect key="frame" x="0.0" y="0.0" width="788" height="1024"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OFo-Bj-cn3">
                                 <rect key="frame" x="245" y="230" width="128" height="128"/>
@@ -1765,7 +1765,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PJg-oj-PME">
-                                <rect key="frame" x="107" y="92" width="39" height="30"/>
+                                <rect key="frame" x="88" y="84" width="40" height="49"/>
                                 <state key="normal" title="Good">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1774,16 +1774,25 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRB-el-0kK">
-                                <rect key="frame" x="160" y="96" width="42" height="21"/>
+                                <rect key="frame" x="158" y="99" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gP-fy-HWz">
-                                <rect key="frame" x="107" y="155" width="270" height="40"/>
+                                <rect key="frame" x="88" y="145" width="270" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4ih-ZK-xw4">
+                                <rect key="frame" x="67" y="81" width="83" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ADx-VO-3Fb">
+                                <rect key="frame" x="135" y="90" width="80" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1824,6 +1833,8 @@
                         <outlet property="badge8Btn" destination="eTJ-O8-rsY" id="EiW-Dc-zbC"/>
                         <outlet property="badge9" destination="A8e-CU-gvS" id="Jpn-1G-sCY"/>
                         <outlet property="badge9Btn" destination="TpP-4M-Y1y" id="zz7-0O-MDJ"/>
+                        <outlet property="communeImage" destination="4ih-ZK-xw4" id="HyV-gb-d1I"/>
+                        <outlet property="communeNumberImage" destination="ADx-VO-3Fb" id="1ff-5j-Puo"/>
                         <outlet property="evaluateBtn" destination="PJg-oj-PME" id="Hj1-ui-EuQ"/>
                         <outlet property="evaluateNumber" destination="eRB-el-0kK" id="buc-OJ-C9R"/>
                         <outlet property="evaluateTime" destination="9gP-fy-HWz" id="5X4-jw-OBq"/>
@@ -1833,7 +1844,7 @@
             </objects>
             <point key="canvasLocation" x="8158" y="3776"/>
         </scene>
-        <!--ライセンス一覧-->
+        <!--Other License View Controller3 - ライセンス一覧-->
         <scene sceneID="w3F-i4-Wsh">
             <objects>
                 <viewController id="b3N-wC-eMg" customClass="otherLicenseViewController3" sceneMemberID="viewController">
