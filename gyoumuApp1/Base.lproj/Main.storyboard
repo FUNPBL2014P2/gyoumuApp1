@@ -1620,7 +1620,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="5jT-1M-L51">
-                                <rect key="frame" x="0.0" y="-2" width="788" height="1024"/>
+                                <rect key="frame" x="0.0" y="0.0" width="788" height="1024"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OFo-Bj-cn3">
                                 <rect key="frame" x="245" y="230" width="128" height="128"/>
@@ -1767,7 +1767,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PJg-oj-PME">
-                                <rect key="frame" x="107" y="92" width="39" height="30"/>
+                                <rect key="frame" x="88" y="84" width="40" height="49"/>
                                 <state key="normal" title="Good">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1776,16 +1776,25 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRB-el-0kK">
-                                <rect key="frame" x="160" y="96" width="42" height="21"/>
+                                <rect key="frame" x="158" y="99" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gP-fy-HWz">
-                                <rect key="frame" x="107" y="155" width="270" height="40"/>
+                                <rect key="frame" x="88" y="145" width="270" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4ih-ZK-xw4">
+                                <rect key="frame" x="67" y="81" width="83" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ADx-VO-3Fb">
+                                <rect key="frame" x="135" y="90" width="80" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1826,6 +1835,8 @@
                         <outlet property="badge8Btn" destination="eTJ-O8-rsY" id="EiW-Dc-zbC"/>
                         <outlet property="badge9" destination="A8e-CU-gvS" id="Jpn-1G-sCY"/>
                         <outlet property="badge9Btn" destination="TpP-4M-Y1y" id="zz7-0O-MDJ"/>
+                        <outlet property="communeImage" destination="4ih-ZK-xw4" id="HyV-gb-d1I"/>
+                        <outlet property="communeNumberImage" destination="ADx-VO-3Fb" id="1ff-5j-Puo"/>
                         <outlet property="evaluateBtn" destination="PJg-oj-PME" id="Hj1-ui-EuQ"/>
                         <outlet property="evaluateNumber" destination="eRB-el-0kK" id="buc-OJ-C9R"/>
                         <outlet property="evaluateTime" destination="9gP-fy-HWz" id="5X4-jw-OBq"/>

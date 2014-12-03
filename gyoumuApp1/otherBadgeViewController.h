@@ -46,7 +46,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *badge16Btn;
 
 
-
+@property (weak, nonatomic) IBOutlet UIImageView *communeNumberImage;
+@property (weak, nonatomic) IBOutlet UIImageView *communeImage;
 @property (weak, nonatomic) IBOutlet UIButton *evaluateBtn;
 - (IBAction)evaluateBtn:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *evaluateNumber;

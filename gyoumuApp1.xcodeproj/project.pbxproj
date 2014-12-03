@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		9C34C2861A05438C00F8B7D0 /* licenseAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C34C2851A05438C00F8B7D0 /* licenseAddViewController.m */; };
+		9C683DBB1A2B1AA1002C8A5B /* checkBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C683DB81A2B1AA1002C8A5B /* checkBtn.png */; };
+		9C683DBC1A2B1AA1002C8A5B /* checkBtn2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C683DB91A2B1AA1002C8A5B /* checkBtn2.png */; };
+		9C683DBD1A2B1AA1002C8A5B /* checkLog.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C683DBA1A2B1AA1002C8A5B /* checkLog.png */; };
 		9C8D0F661A249EB700273ECB /* settingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C8D0F651A249EB700273ECB /* settingViewController.m */; };
 		9C8D0F771A25B3BD00273ECB /* badge01.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8D0F671A25B3BD00273ECB /* badge01.png */; };
 		9C8D0F781A25B3BD00273ECB /* badge02.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C8D0F681A25B3BD00273ECB /* badge02.png */; };
@@ -98,6 +101,9 @@
 /* Begin PBXFileReference section */
 		9C34C2841A05438C00F8B7D0 /* licenseAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = licenseAddViewController.h; sourceTree = "<group>"; };
 		9C34C2851A05438C00F8B7D0 /* licenseAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = licenseAddViewController.m; sourceTree = "<group>"; };
+		9C683DB81A2B1AA1002C8A5B /* checkBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkBtn.png; sourceTree = "<group>"; };
+		9C683DB91A2B1AA1002C8A5B /* checkBtn2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkBtn2.png; sourceTree = "<group>"; };
+		9C683DBA1A2B1AA1002C8A5B /* checkLog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkLog.png; sourceTree = "<group>"; };
 		9C8D0F641A249EB700273ECB /* settingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = settingViewController.h; sourceTree = "<group>"; };
 		9C8D0F651A249EB700273ECB /* settingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = settingViewController.m; sourceTree = "<group>"; };
 		9C8D0F671A25B3BD00273ECB /* badge01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = badge01.png; sourceTree = "<group>"; };
@@ -242,6 +248,9 @@
 			isa = PBXGroup;
 			children = (
 				EB34E0ED19F4C590001CA342 /* menuicon.png */,
+				9C683DB81A2B1AA1002C8A5B /* checkBtn.png */,
+				9C683DB91A2B1AA1002C8A5B /* checkBtn2.png */,
+				9C683DBA1A2B1AA1002C8A5B /* checkLog.png */,
 				9C8D0F671A25B3BD00273ECB /* badge01.png */,
 				9C8D0F681A25B3BD00273ECB /* badge02.png */,
 				9C8D0F691A25B3BD00273ECB /* badge03.png */,
@@ -527,15 +536,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C8D0F7B1A25B3BD00273ECB /* badge05.png in Resources */,
+				9C683DBB1A2B1AA1002C8A5B /* checkBtn.png in Resources */,
 				9C8D0F7A1A25B3BD00273ECB /* badge04.png in Resources */,
 				F8A223E919EE6C0D00139991 /* Images.xcassets in Resources */,
 				EBD7DC5C1A1B4275009C6FFF /* progress2.png in Resources */,
 				EBD7DC5D1A1B4275009C6FFF /* progress3.png in Resources */,
 				F81ACF1E1A2DF4800093201F /* badge15.png in Resources */,
 				9C8D0F791A25B3BD00273ECB /* badge03.png in Resources */,
+				9C683DBC1A2B1AA1002C8A5B /* checkBtn2.png in Resources */,
 				9C8D0F7E1A25B3BD00273ECB /* badge08.png in Resources */,
 				EBD7DC5E1A1B4275009C6FFF /* progress4.png in Resources */,
 				9C8D0F7D1A25B3BD00273ECB /* badge07.png in Resources */,
+				9C683DBD1A2B1AA1002C8A5B /* checkLog.png in Resources */,
 				EB34E0EE19F4C590001CA342 /* menuicon.png in Resources */,
 				F8F60B931A00D104002717F2 /* jsonUser.txt in Resources */,
 				9C8D0F7F1A25B3BD00273ECB /* badge09.png in Resources */,
