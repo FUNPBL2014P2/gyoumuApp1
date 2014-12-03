@@ -15,12 +15,14 @@
 @property (weak, nonatomic) IBOutlet UILabel *makerLabel;
 @property (weak, nonatomic) IBOutlet UILabel *softwareLabel;
 @property (weak, nonatomic) IBOutlet UILabel *verLabel;
+@property (weak, nonatomic) IBOutlet UITableView *tableLD;
 
 @end
 
 @implementation licenseDetailViewController
 {
     licenseDetail *ld;
+    int row;
 }
 
 
@@ -48,6 +50,65 @@
     self.softwareLabel.text = ld.software;
     self.verLabel.text = ld.version;
     // Do any additional setup after loading the view.
+    
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    btn.frame = CGRectMake(516, 218, 100, 30);
+    [btn setTitle:@"削除" forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(hoge:)
+  forControlEvents:UIControlEventTouchDown];
+    [self.view addSubview:btn];
+    NSLog(@"おす");
+
+}
+
+
+// 呼ばれるhogeメソッド
+-(void)hoge:(UIButton*)button{
+    // ここに何かの処理を記述する
+    if (row > 0) {
+        NSLog(@"%d番目", row);
+        // １行で書くタイプ（複数ボタンタイプ）
+        UIAlertView *alert =
+        [[UIAlertView alloc] initWithTitle:@"確認" message:@"削除してもよろしいですか？"
+                                  delegate:self cancelButtonTitle:@"いいえ" otherButtonTitles:@"はい", nil];
+        [alert show];
+    } else
+    {
+        NSLog(@"no select");
+    }
+    
+    // FavoriteViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"FavoriteViewController"];
+    
+}
+
+-(void)alertView:(UIAlertView*)alertView
+clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    switch (buttonIndex) {
+        case 0:
+            //１番目のボタンが押されたときの処理を記述する
+            NSLog(@"canceled");
+            break;
+        case 1:
+            //２番目のボタンが押されたときの処理を記述する
+            NSLog(@"delete");
+            [ld deleteLicense:row-1];
+            NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+            NSArray *userdata = [userDefaults objectForKey:@"userData"];
+            WebdbConnect *connect = [[WebdbConnect alloc] initWithLabArray:[userdata valueForKeyPath:@"labCode"]];
+            //[connect labLicenseCodeGet:softReceiveData];
+            ld = [[licenseDetail alloc] init];
+            [ld setLicendeDetail:connect];
+
+            [self.tableLD reloadData];
+            UIAlertView *alert =
+            [[UIAlertView alloc] initWithTitle:@"Deleted" message:@"削除が完了しました"
+                                      delegate:self cancelButtonTitle:@"確認" otherButtonTitles:nil];
+            [alert show];
+
+            break;
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -81,6 +142,25 @@
     } else
         cell.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.3];
 }
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // テーブルを更新
+    [tableView reloadData];
+    
+    // ②選択したセル以外のすべてのチェックを取る
+    // 今回はセクションは「０」（一番初めのセクション）とします。
+    for (NSInteger index=0; index<[tableView numberOfRowsInSection:0]; index++) {
+        UITableViewCell *cell = [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0]];
+        cell.accessoryType = UITableViewCellAccessoryNone;
+        // ①選択したセルだけチェックする
+        if (indexPath.row == index) {
+            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            row = indexPath.row+1;
+        }
+    }
+}
+
 
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

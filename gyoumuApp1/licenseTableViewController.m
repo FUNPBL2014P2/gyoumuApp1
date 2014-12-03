@@ -12,6 +12,7 @@
 #import "licenseCollect.h"
 
 @interface licenseTableViewController () <UITableViewDataSource,UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *LT;
 
 @end
 
@@ -33,13 +34,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSArray *userdata = [userDefaults objectForKey:@"userData"];
-    WebdbConnect *connect = [[WebdbConnect alloc] initWithLabArray:[userdata valueForKeyPath:@"labCode"]];
     
-    lc = [[licenseCollect alloc] init];
-    [lc setLicenseArray:connect];
-    [self evaluateRecieveCheck:5 :@"07"];
     //for (int i = 0; i < [connect labArray].count; i++) {
     
     //}
@@ -50,6 +45,17 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSArray *userdata = [userDefaults objectForKey:@"userData"];
+    WebdbConnect *connect = [[WebdbConnect alloc] initWithLabArray:[userdata valueForKeyPath:@"labCode"]];
+    
+    lc = [[licenseCollect alloc] init];
+    [lc setLicenseArray:connect];
+    [self evaluateRecieveCheck:5 :@"07"];
+    [self.LT reloadData];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
