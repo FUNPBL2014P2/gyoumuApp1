@@ -12,6 +12,8 @@
 #import "licenseCollect.h"
 
 @interface licenseTableViewController () <UITableViewDataSource,UITableViewDelegate>
+
+// self.tableViewを使うための宣言
 @property (weak, nonatomic) IBOutlet UITableView *LT;
 
 @end
@@ -47,6 +49,7 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
+    //詳細から戻った際もテーブルを更新するようにした
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSArray *userdata = [userDefaults objectForKey:@"userData"];
     WebdbConnect *connect = [[WebdbConnect alloc] initWithLabArray:[userdata valueForKeyPath:@"labCode"]];
@@ -54,6 +57,7 @@
     lc = [[licenseCollect alloc] init];
     [lc setLicenseArray:connect];
     [self evaluateRecieveCheck:5 :@"07"];
+    //テーブル更新
     [self.LT reloadData];
 }
 - (void)didReceiveMemoryWarning

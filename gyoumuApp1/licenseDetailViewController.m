@@ -15,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *makerLabel;
 @property (weak, nonatomic) IBOutlet UILabel *softwareLabel;
 @property (weak, nonatomic) IBOutlet UILabel *verLabel;
+
+//self.tableViewを使うための宣言
 @property (weak, nonatomic) IBOutlet UITableView *tableLD;
 
 @end
@@ -22,6 +24,7 @@
 @implementation licenseDetailViewController
 {
     licenseDetail *ld;
+    //チェックマークのついてるテーブルのセル番号
     int row;
 }
 
@@ -51,20 +54,20 @@
     self.verLabel.text = ld.version;
     // Do any additional setup after loading the view.
     
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    btn.frame = CGRectMake(516, 218, 100, 30);
-    [btn setTitle:@"削除" forState:UIControlStateNormal];
-    [btn addTarget:self action:@selector(hoge:)
+    UIButton *deleteBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    deleteBtn.frame = CGRectMake(516, 218, 100, 30);
+    [deleteBtn setTitle:@"削除" forState:UIControlStateNormal];
+    [deleteBtn addTarget:self action:@selector(deleteCall:)
   forControlEvents:UIControlEventTouchDown];
-    [self.view addSubview:btn];
-    NSLog(@"おす");
+    [self.view addSubview:deleteBtn];
+    
 
 }
 
 
-// 呼ばれるhogeメソッド
--(void)hoge:(UIButton*)button{
-    // ここに何かの処理を記述する
+// 呼ばれるdeleteCallメソッド
+-(void)deleteCall:(UIButton*)button{
+    // テーブルがチェックされてたら
     if (row > 0) {
         NSLog(@"%d番目", row);
         // １行で書くタイプ（複数ボタンタイプ）
@@ -93,13 +96,14 @@ clickedButtonAtIndex:(NSInteger)buttonIndex {
             //２番目のボタンが押されたときの処理を記述する
             NSLog(@"delete");
             [ld deleteLicense:row-1];
+            //削除後、データベースを更新
             NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
             NSArray *userdata = [userDefaults objectForKey:@"userData"];
             WebdbConnect *connect = [[WebdbConnect alloc] initWithLabArray:[userdata valueForKeyPath:@"labCode"]];
             //[connect labLicenseCodeGet:softReceiveData];
             ld = [[licenseDetail alloc] init];
             [ld setLicendeDetail:connect];
-
+            //テーブルを更新
             [self.tableLD reloadData];
             UIAlertView *alert =
             [[UIAlertView alloc] initWithTitle:@"Deleted" message:@"削除が完了しました"
@@ -145,9 +149,8 @@ clickedButtonAtIndex:(NSInteger)buttonIndex {
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // テーブルを更新
-    [tableView reloadData];
-    
+   
+    // テーブルのセルに１つだけチェックマークをつける処理
     // ②選択したセル以外のすべてのチェックを取る
     // 今回はセクションは「０」（一番初めのセクション）とします。
     for (NSInteger index=0; index<[tableView numberOfRowsInSection:0]; index++) {
