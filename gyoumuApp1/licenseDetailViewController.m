@@ -104,6 +104,8 @@ clickedButtonAtIndex:(NSInteger)buttonIndex {
             ld = [[licenseDetail alloc] init];
             [ld setLicendeDetail:connect];
             //テーブルを更新
+            UITableViewCell *cellDouble = [self.tableLD cellForRowAtIndexPath:[NSIndexPath indexPathForRow:row-1 inSection:0]];
+            cellDouble.accessoryType = UITableViewCellAccessoryNone;
             [self.tableLD reloadData];
             UIAlertView *alert =
             [[UIAlertView alloc] initWithTitle:@"Deleted" message:@"削除が完了しました"
@@ -149,6 +151,12 @@ clickedButtonAtIndex:(NSInteger)buttonIndex {
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    UITableViewCell *cellDouble = [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row inSection:0]];
+    
+    if ( (cellDouble.accessoryType == UITableViewCellAccessoryCheckmark) && (indexPath.row == row-1)) {
+        cellDouble.accessoryType = UITableViewCellAccessoryNone;
+        return ;
+    }
    
     // テーブルのセルに１つだけチェックマークをつける処理
     // ②選択したセル以外のすべてのチェックを取る
@@ -159,7 +167,7 @@ clickedButtonAtIndex:(NSInteger)buttonIndex {
         // ①選択したセルだけチェックする
         if (indexPath.row == index) {
             cell.accessoryType = UITableViewCellAccessoryCheckmark;
-            row = indexPath.row+1;
+            row = (int)indexPath.row+1;
         }
     }
 }
