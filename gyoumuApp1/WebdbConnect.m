@@ -68,8 +68,8 @@
     NSMutableArray* badgeArray = [[NSMutableArray alloc]init];
     
     for (int i = 0; i < _labArray.count; i++) {
-        NSString *terminal_badge = [_labArray[i][@"terminalId"] substringWithRange:NSMakeRange(0, 5)];
-        if ([terminal_badge isEqualToString:@"badge"]) {
+        NSString *terminal_badge = [_labArray[i][@"terminalId"] substringWithRange:NSMakeRange(0, 3)];
+        if ([terminal_badge isEqualToString:@"bad"]) {
             [badgeArray addObject:_labArray[i]];
         }
     }
