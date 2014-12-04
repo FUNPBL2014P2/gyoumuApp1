@@ -107,11 +107,12 @@ clickedButtonAtIndex:(NSInteger)buttonIndex {
             UITableViewCell *cellDouble = [self.tableLD cellForRowAtIndexPath:[NSIndexPath indexPathForRow:row-1 inSection:0]];
             cellDouble.accessoryType = UITableViewCellAccessoryNone;
             [self.tableLD reloadData];
+            row = 0;
             UIAlertView *alert =
             [[UIAlertView alloc] initWithTitle:@"Deleted" message:@"削除が完了しました"
                                       delegate:self cancelButtonTitle:@"確認" otherButtonTitles:nil];
             [alert show];
-
+            
             break;
     }
     
@@ -155,6 +156,7 @@ clickedButtonAtIndex:(NSInteger)buttonIndex {
     
     if ( (cellDouble.accessoryType == UITableViewCellAccessoryCheckmark) && (indexPath.row == row-1)) {
         cellDouble.accessoryType = UITableViewCellAccessoryNone;
+        row = 0;
         return ;
     }
    
