@@ -20,5 +20,5 @@
 -(NSString *) identifier:(int)rowNum;
 -(NSString *) purchaseDate:(int)rowNum;
 -(NSString *) expirationDate:(int)rowNum;
-
+-(void)deleteLicense:(int)rowNum;
 @end
