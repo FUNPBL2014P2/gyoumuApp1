@@ -10,7 +10,7 @@
 #import "AppDelegate.h"
 
 @interface guestTabViewController ()
-
+@property (weak, nonatomic) IBOutlet UINavigationItem *name;
 @end
 
 @implementation guestTabViewController
@@ -36,7 +36,7 @@
     //キーが「lab」研究室一覧を指定
     NSMutableArray *jsonArray1 = [jsonDlc objectForKey:@"lab"];
     
-    self.navigationItem.title = jsonArray1[[ap.LabPath intValue]-1];
+    self.name.title = jsonArray1[[ap.LabPath intValue]-1];
     // Do any additional setup after loading the view.
 }
 

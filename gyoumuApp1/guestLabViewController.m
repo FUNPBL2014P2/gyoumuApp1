@@ -18,11 +18,22 @@
 {
     NSArray *testName;
     NSMutableArray *labCheckArray;
+    NSMutableArray *labAllArray;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    
+    //Supporting Files内のjsonUser.txtを参照
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"jsonUser" ofType:@"txt"];
+    NSData *jsondata = [NSData dataWithContentsOfFile:path];
+    NSDictionary *jsonDlc = [NSJSONSerialization JSONObjectWithData:jsondata options:0 error:nil];
+    
+    //キーが「lab」研究室一覧を指定
+    labAllArray = [jsonDlc objectForKey:@"lab"];
+
     // Do any additional setup after loading the view.
 }
 
@@ -50,44 +61,23 @@
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSMutableArray *userData = [userDefaults objectForKey:@"userData"];
-    labCheckArray = [NSMutableArray array];
-    int labNumber = 3;
-    NSInteger labCount = 0;
-    for (int i = 0; i < labNumber; i++) {
-        if (i+1 != [[userData valueForKeyPath:@"labCode"] intValue]) {
-            [labCheckArray addObject:[NSNumber numberWithInteger:i+1]];
-            labCount++;
-        }
-    }
-    NSLog(@"%@",labCheckArray);
-    return labCount;
+       return labAllArray.count;
 }
-
+/*
 -(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 70;
 }
-
-
+*/
+/*
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
     cell.backgroundColor = [UIColor groupTableViewBackgroundColor];
 }
+ */
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //Supporting Files内のjsonUser.txtを参照
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"jsonUser" ofType:@"txt"];
-    NSData *jsondata = [NSData dataWithContentsOfFile:path];
-    NSDictionary *jsonDlc = [NSJSONSerialization JSONObjectWithData:jsondata options:0 error:nil];
-    
-    //キーが「lab」研究室一覧を指定
-    NSMutableArray *jsonArray1 = [jsonDlc objectForKey:@"lab"];
-    //NSLog(@"%@",jsonArray1);
-    //
-    
     //セルの準備
     NSString *cellIdentifier = @"labCell";
     
@@ -100,7 +90,7 @@
     //それをtableViewのindexPath.row(上から１列目は０番目なので)によって指定する
     //するとlabCheckArrayは他研究室の番号を示すのでintValueで数値に直す
     //最後にjsonArray1でその数値の対応するjsonUser.txt内の"lab"配列を参照している
-    NSString *title =[NSString stringWithFormat:@"%@",jsonArray1[[labCheckArray[indexPath.row] intValue]-1]];
+    NSString *title =[NSString stringWithFormat:@"%@",labAllArray[indexPath.row]];
     UILabel *label1 = (UILabel *)[cell viewWithTag:1];
     label1.text = title;
     label1.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
@@ -113,8 +103,8 @@
     // NSLog(@"%@を選択しています",testName[indexPath.row]);
     AppDelegate *ap = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     //otherLabPathを更新
-    ap.LabPath = labCheckArray[indexPath.row];
-    [self performSegueWithIdentifier:@"guestLicenseView" sender:self];
+    ap.LabPath = [NSString stringWithFormat:@"%ld",indexPath.row+1];
+    [self performSegueWithIdentifier:@"guestTab" sender:self];
     
 }
 

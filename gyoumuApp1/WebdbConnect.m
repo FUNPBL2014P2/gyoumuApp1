@@ -17,7 +17,9 @@
 {
     NSString *urlList = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/viewall.php",labCode];
     
-    NSURLRequest *requestList = [NSURLRequest requestWithURL:[NSURL URLWithString:urlList]];
+    NSMutableURLRequest *requestList = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlList]];
+    [requestList setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
+
     NSData *jsonList = [NSURLConnection sendSynchronousRequest:requestList returningResponse:nil error:nil];
     NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:jsonList options:0 error:nil];
     NSArray *jsonArray = [jsonDic objectForKey:@"data"];
@@ -83,7 +85,9 @@
     if (self) {
         NSString *urlList = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/viewall.php",labCode];
         
-        NSURLRequest *requestList = [NSURLRequest requestWithURL:[NSURL URLWithString:urlList]];
+        NSMutableURLRequest *requestList = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlList]];
+        [requestList setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
+
         NSData *jsonList = [NSURLConnection sendSynchronousRequest:requestList returningResponse:nil error:nil];
         NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:jsonList options:0 error:nil];
         NSArray *jsonArray = [jsonDic objectForKey:@"data"];
