@@ -10,6 +10,6 @@
 
 @interface guestViewController : UIViewController
 //new
-@property (weak, nonatomic) IBOutlet UIButton *backRectBtn;
+
 
 @end

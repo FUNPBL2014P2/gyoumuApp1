@@ -54,6 +54,8 @@
 		EBE89AA91A176C6F002D0DCA /* confirmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE89AA81A176C6F002D0DCA /* confirmViewController.m */; };
 		EBE89AAC1A1771D4002D0DCA /* labViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE89AAB1A1771D4002D0DCA /* labViewController.m */; };
 		EBE89AE71A177901002D0DCA /* otherBadgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE89AE61A177901002D0DCA /* otherBadgeViewController.m */; };
+		F81201071A3008A200670D65 /* guestLabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F81201061A3008A200670D65 /* guestLabViewController.m */; };
+		F812010A1A300B5900670D65 /* guestTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F81201091A300B5900670D65 /* guestTabViewController.m */; };
 		F81A11D41A1898620064103A /* tabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F81A11D31A1898620064103A /* tabViewController.m */; };
 		F81A121E1A1A2ACF0064103A /* WebdbConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = F81A121D1A1A2ACF0064103A /* WebdbConnect.m */; };
 		F81ACF151A2DEE9D0093201F /* badge11.png in Resources */ = {isa = PBXBuildFile; fileRef = F81ACF101A2DEE9D0093201F /* badge11.png */; };
@@ -169,6 +171,10 @@
 		EBE89AE51A177901002D0DCA /* otherBadgeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = otherBadgeViewController.h; sourceTree = "<group>"; };
 		EBE89AE61A177901002D0DCA /* otherBadgeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = otherBadgeViewController.m; sourceTree = "<group>"; };
 		EBFEFC0E1A032CA100E548B5 /* BadgeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BadgeViewController.h; sourceTree = "<group>"; };
+		F81201051A3008A200670D65 /* guestLabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = guestLabViewController.h; sourceTree = "<group>"; };
+		F81201061A3008A200670D65 /* guestLabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = guestLabViewController.m; sourceTree = "<group>"; };
+		F81201081A300B5900670D65 /* guestTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = guestTabViewController.h; sourceTree = "<group>"; };
+		F81201091A300B5900670D65 /* guestTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = guestTabViewController.m; sourceTree = "<group>"; };
 		F81A11D21A1898620064103A /* tabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tabViewController.h; sourceTree = "<group>"; };
 		F81A11D31A1898620064103A /* tabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tabViewController.m; sourceTree = "<group>"; };
 		F81A121C1A1A2ACF0064103A /* WebdbConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebdbConnect.h; sourceTree = "<group>"; };
@@ -337,6 +343,40 @@
 			name = OtherLabView;
 			sourceTree = "<group>";
 		};
+		F81201031A30076F00670D65 /* LoginUserPage */ = {
+			isa = PBXGroup;
+			children = (
+				EB9DE12A19F03E910071FEEB /* MenuViewController.h */,
+				EB9DE12B19F03E910071FEEB /* MenuViewController.m */,
+				9C34C2841A05438C00F8B7D0 /* licenseAddViewController.h */,
+				9C34C2851A05438C00F8B7D0 /* licenseAddViewController.m */,
+				EBFEFC0E1A032CA100E548B5 /* BadgeViewController.h */,
+				EBB974631A036BDA00030426 /* BadgeViewController.m */,
+				EB24DAB51A0731A800C791F7 /* BadgeDetailViewController.h */,
+				EB24DAB61A0731A800C791F7 /* BadgeDetailViewController.m */,
+				F8B6F8DD1A1DDD2F009983D2 /* licenseTableViewController.h */,
+				F8B6F8DE1A1DDD2F009983D2 /* licenseTableViewController.m */,
+				F8C24FC31A22078C006DB833 /* licenseDetailViewController.h */,
+				F8C24FC41A22078C006DB833 /* licenseDetailViewController.m */,
+				9C8D0F641A249EB700273ECB /* settingViewController.h */,
+				9C8D0F651A249EB700273ECB /* settingViewController.m */,
+			);
+			name = LoginUserPage;
+			sourceTree = "<group>";
+		};
+		F81201041A3007C500670D65 /* GuestPage */ = {
+			isa = PBXGroup;
+			children = (
+				F87F6A3819F939740088A0D6 /* guestViewController.h */,
+				F87F6A3919F939740088A0D6 /* guestViewController.m */,
+				F81201051A3008A200670D65 /* guestLabViewController.h */,
+				F81201061A3008A200670D65 /* guestLabViewController.m */,
+				F81201081A300B5900670D65 /* guestTabViewController.h */,
+				F81201091A300B5900670D65 /* guestTabViewController.m */,
+			);
+			name = GuestPage;
+			sourceTree = "<group>";
+		};
 		F88AB18A1A21D08400CCE4E8 /* originClass */ = {
 			isa = PBXGroup;
 			children = (
@@ -392,22 +432,8 @@
 				F8A223E619EE6C0D00139991 /* ViewController.m */,
 				F889EFAD19EED0760049B3A7 /* PerViewController.h */,
 				F889EFAE19EED0760049B3A7 /* PerViewController.m */,
-				F87F6A3819F939740088A0D6 /* guestViewController.h */,
-				F87F6A3919F939740088A0D6 /* guestViewController.m */,
-				EB9DE12A19F03E910071FEEB /* MenuViewController.h */,
-				EB9DE12B19F03E910071FEEB /* MenuViewController.m */,
-				9C34C2841A05438C00F8B7D0 /* licenseAddViewController.h */,
-				9C34C2851A05438C00F8B7D0 /* licenseAddViewController.m */,
-				EBFEFC0E1A032CA100E548B5 /* BadgeViewController.h */,
-				EBB974631A036BDA00030426 /* BadgeViewController.m */,
-				EB24DAB51A0731A800C791F7 /* BadgeDetailViewController.h */,
-				EB24DAB61A0731A800C791F7 /* BadgeDetailViewController.m */,
-				F8B6F8DD1A1DDD2F009983D2 /* licenseTableViewController.h */,
-				F8B6F8DE1A1DDD2F009983D2 /* licenseTableViewController.m */,
-				F8C24FC31A22078C006DB833 /* licenseDetailViewController.h */,
-				F8C24FC41A22078C006DB833 /* licenseDetailViewController.m */,
-				9C8D0F641A249EB700273ECB /* settingViewController.h */,
-				9C8D0F651A249EB700273ECB /* settingViewController.m */,
+				F81201031A30076F00670D65 /* LoginUserPage */,
+				F81201041A3007C500670D65 /* GuestPage */,
 				EBE89AE81A178074002D0DCA /* LicenseAddition */,
 				EBE89AE91A17809D002D0DCA /* OtherLabView */,
 				EBD7DC551A1B4275009C6FFF /* progress1.png */,
@@ -598,6 +624,7 @@
 				F8A223E719EE6C0D00139991 /* ViewController.m in Sources */,
 				EBE89AE71A177901002D0DCA /* otherBadgeViewController.m in Sources */,
 				F81A11D41A1898620064103A /* tabViewController.m in Sources */,
+				F812010A1A300B5900670D65 /* guestTabViewController.m in Sources */,
 				EBE89AA91A176C6F002D0DCA /* confirmViewController.m in Sources */,
 				EB9DE12819F03D2D0071FEEB /* AMSlideMenuRightTableViewController.m in Sources */,
 				EB24DAB71A0731A800C791F7 /* BadgeDetailViewController.m in Sources */,
@@ -617,6 +644,7 @@
 				EBE89AA01A176C15002D0DCA /* selectVersionViewController.m in Sources */,
 				F889EFAF19EED0760049B3A7 /* PerViewController.m in Sources */,
 				EB9DE12C19F03E910071FEEB /* MenuViewController.m in Sources */,
+				F81201071A3008A200670D65 /* guestLabViewController.m in Sources */,
 				F8A223E119EE6C0D00139991 /* AppDelegate.m in Sources */,
 				EB9DE12519F03D2D0071FEEB /* AMSlideMenuLeftTableViewController.m in Sources */,
 				EB9DE12419F03D2D0071FEEB /* AMSlideMenuLeftMenuSegue.m in Sources */,
