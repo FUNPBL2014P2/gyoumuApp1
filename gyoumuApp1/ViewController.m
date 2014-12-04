@@ -53,6 +53,36 @@
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
 {
     if ([sender tag] == 1) {
+        
+        //リクエスト可能かどうか確認する処理
+        NSString *urlList = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline/viewall.php"];
+        
+        NSError *error;
+        NSURLResponse *response;
+        
+        NSMutableURLRequest *requestList = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlList]];
+        [requestList setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
+        [NSURLConnection sendSynchronousRequest:requestList returningResponse:&response error:&error];
+        
+        //NSData *jsonList = [NSURLConnection sendSynchronousRequest:requestList returningResponse:&response error:&error];
+        if (error) {
+            // エラー処理を行う。
+            if (error.code == -1009) {
+                NSLog(@"not connection InterNet");
+                UIAlertView *alert =
+                [[UIAlertView alloc] initWithTitle:@"connection error!" message:@"ネットワークに接続して下さい"
+                                          delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                [alert show];
+
+                return NO;
+            }
+        }
+            NSLog(@"error = %@", error);
+        /////////////////////////////////////////////
+        
+        
+        
+        
         //Supporting Files内のjsonUser.txtを参照
         NSString *path = [[NSBundle mainBundle] pathForResource:@"jsonUser" ofType:@"txt"];
         NSData *jsondata = [NSData dataWithContentsOfFile:path];
@@ -118,125 +148,6 @@
 //- (IBAction)loginBtn:(id)sender {
 //}
 
-- (IBAction)BadgeOneResetBtn:(id)sender {
-    
-    NSString *urlList = @"http://webdb.per.c.fun.ac.jp/sofline/viewall.php";
-    
-    
-    NSURLRequest *requestList = [NSURLRequest requestWithURL:[NSURL URLWithString:urlList]];
-    NSData *jsonList = [NSURLConnection sendSynchronousRequest:requestList returningResponse:nil error:nil];
-    NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:jsonList options:0 error:nil];
-    NSArray *jsonArray = [jsonDic objectForKey:@"data"];
-    for (int i = 0; jsonArray.count; i++) {
-        if ([jsonArray[i][@"terminalId"] isEqualToString:@"badge01"]) {
-            
-            NSURL *url = [NSURL URLWithString:@"http://webdb.per.c.fun.ac.jp/sofline/add.php"];
-            NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-            [request setHTTPMethod:@"POST"];
-            //パラメータを作成
-            NSString *body = [NSString stringWithFormat:@"title=%@&message=&latitude=&longitude=&terminalId=%@&option0=0&option2=0&option3=%@&option4=%@&option5=%@", jsonArray[i][@"title"], jsonArray[i][@"terminalId"], jsonArray[i][@"option3"], jsonArray[i][@"option4"], jsonArray[i][@"option5"]];
-            
-            request.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
-            NSURLConnection *connection;
-            connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-            ///////////////////
-            NSString *strURL = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline/delete.php?data=/%@/%@",jsonArray[i][@"terminalId"], jsonArray[i][@"datetime"]];
-            NSURL *urlDelete = [NSURL URLWithString:strURL];
-            NSMutableURLRequest *deleteRequest = [NSMutableURLRequest requestWithURL:urlDelete];
-            [deleteRequest setHTTPMethod:@"GET"];
-            [NSURLConnection sendSynchronousRequest:deleteRequest returningResponse:nil error:nil];
-            ///////////////////
-            //削除したら抜ける
-            break;
-            
-            
-        }
-    }
-    UIAlertView *alert =
-    [[UIAlertView alloc] initWithTitle:@"Reset" message:@"Resetしました"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [alert show];
-    return ;
-}
-
-- (IBAction)BadgeFiveResetBtn:(id)sender {
-    NSString *urlList = @"http://webdb.per.c.fun.ac.jp/sofline/viewall.php";
-    
-    
-    NSURLRequest *requestList = [NSURLRequest requestWithURL:[NSURL URLWithString:urlList]];
-    NSData *jsonList = [NSURLConnection sendSynchronousRequest:requestList returningResponse:nil error:nil];
-    NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:jsonList options:0 error:nil];
-    NSArray *jsonArray = [jsonDic objectForKey:@"data"];
-    for (int i = 0; jsonArray.count; i++) {
-        if ([jsonArray[i][@"terminalId"] isEqualToString:@"badge05"]) {
-            
-            NSURL *url = [NSURL URLWithString:@"http://webdb.per.c.fun.ac.jp/sofline/add.php"];
-            NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-            [request setHTTPMethod:@"POST"];
-            //パラメータを作成
-            NSString *body = [NSString stringWithFormat:@"title=%@&message=&latitude=&longitude=&terminalId=%@&option0=0&option2=0&option3=%@&option4=%@&option5=%@", jsonArray[i][@"title"], jsonArray[i][@"terminalId"], jsonArray[i][@"option3"], jsonArray[i][@"option4"], jsonArray[i][@"option5"]];
-            
-            request.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
-            NSURLConnection *connection;
-            connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-            ///////////////////
-            NSString *strURL = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline/delete.php?data=/%@/%@",jsonArray[i][@"terminalId"], jsonArray[i][@"datetime"]];
-            NSURL *urlDelete = [NSURL URLWithString:strURL];
-            NSMutableURLRequest *deleteRequest = [NSMutableURLRequest requestWithURL:urlDelete];
-            [deleteRequest setHTTPMethod:@"GET"];
-            [NSURLConnection sendSynchronousRequest:deleteRequest returningResponse:nil error:nil];
-            ///////////////////
-            //削除したら抜ける
-            break;
-            
-            
-        }
-    }
-    UIAlertView *alert =
-    [[UIAlertView alloc] initWithTitle:@"Reset" message:@"Resetしました"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [alert show];
-    return ;
-}
-
-- (IBAction)BadgeSixResetBtn:(id)sender {
-    NSString *urlList = @"http://webdb.per.c.fun.ac.jp/sofline/viewall.php";
-    
-    
-    NSURLRequest *requestList = [NSURLRequest requestWithURL:[NSURL URLWithString:urlList]];
-    NSData *jsonList = [NSURLConnection sendSynchronousRequest:requestList returningResponse:nil error:nil];
-    NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:jsonList options:0 error:nil];
-    NSArray *jsonArray = [jsonDic objectForKey:@"data"];
-    for (int i = 0; jsonArray.count; i++) {
-        if ([jsonArray[i][@"terminalId"] isEqualToString:@"badge06"]) {
-            
-            NSURL *url = [NSURL URLWithString:@"http://webdb.per.c.fun.ac.jp/sofline/add.php"];
-            NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-            [request setHTTPMethod:@"POST"];
-            //パラメータを作成
-            NSString *body = [NSString stringWithFormat:@"title=%@&message=&latitude=&longitude=&terminalId=%@&option0=0&option2=0&option3=%@&option4=%@&option5=%@", jsonArray[i][@"title"], jsonArray[i][@"terminalId"], jsonArray[i][@"option3"], jsonArray[i][@"option4"], jsonArray[i][@"option5"]];
-            
-            request.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
-            NSURLConnection *connection;
-            connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-            ///////////////////
-            NSString *strURL = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline/delete.php?data=/%@/%@",jsonArray[i][@"terminalId"], jsonArray[i][@"datetime"]];
-            NSURL *urlDelete = [NSURL URLWithString:strURL];
-            NSMutableURLRequest *deleteRequest = [NSMutableURLRequest requestWithURL:urlDelete];
-            [deleteRequest setHTTPMethod:@"GET"];
-            [NSURLConnection sendSynchronousRequest:deleteRequest returningResponse:nil error:nil];
-            ///////////////////
-            //削除したら抜ける
-            break;
-            
-            
-        }
-    }
-    UIAlertView *alert =
-    [[UIAlertView alloc] initWithTitle:@"Reset" message:@"Resetしました"                              delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [alert show];
-    return ;
-}
-
-
 //ログイン日数用
 -(void) addLogin:(NSString *)title badgeFlag:(int)flagCount
 {
@@ -248,7 +159,10 @@
     
     NSString *urlList = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/viewall.php",[userData valueForKeyPath:@"labCode"]];
     
-    NSURLRequest *requestList = [NSURLRequest requestWithURL:[NSURL URLWithString:urlList]];
+    //　CachePolicyがデフォルトではNSURLRequestUseProtocolCachePolicyとなっているので変更
+    NSMutableURLRequest *requestList = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlList]];
+    [requestList setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
+
     NSData *jsonList = [NSURLConnection sendSynchronousRequest:requestList returningResponse:nil error:nil];
     NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:jsonList options:0 error:nil];
     NSArray *jsonArray = [jsonDic objectForKey:@"data"];
@@ -364,12 +278,14 @@
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSMutableArray *userData = [userDefaults objectForKey:@"userData"];
     
-    NSString *urlList = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/viewall.php",[userData valueForKeyPath:@"labCode"]];
+    NSString *urlList = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline/viewall.php"];
     
     
-    
-    NSURLRequest *requestList = [NSURLRequest requestWithURL:[NSURL URLWithString:urlList]];
+    NSMutableURLRequest *requestList = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlList]];
+    [requestList setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
+
     NSData *jsonList = [NSURLConnection sendSynchronousRequest:requestList returningResponse:nil error:nil];
+    
     NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:jsonList options:0 error:nil];
     NSArray *jsonArray = [jsonDic objectForKey:@"data"];
     
