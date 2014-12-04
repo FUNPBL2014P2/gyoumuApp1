@@ -69,7 +69,6 @@
 		F81ACF1E1A2DF4800093201F /* badge15.png in Resources */ = {isa = PBXBuildFile; fileRef = F81ACF1B1A2DF4800093201F /* badge15.png */; };
 		F81ACF1F1A2DF4800093201F /* badge16.png in Resources */ = {isa = PBXBuildFile; fileRef = F81ACF1C1A2DF4800093201F /* badge16.png */; };
 		F8560B3D1A22B84B005AAEA9 /* licenseDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = F8560B3C1A22B84B005AAEA9 /* licenseDetail.m */; };
-		F87F6A3A19F939740088A0D6 /* guestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F87F6A3919F939740088A0D6 /* guestViewController.m */; };
 		F87F6A7F19FA28E00088A0D6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F87F6A7E19FA28E00088A0D6 /* QuartzCore.framework */; };
 		F889EFAF19EED0760049B3A7 /* PerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F889EFAE19EED0760049B3A7 /* PerViewController.m */; };
 		F88AB1891A21D05000CCE4E8 /* licenseCollect.m in Sources */ = {isa = PBXBuildFile; fileRef = F88AB1881A21D05000CCE4E8 /* licenseCollect.m */; };
@@ -200,8 +199,6 @@
 		F81ACF1C1A2DF4800093201F /* badge16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = badge16.png; sourceTree = "<group>"; };
 		F8560B3B1A22B84B005AAEA9 /* licenseDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = licenseDetail.h; sourceTree = "<group>"; };
 		F8560B3C1A22B84B005AAEA9 /* licenseDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = licenseDetail.m; sourceTree = "<group>"; };
-		F87F6A3819F939740088A0D6 /* guestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = guestViewController.h; sourceTree = "<group>"; };
-		F87F6A3919F939740088A0D6 /* guestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = guestViewController.m; sourceTree = "<group>"; };
 		F87F6A7E19FA28E00088A0D6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F889EFAD19EED0760049B3A7 /* PerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerViewController.h; sourceTree = "<group>"; };
 		F889EFAE19EED0760049B3A7 /* PerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerViewController.m; sourceTree = "<group>"; };
@@ -382,8 +379,6 @@
 		F81201041A3007C500670D65 /* GuestPage */ = {
 			isa = PBXGroup;
 			children = (
-				F87F6A3819F939740088A0D6 /* guestViewController.h */,
-				F87F6A3919F939740088A0D6 /* guestViewController.m */,
 				F81201051A3008A200670D65 /* guestLabViewController.h */,
 				F81201061A3008A200670D65 /* guestLabViewController.m */,
 				F81201081A300B5900670D65 /* guestTabViewController.h */,
@@ -678,7 +673,6 @@
 				EB9DE12419F03D2D0071FEEB /* AMSlideMenuLeftMenuSegue.m in Sources */,
 				F8A223DD19EE6C0D00139991 /* main.m in Sources */,
 				F8560B3D1A22B84B005AAEA9 /* licenseDetail.m in Sources */,
-				F87F6A3A19F939740088A0D6 /* guestViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
