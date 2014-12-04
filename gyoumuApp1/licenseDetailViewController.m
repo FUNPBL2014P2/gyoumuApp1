@@ -55,7 +55,7 @@
     // Do any additional setup after loading the view.
     
     UIButton *deleteBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    deleteBtn.frame = CGRectMake(516, 218, 100, 30);
+    deleteBtn.frame = CGRectMake(604, 222, 46, 30);
     [deleteBtn setTitle:@"削除" forState:UIControlStateNormal];
     [deleteBtn addTarget:self action:@selector(deleteCall:)
   forControlEvents:UIControlEventTouchDown];
