@@ -55,4 +55,24 @@
 -(NSString *) expirationDate:(int)rowNum{
     return [_DetailSoftCollectArray[rowNum] valueForKeyPath:@"option6"];
 }
+
+-(void) deleteLicense:(int)rowNum{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSMutableArray *userData = [userDefaults objectForKey:@"userData"];
+
+    NSString *strURL = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/delete.php?data=/%@/%@",[userData valueForKeyPath:@"labCode"],[_DetailSoftCollectArray[rowNum] valueForKeyPath:@"terminalId"], [_DetailSoftCollectArray[rowNum] valueForKeyPath:@"datetime"]];
+    
+    NSLog(@"%@",strURL);
+    NSString *encodedString = [strURL stringByAddingPercentEscapesUsingEncoding:
+                               NSUTF8StringEncoding];
+    NSURL *urlDelete = [NSURL URLWithString:encodedString];
+    
+    NSMutableURLRequest *deleteRequest = [NSMutableURLRequest requestWithURL:urlDelete];
+    
+    [deleteRequest setHTTPMethod:@"GET"];
+    
+    [NSURLConnection sendSynchronousRequest:deleteRequest returningResponse:nil error:nil];
+    
+         
+}
 @end
