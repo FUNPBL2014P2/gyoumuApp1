@@ -103,7 +103,7 @@
     // NSLog(@"%@を選択しています",testName[indexPath.row]);
     AppDelegate *ap = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     //otherLabPathを更新
-    ap.LabPath = [NSString stringWithFormat:@"%ld",indexPath.row+1];
+    ap.LabPath = [NSString stringWithFormat:@"%d",indexPath.row+1];
     [self performSegueWithIdentifier:@"guestTab" sender:self];
     
 }
