@@ -29,12 +29,15 @@
 #import "AMSlideMenuMainViewController.h"
 
 #import "AMSlideMenuContentSegue.h"
-
+#import "drawRectView.h"
 @interface AMSlideMenuLeftTableViewController ()
 
 @end
 
-@implementation AMSlideMenuLeftTableViewController
+@implementation AMSlideMenuLeftTableViewController{
+    NSString *userName;
+    NSString *userLabName;
+}
 
 /*----------------------------------------------------*/
 #pragma mark - Lifecycle -
@@ -43,6 +46,20 @@
 
 {
     [super viewDidLoad];
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSMutableArray *userData = [userDefaults objectForKey:@"userData"];
+    NSString *labCode = [NSString stringWithString:[userData valueForKeyPath:@"labCode"]];
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"jsonUser" ofType:@"txt"];
+    NSData *jsondata = [NSData dataWithContentsOfFile:path];
+    NSDictionary *jsonDlc = [NSJSONSerialization JSONObjectWithData:jsondata options:0 error:nil];
+    
+    //キーが「lab」研究室一覧を指定
+    NSMutableArray *labAllArray = [jsonDlc objectForKey:@"lab"];
+    
+    userName = [NSString stringWithString:[userData valueForKeyPath:@"name"]];
+    userLabName = [NSString stringWithString:labAllArray[[labCode intValue]-1]];
+               
     menuSource = [[NSArray alloc]initWithObjects:
                   @"ライセンス登録",
                   @"ライセンス一覧",
@@ -79,25 +96,64 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    sectionHeight = 100.0;
+    sectionHeight = 100;
+    drawRectView* view = [[drawRectView alloc]init];
+    view.frame = CGRectMake(0, 100, self.view.frame.size.width, 1);
+    [self.view addSubview:view];
+
     return sectionHeight;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UIView *sectionView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 30.0f)];
-    sectionView.backgroundColor = [UIColor clearColor];
+    sectionView.backgroundColor = [UIColor groupTableViewBackgroundColor];
     
     UILabel *menuLabel = [[UILabel alloc] init];
-    menuLabel.frame = CGRectMake(100, 29.1, 300, 70);
-    menuLabel.font = [UIFont italicSystemFontOfSize:40];
+    UILabel *loginuser = [[UILabel alloc] init];
+    UILabel *loginuserName = [[UILabel alloc] init];
+    UILabel *lab = [[UILabel alloc] init];
+    UILabel *labName = [[UILabel alloc] init];
+    
+    menuLabel.frame = CGRectMake(100, 10, 300, 70);
     menuLabel.textColor = [UIColor blackColor];
-    menuLabel.backgroundColor = [UIColor cyanColor];
+    //menuLabel.backgroundColor = [UIColor cyanColor];
     menuLabel.textAlignment = NSTextAlignmentCenter;
-    menuLabel.text = @"MENU";
+    menuLabel.text = @"メニュー";
+    menuLabel.font = [UIFont fontWithName:@"Hiragino Kaku Gothic ProN W3" size:25];
     tableView.bounces = NO;
     
     [sectionView addSubview:menuLabel];
     
+    /////////研究室名
+    lab.frame = CGRectMake(150, 90-15, 90, 20);
+    lab.textColor = [UIColor blackColor];
+    lab.text = [NSString stringWithFormat:@"所属研究室："];
+    lab.font = [UIFont fontWithName:@"Hiragino Kaku Gothic ProN W3" size:15];
+    [sectionView addSubview:lab];
+
+    labName.frame = CGRectMake(240, 90-15, 150, 20);
+    labName.textColor = [UIColor blackColor];
+    labName.text = userLabName;
+    labName.font = [UIFont fontWithName:@"Hiragino Kaku Gothic ProN W3" size:15];
+    labName.adjustsFontSizeToFitWidth = YES;
+    labName.minimumScaleFactor = 0.5f;
+    [sectionView addSubview:labName];
+    
+    /////ユーザ名
+    loginuser.frame = CGRectMake(340, 90-15, 60, 20);
+    loginuser.textColor = [UIColor blackColor];
+    loginuser.text = [NSString stringWithFormat:@"ユーザ："];
+    loginuser.font = [UIFont fontWithName:@"Hiragino Kaku Gothic ProN W3" size:15];
+    [sectionView addSubview:loginuser];
+    
+    loginuserName.frame = CGRectMake(400, 90-15, 90, 20);
+    loginuserName.textColor = [UIColor blackColor];
+    loginuserName.text = userName;
+    loginuserName.font = [UIFont fontWithName:@"Hiragino Kaku Gothic ProN W3" size:15];
+    loginuserName.adjustsFontSizeToFitWidth = YES;
+    loginuserName.minimumScaleFactor = 0.7f;
+    [sectionView addSubview:loginuserName];
+     
     return sectionView;
 }
 

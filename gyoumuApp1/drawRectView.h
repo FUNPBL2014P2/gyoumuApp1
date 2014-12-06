@@ -1,5 +1,5 @@
 //
-//  initialNavigationViewController.h
+//  drawRectView.h
 //  gyoumuApp1
 //
 //  Created by Shota Oda on 2014/12/05.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface initialNavigationViewController : UINavigationController
-
+@interface drawRectView : UIView
+-(void)drawRect:(CGRect)rect;
 @end
