@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "WebdbConnect.h"
 #import "licenseCollect.h"
-#import "drawRectView.h"
+
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *userText;

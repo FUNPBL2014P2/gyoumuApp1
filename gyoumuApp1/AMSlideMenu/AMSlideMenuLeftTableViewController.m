@@ -124,38 +124,35 @@
     
     [sectionView addSubview:menuLabel];
     
+    /////////研究室名
     lab.frame = CGRectMake(150, 90-15, 90, 20);
-    lab.font = [UIFont italicSystemFontOfSize:15];
     lab.textColor = [UIColor blackColor];
     lab.text = [NSString stringWithFormat:@"所属研究室："];
     lab.font = [UIFont fontWithName:@"Hiragino Kaku Gothic ProN W3" size:15];
     [sectionView addSubview:lab];
 
-    
-    loginuser.frame = CGRectMake(340, 90-15, 60, 20);
-    loginuser.font = [UIFont italicSystemFontOfSize:15];
-    loginuser.textColor = [UIColor blackColor];
-    loginuser.text = [NSString stringWithFormat:@"ユーザ："];
-    loginuser.font = [UIFont fontWithName:@"Hiragino Kaku Gothic ProN W3" size:15];
-    [sectionView addSubview:loginuser];
-    
-    loginuserName.frame = CGRectMake(400, 90-15, 90, 20);
-    loginuserName.font = [UIFont italicSystemFontOfSize:15];
-    loginuserName.textColor = [UIColor blackColor];
-    loginuserName.text = userName;
-    loginuserName.font = [UIFont fontWithName:@"Hiragino Kaku Gothic ProN W3" size:15];
-    loginuserName.adjustsFontSizeToFitWidth = YES;
-    loginuserName.minimumScaleFactor = 0.7f;
-    [sectionView addSubview:loginuserName];
-    
     labName.frame = CGRectMake(240, 90-15, 150, 20);
-    labName.font = [UIFont italicSystemFontOfSize:15];
     labName.textColor = [UIColor blackColor];
     labName.text = userLabName;
     labName.font = [UIFont fontWithName:@"Hiragino Kaku Gothic ProN W3" size:15];
     labName.adjustsFontSizeToFitWidth = YES;
     labName.minimumScaleFactor = 0.5f;
     [sectionView addSubview:labName];
+    
+    /////ユーザ名
+    loginuser.frame = CGRectMake(340, 90-15, 60, 20);
+    loginuser.textColor = [UIColor blackColor];
+    loginuser.text = [NSString stringWithFormat:@"ユーザ："];
+    loginuser.font = [UIFont fontWithName:@"Hiragino Kaku Gothic ProN W3" size:15];
+    [sectionView addSubview:loginuser];
+    
+    loginuserName.frame = CGRectMake(400, 90-15, 90, 20);
+    loginuserName.textColor = [UIColor blackColor];
+    loginuserName.text = userName;
+    loginuserName.font = [UIFont fontWithName:@"Hiragino Kaku Gothic ProN W3" size:15];
+    loginuserName.adjustsFontSizeToFitWidth = YES;
+    loginuserName.minimumScaleFactor = 0.7f;
+    [sectionView addSubview:loginuserName];
      
     return sectionView;
 }
