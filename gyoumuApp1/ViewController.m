@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "WebdbConnect.h"
 #import "licenseCollect.h"
+#import "drawRectView.h"
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *userText;
@@ -18,16 +19,11 @@
 - (IBAction)loginBtn:(id)sender;
 @end
 
-@implementation ViewController/*
-                               */
+@implementation ViewController
+                               
 //selfがめんどくさいので
 @synthesize loginBtn;
 
-- (void)viewDidLoad
-{
-    
-
-}
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     // ここにtextデータの処理
@@ -60,14 +56,14 @@
         NSError *error;
         NSURLResponse *response;
         
-        NSMutableURLRequest *requestList = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlList]];
-        [requestList setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
-        [NSURLConnection sendSynchronousRequest:requestList returningResponse:&response error:&error];
-        
+        NSMutableURLRequest *requestList = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlList]cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:1];
+//        [requestList setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
+          [NSURLConnection sendSynchronousRequest:requestList returningResponse:&response error:&error];
+        NSLog(@"%@",response);
         //NSData *jsonList = [NSURLConnection sendSynchronousRequest:requestList returningResponse:&response error:&error];
         if (error) {
             // エラー処理を行う。
-            if (error.code == -1009) {
+            if (error.code == -1009 || response==NULL) {
                 NSLog(@"not connection InterNet");
                 UIAlertView *alert =
                 [[UIAlertView alloc] initWithTitle:@"connection error!" message:@"ネットワークに接続して下さい"
@@ -138,7 +134,7 @@
     }
     return NO;
 }
-
+        
 //ゲストユーザ遷移先での戻るボタンのメソッド
 -(IBAction)returnMain:(UIStoryboardSegue *)sender
 {

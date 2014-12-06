@@ -3,7 +3,7 @@
     "0": [
     {"terminalId": "123","username": "odashota","timestamp": "2014/10/02 13:37:06","title": "2014/10/02 13:37:06 MA-015","path": "/MA-015/20141002-133706","name": "小田将太","labCode": "1"},
     {"terminalId": "123","username": "jinatsushi","timestamp": "2014/10/02 13:37:06","title": "2014/10/02 13:37:06 MA-015","path": "/MA-015/20141002-133706","name": "神篤志","labCode": "1"},
-    {"terminalId": "123","username": "segawatakamasa","timestamp": "2014/10/02 13:37:06","title": "2014/10/02 13:37:06 MA-015","path": "/MA-015/20141002-133706","name": "瀬川貴雅","labCode": "1"},
+    {"terminalId": "123","username": "segawatakamasa","timestamp": "2014/10/02 13:37:06","title": "2014/10/02 13:37:06 MA-015","path": "/MA-015/20141002-133706","name": "あやとり瀬川","labCode": "1"},
     {"terminalId": "123","username": "nishiurakota","timestamp": "2014/10/02 13:37:06","title": "2014/10/02 13:37:06 MA-015","path": "/MA-015/20141002-133706","name": "西浦康太","labCode": "1"}],
    
     "comment": "TEKITO研究室",
