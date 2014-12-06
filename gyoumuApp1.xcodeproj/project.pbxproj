@@ -92,7 +92,11 @@
 		F8C24FC81A22268F006DB833 /* otherLicenseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C24FC71A22268F006DB833 /* otherLicenseDetailViewController.m */; };
 		F8F60B931A00D104002717F2 /* jsonUser.txt in Resources */ = {isa = PBXBuildFile; fileRef = F8F60B921A00D104002717F2 /* jsonUser.txt */; };
 		F8FE9D6C1A1FD8950007D2EA /* otherLicenseViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = F8FE9D6B1A1FD8950007D2EA /* otherLicenseViewController3.m */; };
+
 		F8FFFDEB1A31BB3E00075947 /* drawRectView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8FFFDEA1A31BB3E00075947 /* drawRectView.m */; };
+
+		F8FFFDE21A3192C000075947 /* initialNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8FFFDE11A3192C000075947 /* initialNavigationViewController.m */; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -235,8 +239,13 @@
 		F8F60B921A00D104002717F2 /* jsonUser.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jsonUser.txt; sourceTree = "<group>"; };
 		F8FE9D6A1A1FD8950007D2EA /* otherLicenseViewController3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = otherLicenseViewController3.h; sourceTree = "<group>"; };
 		F8FE9D6B1A1FD8950007D2EA /* otherLicenseViewController3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = otherLicenseViewController3.m; sourceTree = "<group>"; };
+
 		F8FFFDE91A31BB3E00075947 /* drawRectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = drawRectView.h; sourceTree = "<group>"; };
 		F8FFFDEA1A31BB3E00075947 /* drawRectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = drawRectView.m; sourceTree = "<group>"; };
+
+		F8FFFDE01A3192C000075947 /* initialNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = initialNavigationViewController.h; sourceTree = "<group>"; };
+		F8FFFDE11A3192C000075947 /* initialNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = initialNavigationViewController.m; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -452,6 +461,8 @@
 				F8A223DF19EE6C0D00139991 /* AppDelegate.h */,
 				F8A223E019EE6C0D00139991 /* AppDelegate.m */,
 				F8A223E519EE6C0D00139991 /* ViewController.h */,
+				F8FFFDE01A3192C000075947 /* initialNavigationViewController.h */,
+				F8FFFDE11A3192C000075947 /* initialNavigationViewController.m */,
 				F8A223E619EE6C0D00139991 /* ViewController.m */,
 				F889EFAD19EED0760049B3A7 /* PerViewController.h */,
 				F889EFAE19EED0760049B3A7 /* PerViewController.m */,
@@ -665,6 +676,7 @@
 				F8C24FC51A22078C006DB833 /* licenseDetailViewController.m in Sources */,
 				EB7EB4391A23910500047F67 /* finishAddingViewController.m in Sources */,
 				EBE89AA31A176C41002D0DCA /* licenseKeyViewController.m in Sources */,
+				F8FFFDE21A3192C000075947 /* initialNavigationViewController.m in Sources */,
 				F88AB1891A21D05000CCE4E8 /* licenseCollect.m in Sources */,
 				9C8D0F661A249EB700273ECB /* settingViewController.m in Sources */,
 				F81A121E1A1A2ACF0064103A /* WebdbConnect.m in Sources */,

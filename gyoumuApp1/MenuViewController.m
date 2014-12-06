@@ -8,6 +8,7 @@
 
 #import "MenuViewController.h"
 #import "ViewController.h"
+#import "initialNavigationViewController.h"
 @interface MenuViewController ()
 
 @end
@@ -88,9 +89,8 @@ clickedButtonAtIndex:(NSInteger)buttonIndex {
         case 0:
         {
             //はいボタンが押されたときの処理を記述する
-            //ログイン画面のStoryboard IDは"Login"です
-        ViewController *ViewController2 = [self.storyboard instantiateViewControllerWithIdentifier:@"Login"];
-            [self presentViewController:ViewController2 animated:NO completion:nil];
+            //ログイン画面のNVCへ遷移する
+        [self performSegueWithIdentifier:@"initial" sender:self];
             //
             NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
             [userDefaults setObject:@"guest" forKey:@"userData"];

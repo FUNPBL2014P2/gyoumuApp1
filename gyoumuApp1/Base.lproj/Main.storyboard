@@ -5,11 +5,12 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Initial Navigation View Controller-->
         <scene sceneID="Cae-1Y-1S8">
             <objects>
-                <navigationController definesPresentationContext="YES" id="qeb-hm-2Hh" sceneMemberID="viewController">
-                    <nil key="simulatedStatusBarMetrics"/>
+
+                <navigationController definesPresentationContext="YES" id="qeb-hm-2Hh" customClass="initialNavigationViewController" sceneMemberID="viewController">
+
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="pgJ-nc-Ks7">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -19,7 +20,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZpR-gg-Oeq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-805" y="33"/>
+            <point key="canvasLocation" x="-801" y="-291"/>
         </scene>
         <!--View Controller - ユーザログイン-->
         <scene sceneID="tne-QT-ifu">
@@ -124,11 +125,12 @@
                     <navigationItem key="navigationItem" id="4u0-8h-H7l"/>
                     <connections>
                         <segue destination="A3s-Vo-7Hw" kind="custom" identifier="leftMenu" customClass="AMSlideMenuLeftMenuSegue" id="6pA-GQ-lJ9"/>
+                        <segue destination="qeb-hm-2Hh" kind="modal" identifier="initial" animates="NO" id="qCO-cI-glw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="udX-Kz-y8p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2914" y="70"/>
+            <point key="canvasLocation" x="2966" y="274"/>
         </scene>
         <!--Slide Menu Left Table View Controller-->
         <scene sceneID="pHI-zt-gyC">
