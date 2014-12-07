@@ -410,6 +410,7 @@
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSMutableArray *userData = [userDefaults objectForKey:@"userData"];
     
+    WebdbConnect *badge = [[WebdbConnect alloc] init];
     WebdbConnect *myLab = [[WebdbConnect alloc] initWithLabArray:[userData valueForKeyPath:@"labCode"]];
     NSObject *jsonArray = [myLab labBadgeGet:badgeTitle];
     
@@ -465,6 +466,7 @@
                                   delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         
         [alert show];
+        [badge badgeOwnGet];
         return ;
         
     }

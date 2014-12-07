@@ -2611,12 +2611,12 @@
         <image name="background.jpg" width="1536" height="2048"/>
         <image name="detailBackground.jpg" width="1536" height="2048"/>
         <image name="otherbackground.jpg" width="768" height="1024"/>
-        <image name="progress1.png" width="691" height="124"/>
-        <image name="progress2.png" width="691" height="124"/>
-        <image name="progress3.png" width="691" height="124"/>
-        <image name="progress4.png" width="691" height="124"/>
-        <image name="progress5.png" width="691" height="124"/>
-        <image name="progress6.png" width="691" height="124"/>
+        <image name="progress1.png" width="730" height="124"/>
+        <image name="progress2.png" width="730" height="124"/>
+        <image name="progress3.png" width="730" height="124"/>
+        <image name="progress4.png" width="730" height="124"/>
+        <image name="progress5.png" width="730" height="124"/>
+        <image name="progress6.png" width="730" height="124"/>
         <image name="tabIconBadge.png" width="32" height="32"/>
         <image name="tabIconLicense.png" width="32" height="32"/>
     </resources>
