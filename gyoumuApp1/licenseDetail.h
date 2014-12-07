@@ -20,5 +20,7 @@
 -(NSString *) identifier:(int)rowNum;
 -(NSString *) purchaseDate:(int)rowNum;
 -(NSString *) expirationDate:(int)rowNum;
+-(NSString *) busySet:(int)rowNum;
 -(void)deleteLicense:(int)rowNum;
+-(void) busyChange:(int)rowNum;
 @end

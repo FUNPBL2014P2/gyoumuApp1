@@ -26,6 +26,9 @@
     licenseDetail *ld;
     //チェックマークのついてるテーブルのセル番号
     int row;
+    UIAlertView *deleteAlert;
+    UIAlertView *busyAlert;
+    UIAlertView *nobusyAlert;
 }
 
 
@@ -55,12 +58,17 @@
     // Do any additional setup after loading the view.
     
     UIButton *deleteBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    deleteBtn.frame = CGRectMake(604, 222, 46, 30);
+    deleteBtn.frame = CGRectMake(691, 76, 46, 30);
     [deleteBtn setTitle:@"削除" forState:UIControlStateNormal];
     [deleteBtn addTarget:self action:@selector(deleteCall:)
   forControlEvents:UIControlEventTouchDown];
     [self.view addSubview:deleteBtn];
     
+    UIButton *busyBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    busyBtn.frame = CGRectMake(691, 107, 46, 30);
+    [busyBtn setTitle:@"使用" forState:UIControlStateNormal];
+    [busyBtn addTarget:self action:@selector(busyCell:) forControlEvents:UIControlEventTouchDown];
+    [self.view addSubview:busyBtn];
 
 }
 
@@ -71,10 +79,10 @@
     if (row > 0) {
         NSLog(@"%d番目", row);
         // １行で書くタイプ（複数ボタンタイプ）
-        UIAlertView *alert =
+        deleteAlert =
         [[UIAlertView alloc] initWithTitle:@"確認" message:@"削除してもよろしいですか？"
                                   delegate:self cancelButtonTitle:@"いいえ" otherButtonTitles:@"はい", nil];
-        [alert show];
+        [deleteAlert show];
     } else
     {
         NSLog(@"no select");
@@ -84,16 +92,41 @@
     
 }
 
+-(void)busyCell:(UIButton*)button{
+    // テーブルがチェックされてたら
+    if (row > 0) {
+        NSLog(@"%d番目", row);
+        // １行で書くタイプ（複数ボタンタイプ）
+        if ([[ld busySet:row-1] isEqualToString:@"×"]) {
+            busyAlert =
+            [[UIAlertView alloc] initWithTitle:@"確認" message:@"使用中にしてもよろしいですか？"
+                                      delegate:self cancelButtonTitle:@"いいえ" otherButtonTitles:@"はい", nil];
+            [busyAlert show];
+
+        } else {
+            nobusyAlert =
+            [[UIAlertView alloc] initWithTitle:@"確認" message:@"使用中を解除してもよろしいですか？"
+                                      delegate:self cancelButtonTitle:@"いいえ" otherButtonTitles:@"はい", nil];
+            [nobusyAlert show];
+
+        }
+            } else
+        NSLog(@"no select");
+    
+
+}
+
 -(void)alertView:(UIAlertView*)alertView
 clickedButtonAtIndex:(NSInteger)buttonIndex {
-    
+    if (deleteAlert == alertView) {
+        
     switch (buttonIndex) {
         case 0:
-            //１番目のボタンが押されたときの処理を記述する
+            //いいえボタンが押されたときの処理を記述する
             NSLog(@"canceled");
             break;
         case 1:
-            //２番目のボタンが押されたときの処理を記述する
+            //はいボタンが押されたときの処理を記述する
             NSLog(@"delete");
             [ld deleteLicense:row-1];
             //削除後、データベースを更新
@@ -114,6 +147,71 @@ clickedButtonAtIndex:(NSInteger)buttonIndex {
             [alert show];
             
             break;
+      }
+        //使用ボタン-使用中にする-
+    } else if (busyAlert == alertView) {
+        
+        switch (buttonIndex) {
+
+    case 0:
+        //いいえボタンが押されたときの処理を記述する
+        NSLog(@"canceled");
+        break;
+    case 1:
+        //はいボタンが押されたときの処理を記述する
+        [ld busyChange:row-1];
+                NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+                NSArray *userdata = [userDefaults objectForKey:@"userData"];
+                WebdbConnect *connect = [[WebdbConnect alloc] initWithLabArray:[userdata valueForKeyPath:@"labCode"]];
+                //[connect labLicenseCodeGet:softReceiveData];
+                ld = [[licenseDetail alloc] init];
+                [ld setLicendeDetail:connect];
+                //テーブルを更新
+                UITableViewCell *cellDouble = [self.tableLD cellForRowAtIndexPath:[NSIndexPath indexPathForRow:row-1 inSection:0]];
+                cellDouble.accessoryType = UITableViewCellAccessoryNone;
+                [self.tableLD reloadData];
+                row = 0;
+                
+                UIAlertView *alert =
+                [[UIAlertView alloc] initWithTitle:@"It's being used" message:@"使用中になりました"
+                                          delegate:self cancelButtonTitle:@"確認" otherButtonTitles:nil];
+                [alert show];
+
+        break;
+        }
+        
+    }
+    ////使用ボタン-使用中を解除にする-
+    else if (nobusyAlert == alertView) {
+        switch (buttonIndex) {
+                
+            case 0:
+                //いいえボタンが押されたときの処理を記述する
+                NSLog(@"canceled");
+                break;
+            case 1:
+                //はいボタンが押されたときの処理を記述する
+                [ld busyChange:row-1];
+                NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+                NSArray *userdata = [userDefaults objectForKey:@"userData"];
+                WebdbConnect *connect = [[WebdbConnect alloc] initWithLabArray:[userdata valueForKeyPath:@"labCode"]];
+                //[connect labLicenseCodeGet:softReceiveData];
+                ld = [[licenseDetail alloc] init];
+                [ld setLicendeDetail:connect];
+                //テーブルを更新
+                UITableViewCell *cellDouble = [self.tableLD cellForRowAtIndexPath:[NSIndexPath indexPathForRow:row-1 inSection:0]];
+                cellDouble.accessoryType = UITableViewCellAccessoryNone;
+                [self.tableLD reloadData];
+                row = 0;
+                
+                UIAlertView *alert =
+                [[UIAlertView alloc] initWithTitle:@"It's being unused" message:@"使用中を解除しました"
+                                          delegate:self cancelButtonTitle:@"確認" otherButtonTitles:nil];
+                [alert show];
+
+                break;
+
+       }
     }
     
 }
@@ -191,6 +289,8 @@ clickedButtonAtIndex:(NSInteger)buttonIndex {
     label2.text = [NSString stringWithFormat:@"%@",[ld purchaseDate:(int)indexPath.row]];
     UILabel *label3 = (UILabel *)[cell viewWithTag:3];
     label3.text = [NSString stringWithFormat:@"%@",[ld expirationDate:(int)indexPath.row]];
+    UILabel *label4 = (UILabel *)[cell viewWithTag:4];
+    label4.text = [NSString stringWithFormat:@"%@",[ld busySet:(int)indexPath.row]];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     return cell;
