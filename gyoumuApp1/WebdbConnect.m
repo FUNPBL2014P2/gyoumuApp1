@@ -200,6 +200,7 @@
          delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
          [alert show];
          */
+        [self badgeOwnGet];
         return ;
     }
     
