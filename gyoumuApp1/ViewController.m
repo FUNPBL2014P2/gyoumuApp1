@@ -155,6 +155,7 @@
     NSString *subold;
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSMutableArray *userData = [userDefaults objectForKey:@"userData"];
+    WebdbConnect *badge = [[WebdbConnect alloc] init];
     WebdbConnect *myLab = [[WebdbConnect alloc] initWithLabArray:[userData valueForKeyPath:@"labCode"]];
     NSObject *jsonArray =[myLab labBadgeGet:title];
     //WebdbConnect *badge = [[WebdbConnect alloc] initWithNibName:[userData valueForKeyPath:@"labCode"]];
@@ -235,7 +236,7 @@
         UIAlertView *alert =
         [[UIAlertView alloc] initWithTitle:@"バッジ取得" message:[jsonArray valueForKeyPath:@"option3"]delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
-     
+        [badge badgeOwnGet];
         return ;
         
     }else if (count < flagCount) {
@@ -276,6 +277,7 @@
     NSString *subold;
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSMutableArray *userData = [userDefaults objectForKey:@"userData"];
+    WebdbConnect *badge = [[WebdbConnect alloc] init];
     WebdbConnect *myLab = [[WebdbConnect alloc] initWithLabArray:[userData valueForKeyPath:@"labCode"]];
     NSObject *jsonArray =[myLab labBadgeGet:title];
     
@@ -352,7 +354,7 @@
         UIAlertView *alert =
         [[UIAlertView alloc] initWithTitle:@"バッジ取得" message:[jsonArray valueForKeyPath:@"option3"]delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
-        
+        [badge badgeOwnGet];
         return ;
         
     }else if (count < flagCount) {
