@@ -12,9 +12,10 @@
 #import "licenseCollect.h"
 
 @interface licenseTableViewController () <UITableViewDataSource,UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *LT;
 
 // self.tableViewを使うための宣言
-@property (weak, nonatomic) IBOutlet UITableView *LT;
+
 
 @end
 
@@ -45,6 +46,9 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self licenseCheck:20 :@"13"];
+    [self evaluateRecieveCheck:5 :@"07"];
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -56,7 +60,7 @@
     
     lc = [[licenseCollect alloc] init];
     [lc setLicenseArray:connect];
-    [self evaluateRecieveCheck:5 :@"07"];
+    
     //テーブル更新
     [self.LT reloadData];
 }
@@ -112,9 +116,7 @@
     UILabel *label1 = (UILabel *)[cell viewWithTag:1];
     label1.text = [NSString stringWithFormat:@"%@",[lc maker:(int)indexPath.row]];
     UILabel *label2 = (UILabel *)[cell viewWithTag:2];
-    label2.text = [NSString stringWithFormat:@"%@",[lc software:(int)indexPath.row]];
-    UILabel *label3 = (UILabel *)[cell viewWithTag:3];
-    label3.text = [NSString stringWithFormat:@"%@",[lc version:(int)indexPath.row]];
+    label2.text = [NSString stringWithFormat:@"%@ %@",[lc software:(int)indexPath.row],[lc version:(int)indexPath.row]];
     UILabel *label4 = (UILabel *)[cell viewWithTag:4];
     label4.text = [NSString stringWithFormat:@"%@", [lc ownCount:(int)indexPath.row]];
     cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
@@ -134,6 +136,7 @@
     //Viewall用
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSMutableArray *userData = [userDefaults objectForKey:@"userData"];
+    WebdbConnect *badge = [[WebdbConnect alloc] init];
     WebdbConnect *myLab = [[WebdbConnect alloc] initWithLabArray:[userData valueForKeyPath:@"labCode"]];
     NSObject *jsonArray =[myLab labBadgeGet:badgeTitle];
     
@@ -175,7 +178,7 @@
         UIAlertView *alert =
         [[UIAlertView alloc] initWithTitle:@"バッジ取得" message:[jsonArray valueForKeyPath:@"option3"]delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
-        
+        [badge badgeOwnGet];
         return ;
    
     }else if (count < flagCount) {
@@ -212,6 +215,7 @@
     //Viewall用
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSMutableArray *userData = [userDefaults objectForKey:@"userData"];
+    WebdbConnect *badge = [[WebdbConnect alloc] init];
     WebdbConnect *myLab = [[WebdbConnect alloc] initWithLabArray:[userData valueForKeyPath:@"labCode"]];
     NSObject *jsonArray = [myLab labBadgeGet:badgeTitle];
     
@@ -252,7 +256,7 @@
         
         UIAlertView *alert =[[UIAlertView alloc] initWithTitle:@"バッジ取得" message:[jsonArray valueForKeyPath:@"option3"]delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
-        
+        [badge badgeOwnGet];
         return ;
         
     }else if (count < flagCount) {
