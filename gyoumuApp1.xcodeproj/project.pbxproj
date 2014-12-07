@@ -88,6 +88,8 @@
 		F8A223FC19EE6C0D00139991 /* gyoumuApp1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A223FB19EE6C0D00139991 /* gyoumuApp1Tests.m */; };
 		F8A63E3F1A1BCE3200B34842 /* otherBadgeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A63E3E1A1BCE3200B34842 /* otherBadgeDetailViewController.m */; };
 		F8B6F8DF1A1DDD2F009983D2 /* licenseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B6F8DE1A1DDD2F009983D2 /* licenseTableViewController.m */; };
+		F8BF10401A34367100EB5B41 /* badgeTag.png in Resources */ = {isa = PBXBuildFile; fileRef = F8BF103F1A34367100EB5B41 /* badgeTag.png */; };
+		F8BF10421A34369900EB5B41 /* badgeTag2.png in Resources */ = {isa = PBXBuildFile; fileRef = F8BF10411A34369900EB5B41 /* badgeTag2.png */; };
 		F8C24FC51A22078C006DB833 /* licenseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C24FC41A22078C006DB833 /* licenseDetailViewController.m */; };
 		F8C24FC81A22268F006DB833 /* otherLicenseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C24FC71A22268F006DB833 /* otherLicenseDetailViewController.m */; };
 		F8F60B931A00D104002717F2 /* jsonUser.txt in Resources */ = {isa = PBXBuildFile; fileRef = F8F60B921A00D104002717F2 /* jsonUser.txt */; };
@@ -228,6 +230,8 @@
 		F8A63E3E1A1BCE3200B34842 /* otherBadgeDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = otherBadgeDetailViewController.m; sourceTree = "<group>"; };
 		F8B6F8DD1A1DDD2F009983D2 /* licenseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = licenseTableViewController.h; sourceTree = "<group>"; };
 		F8B6F8DE1A1DDD2F009983D2 /* licenseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = licenseTableViewController.m; sourceTree = "<group>"; };
+		F8BF103F1A34367100EB5B41 /* badgeTag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = badgeTag.png; sourceTree = "<group>"; };
+		F8BF10411A34369900EB5B41 /* badgeTag2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = badgeTag2.png; sourceTree = "<group>"; };
 		F8C24FC31A22078C006DB833 /* licenseDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = licenseDetailViewController.h; sourceTree = "<group>"; };
 		F8C24FC41A22078C006DB833 /* licenseDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = licenseDetailViewController.m; sourceTree = "<group>"; };
 		F8C24FC61A22268F006DB833 /* otherLicenseDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = otherLicenseDetailViewController.h; sourceTree = "<group>"; };
@@ -467,6 +471,8 @@
 				EBD7DC5A1A1B4275009C6FFF /* progress6.png */,
 				EBD7DC611A1B43F9009C6FFF /* adobe.png */,
 				EBD7DC631A1B45FB009C6FFF /* microsoft.png */,
+				F8BF103F1A34367100EB5B41 /* badgeTag.png */,
+				F8BF10411A34369900EB5B41 /* badgeTag2.png */,
 				F8A223E819EE6C0D00139991 /* Images.xcassets */,
 				F8A223D719EE6C0D00139991 /* Supporting Files */,
 			);
@@ -586,6 +592,7 @@
 			files = (
 				9C8D0F7B1A25B3BD00273ECB /* badge05.png in Resources */,
 				9C683DBB1A2B1AA1002C8A5B /* checkBtn.png in Resources */,
+				F8BF10401A34367100EB5B41 /* badgeTag.png in Resources */,
 				9C8D0F7A1A25B3BD00273ECB /* badge04.png in Resources */,
 				F8A223E919EE6C0D00139991 /* Images.xcassets in Resources */,
 				EBD7DC5C1A1B4275009C6FFF /* progress2.png in Resources */,
@@ -619,6 +626,7 @@
 				EBD7DC5B1A1B4275009C6FFF /* progress1.png in Resources */,
 				EBD7DC5F1A1B4275009C6FFF /* progress5.png in Resources */,
 				F81ACF151A2DEE9D0093201F /* badge11.png in Resources */,
+				F8BF10421A34369900EB5B41 /* badgeTag2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
