@@ -9,7 +9,7 @@
 #import "otherBadgeViewController.h"
 #import "otherBadgeDetailViewController.h"
 #import "AppDelegate.h"
-#import "WebdbConnect.h"
+
 //値渡しのためのimport
 #import "WebdbConnect.h"
 
