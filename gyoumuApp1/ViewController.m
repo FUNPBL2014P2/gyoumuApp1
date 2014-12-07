@@ -26,7 +26,7 @@
 - (void)viewDidLoad
 {
     
-
+    
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -35,7 +35,7 @@
     // キーボードを閉じる
     [self.userText resignFirstResponder];
     [self.pwText resignFirstResponder];
-
+    
 }
 - (void)didReceiveMemoryWarning
 {
@@ -73,11 +73,11 @@
                 [[UIAlertView alloc] initWithTitle:@"connection error!" message:@"ネットワークに接続して下さい"
                                           delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
                 [alert show];
-
+                
                 return NO;
             }
         }
-            NSLog(@"error = %@", error);
+        NSLog(@"error = %@", error);
         /////////////////////////////////////////////
         
         
@@ -152,119 +152,119 @@
 -(void) addLogin:(NSString *)title badgeFlag:(int)flagCount
 {
     //Viewall用
-    
     NSString *subold;
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSMutableArray *userData = [userDefaults objectForKey:@"userData"];
-    
-    NSString *urlList = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/viewall.php",[userData valueForKeyPath:@"labCode"]];
+    WebdbConnect *myLab = [[WebdbConnect alloc] initWithLabArray:[userData valueForKeyPath:@"labCode"]];
+    NSObject *jsonArray =[myLab labBadgeGet:title];
+    //WebdbConnect *badge = [[WebdbConnect alloc] initWithNibName:[userData valueForKeyPath:@"labCode"]];
+    //NSString *urlList = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/viewall.php",[userData valueForKeyPath:@"labCode"]];
     
     //　CachePolicyがデフォルトではNSURLRequestUseProtocolCachePolicyとなっているので変更
-    NSMutableURLRequest *requestList = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlList]];
-    [requestList setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
-
-    NSData *jsonList = [NSURLConnection sendSynchronousRequest:requestList returningResponse:nil error:nil];
-    NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:jsonList options:0 error:nil];
-    NSArray *jsonArray = [jsonDic objectForKey:@"data"];
+    //    NSMutableURLRequest *requestList = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlList]];
+    //    [requestList setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
+    //
+    //    NSData *jsonList = [NSURLConnection sendSynchronousRequest:requestList returningResponse:nil error:nil];
+    //    NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:jsonList options:0 error:nil];
+    //    NSArray *jsonArray = [jsonDic objectForKey:@"data"];
     
     
     int count = 0;
     NSString *time_old;
     NSString *time_new;
     
+    if( [[jsonArray valueForKeyPath:@"option0"] isEqualToString:@"1"]) {
+        return;
+    }
     
-    for (int i = 0; jsonArray.count; i++) {
-        if ([jsonArray[i][@"terminalId"] isEqualToString:[NSString stringWithFormat:@"badge%@",title]]) {
-            if ( [jsonArray[i][@"option0"] isEqualToString:@"1"]) {
-                return;
-            }
-            
-            time_old  = jsonArray[i][@"option1"];
-            
-            count = [jsonArray[i][@"option2"] intValue];
-            
-            NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
-            [fmt setDateFormat:@"yyyy年MM月dd日 HH時mm分"];
-            NSDate *nowGet = [[NSDate alloc]init];
-            
-            time_new = [fmt stringFromDate:nowGet];
-            
-            //日にちを取得
-            NSString *sub = [NSString stringWithFormat:@"%@",time_old];
-            
-            if(sub.length == 0){
-                subold= @"0000年00月00日";
-            }else{
-                subold = [time_old substringWithRange:NSMakeRange(8, 2)];
-            }
-            
-            NSString *subnew = [time_new substringWithRange:NSMakeRange(8, 2)];
-            
-            //同じ日じゃなければcount++
-            if(sub.length == 0){
-                count= 1;
-            }else if(![subold isEqualToString:subnew]) {
-                count++;
-            }
-            
-            
-            
-            
-            if (count == flagCount) {
-                /////////////////取得日時
-                
-                /////////////////////取得日時を送信する処理
-                NSString *urlList = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/add.php",[userData valueForKeyPath:@"labCode"]];
-                
-                NSURL *url = [NSURL URLWithString:urlList];
-                NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-                [request setHTTPMethod:@"POST"];
-                //パラメータを作成
-                NSString *body = [NSString stringWithFormat:@"title=%@&message=&latitude=&longitude=&terminalId=%@&option0=1&option1=%@&option2=%@&option3=%@&option4=%@&option5=%@",title,jsonArray[i][@"terminalId"],time_new,[NSString stringWithFormat:@"%d",flagCount], jsonArray[i][@"option3"],jsonArray[i][@"option4"],jsonArray[i][@"option5"]];
-                request.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
-                NSURLConnection *connection;
-                connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-                //////////////////
-                NSString *strURL = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/delete.php?data=/%@/%@",[userData valueForKeyPath:@"labCode"],jsonArray[i][@"terminalId"], jsonArray[i][@"datetime"]];
-                NSURL *urlDelete = [NSURL URLWithString:strURL];
-                NSMutableURLRequest *deleteRequest = [NSMutableURLRequest requestWithURL:urlDelete];
-                [deleteRequest setHTTPMethod:@"GET"];
-                [NSURLConnection sendSynchronousRequest:deleteRequest returningResponse:nil error:nil];
-                ///////////////////
-                //削除したら抜ける
-                
-                //////////////////
-                
-                
-                UIAlertView *alert =
-                [[UIAlertView alloc] initWithTitle:@"バッジ取得" message:jsonArray[i][@"option3"]
-                                          delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-                [alert show];
-                return ;
-            }
-            
-            else if (count < flagCount) {
-                NSString *urlList = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/add.php",[userData valueForKeyPath:@"labCode"]];
-                NSURL *url = [NSURL URLWithString:urlList];
-                NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-                [request setHTTPMethod:@"POST"];
-                //パラメータを作成
-                NSString *body = [NSString stringWithFormat:@"title=%@&message=&latitude=&longitude=&terminalId=%@&option0=0&option1=%@&option2=%@&option3=%@&option4=%@&option5=%@",title,jsonArray[i][@"terminalId"],time_new,[NSString stringWithFormat:@"%d",count], jsonArray[i][@"option3"],jsonArray[i][@"option4"],jsonArray[i][@"option5"]];
-                request.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
-                NSURLConnection *connection;
-                connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-                /////////////////////
-                NSString *strURL = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/delete.php?data=/%@/%@",[userData valueForKeyPath:@"labCode"],jsonArray[i][@"terminalId"], jsonArray[i][@"datetime"]];
-                NSURL *urlDelete = [NSURL URLWithString:strURL];
-                NSMutableURLRequest *deleteRequest = [NSMutableURLRequest requestWithURL:urlDelete];
-                [deleteRequest setHTTPMethod:@"GET"];
-                [NSURLConnection sendSynchronousRequest:deleteRequest returningResponse:nil error:nil];
-                ///////////////////
-                //削除したら抜ける
-                return ;
-                /////////////////////
-            }
-        }
+    time_old  = [jsonArray valueForKeyPath:@"option1"];
+    
+    count = [[jsonArray valueForKeyPath:@"option2"] intValue];
+    
+    NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
+    [fmt setDateFormat:@"yyyy年MM月dd日 HH時mm分"];
+    NSDate *nowGet = [[NSDate alloc]init];
+    
+    time_new = [fmt stringFromDate:nowGet];
+    
+    //日にちを取得
+    NSString *sub = [NSString stringWithFormat:@"%@",time_old];
+    
+    if(sub.length == 0){
+        subold= @"0000年00月00日";
+    }else{
+        subold = [time_old substringWithRange:NSMakeRange(8, 2)];
+    }
+    
+    NSString *subnew = [time_new substringWithRange:NSMakeRange(8, 2)];
+    
+    //同じ日じゃなければcount++
+    if(sub.length == 0){
+        count= 1;
+    }else if(![subold isEqualToString:subnew]) {
+        count++;
+    }
+    
+    if (count == flagCount) {
+        
+        /////////////////////取得日時を送信する処理
+        NSString *urlList = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/add.php",[userData valueForKeyPath:@"labCode"]];
+        
+        NSURL *url = [NSURL URLWithString:urlList];
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+        [request setHTTPMethod:@"POST"];
+        //パラメータを作成
+        NSString *body =[NSString stringWithFormat:@"title=%@&message=&latitude=&longitude=&terminalId=%@&option0=1&option1=%@&option2=%@&option3=%@&option4=%@&option5=%@",[jsonArray valueForKeyPath:@"title"],[jsonArray valueForKeyPath:@"terminalId"],[fmt stringFromDate:nowGet],[NSString stringWithFormat:@"%d",flagCount], [jsonArray valueForKeyPath:@"option3"],[jsonArray valueForKeyPath:@"option4"],[jsonArray valueForKeyPath:@"option5"]];
+        request.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
+        NSURLConnection *connection;
+        connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+        
+        //////////////////
+        
+        NSString *strURL = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/delete.php?data=/%@/%@",[userData valueForKeyPath:@"labCode"],[jsonArray valueForKeyPath:@"terminalId"], [jsonArray valueForKeyPath:@"datetime"]];
+        NSURL *urlDelete = [NSURL URLWithString:strURL];
+        NSMutableURLRequest *deleteRequest = [NSMutableURLRequest requestWithURL:urlDelete];
+        [deleteRequest setHTTPMethod:@"GET"];
+        [NSURLConnection sendSynchronousRequest:deleteRequest returningResponse:nil error:nil];
+        ///////////////////
+        //削除したら抜ける
+        
+        //////////////////
+        
+        
+        UIAlertView *alert =
+        [[UIAlertView alloc] initWithTitle:@"バッジ取得" message:[jsonArray valueForKeyPath:@"option3"]delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+     
+        return ;
+        
+    }else if (count < flagCount) {
+        
+        NSString *urlList = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/add.php",[userData valueForKeyPath:@"labCode"]];
+        NSURL *url = [NSURL URLWithString:urlList];
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+        [request setHTTPMethod:@"POST"];
+        
+        //パラメータを作成
+        
+        NSString *body = [NSString stringWithFormat:@"title=%@&message=&latitude=&longitude=&terminalId=%@&option0=0&option1=&option2=%d&option3=%@&option4=%@&option5=%@",[jsonArray valueForKeyPath:@"title"],[jsonArray valueForKeyPath:@"terminalId"],count,[jsonArray valueForKeyPath:@"option3"],[jsonArray valueForKeyPath:@"option4"],[jsonArray valueForKeyPath:@"option5"]];
+        request.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
+        NSURLConnection *connection;
+        connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+        
+        /////////////////////
+        
+        NSString *strURL = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/delete.php?data=/%@/%@",[userData valueForKeyPath:@"labCode"],[jsonArray valueForKeyPath:@"terminalId"], [jsonArray valueForKeyPath:@"datetime"]];
+        NSURL *urlDelete = [NSURL URLWithString:strURL];
+        NSMutableURLRequest *deleteRequest = [NSMutableURLRequest requestWithURL:urlDelete];
+        [deleteRequest setHTTPMethod:@"GET"];
+        [NSURLConnection sendSynchronousRequest:deleteRequest returningResponse:nil error:nil];
+        
+        ///////////////////
+        //削除したら抜ける
+        return ;
+        /////////////////////
+        
     }
 }
 
@@ -274,120 +274,113 @@
 {
     
     NSString *subold;
-    
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSMutableArray *userData = [userDefaults objectForKey:@"userData"];
-    
-    NSString *urlList = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline/viewall.php"];
-    
-    
-    NSMutableURLRequest *requestList = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlList]];
-    [requestList setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
-
-    NSData *jsonList = [NSURLConnection sendSynchronousRequest:requestList returningResponse:nil error:nil];
-    
-    NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:jsonList options:0 error:nil];
-    NSArray *jsonArray = [jsonDic objectForKey:@"data"];
-    
+    WebdbConnect *myLab = [[WebdbConnect alloc] initWithLabArray:[userData valueForKeyPath:@"labCode"]];
+    NSObject *jsonArray =[myLab labBadgeGet:title];
     
     
     int count = 0;
     NSString *time_old;
     NSString *time_new;;
     
-    for (int i = 0; jsonArray.count; i++) {
-        if ([jsonArray[i][@"terminalId"] isEqualToString:[NSString stringWithFormat:@"badge%@",title]]) {
-            if ( [jsonArray[i][@"option0"] isEqualToString:@"1"]) {
-                return;
-            }
-            
-            time_old = jsonArray[i][@"option1"];
-            count = [jsonArray[i][@"option2"] intValue];
-            
-            
-            NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
-            [fmt setDateFormat:@"yyyy年MM月dd日 HH時mm分"];
-            
-            NSDate *nowGet = [[NSDate alloc]init];
-            
-            time_new = [fmt stringFromDate:nowGet];
-            
-            NSString *sub = [NSString stringWithFormat:@"%@",time_old];
-            if(sub.length == 0){
-                subold= @"0000年00月00日";
-            }else{
-                subold = [time_old substringWithRange:NSMakeRange(8, 2)];
-            }
-            NSString *subnew = [time_new substringWithRange:NSMakeRange(8, 2)];
-            NSDate *resDate = [nowGet initWithTimeInterval:-1*24*60*60 sinceDate:nowGet];
-            NSString *lastday= [fmt stringFromDate:resDate];
-            NSString *last = [lastday substringWithRange:NSMakeRange(8, 2)];
-            
-            if([subold isEqualToString:last]) {
-                count+= 1;
-            }else if([subnew isEqualToString: subold]){
-                
-            }else{
-                count = 1;
-            }
-            
-            NSLog(@"%d",count);
-            
-            if (count == flagCount) {
-                /////////////////取得日時
-                
-                /////////////////////取得日時を送信する処理
-                NSString *urlList = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/add.php",[userData valueForKeyPath:@"labCode"]];
-                
-                NSURL *url = [NSURL URLWithString:urlList];
-                NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-                [request setHTTPMethod:@"POST"];
-                //パラメータを作成
-                NSString *body = [NSString stringWithFormat:@"title=%@&message=&latitude=&longitude=&terminalId=%@&option0=1&option1=%@&option2=%@&option3=%@&option4=%@&option5=%@",title,jsonArray[i][@"terminalId"],time_new,[NSString stringWithFormat:@"%d",flagCount], jsonArray[i][@"option3"],jsonArray[i][@"option4"],jsonArray[i][@"option5"]];
-                request.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
-                NSURLConnection *connection;
-                connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-                //////////////////
-                NSString *strURL = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/delete.php?data=/%@/%@",[userData valueForKeyPath:@"labCode"],jsonArray[i][@"terminalId"], jsonArray[i][@"datetime"]];
-                NSURL *urlDelete = [NSURL URLWithString:strURL];
-                NSMutableURLRequest *deleteRequest = [NSMutableURLRequest requestWithURL:urlDelete];
-                [deleteRequest setHTTPMethod:@"GET"];
-                [NSURLConnection sendSynchronousRequest:deleteRequest returningResponse:nil error:nil];
-                ///////////////////
-                //削除したら抜ける
-                
-                //////////////////
-                
-                
-                UIAlertView *alert =
-                [[UIAlertView alloc] initWithTitle:@"バッジ取得" message:jsonArray[i][@"option3"]
-                                          delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-                [alert show];
-                return ;
-            }
-            
-            else if (count < flagCount) {
-                NSString *urlList = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/add.php",[userData valueForKeyPath:@"labCode"]];
-                NSURL *url = [NSURL URLWithString:urlList];
-                NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-                [request setHTTPMethod:@"POST"];
-                //パラメータを作成
-                NSString *body = [NSString stringWithFormat:@"title=%@&message=&latitude=&longitude=&terminalId=%@&option0=0&option1=%@&option2=%@&option3=%@&option4=%@&option5=%@",title,jsonArray[i][@"terminalId"],time_new,[NSString stringWithFormat:@"%d",count], jsonArray[i][@"option3"],jsonArray[i][@"option4"],jsonArray[i][@"option5"]];
-                request.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
-                NSURLConnection *connection;
-                connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-                /////////////////////
-                NSString *strURL = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/delete.php?data=/%@/%@",[userData valueForKeyPath:@"labCode"],jsonArray[i][@"terminalId"], jsonArray[i][@"datetime"]];
-                NSURL *urlDelete = [NSURL URLWithString:strURL];
-                NSMutableURLRequest *deleteRequest = [NSMutableURLRequest requestWithURL:urlDelete];
-                [deleteRequest setHTTPMethod:@"GET"];
-                [NSURLConnection sendSynchronousRequest:deleteRequest returningResponse:nil error:nil];
-                ///////////////////
-                //削除したら抜ける
-                return ;
-                /////////////////////
-            }
-        }
+    if( [[jsonArray valueForKeyPath:@"option0"] isEqualToString:@"1"]) {
+        return;
+    }
+    
+    count = [[jsonArray valueForKeyPath:@"option2"] intValue];
+    
+    time_old = [jsonArray valueForKeyPath:@"option1"];
+    
+    
+    NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
+    [fmt setDateFormat:@"yyyy年MM月dd日 HH時mm分"];
+    
+    NSDate *nowGet = [[NSDate alloc]init];
+    
+    time_new = [fmt stringFromDate:nowGet];
+    
+    NSString *sub = [NSString stringWithFormat:@"%@",time_old];
+    if(sub.length == 0){
+        subold= @"0000年00月00日";
+    }else{
+        subold = [time_old substringWithRange:NSMakeRange(8, 2)];
+    }
+    NSString *subnew = [time_new substringWithRange:NSMakeRange(8, 2)];
+    NSDate *resDate = [nowGet initWithTimeInterval:-1*24*60*60 sinceDate:nowGet];
+    NSString *lastday= [fmt stringFromDate:resDate];
+    NSString *last = [lastday substringWithRange:NSMakeRange(8, 2)];
+    
+    if([subold isEqualToString:last]) {
+        count+= 1;
+    }else if([subnew isEqualToString: subold]){
+        
+    }else{
+        count = 1;
+    }
+    
+    NSLog(@"%d",count);
+    
+    if (count == flagCount) {
+        /////////////////取得日時
+        
+        /////////////////////取得日時を送信する処理
+        NSString *urlList = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/add.php",[userData valueForKeyPath:@"labCode"]];
+        
+        NSURL *url = [NSURL URLWithString:urlList];
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+        [request setHTTPMethod:@"POST"];
+        //パラメータを作成
+        NSString *body =[NSString stringWithFormat:@"title=%@&message=&latitude=&longitude=&terminalId=%@&option0=1&option1=%@&option2=%@&option3=%@&option4=%@&option5=%@",[jsonArray valueForKeyPath:@"title"],[jsonArray valueForKeyPath:@"terminalId"],[fmt stringFromDate:nowGet],[NSString stringWithFormat:@"%d",flagCount], [jsonArray valueForKeyPath:@"option3"],[jsonArray valueForKeyPath:@"option4"],[jsonArray valueForKeyPath:@"option5"]];
+        request.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
+        NSURLConnection *connection;
+        connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+        
+        //////////////////
+        
+        NSString *strURL = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/delete.php?data=/%@/%@",[userData valueForKeyPath:@"labCode"],[jsonArray valueForKeyPath:@"terminalId"], [jsonArray valueForKeyPath:@"datetime"]];
+        NSURL *urlDelete = [NSURL URLWithString:strURL];
+        NSMutableURLRequest *deleteRequest = [NSMutableURLRequest requestWithURL:urlDelete];
+        [deleteRequest setHTTPMethod:@"GET"];
+        [NSURLConnection sendSynchronousRequest:deleteRequest returningResponse:nil error:nil];
+        ///////////////////
+        //削除したら抜ける
+        
+        //////////////////
+        
+        
+        UIAlertView *alert =
+        [[UIAlertView alloc] initWithTitle:@"バッジ取得" message:[jsonArray valueForKeyPath:@"option3"]delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+        
+        return ;
+        
+    }else if (count < flagCount) {
+        
+        NSString *urlList = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/add.php",[userData valueForKeyPath:@"labCode"]];
+        NSURL *url = [NSURL URLWithString:urlList];
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+        [request setHTTPMethod:@"POST"];
+        
+        //パラメータを作成
+        
+        NSString *body = [NSString stringWithFormat:@"title=%@&message=&latitude=&longitude=&terminalId=%@&option0=0&option1=&option2=%d&option3=%@&option4=%@&option5=%@",[jsonArray valueForKeyPath:@"title"],[jsonArray valueForKeyPath:@"terminalId"],count,[jsonArray valueForKeyPath:@"option3"],[jsonArray valueForKeyPath:@"option4"],[jsonArray valueForKeyPath:@"option5"]];
+        request.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
+        NSURLConnection *connection;
+        connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+        
+        /////////////////////
+        
+        NSString *strURL = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/delete.php?data=/%@/%@",[userData valueForKeyPath:@"labCode"],[jsonArray valueForKeyPath:@"terminalId"], [jsonArray valueForKeyPath:@"datetime"]];
+        NSURL *urlDelete = [NSURL URLWithString:strURL];
+        NSMutableURLRequest *deleteRequest = [NSMutableURLRequest requestWithURL:urlDelete];
+        [deleteRequest setHTTPMethod:@"GET"];
+        [NSURLConnection sendSynchronousRequest:deleteRequest returningResponse:nil error:nil];
+        
+        ///////////////////
+        //削除したら抜ける
+        return ;
+        /////////////////////}
     }
 }
 
