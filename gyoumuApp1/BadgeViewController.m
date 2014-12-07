@@ -10,6 +10,7 @@
 
 //値渡しのためのimport
 #import "BadgeDetailViewController.h"
+#import "AppDelegate.h"
 
 @interface BadgeViewController () {
     NSString *sendBadgeName;
@@ -35,6 +36,8 @@
     [super viewDidLoad];
     [self actionizeBadge];
         NSLog(@"ログインユーザの研究室バッジ一覧にて閲覧中");
+    AppDelegate *ap = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSLog(@"%@", ap.badgeTitle);
     // Do any additional setup after loading the view.
     //UIImage *backgroundImage  = [UIImage imageNamed:@"background.jpg"];
     //self.view.layer.contents = (__bridge id)((backgroundImage.CGImage));

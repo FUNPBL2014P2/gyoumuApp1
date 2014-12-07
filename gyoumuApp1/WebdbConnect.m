@@ -7,6 +7,7 @@
 //
 
 #import "WebdbConnect.h"
+#import "AppDelegate.h"
 
 @implementation WebdbConnect
 {
@@ -157,6 +158,7 @@
 {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSMutableArray *userData = [userDefaults objectForKey:@"userData"];
+    AppDelegate *ap = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
     int count = 0;
     
@@ -191,7 +193,7 @@
         //削除したら抜ける
         
         //////////////////
-        
+        ap.badgeTitle = badgeArrayobject[@"title"];
         /*/Users/Oden/Documents/git_gyoumu/gyoumuApp1/gyoumuApp1/AppDelegate.m
          UIAlertView *alert =
          [[UIAlertView alloc] initWithTitle:@"バッジ取得" message:badgeArrayobject[@"option3"]

@@ -17,5 +17,5 @@
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) NSString *LabPath;
 @property (strong, nonatomic) NSString *softwareCode;
-
+@property (strong, nonatomic) NSString *badgeTitle;
 @end
