@@ -1774,7 +1774,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
-                    <tabBarItem key="tabBarItem" title="バッジ" id="0qu-V0-gqd"/>
+                    <tabBarItem key="tabBarItem" title="バッジ" image="tabIconBadge.png" id="0qu-V0-gqd"/>
                     <navigationItem key="navigationItem" title="バッジ" id="rBg-vT-M3v"/>
                     <connections>
                         <outlet property="backgroundView" destination="5jT-1M-L51" id="RaC-pk-xkk"/>
@@ -1920,7 +1920,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <tabBarItem key="tabBarItem" title="ライセンス一覧" id="MIi-BI-Xe9"/>
+                    <tabBarItem key="tabBarItem" title="ライセンス" image="tabIconLicense.png" id="MIi-BI-Xe9"/>
                     <navigationItem key="navigationItem" title="ライセンス一覧" id="mWM-DR-MsN"/>
                     <connections>
                         <segue destination="eqx-y7-EP2" kind="push" identifier="otherLicenseDetail" id="19w-Hc-pr8"/>
@@ -2349,7 +2349,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
-                    <tabBarItem key="tabBarItem" title="バッジ" id="5cy-Jl-z0H"/>
+                    <tabBarItem key="tabBarItem" title="バッジ" image="tabIconBadge.png" id="5cy-Jl-z0H"/>
                     <navigationItem key="navigationItem" title="バッジ" id="AMu-Pk-gkU"/>
                     <connections>
                         <outlet property="backgroundView" destination="Urs-aS-jYP" id="vnC-Rr-TE9"/>
@@ -2490,7 +2490,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <tabBarItem key="tabBarItem" title="ライセンス一覧" id="iY8-J9-fB9"/>
+                    <tabBarItem key="tabBarItem" title="ライセンス" image="tabIconLicense.png" id="iY8-J9-fB9"/>
                     <navigationItem key="navigationItem" title="ライセンス一覧" id="ZZ2-fc-X07"/>
                     <connections>
                         <segue destination="PBs-NB-4Hq" kind="push" identifier="guestLicenseDetail" id="XDM-Sh-sOe"/>
@@ -2611,12 +2611,14 @@
         <image name="background.jpg" width="1536" height="2048"/>
         <image name="detailBackground.jpg" width="1536" height="2048"/>
         <image name="otherbackground.jpg" width="768" height="1024"/>
-        <image name="progress1.png" width="691" height="124"/>
-        <image name="progress2.png" width="691" height="124"/>
-        <image name="progress3.png" width="691" height="124"/>
-        <image name="progress4.png" width="691" height="124"/>
-        <image name="progress5.png" width="691" height="124"/>
-        <image name="progress6.png" width="691" height="124"/>
+        <image name="progress1.png" width="730" height="124"/>
+        <image name="progress2.png" width="730" height="124"/>
+        <image name="progress3.png" width="730" height="124"/>
+        <image name="progress4.png" width="730" height="124"/>
+        <image name="progress5.png" width="730" height="124"/>
+        <image name="progress6.png" width="730" height="124"/>
+        <image name="tabIconBadge.png" width="32" height="32"/>
+        <image name="tabIconLicense.png" width="32" height="32"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
