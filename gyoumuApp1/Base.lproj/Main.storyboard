@@ -1920,7 +1920,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <tabBarItem key="tabBarItem" title="ライセンス一覧" image="tabIconLicense.png" id="MIi-BI-Xe9"/>
+                    <tabBarItem key="tabBarItem" title="ライセンス" image="tabIconLicense.png" id="MIi-BI-Xe9"/>
                     <navigationItem key="navigationItem" title="ライセンス一覧" id="mWM-DR-MsN"/>
                     <connections>
                         <segue destination="eqx-y7-EP2" kind="push" identifier="otherLicenseDetail" id="19w-Hc-pr8"/>
@@ -2490,7 +2490,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <tabBarItem key="tabBarItem" title="ライセンス一覧" image="tabIconLicense.png" id="iY8-J9-fB9"/>
+                    <tabBarItem key="tabBarItem" title="ライセンス" image="tabIconLicense.png" id="iY8-J9-fB9"/>
                     <navigationItem key="navigationItem" title="ライセンス一覧" id="ZZ2-fc-X07"/>
                     <connections>
                         <segue destination="PBs-NB-4Hq" kind="push" identifier="guestLicenseDetail" id="XDM-Sh-sOe"/>
