@@ -8,6 +8,7 @@
 
 #import "BadgeDetailViewController.h"
 #import "WebdbConnect.h"
+#import "AppDelegate.h"
 
 @interface BadgeDetailViewController ()
 
@@ -125,6 +126,18 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [self dismissViewControllerAnimated:NO completion:nil];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    AppDelegate *ap = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSLog(@"ap = %@",ap.badgeTitle);
+    
+    if(ap.badgeTitle){
+        UIAlertView *alert =[[UIAlertView alloc] initWithTitle:@"バッジ取得" message:ap.badgeTitle delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+    ap.badgeTitle = nil;
+    }
 }
 
 - (void)didReceiveMemoryWarning
