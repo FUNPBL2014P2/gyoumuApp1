@@ -46,6 +46,9 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self licenseCheck:20 :@"13"];
+    [self evaluateRecieveCheck:5 :@"07"];
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -57,7 +60,7 @@
     
     lc = [[licenseCollect alloc] init];
     [lc setLicenseArray:connect];
-    [self evaluateRecieveCheck:5 :@"07"];
+    
     //テーブル更新
     [self.LT reloadData];
 }
@@ -133,6 +136,7 @@
     //Viewall用
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSMutableArray *userData = [userDefaults objectForKey:@"userData"];
+    WebdbConnect *badge = [[WebdbConnect alloc] init];
     WebdbConnect *myLab = [[WebdbConnect alloc] initWithLabArray:[userData valueForKeyPath:@"labCode"]];
     NSObject *jsonArray =[myLab labBadgeGet:badgeTitle];
     
@@ -174,7 +178,7 @@
         UIAlertView *alert =
         [[UIAlertView alloc] initWithTitle:@"バッジ取得" message:[jsonArray valueForKeyPath:@"option3"]delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
-        
+        [badge badgeOwnGet];
         return ;
    
     }else if (count < flagCount) {
@@ -211,6 +215,7 @@
     //Viewall用
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSMutableArray *userData = [userDefaults objectForKey:@"userData"];
+    WebdbConnect *badge = [[WebdbConnect alloc] init];
     WebdbConnect *myLab = [[WebdbConnect alloc] initWithLabArray:[userData valueForKeyPath:@"labCode"]];
     NSObject *jsonArray = [myLab labBadgeGet:badgeTitle];
     
@@ -251,7 +256,7 @@
         
         UIAlertView *alert =[[UIAlertView alloc] initWithTitle:@"バッジ取得" message:[jsonArray valueForKeyPath:@"option3"]delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
-        
+        [badge badgeOwnGet];
         return ;
         
     }else if (count < flagCount) {

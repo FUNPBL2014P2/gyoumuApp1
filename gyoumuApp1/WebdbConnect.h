@@ -18,6 +18,8 @@
 -(NSMutableArray *)labBadgeAllGet;
 -(id)initWithLabArray:(NSString *)labCode;
 -(NSObject *)labEvaluateGet;
+- (void) badgeOwnGet;
+-(void) badgeOwnCheck:(id)badgeArrayobject badgeFlag:(int)flagCount;
 
 
 @end
