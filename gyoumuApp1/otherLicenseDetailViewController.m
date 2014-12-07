@@ -66,12 +66,12 @@
     //同名ソフトウェアの数
     return ld.countRow;
 }
-
+/*
 -(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 45;
 }
-
+*/
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row % 2 == 0) {
@@ -96,7 +96,8 @@
     label2.text = [NSString stringWithFormat:@"%@",[ld purchaseDate:(int)indexPath.row]];
     UILabel *label3 = (UILabel *)[cell viewWithTag:3];
     label3.text = [NSString stringWithFormat:@"%@",[ld expirationDate:(int)indexPath.row]];
-    
+    UILabel *label4 = (UILabel *)[cell viewWithTag:4];
+    label4.text = [NSString stringWithFormat:@"%@",[ld busySet:(int)indexPath.row]];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     return cell;
