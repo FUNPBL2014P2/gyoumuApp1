@@ -111,9 +111,7 @@
     UILabel *label1 = (UILabel *)[cell viewWithTag:1];
     label1.text = [NSString stringWithFormat:@"%@",[lc maker:(int)indexPath.row]];
     UILabel *label2 = (UILabel *)[cell viewWithTag:2];
-    label2.text = [NSString stringWithFormat:@"%@",[lc software:(int)indexPath.row]];
-    UILabel *label3 = (UILabel *)[cell viewWithTag:3];
-    label3.text = [NSString stringWithFormat:@"%@",[lc version:(int)indexPath.row]];
+    label2.text = [NSString stringWithFormat:@"%@ %@",[lc software:(int)indexPath.row],[lc version:(int)indexPath.row]];
     UILabel *label4 = (UILabel *)[cell viewWithTag:4];
     label4.text = [NSString stringWithFormat:@"%@",[lc ownCount:(int)indexPath.row]];
     cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;

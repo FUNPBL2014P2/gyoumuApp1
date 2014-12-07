@@ -1,20 +1,19 @@
 //
-//  guestViewController.m
+//  guestTabViewController.m
 //  gyoumuApp1
 //
-//  Created by Shota Oda on 2014/10/23.
+//  Created by Shota Oda on 2014/12/04.
 //  Copyright (c) 2014年 shota. All rights reserved.
 //
 
-#import "guestViewController.h"
+#import "guestTabViewController.h"
+#import "AppDelegate.h"
 
-@interface guestViewController ()
-
+@interface guestTabViewController ()
+@property (weak, nonatomic) IBOutlet UINavigationItem *name;
 @end
 
-@implementation guestViewController
-//new
-@synthesize backRectBtn;
+@implementation guestTabViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,18 +27,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    //[userDefaults setObject:@"guest" forKey:@"userData"];
-    //NSLog(@"現在%@なのでユーザデータは保持されていません", [userDefaults stringForKey:@"userData"]);
-
+    AppDelegate *ap = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    //Supporting Files内のjsonUser.txtを参照
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"jsonUser" ofType:@"txt"];
+    NSData *jsondata = [NSData dataWithContentsOfFile:path];
+    NSDictionary *jsonDlc = [NSJSONSerialization JSONObjectWithData:jsondata options:0 error:nil];
+    
+    //キーが「lab」研究室一覧を指定
+    NSMutableArray *jsonArray1 = [jsonDlc objectForKey:@"lab"];
+    
+    self.name.title = jsonArray1[[ap.LabPath intValue]-1];
     // Do any additional setup after loading the view.
-    //new
-    double btnBorderRectPoint = 2.0;
-    //new
-    backRectBtn.layer.cornerRadius = 10;
-    [[backRectBtn layer] setBorderColor:[[UIColor blackColor]CGColor]];
-    [[backRectBtn layer] setBorderWidth:btnBorderRectPoint];
-
 }
 
 - (void)didReceiveMemoryWarning
