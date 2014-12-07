@@ -692,7 +692,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="progress1.png" translatesAutoresizingMaskIntoConstraints="NO" id="MA1-ma-SrA">
-                                <rect key="frame" x="128" y="888" width="510" height="128"/>
+                                <rect key="frame" x="572" y="51" width="176" height="37"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="101" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="RD8-tC-pEH">
                                 <rect key="frame" x="148" y="165" width="472" height="731"/>
@@ -756,7 +756,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="progress2.png" translatesAutoresizingMaskIntoConstraints="NO" id="bcd-HS-JUl">
-                                <rect key="frame" x="128" y="888" width="510" height="128"/>
+                                <rect key="frame" x="572" y="51" width="176" height="37"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="98" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="XNo-sT-VwP">
                                 <rect key="frame" x="148" y="165" width="472" height="731"/>
@@ -818,7 +818,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="progress3.png" translatesAutoresizingMaskIntoConstraints="NO" id="64h-Nz-Qqa">
-                                <rect key="frame" x="128" y="888" width="510" height="128"/>
+                                <rect key="frame" x="572" y="51" width="176" height="37"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="101" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="SEG-7a-mly">
                                 <rect key="frame" x="148" y="165" width="472" height="731"/>
@@ -880,10 +880,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="progress4.png" translatesAutoresizingMaskIntoConstraints="NO" id="hLc-VH-5eB">
-                                <rect key="frame" x="128" y="888" width="510" height="128"/>
+                                <rect key="frame" x="572" y="51" width="176" height="37"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="識別名を入力してください（１〜２０文字まで）" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="N9j-xA-itg">
-                                <rect key="frame" x="162" y="131" width="373" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="識別名を入力してください（半角英数字１〜２０文字まで）" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="N9j-xA-itg">
+                                <rect key="frame" x="162" y="131" width="458" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -896,9 +896,10 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5cl-2B-N0E">
                                 <rect key="frame" x="530" y="800" width="120" height="60"/>
-                                <color key="backgroundColor" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.090196080505847931" green="0.34117648005485535" blue="0.46666669845581055" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="次へ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -933,9 +934,10 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WuX-x3-tcO">
                                 <rect key="frame" x="530" y="800" width="120" height="60"/>
-                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.094117656350135803" green="0.40784317255020142" blue="0.48235297203063965" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="次へ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -943,7 +945,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="progress5.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ube-R0-aTK">
-                                <rect key="frame" x="128" y="888" width="510" height="128"/>
+                                <rect key="frame" x="572" y="51" width="176" height="37"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HR8-Vb-txg">
                                 <rect key="frame" x="117" y="155" width="533" height="216"/>
@@ -979,13 +981,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="期限の有無" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dIN-iy-5mL">
-                                <rect key="frame" x="182" y="700" width="85" height="21"/>
+                                <rect key="frame" x="564" y="403" width="85" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Elb-LX-juS">
-                                <rect key="frame" x="117" y="695" width="51" height="31"/>
+                                <rect key="frame" x="499" y="398" width="51" height="31"/>
                             </switch>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="sx5-Lz-edq">
                                 <rect key="frame" x="117" y="437" width="532" height="216"/>
@@ -1036,7 +1038,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="progress6.png" translatesAutoresizingMaskIntoConstraints="NO" id="B6M-26-lmv">
-                                <rect key="frame" x="128" y="888" width="510" height="128"/>
+                                <rect key="frame" x="572" y="51" width="176" height="37"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fMK-JC-4JX">
                                 <rect key="frame" x="92" y="153" width="585" height="446"/>
@@ -1080,9 +1082,10 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rxe-60-Orz">
                                 <rect key="frame" x="309" y="750" width="150" height="60"/>
-                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.094117647058823528" green="0.40784313725490196" blue="0.4823529411764706" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="送信">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
