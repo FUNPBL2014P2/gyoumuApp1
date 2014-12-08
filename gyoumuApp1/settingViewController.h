@@ -20,4 +20,7 @@
 - (IBAction)badgeResetBtn:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *evaluateResetLabel;
 - (IBAction)evaluateResetBtn:(id)sender;
+
+- (IBAction)demoResetBtn:(id)sender;
+
 @end
