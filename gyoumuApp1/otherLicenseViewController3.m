@@ -74,6 +74,9 @@
     //NSLog(@"%d",[self timeCheck:labCode]);
     int time_hour = _time/3600;
     int time_minute = (_time - time_hour*3600)/60;
+    if (_time <= 0.0) {
+        [self.communeTime setHidden:YES];
+    }
     self.communeTime.text = [NSString stringWithFormat:@"評価可能まであと%02d時間%02d分です",time_hour,time_minute];
     self.communeTime.textColor = [UIColor blueColor];
     
@@ -90,18 +93,57 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    AppDelegate *ap = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSMutableArray *userData = [userDefaults objectForKey:@"userData"];
+    
+    
+    WebdbConnect *otherLab = [[WebdbConnect alloc] initWithLabArray:ap.LabPath];
+    NSString *otherRecvCount = [[otherLab labEvaluateGet]valueForKeyPath:@"option3"];
+    NSString *labCode =[userData valueForKeyPath:@"labCode"];
+    
+    _countdown_timer = [NSTimer scheduledTimerWithTimeInterval:1
+                                                        target:self
+                                                      selector:@selector(update)
+                                                      userInfo:nil
+                                                       repeats:YES];
+    _time = [self timeReverse:labCode];
+    [_countdown_timer fire];
+    
+    [self evaluateUseCheck:labCode];
+    self.receiveNumber.text = otherRecvCount;
+    self.receiveImage.image = [UIImage imageNamed: [NSString stringWithFormat:@"checkLog.png"]];
+    [self.view sendSubviewToBack:self.receiveImage];
+    self.receiveNumber.textColor = [UIColor blueColor];
+    self.receiveNumber.textAlignment = NSTextAlignmentCenter;
+    self.communeImage.layer.cornerRadius = 7;
+    //NSString *time = [NSString stringWithFormat:@"%d",abs([self timeCheck:labCode])];
+    //NSLog(@"%d",[self timeCheck:labCode]);
+    int time_hour = _time/3600;
+    int time_minute = (_time - time_hour*3600)/60;
+    if (_time <= 0.0) {
+        [self.communeTime setHidden:YES];
+    }
+    self.communeTime.text = [NSString stringWithFormat:@"評価可能まであと%02d時間%02d分です",time_hour,time_minute];
+    self.communeTime.textColor = [UIColor blueColor];
+    
+}
 - (void) update{
     if (_time <= 0.0) {
         [_countdown_timer invalidate];
         [_communeBtn setEnabled:YES];
         self.communeImage.image = [UIImage imageNamed: [NSString stringWithFormat:@"checkBtn.png"]];
+        [self.communeTime setHidden:YES];
     }
     else {
         _time--;
         int time_hour = _time/3600;
         int time_minute = (_time - time_hour*3600)/60;
+        [self.communeTime setHidden:NO];
         self.communeTime.text = [NSString stringWithFormat:@"評価可能まであと%02d時間%02d分です",time_hour,time_minute];
     }
 }
@@ -539,7 +581,7 @@
     int time_minute = (_time - time_hour*3600)/60;
     self.communeTime.text = [NSString stringWithFormat:@"評価可能まであと%02d時間%02d分です",time_hour,time_minute];
     [self.communeBtn setEnabled:NO];
-    
+    [self.communeTime setHidden:NO];
     [self evaluateAddCheck:1 :@"04"];
     [self evaluateAddCheck:5 :@"08"];
 }
