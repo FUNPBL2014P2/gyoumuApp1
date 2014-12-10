@@ -12,6 +12,7 @@
 @implementation WebdbConnect
 {
     NSArray *_labArray;
+    int ownCount;
 }
 
 -(void)setLabArray:(NSString *)labCode
@@ -141,18 +142,22 @@
     
     for (int i = 0; i < jsonArray.count; i++) {
         if ([jsonArray[i][@"terminalId"] isEqualToString:@"badge14"]) {
+            
             [self badgeOwnCheck:jsonArray[i] badgeFlag:5];
         }
         else if ([jsonArray[i][@"terminalId"] isEqualToString:@"badge15"]) {
+            
             [self badgeOwnCheck:jsonArray[i] badgeFlag:10];
             
         }
         else if ([jsonArray[i][@"terminalId"] isEqualToString:@"badge16"]) {
+            
             [self badgeOwnCheck:jsonArray[i] badgeFlag:15];
         }
         
     }
     
+    ownCount = 0;
     return;
 }
 
@@ -169,7 +174,7 @@
     if ( [badgeArrayobject[@"option0"] isEqualToString:@"1"]) {
         return;
     }
-    count = [badgeArrayobject[@"option2"] intValue] + 1;
+    count = [badgeArrayobject[@"option2"] intValue] + 1 + ownCount;
     
     if (count == flagCount) {
         /////////////////取得日時
@@ -204,7 +209,7 @@
          delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
          [alert show];
          */
-        [self badgeOwnGet];
+        ownCount = 1;
         return ;
     }
     
