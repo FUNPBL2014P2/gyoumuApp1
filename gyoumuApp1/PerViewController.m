@@ -8,6 +8,7 @@
 
 #import "PerViewController.h"
 #import "WebdbConnect.h"
+#import "AppDelegate.h"
 
 @interface PerViewController ()
 
@@ -28,6 +29,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    AppDelegate *ap = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSLog(@"pv vddld ap = %@",ap.badgeTitle);
+    
     // Do any additional setup after loading the view.
     NSString *str1 = @"Login User:";
     /*
@@ -73,6 +78,19 @@
     [super didReceiveMemoryWarning];
          // Dispose of any resources that can be recreated.
 }
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    AppDelegate *ap = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSLog(@"ap = %@",ap.badgeTitle);
+    
+    if(ap.badgeTitle){
+        UIAlertView *alert =[[UIAlertView alloc] initWithTitle:@"バッジ取得" message:ap.badgeTitle delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+        ap.badgeTitle = nil;
+    }
+}
+
 
 -(void) evaluateRecieveCheck:(int) flagCount :(NSString *) badgeTitle
 {

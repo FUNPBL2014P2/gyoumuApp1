@@ -70,7 +70,7 @@
         badgeNumLabel.text = [NSString stringWithFormat:@"No.%@",viewDic[@"title"]];
         badgeTitleLabel.text = [NSString stringWithFormat:@"%@",viewDic[@"option3"]];
         badgeExpLabel.text = [NSString stringWithFormat:@"%@",viewDic[@"option4"]];
-        badgeConditionLabel.text = [NSString stringWithFormat:@"?????????????"];
+        badgeConditionLabel.text = [NSString stringWithFormat:@"？？？？？？？？？？？？？？？？？？？？？？？"];
         badgeGetTimeLabel.text = @"";
         
     }
