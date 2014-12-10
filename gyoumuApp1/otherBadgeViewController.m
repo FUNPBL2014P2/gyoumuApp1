@@ -71,7 +71,7 @@
     if (_time <= 0.0) {
         [self.evaluateTime setHidden:YES];
     }
-    self.evaluateTime.text = [NSString stringWithFormat:@"評価可能まであと%02d時間%02d分です",time_hour,time_minute];
+    self.evaluateTime.text = [NSString stringWithFormat:@"交流可能まであと%02d時間%02d分です",time_hour,time_minute];
     self.evaluateTime.textColor = [UIColor whiteColor];
     
     //otherLabPathを更新
@@ -131,7 +131,7 @@
     if (_time <= 0.0) {
         [self.evaluateTime setHidden:YES];
     }
-    self.evaluateTime.text = [NSString stringWithFormat:@"評価可能まであと%02d時間%02d分です",time_hour,time_minute];
+    self.evaluateTime.text = [NSString stringWithFormat:@"交流可能まであと%02d時間%02d分です",time_hour,time_minute];
     self.evaluateTime.textColor = [UIColor whiteColor];
     
     flagArray = [NSMutableArray array];
@@ -167,7 +167,7 @@
         _time--;
         int time_hour = _time/3600;
         int time_minute = (_time - time_hour*3600)/60;
-        self.evaluateTime.text = [NSString stringWithFormat:@"評価可能まであと%02d時間%02d分です",time_hour,time_minute];
+        self.evaluateTime.text = [NSString stringWithFormat:@"交流可能まであと%02d時間%02d分です",time_hour,time_minute];
         [self.evaluateTime setHidden:NO];
     }
 }
@@ -274,7 +274,7 @@
     [fmt setDateFormat:@"yyyy年MM月dd日 HH時mm分"];
     NSDate *nowGet = [[NSDate alloc]init];
     
-    /////////////////評価した側の処理
+    /////////////////交流した側の処理
     mAddCount += 1;
     
     NSString *urlList = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/add.php",[userData valueForKeyPath:@"labCode"]];
@@ -297,7 +297,7 @@
     [NSURLConnection sendSynchronousRequest:deleteRequest returningResponse:nil error:nil];
     ///////////////////
     
-    //////////////////評価された側の処理
+    //////////////////交流された側の処理
     oRecvCount += 1;
     
     NSString *urlList1 = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/add.php",ap.LabPath];
@@ -328,7 +328,7 @@
     _time = 24*60*60;
     int time_hour = _time/3600;
     int time_minute = (_time - time_hour*3600)/60;
-    self.evaluateTime.text = [NSString stringWithFormat:@"評価可能まであと%02d時間%02d分です",time_hour,time_minute];
+    self.evaluateTime.text = [NSString stringWithFormat:@"交流可能まであと%02d時間%02d分です",time_hour,time_minute];
     [_evaluateBtn setEnabled:NO];
     
     [self evaluateAddCheck:1 :@"04"];
@@ -365,7 +365,7 @@
     }
     
     
-    //24時間以内だったら評価不可
+    //24時間以内だったら交流不可
     if(sub.length == 0){
         [_evaluateBtn setEnabled:YES];
          self.communeImage.image = [UIImage imageNamed: [NSString stringWithFormat:@"checkBtn.png"]];
