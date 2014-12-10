@@ -24,11 +24,15 @@
 {
     AppDelegate *ap = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     _DetailSoftCollectArray = [NSMutableArray arrayWithArray:[connect labLicenseCodeGet:ap.softwareCode]];
+    if (_DetailSoftCollectArray.count == 0) {
+        return;
+    } else{
     _maker = [_DetailSoftCollectArray[0] valueForKeyPath:@"option0"];
     _software= [_DetailSoftCollectArray[0] valueForKeyPath:@"option1"];
     _version = [_DetailSoftCollectArray[0] valueForKeyPath:@"option2"];
     _softTag = [_DetailSoftCollectArray[0] valueForKeyPath:@"option7"];
-   }
+    }
+}
 
 -(NSMutableArray *) DetailSoftCollectArray{
     return _DetailSoftCollectArray;
