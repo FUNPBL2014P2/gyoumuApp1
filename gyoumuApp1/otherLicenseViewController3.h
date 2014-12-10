@@ -10,4 +10,10 @@
 
 @interface otherLicenseViewController3 : UIViewController
 
+- (IBAction)communeBtn:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *communeBtn;
+@property (weak, nonatomic) IBOutlet UILabel *receiveNumber;
+@property (weak, nonatomic) IBOutlet UILabel *communeTime;
+@property (weak, nonatomic) IBOutlet UIImageView *communeImage;
+@property (weak, nonatomic) IBOutlet UIImageView *receiveImage;
 @end

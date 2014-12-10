@@ -38,6 +38,9 @@
 {
     [super viewDidLoad];
     
+    AppDelegate *ap = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSLog(@"vddld ap = %@",ap.badgeTitle);
+    
     //for (int i = 0; i < [connect labArray].count; i++) {
     
     //}
@@ -207,6 +210,18 @@
         //削除したら抜ける
         return ;
         /////////////////////
+    }
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    AppDelegate *ap = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSLog(@"ap = %@",ap.badgeTitle);
+    
+    if(ap.badgeTitle){
+        UIAlertView *alert =[[UIAlertView alloc] initWithTitle:@"バッジ取得" message:ap.badgeTitle delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+        ap.badgeTitle = nil;
     }
 }
 
