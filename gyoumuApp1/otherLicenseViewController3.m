@@ -77,7 +77,7 @@
     if (_time <= 0.0) {
         [self.communeTime setHidden:YES];
     }
-    self.communeTime.text = [NSString stringWithFormat:@"評価可能まであと%02d時間%02d分です",time_hour,time_minute];
+    self.communeTime.text = [NSString stringWithFormat:@"交流可能まであと%02d時間%02d分です",time_hour,time_minute];
     self.communeTime.textColor = [UIColor blueColor];
     
     //for (int i = 0; i < [connect labArray].count; i++) {
@@ -128,7 +128,7 @@
     if (_time <= 0.0) {
         [self.communeTime setHidden:YES];
     }
-    self.communeTime.text = [NSString stringWithFormat:@"評価可能まであと%02d時間%02d分です",time_hour,time_minute];
+    self.communeTime.text = [NSString stringWithFormat:@"交流可能まであと%02d時間%02d分です",time_hour,time_minute];
     self.communeTime.textColor = [UIColor blueColor];
     
 }
@@ -144,7 +144,7 @@
         int time_hour = _time/3600;
         int time_minute = (_time - time_hour*3600)/60;
         [self.communeTime setHidden:NO];
-        self.communeTime.text = [NSString stringWithFormat:@"評価可能まであと%02d時間%02d分です",time_hour,time_minute];
+        self.communeTime.text = [NSString stringWithFormat:@"交流可能まであと%02d時間%02d分です",time_hour,time_minute];
     }
 }
 
@@ -246,7 +246,7 @@
     }
     
     
-    //24時間以内だったら評価不可
+    //24時間以内だったら交流不可
     if(sub.length == 0){
         [_communeBtn setEnabled:YES];
         self.communeImage.image = [UIImage imageNamed: [NSString stringWithFormat:@"checkBtn.png"]];
@@ -525,7 +525,7 @@
     [fmt setDateFormat:@"yyyy年MM月dd日 HH時mm分"];
     NSDate *nowGet = [[NSDate alloc]init];
     
-    /////////////////評価した側の処理
+    /////////////////交流した側の処理
     mAddCount += 1;
     
     NSString *urlList = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/add.php",[userData valueForKeyPath:@"labCode"]];
@@ -548,7 +548,7 @@
     [NSURLConnection sendSynchronousRequest:deleteRequest returningResponse:nil error:nil];
     ///////////////////
     
-    //////////////////評価された側の処理
+    //////////////////交流された側の処理
     oRecvCount += 1;
     
     NSString *urlList1 = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/add.php",ap.LabPath];
@@ -579,7 +579,7 @@
     _time = 24*60*60;
     int time_hour = _time/3600;
     int time_minute = (_time - time_hour*3600)/60;
-    self.communeTime.text = [NSString stringWithFormat:@"評価可能まであと%02d時間%02d分です",time_hour,time_minute];
+    self.communeTime.text = [NSString stringWithFormat:@"交流可能まであと%02d時間%02d分です",time_hour,time_minute];
     [self.communeBtn setEnabled:NO];
     [self.communeTime setHidden:NO];
     [self evaluateAddCheck:1 :@"04"];
