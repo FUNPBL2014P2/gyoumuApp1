@@ -15,6 +15,7 @@
 #import "selectVersionViewController.h"
 #import "licenseKeyViewController.h"
 #import "inputDateViewController.h"
+#import "AppDelegate.h"
 
 @interface confirmViewController ()
 
@@ -181,6 +182,17 @@
     [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:4] animated:YES];
 }
 
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    AppDelegate *ap = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSLog(@"confirm ap = %@",ap.badgeTitle);
+    
+    if(ap.badgeTitle){
+        UIAlertView *alert =[[UIAlertView alloc] initWithTitle:@"バッジ取得" message:ap.badgeTitle delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+        ap.badgeTitle = nil;
+    }
+}
 
 -(void) addLicense:(NSString *)title badgeFlag:(int)flagCount
 {
