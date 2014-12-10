@@ -30,6 +30,8 @@
 
 #import "AMSlideMenuContentSegue.h"
 #import "drawRectView.h"
+#import "WebdbConnect.h"
+
 @interface AMSlideMenuLeftTableViewController ()
 
 @end
@@ -37,6 +39,8 @@
 @implementation AMSlideMenuLeftTableViewController{
     NSString *userName;
     NSString *userLabName;
+    WebdbConnect *evalConnect;
+    NSString *evalPoint;
 }
 
 /*----------------------------------------------------*/
@@ -50,6 +54,8 @@
     NSMutableArray *userData = [userDefaults objectForKey:@"userData"];
     NSString *labCode = [NSString stringWithString:[userData valueForKeyPath:@"labCode"]];
     
+    evalConnect = [[WebdbConnect alloc] initWithLabArray:labCode];
+    evalPoint = [NSString stringWithString:[[evalConnect labEvaluateGet] valueForKeyPath:@"option3"]];
     NSString *path = [[NSBundle mainBundle] pathForResource:@"jsonUser" ofType:@"txt"];
     NSData *jsondata = [NSData dataWithContentsOfFile:path];
     NSDictionary *jsonDlc = [NSJSONSerialization JSONObjectWithData:jsondata options:0 error:nil];
@@ -113,7 +119,16 @@
     UILabel *loginuserName = [[UILabel alloc] init];
     UILabel *lab = [[UILabel alloc] init];
     UILabel *labName = [[UILabel alloc] init];
+    UILabel *evalLabel = [[UILabel alloc] init];
     
+    evalLabel.frame = CGRectMake(10, 90-15, 139, 20);
+    evalLabel.textColor = [UIColor blackColor];
+    evalLabel.text = [NSString stringWithFormat:@"交流ポイント：%@", evalPoint];
+    evalLabel.font = [UIFont fontWithName:@"Hiragino Kaku Gothic ProN W3" size:15];
+    evalLabel.adjustsFontSizeToFitWidth = YES;
+    evalLabel.minimumScaleFactor = 0.5f;
+    [sectionView addSubview:evalLabel];
+
     menuLabel.frame = CGRectMake(100, 10, 300, 70);
     menuLabel.textColor = [UIColor blackColor];
     //menuLabel.backgroundColor = [UIColor cyanColor];
