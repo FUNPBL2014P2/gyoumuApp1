@@ -73,6 +73,7 @@
 		F87F6A7F19FA28E00088A0D6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F87F6A7E19FA28E00088A0D6 /* QuartzCore.framework */; };
 		F889EFAF19EED0760049B3A7 /* PerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F889EFAE19EED0760049B3A7 /* PerViewController.m */; };
 		F88AB1891A21D05000CCE4E8 /* licenseCollect.m in Sources */ = {isa = PBXBuildFile; fileRef = F88AB1881A21D05000CCE4E8 /* licenseCollect.m */; };
+		F89B5AF11A38425400D97E68 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F89B5AF01A38425400D97E68 /* MBProgressHUD.m */; };
 		F8A223D119EE6C0D00139991 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8A223D019EE6C0D00139991 /* Foundation.framework */; };
 		F8A223D319EE6C0D00139991 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8A223D219EE6C0D00139991 /* CoreGraphics.framework */; };
 		F8A223D519EE6C0D00139991 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8A223D419EE6C0D00139991 /* UIKit.framework */; };
@@ -209,6 +210,8 @@
 		F889EFAE19EED0760049B3A7 /* PerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerViewController.m; sourceTree = "<group>"; };
 		F88AB1871A21D05000CCE4E8 /* licenseCollect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = licenseCollect.h; sourceTree = "<group>"; };
 		F88AB1881A21D05000CCE4E8 /* licenseCollect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = licenseCollect.m; sourceTree = "<group>"; };
+		F89B5AEF1A38425400D97E68 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		F89B5AF01A38425400D97E68 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		F8A223CD19EE6C0D00139991 /* gyoumuApp1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gyoumuApp1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8A223D019EE6C0D00139991 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F8A223D219EE6C0D00139991 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -456,6 +459,8 @@
 			children = (
 				EB9DE11319F03D2D0071FEEB /* AMSlideMenu */,
 				F88AB18A1A21D08400CCE4E8 /* originClass */,
+				F89B5AEF1A38425400D97E68 /* MBProgressHUD.h */,
+				F89B5AF01A38425400D97E68 /* MBProgressHUD.m */,
 				F8A223DF19EE6C0D00139991 /* AppDelegate.h */,
 				F8A223E019EE6C0D00139991 /* AppDelegate.m */,
 				F8A223E519EE6C0D00139991 /* ViewController.h */,
@@ -679,6 +684,7 @@
 				EBE89AA31A176C41002D0DCA /* licenseKeyViewController.m in Sources */,
 				F88AB1891A21D05000CCE4E8 /* licenseCollect.m in Sources */,
 				9C8D0F661A249EB700273ECB /* settingViewController.m in Sources */,
+				F89B5AF11A38425400D97E68 /* MBProgressHUD.m in Sources */,
 				F81A121E1A1A2ACF0064103A /* WebdbConnect.m in Sources */,
 				EB9DE12619F03D2D0071FEEB /* AMSlideMenuMainViewController.m in Sources */,
 				F8A63E3F1A1BCE3200B34842 /* otherBadgeDetailViewController.m in Sources */,
