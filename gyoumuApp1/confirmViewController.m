@@ -28,18 +28,24 @@
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
     // Do any additional setup after loading the view.
 }
+@synthesize makerLabel;
+@synthesize softwareLabel;
+@synthesize versionLabel;
+@synthesize tagLabel;
+@synthesize keyLabel;
+@synthesize startLabel;
+@synthesize periodLabel;
 
 - (void)viewWillAppear:(BOOL)animated{
     
     [super viewWillAppear:YES];
-    
-    self.makerLabel.text = self.addData.maker;
-    self.softwareLabel.text = self.addData.software;
-    self.versionLabel.text = self.addData.version;
-    self.tagLabel.text = self.addData.tag;
-    self.keyLabel.text = self.addData.key;
-    self.startLabel.text = self.addData.start;
-    self.periodLabel.text = self.addData.period;
+    makerLabel.text = @"Adobe";
+    softwareLabel.text = @"Photoshop";
+    versionLabel.text = @"CS6.0";
+    tagLabel.text = @"mirai_taro01";
+    keyLabel.text = @"XXXX-XXXX-XXXX-XXXX-XXXX";
+    startLabel.text = @"2014-12-12";
+    periodLabel.text = @"2015-12-12";
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
@@ -74,7 +80,7 @@
 }
 
 - (void)sendLicenseData{
-    NSString *option7 = [self.addData.maker stringByAppendingString:[self.addData.software stringByAppendingString:self.addData.version]];
+    NSString *option7 = [makerLabel.text stringByAppendingString:[softwareLabel.text stringByAppendingString:versionLabel.text]];
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSMutableArray *userData = [userDefaults objectForKey:@"userData"];
     NSString *urlList = [NSString stringWithFormat:@"http://webdb.per.c.fun.ac.jp/sofline%@/add.php",[userData valueForKeyPath:@"labCode"]];
@@ -83,12 +89,12 @@
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     [request setHTTPMethod:@"POST"];
     //パラメータを作成
-    NSString *body = [NSString stringWithFormat:@"title=ライセンス&message=&latitude=&longitude=&terminalId=ライセンス&option0=%@&option1=%@&option2=%@&option3=%@&option4=%@&option5=%@&option6=%@&option7=%@",self.addData.maker, self.addData.software, self.addData.version, self.addData.tag, self.addData.key, self.addData.start, self.addData.period,option7];
+    NSString *body = [NSString stringWithFormat:@"title=ライセンス&message=&latitude=&longitude=&terminalId=ライセンス&option0=%@&option1=%@&option2=%@&option3=%@&option4=%@&option5=%@&option6=%@&option7=%@",makerLabel.text, softwareLabel.text, versionLabel.text, tagLabel.text, keyLabel.text, startLabel.text, periodLabel.text,option7];
     request.HTTPBody = [body dataUsingEncoding:NSUTF8StringEncoding];
     NSURLConnection *connection;
     connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
 }
-
+/*
 - (BOOL)checkInputData{
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSMutableArray *userData = [userDefaults objectForKey:@"userData"];
@@ -137,50 +143,56 @@
     }
     return YES;
 }
+*/
+
 
 - (IBAction)sendBtn:(id)sender {
-    if(![self checkInputData])return;
+    //if(![self checkInputData])return;
     
     [self sendLicenseData];
     [self addLicense:@"03" badgeFlag:1];
     [self addLicense:@"09" badgeFlag:5];
     [self addLicense:@"10" badgeFlag:10];
     
-    if([self.addData.maker  isEqualToString:@"Microsoft"]){
+    if([makerLabel.text  isEqualToString:@"Microsoft"]){
         [self addLicense:@"11" badgeFlag:5];
-    }else if([self.addData.maker isEqualToString:@"Adobe"]){
+    }else if([makerLabel.text isEqualToString:@"Adobe"]){
         [self addLicense:@"12" badgeFlag:5];
     }
     [self performSegueWithIdentifier:@"finish" sender:self];
 }
 
+
+
 - (IBAction)makerEdit:(id)sender {
-    [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:0] animated:YES];
+    //[self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:0] animated:YES];
 }
 
 - (IBAction)softwareEdit:(id)sender {
-    [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:1] animated:YES];
+   // [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:1] animated:YES];
 }
 
 - (IBAction)versionEdit:(id)sender {
-    [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:2] animated:YES];
+    //[self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:2] animated:YES];
 }
 
 - (IBAction)tagEdit:(id)sender {
-    [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:3] animated:YES];
+    //[self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:3] animated:YES];
 }
 
 - (IBAction)keyEdit:(id)sender {
-    [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:3] animated:YES];
+    //[self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:3] animated:YES];
 }
 
 - (IBAction)startEdit:(id)sender {
-    [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:4] animated:YES];
+   // [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:4] animated:YES];
 }
 
 - (IBAction)periodEdit:(id)sender {
-    [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:4] animated:YES];
+    //[self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:4] animated:YES];
 }
+
+
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {

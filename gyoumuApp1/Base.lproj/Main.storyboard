@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="qeb-hm-2Hh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="qeb-hm-2Hh">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -20,7 +19,7 @@
             </objects>
             <point key="canvasLocation" x="-801" y="-291"/>
         </scene>
-        <!--ユーザログイン-->
+        <!--View Controller - ユーザログイン-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="Login" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
@@ -188,7 +187,7 @@
             </objects>
             <point key="canvasLocation" x="5062" y="1304"/>
         </scene>
-        <!--バッジ-->
+        <!--Badge View Controller - バッジ-->
         <scene sceneID="YAD-qX-1nO">
             <objects>
                 <viewController id="H4G-DU-vo1" customClass="BadgeViewController" sceneMemberID="viewController">
@@ -472,7 +471,7 @@
             </objects>
             <point key="canvasLocation" x="5078" y="2648"/>
         </scene>
-        <!--研究室一覧-->
+        <!--Lab View Controller - 研究室一覧-->
         <scene sceneID="Z4u-qM-bTP">
             <objects>
                 <viewController id="eLi-4A-0wf" customClass="labViewController" sceneMemberID="viewController">
@@ -566,7 +565,7 @@
             </objects>
             <point key="canvasLocation" x="4870" y="4480"/>
         </scene>
-        <!--設定-->
+        <!--Setting View Controller - 設定-->
         <scene sceneID="hI0-pO-hdb">
             <objects>
                 <viewController id="Hb5-ZA-8Cp" customClass="settingViewController" sceneMemberID="viewController">
@@ -672,7 +671,7 @@
             </objects>
             <point key="canvasLocation" x="5830" y="4444"/>
         </scene>
-        <!--ライセンス登録-->
+        <!--Navigation Controller - ライセンス登録-->
         <scene sceneID="Upm-LX-BSz">
             <objects>
                 <navigationController id="L6H-uK-gWR" sceneMemberID="viewController">
@@ -682,354 +681,14 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="2TA-s0-PGr" kind="relationship" relationship="rootViewController" id="1Fr-12-8C8"/>
+                        <segue destination="YUf-UH-ezE" kind="relationship" relationship="rootViewController" id="Vhr-hh-eNY"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yft-4h-w5s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5062" y="-1149"/>
         </scene>
-        <!--メーカー選択-->
-        <scene sceneID="5T0-d7-VqJ">
-            <objects>
-                <viewController id="2TA-s0-PGr" customClass="selectMakerViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="D89-6t-kjx"/>
-                        <viewControllerLayoutGuide type="bottom" id="nGP-Tj-xMX"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="mcO-t9-reR">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="progress1.png" translatesAutoresizingMaskIntoConstraints="NO" id="MA1-ma-SrA">
-                                <rect key="frame" x="572" y="51" width="176" height="37"/>
-                            </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="101" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="RD8-tC-pEH">
-                                <rect key="frame" x="148" y="165" width="472" height="731"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="makerCell" rowHeight="101" id="LUv-B9-tsz">
-                                        <rect key="frame" x="0.0" y="22" width="472" height="101"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LUv-B9-tsz" id="2aO-Gi-Qtg">
-                                            <rect key="frame" x="0.0" y="0.0" width="472" height="100"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="xLa-cS-Ix1">
-                                                    <rect key="frame" x="65" y="26" width="350" height="48"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="20" maxY="0.0"/>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="2TA-s0-PGr" id="X8i-Mz-syb"/>
-                                    <outlet property="delegate" destination="2TA-s0-PGr" id="kRq-cb-QNM"/>
-                                </connections>
-                            </tableView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ソフトウェアのメーカーを選択してください" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="hkI-zF-Q7J">
-                                <rect key="frame" x="215" y="103" width="338" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="メーカー選択" id="vLa-so-wQu">
-                        <barButtonItem key="backBarButtonItem" title="メーカー選択" id="wCc-lh-uU4"/>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="tableView" destination="RD8-tC-pEH" id="YfB-zN-lLh"/>
-                        <segue destination="yP0-yh-eag" kind="push" identifier="maker" id="9fW-ib-Jps"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Q2h-zU-nHH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6946" y="-1100"/>
-        </scene>
-        <!--ソフトウェア選択-->
-        <scene sceneID="7hv-7l-Nui">
-            <objects>
-                <viewController id="yP0-yh-eag" customClass="selectSoftwareViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="3Tc-P9-VmF"/>
-                        <viewControllerLayoutGuide type="bottom" id="qIN-sS-0O6"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ksl-u1-3y7">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="progress2.png" translatesAutoresizingMaskIntoConstraints="NO" id="bcd-HS-JUl">
-                                <rect key="frame" x="572" y="51" width="176" height="37"/>
-                            </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="98" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="XNo-sT-VwP">
-                                <rect key="frame" x="148" y="165" width="472" height="731"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="softwareCell" rowHeight="101" id="GUC-y1-CHH">
-                                        <rect key="frame" x="0.0" y="22" width="472" height="101"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GUC-y1-CHH" id="jla-Pa-RgQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="472" height="100"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="KZ2-Kj-QuU">
-                                                    <rect key="frame" x="65" y="22" width="350" height="56"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="yP0-yh-eag" id="vhS-AD-Ndz"/>
-                                    <outlet property="delegate" destination="yP0-yh-eag" id="CE4-e0-s4G"/>
-                                </connections>
-                            </tableView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ソフトウェアを選択してください" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="jRb-2i-XFJ">
-                                <rect key="frame" x="257" y="103" width="254" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="ソフトウェア選択" id="Le0-eJ-cw7">
-                        <barButtonItem key="backBarButtonItem" title="ソフトウェア選択" id="HZ0-B7-9sU"/>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="tableView" destination="XNo-sT-VwP" id="Lu4-bl-8wh"/>
-                        <segue destination="6hg-Fd-tD5" kind="push" identifier="software" id="cxy-fe-rqN"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TOY-sL-Xwa" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="7869" y="-1136"/>
-        </scene>
-        <!--バージョン選択-->
-        <scene sceneID="9uJ-VV-HhS">
-            <objects>
-                <viewController id="6hg-Fd-tD5" customClass="selectVersionViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="WXw-NV-MUc"/>
-                        <viewControllerLayoutGuide type="bottom" id="Du1-IH-6xK"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="tKe-Fz-VDb">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="progress3.png" translatesAutoresizingMaskIntoConstraints="NO" id="64h-Nz-Qqa">
-                                <rect key="frame" x="572" y="51" width="176" height="37"/>
-                            </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="101" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="SEG-7a-mly">
-                                <rect key="frame" x="148" y="165" width="472" height="731"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="versionCell" rowHeight="101" id="8hU-ll-t9k">
-                                        <rect key="frame" x="0.0" y="22" width="472" height="101"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8hU-ll-t9k" id="0oX-km-AE1">
-                                            <rect key="frame" x="0.0" y="0.0" width="472" height="100"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="A33-hP-5Q5">
-                                                    <rect key="frame" x="65" y="39" width="350" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="6hg-Fd-tD5" id="wfT-cD-hIO"/>
-                                    <outlet property="delegate" destination="6hg-Fd-tD5" id="uBI-Q3-DC8"/>
-                                </connections>
-                            </tableView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="バージョンを選択してください" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="BgA-FJ-DKO">
-                                <rect key="frame" x="266" y="103" width="236" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="バージョン選択" id="22f-0W-wWz">
-                        <barButtonItem key="backBarButtonItem" title="バージョン選択" id="045-Wm-sAE"/>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="tableView" destination="SEG-7a-mly" id="R5y-Hl-T6T"/>
-                        <segue destination="io5-ch-xae" kind="push" identifier="version" id="HDA-Xd-UVJ"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TbI-Kf-Paw" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="8722" y="-1136"/>
-        </scene>
-        <!--識別名&ライセンスキー-->
-        <scene sceneID="3OI-7M-ypp">
-            <objects>
-                <viewController id="io5-ch-xae" customClass="licenseKeyViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Jre-2d-q1W"/>
-                        <viewControllerLayoutGuide type="bottom" id="RVm-Rm-D0D"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Try-QD-AVn">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="progress4.png" translatesAutoresizingMaskIntoConstraints="NO" id="hLc-VH-5eB">
-                                <rect key="frame" x="572" y="51" width="176" height="37"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="識別名を入力してください（半角英数字１〜２０文字まで）" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="N9j-xA-itg">
-                                <rect key="frame" x="162" y="131" width="458" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ライセンスキーを入力してください" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Ia7-HT-MPV">
-                                <rect key="frame" x="162" y="373" width="269" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5cl-2B-N0E">
-                                <rect key="frame" x="530" y="800" width="120" height="60"/>
-                                <color key="backgroundColor" red="0.090196080505847931" green="0.34117648005485535" blue="0.46666669845581055" alpha="1" colorSpace="deviceRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="次へ">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="next:" destination="io5-ch-xae" eventType="touchUpInside" id="HvT-0d-BFa"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="識別名&amp;ライセンスキー" id="Y6c-t8-uW9">
-                        <barButtonItem key="backBarButtonItem" title="識別名&amp;ライセンスキー" id="kBW-WD-gXW"/>
-                    </navigationItem>
-                    <connections>
-                        <segue destination="qZ4-JY-tNy" kind="push" identifier="key" id="uu3-EV-pef"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UcQ-KJ-L8q" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="9550" y="-1136"/>
-        </scene>
-        <!--購入日時&有効期限-->
-        <scene sceneID="sxr-sS-iEZ">
-            <objects>
-                <viewController id="qZ4-JY-tNy" customClass="inputDateViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="5nG-Fa-P0N"/>
-                        <viewControllerLayoutGuide type="bottom" id="egH-Pa-7h0"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="RIl-tM-bMj">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WuX-x3-tcO">
-                                <rect key="frame" x="530" y="800" width="120" height="60"/>
-                                <color key="backgroundColor" red="0.094117656350135803" green="0.40784317255020142" blue="0.48235297203063965" alpha="1" colorSpace="deviceRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="次へ">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="next:" destination="qZ4-JY-tNy" eventType="touchUpInside" id="5GJ-N7-aB6"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="progress5.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ube-R0-aTK">
-                                <rect key="frame" x="572" y="51" width="176" height="37"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HR8-Vb-txg">
-                                <rect key="frame" x="117" y="155" width="533" height="216"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MTi-Re-3xa">
-                                <rect key="frame" x="117" y="437" width="532" height="216"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </imageView>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="zyr-Jw-eX1">
-                                <rect key="frame" x="117" y="155" width="532" height="216"/>
-                                <date key="date" timeIntervalSinceReferenceDate="438007440.91391402">
-                                    <!--2014-11-18 12:44:00 +0000-->
-                                </date>
-                                <date key="minimumDate" timeIntervalSinceReferenceDate="-978267600">
-                                    <!--1970-01-01 11:00:00 +0000-->
-                                </date>
-                                <date key="maximumDate" timeIntervalSinceReferenceDate="1167562800">
-                                    <!--2037-12-31 11:00:00 +0000-->
-                                </date>
-                                <locale key="locale" localeIdentifier="ja_JP"/>
-                            </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="購入日時を選択してください" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="bPe-35-vGr">
-                                <rect key="frame" x="117" y="126" width="220" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="有効期限を選択してください" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="hnS-aG-tdK">
-                                <rect key="frame" x="117" y="408" width="220" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="期限の有無" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dIN-iy-5mL">
-                                <rect key="frame" x="564" y="403" width="85" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Elb-LX-juS">
-                                <rect key="frame" x="499" y="398" width="51" height="31"/>
-                            </switch>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="sx5-Lz-edq">
-                                <rect key="frame" x="117" y="437" width="532" height="216"/>
-                                <date key="date" timeIntervalSinceReferenceDate="438007446.08995497">
-                                    <!--2014-11-18 12:44:06 +0000-->
-                                </date>
-                                <date key="minimumDate" timeIntervalSinceReferenceDate="-978267600">
-                                    <!--1970-01-01 11:00:00 +0000-->
-                                </date>
-                                <date key="maximumDate" timeIntervalSinceReferenceDate="1167562800">
-                                    <!--2037-12-31 11:00:00 +0000-->
-                                </date>
-                                <locale key="locale" localeIdentifier="ja_JP"/>
-                            </datePicker>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="購入日時&amp;有効期限" id="zFA-Sq-X3L"/>
-                    <connections>
-                        <outlet property="periodLabel" destination="hnS-aG-tdK" id="V1a-x5-oou"/>
-                        <outlet property="periodPicker" destination="sx5-Lz-edq" id="7xS-9E-toj"/>
-                        <outlet property="periodState" destination="Elb-LX-juS" id="Xek-7D-Ize"/>
-                        <outlet property="startPicker" destination="zyr-Jw-eX1" id="mex-dk-hnL"/>
-                        <outlet property="yukoKigen" destination="MTi-Re-3xa" id="98V-pg-zeW"/>
-                        <segue destination="YUf-UH-ezE" kind="push" identifier="date" id="4kG-yU-wzZ"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aLa-Ug-Iyg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="10398" y="-1131"/>
-        </scene>
-        <!--登録情報確認-->
+        <!--Confirm View Controller - 登録情報確認-->
         <scene sceneID="lhA-Fb-vZ4">
             <objects>
                 <viewController storyboardIdentifier="Finish" id="YUf-UH-ezE" customClass="confirmViewController" sceneMemberID="viewController">
@@ -1233,9 +892,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bh7-1U-p3a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="11310" y="-1119"/>
+            <point key="canvasLocation" x="9590" y="-1943"/>
         </scene>
-        <!--登録完了-->
+        <!--Finish Adding View Controller - 登録完了-->
         <scene sceneID="eUl-eJ-eyV">
             <objects>
                 <viewController wantsFullScreenLayout="YES" id="B2Z-hr-bNb" customClass="finishAddingViewController" sceneMemberID="viewController">
@@ -1356,7 +1015,7 @@
             </objects>
             <point key="canvasLocation" x="9289" y="3776"/>
         </scene>
-        <!--ライセンス一覧-->
+        <!--License Table View Controller - ライセンス一覧-->
         <scene sceneID="QTB-34-FDp">
             <objects>
                 <viewController id="W1i-hP-gZn" customClass="licenseTableViewController" sceneMemberID="viewController">
@@ -1513,7 +1172,6 @@
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" alpha="0.29999999999999966" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PQN-pd-CX8">
-
                                                     <rect key="frame" x="552" y="9" width="22" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -1542,7 +1200,7 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="NyW-S0-LQI">
-                                <rect key="frame" x="177" y="25" width="248" height="71"/>
+                                <rect key="frame" x="177" y="24" width="248" height="71"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -1553,7 +1211,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K1I-ez-ARI">
-                                <rect key="frame" x="92" y="194" width="585" height="4"/>
+                                <rect key="frame" x="92" y="193" width="585" height="4"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="識別名" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bwZ-75-cUs">
@@ -1601,7 +1259,7 @@
             </objects>
             <point key="canvasLocation" x="7213" y="94"/>
         </scene>
-        <!--バッジ-->
+        <!--Other Badge View Controller - バッジ-->
         <scene sceneID="2oW-vl-qmn">
             <objects>
                 <viewController extendedLayoutIncludesOpaqueBars="YES" id="5db-W9-m4M" customClass="otherBadgeViewController" sceneMemberID="viewController">
@@ -1769,7 +1427,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PJg-oj-PME">
-                                <rect key="frame" x="89" y="92" width="39" height="30"/>
+                                <rect key="frame" x="89" y="91" width="39" height="30"/>
                                 <state key="normal" title="Good">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1784,20 +1442,17 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gP-fy-HWz">
-                                <rect key="frame" x="249" y="89" width="270" height="40"/>
+                                <rect key="frame" x="249" y="88" width="270" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4ih-ZK-xw4">
                                 <rect key="frame" x="67" y="81" width="83" height="53"/>
-
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-
                                 <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
-
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ADx-VO-3Fb">
-                                <rect key="frame" x="135" y="90" width="80" height="40"/>
+                                <rect key="frame" x="135" y="89" width="80" height="40"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1850,7 +1505,7 @@
             </objects>
             <point key="canvasLocation" x="8158" y="3776"/>
         </scene>
-        <!--ライセンス一覧-->
+        <!--Other License View Controller3 - ライセンス一覧-->
         <scene sceneID="w3F-i4-Wsh">
             <objects>
                 <viewController id="b3N-wC-eMg" customClass="otherLicenseViewController3" sceneMemberID="viewController">
@@ -1910,39 +1565,39 @@
                                 </connections>
                             </tableView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lgk-2u-vrf">
-                                <rect key="frame" x="247" y="174" width="266" height="4"/>
+                                <rect key="frame" x="247" y="173" width="266" height="4"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sle-1z-1Ww">
-                                <rect key="frame" x="515" y="174" width="72" height="4"/>
+                                <rect key="frame" x="515" y="173" width="72" height="4"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jzg-wv-WtH">
-                                <rect key="frame" x="99" y="174" width="146" height="4"/>
+                                <rect key="frame" x="99" y="173" width="146" height="4"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="メーカー" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7e9-lW-bVo">
-                                <rect key="frame" x="138" y="148" width="68" height="21"/>
+                                <rect key="frame" x="138" y="147" width="68" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ソフトウェア" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QJy-57-3sA">
-                                <rect key="frame" x="327" y="148" width="102" height="21"/>
+                                <rect key="frame" x="327" y="147" width="102" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="保管" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TYb-GA-K2Q">
-                                <rect key="frame" x="533" y="148" width="34" height="21"/>
+                                <rect key="frame" x="533" y="147" width="34" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="詳細" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IcK-gV-ms2">
-                                <rect key="frame" x="613" y="148" width="34" height="21"/>
+                                <rect key="frame" x="613" y="147" width="34" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k0u-XL-Cg7">
-                                <rect key="frame" x="589" y="174" width="82" height="4"/>
+                                <rect key="frame" x="589" y="173" width="82" height="4"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="npF-Tt-CNR">
@@ -2118,7 +1773,7 @@
             </objects>
             <point key="canvasLocation" x="9524" y="2254"/>
         </scene>
-        <!--研究室一覧-->
+        <!--Guest Lab View Controller - 研究室一覧-->
         <scene sceneID="lSF-jG-GJj">
             <objects>
                 <viewController id="Ub4-bv-f6e" customClass="guestLabViewController" sceneMemberID="viewController">
@@ -2260,7 +1915,7 @@
             </objects>
             <point key="canvasLocation" x="2473" y="3188"/>
         </scene>
-        <!--バッジ-->
+        <!--Guest Badge View Controller - バッジ-->
         <scene sceneID="Pyy-c2-YfD">
             <objects>
                 <viewController extendedLayoutIncludesOpaqueBars="YES" id="ZCJ-WH-yim" customClass="guestBadgeViewController" sceneMemberID="viewController">
@@ -2473,7 +2128,7 @@
             </objects>
             <point key="canvasLocation" x="1374" y="3120"/>
         </scene>
-        <!--ライセンス一覧-->
+        <!--Guest License View Controller - ライセンス一覧-->
         <scene sceneID="HYw-Fn-aHf">
             <objects>
                 <viewController id="Sia-7H-VOT" customClass="guestLicenseViewController" sceneMemberID="viewController">
@@ -2711,11 +2366,6 @@
         <image name="detailBackground.jpg" width="1536" height="2048"/>
         <image name="detailbackground2.jpg" width="1536" height="2048"/>
         <image name="otherbackground.jpg" width="768" height="1024"/>
-        <image name="progress1.png" width="730" height="124"/>
-        <image name="progress2.png" width="730" height="124"/>
-        <image name="progress3.png" width="730" height="124"/>
-        <image name="progress4.png" width="730" height="124"/>
-        <image name="progress5.png" width="730" height="124"/>
         <image name="progress6.png" width="730" height="124"/>
         <image name="tabIconBadge.png" width="32" height="32"/>
         <image name="tabIconLicense.png" width="32" height="32"/>
