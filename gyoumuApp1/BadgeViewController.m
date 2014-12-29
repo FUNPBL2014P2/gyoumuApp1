@@ -11,6 +11,7 @@
 //値渡しのためのimport
 #import "BadgeDetailViewController.h"
 #import "AppDelegate.h"
+#import "MBProgressHUD.h"
 
 @interface BadgeViewController () {
     NSString *sendBadgeName;
@@ -115,12 +116,17 @@
     //sendBadgeNameにBadgeDetailVCのreceiveBadgeNAmeに渡したい文字列を入れる
     //sendview.receiveBadgeNameに代入することで値の受け渡しをしている
 - (void)badgeTapped:(id)sender {
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.01 * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
             sendBadgeName = [NSString stringWithFormat:@"/%@/%@",flagArray[[sender tag]][@"terminalId"],flagArray[[sender tag]][@"datetime"]];
         //バッジ詳細画面のStoryboard IDは"badgeDetail"です
         BadgeDetailViewController *sendView = [self.storyboard instantiateViewControllerWithIdentifier:@"badgeDetail"];
         sendView.receiveBadgeName = [NSString stringWithFormat:@"%@",sendBadgeName];
         [self presentViewController:sendView animated:NO completion:nil];
-    
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+
+    });
 }
 
 - (void)actionizeBadge{

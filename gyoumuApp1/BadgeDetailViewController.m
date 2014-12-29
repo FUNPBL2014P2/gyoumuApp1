@@ -9,6 +9,7 @@
 #import "BadgeDetailViewController.h"
 #import "WebdbConnect.h"
 #import "AppDelegate.h"
+#import "MBProgressHUD.h"
 
 @interface BadgeDetailViewController ()
 
@@ -125,7 +126,12 @@
 }
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 0.01 * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
     [self dismissViewControllerAnimated:NO completion:nil];
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    });
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
